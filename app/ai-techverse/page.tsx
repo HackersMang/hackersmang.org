@@ -5,6 +5,7 @@ import Cursor from "./components/Cursor";
 
 import "@/app/ai-techverse/assets/style.css"
 import "@/app/ai-techverse/assets/fonts.css"
+import Speakers from "./components/Speakers";
 
 function page() {
   return (
@@ -12,6 +13,7 @@ function page() {
       <Cursor />
       <Navbar />
       <Hero />
+      <Speakers />
       <Footer />
     </>
   );
