@@ -197,9 +197,7 @@ a {
 }
 
 .nav-link:hover {
-  color: #9b9b9b;
-  outline: solid 1px #2b2828;
-  background-color: #080808;
+  @apply text-[#9b9b9b] outline outline-1 outline-[#2b2828] bg-[#d4e20b];
 }
 
 .nav-link-color {
@@ -222,12 +220,13 @@ a {
   @apply bg-grainy bg-cover bg-center bg-no-repeat
 }
 
+/* Hide the custom cursor by default */
 .custom-cursor {
-  @apply h-4 w-4 top-0 bottom-0 z-50 fixed rounded-full bg-[#d4e20b] transform -translate-x-1/2 -translate-y-1/2 pointer-events-none mix-blend-difference p-2 flex justify-center items-center
+  @apply hidden lg:flex h-4 w-4 top-0 bottom-0 z-50 fixed rounded-full bg-[#d4e20b] transform -translate-x-1/2 -translate-y-1/2 pointer-events-none mix-blend-difference p-2 justify-center items-center;
 }
 
 .cursor-text {
-  @apply text-xs font-extrabold hidden
+  @apply text-xs font-extrabold hidden;
 }
 
 .buttonContainer {
@@ -235,7 +234,7 @@ a {
 }
 
 .register-button-inner-shadow:hover{
-  box-shadow: inset 1px 0px 0px 2px ##;
+  box-shadow: inset 1px 0px 0px 2px #080808;
 }
 
 .curved-undeline {
