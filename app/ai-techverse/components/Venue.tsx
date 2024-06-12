@@ -7,7 +7,7 @@ const Venue = () => {
                 <div className="grid grid-cols-[auto_1fr] items-center gap-1">
                     <span className="text-sm">Location</span>
                     <img
-                        src="/2024-june/location.svg"
+                        src="/ai-techverse/location.svg"
                         alt="Share Icon"
                         width={10}
                         height={10}
@@ -19,7 +19,7 @@ const Venue = () => {
             <div className="col-span-1">
                 <a href="https://maps.app.goo.gl/bB6HwqDftS4Nq1LT7" target="_blank" rel="noopener noreferrer">
                     <img
-                        src="/2024-june/unicourt-logo.png"
+                        src="/unicourt-logo.png"
                         alt="UniCourt-logo"
                         width={500}
                         height={90}

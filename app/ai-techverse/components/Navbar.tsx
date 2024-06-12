@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <nav className="flexCenter md:flexBetween padding-container relative z-30 py-5">
       <Link href="/" className="view pt-2">
-        <Image src="/2024-june/ai-techverse.svg" alt="ai-techverse logo" width={120} height={45} />
+        <Image src="/ai-techverse/ai-techverse.svg" alt="ai-techverse logo" width={120} height={45} />
       </Link>
 
       {/* Desktop Menu */}

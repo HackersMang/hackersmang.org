@@ -6,7 +6,7 @@ const Register = () => {
         <div className="grid grid-cols-[auto_1fr] items-center gap-1">
           <span className="text-sm">Register</span>
           <img
-            src="/2024-june/register.svg"
+            src="/ai-techverse/register.svg"
             alt="Share Icon"
             width={10}
             className="buttonIcon justify-self-start h-3.5 w-3.5 animate-pulse"

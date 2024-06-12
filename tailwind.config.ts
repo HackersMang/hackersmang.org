@@ -33,10 +33,7 @@ module.exports = {
         },
       },
       backgroundImage: {
-        'grainy' : "url('/2024-june/noise.svg')",
-        'bg-img-1': "url('/img-1.png')",
-        'bg-img-2': "url('/img-2.png')",
-        'feature-bg': "url('/feature-bg.png')",
+        'grainy' : "url('/ai-techverse/noise.svg')",
         pattern: "url('/pattern.png')",
         'pattern-2': "url('/pattern-bg.png')",
       },
