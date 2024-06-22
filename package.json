@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@motionone/utils": "^10.18.0",
     "class-variance-authority": "^0.7.0",
     "gsap": "^3.12.5",
     "next": "14.2.3",
