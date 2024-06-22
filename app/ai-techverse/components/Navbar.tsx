@@ -15,7 +15,7 @@ const Navbar = () => {
       <ul className="hidden flex-row fixed top-3 right-5 gap-6 md:flex nav-bar-right-top">
         {
           NAV_LINKS.map((link) => (
-            <Link href={link.href} key={link.key} className="regular-16 backdrop-blur-lg nav-link-color flexCenter transition-all nav-link py-2 px-4 rounded-lg">
+            <Link href={link.href} key={link.key} className="regular-16 backdrop-blur-lg text-[#9b9b9b] hover:text-black flexCenter transition-all nav-link py-2 px-4 rounded-lg">
               {link.label}
             </Link>
           ))
@@ -26,7 +26,7 @@ const Navbar = () => {
       <ul className="md:hidden flex flex-col fixed bottom-20 right-4 nav-bar-right-bottom">
         {
           NAV_LINKS.map((link) => (
-            <Link href={link.href} key={link.key} className="backdrop-blur-lg nav-link-color regular-16 rounded-lg flexCenter mb-2 last:mb-0 px-2 py-6 transition-all nav-link">
+            <Link href={link.href} key={link.key} className="backdrop-blur-lg text-[#9b9b9b] hover:text-black regular-16 rounded-lg flexCenter mb-2 last:mb-0 px-2 py-6 transition-all nav-link">
               {link.label}
             </Link>
           ))

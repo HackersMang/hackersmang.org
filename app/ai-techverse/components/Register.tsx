@@ -1,8 +1,8 @@
 const Register = () => {
 
   return (
-    <div className="lg:flex-1 nav-link-outline rounded-3xl md:col-span-2 md:grid md:grid-cols-2 w-full text-left">
-      <div className="col-span-2 rounded-t-3xl pt-3 mx-4">
+    <div className="lg:flex-1 nav-link-outline rounded-2xl md:col-span-2 md:grid md:grid-cols-2 w-full text-left">
+      <div className="col-span-2 rounded-t-3xl pt-4 mx-4 flex flex-col items-center justify-center">
         <div className="grid grid-cols-[auto_1fr] items-center gap-1">
           <span className="text-sm">Register</span>
           <img

@@ -9,24 +9,24 @@ export const NAV_LINKS = [
 // Social media links
 export const SOCIAL_LINKS = [
   {
-    label: 'X',
-    href: '/2024-june/close.svg',
-    icon: '/2024-june/instagram.svg',
+    label: 'Github',
+    href: '/social/github.svg',
+    icon: '/social/instagram.svg',
   },
   {
     label: 'Facebook',
-    href: '/2024-june/facebook.svg',
-    icon: '/2024-june/facebook.svg',
+    href: '/social/facebook.svg',
+    icon: '/social/facebook.svg',
   },
   {
-    label: 'Twitter',
-    href: '/2024-june/twitter.svg',
-    icon: '/2024-june/twitter.svg',
+    label: 'X',
+    href: '/social/x.svg',
+    icon: '/social/x.svg',
   },
   {
     label: 'YouTube',
-    href: '/2024-june/youtube.svg',
-    icon: '/2024-june/youtube.svg',
+    href: '/social/youtube.svg',
+    icon: '/social/youtube.svg',
   }
 ];
 
@@ -34,7 +34,7 @@ export const SOCIAL_LINKS = [
 export const SPEAKERS = [
   {
     name: 'Fayaz Mural',  
-    designation: '/2024-june/twitter.svgsadad',
+    designation: '/social/twitter.svgsadad',
     topic: '/2024-june/twitter.svg',
     image: '/2024-june/person-1.png',
     socialLinks: '/2024-june/twitter.svg',

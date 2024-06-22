@@ -197,7 +197,7 @@ a {
 }
 
 .nav-link:hover {
-  @apply text-[#9b9b9b] outline outline-1 outline-[#2b2828] bg-[#d4e20b];
+  @apply outline outline-1 outline-[#2b2828] bg-[#d4e20b];
 }
 
 .nav-link-color {
