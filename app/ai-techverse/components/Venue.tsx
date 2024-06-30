@@ -3,7 +3,7 @@ import React from 'react';
 const Venue = () => {
     return (
         <div className="lg:flex-1 nav-link-outline rounded-3xl md:col-span-2 md:grid md:grid-cols-2 w-full md:text-left flex flex-col items-center justify-center">
-            <div className="flex flex-col items-center justify-center md:col-span-2 nav-link-outline-bottom rounded-t-3xl pt-3 mx-4">
+            <div className="flex flex-col items-center justify-center md:col-span-2 nav-link-outline-bottom rounded-t-3xl pt-3 mx-4 lg:mx-[-.5rem]">
                 <div className="flex flex-row gap-1">
                     <span className="text-sm">Location</span>
                     <img

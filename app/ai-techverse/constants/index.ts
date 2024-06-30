@@ -1,9 +1,9 @@
 // NAVIGATION
 export const NAV_LINKS = [
   { href: '/ai-techverse', key: 'home', label: 'Home' },
+  { href: '/ai-techverse', key: 'location', label: 'Location' },
+  { href: '/ai-techverse', key: 'register', label: 'Register' },
   { href: '/ai-techverse', key: 'speakers', label: 'Speakers' },
-  { href: '/ai-techverse', key: 'schedule', label: 'Schedule' },
-  { href: '/ai-techverse', key: 'sponsors', label: 'Sponsors' },
 ];
 
 // Social media links
@@ -33,7 +33,7 @@ export const SOCIAL_LINKS = [
 // Speakers
 export const SPEAKERS = [
   {
-    name: 'Fayaz Mural',  
+    name: 'Fayaz Mural',
     designation: '/social/twitter.svgsadad',
     topic: '/2024-june/twitter.svg',
     image: '/2024-june/person-1.png',

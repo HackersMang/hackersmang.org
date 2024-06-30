@@ -1,4 +1,5 @@
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
+import ShineBorder from "@/components/magicui/shine-border";
 
 const Register = () => {
 
@@ -24,9 +25,13 @@ const Register = () => {
         />
       </div>
       <div className="col-span-2 m-2">
-        <a href="https://maps.app.goo.gl/bB6HwqDftS4Nq1LT7" target="_blank" rel="noopener noreferrer" className="relative register-button-inner-shadow inline-flex items-center justify-center p-4 overflow-hidden pencil-studio italic text-3xl font-extrabold tracking-tighter bg-[#d4e20b] [&_li]:text-black rounded-2xl w-full h-full group view">
-          <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-[#1d1d1c] rounded-full group-hover:w-full group-hover:h-[32rem]"></span>
-          <span className="relative tracking-wide text-black group-hover:text-[#d4e20b]">Lock in your spot!</span>
+        <a href="https://maps.app.goo.gl/bB6HwqDftS4Nq1LT7" target="_blank" rel="noopener noreferrer" className="view">
+          <ShineBorder
+            className="group text-center text-2xl pencil-studio italic w-full bg-black hover:bg-[#d4e20b]"
+            color={["#d4e20b", "#9fb2b2", "#FFBE7B"]}
+          >
+            Lock in your spot!
+          </ShineBorder>
         </a>
       </div>
     </div>

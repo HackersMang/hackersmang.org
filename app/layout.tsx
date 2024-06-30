@@ -17,9 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main className="relative bg-grainy">
-          {children}
-        </main>
+        {children}
       </body>
     </html>
   );

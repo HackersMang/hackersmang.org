@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
-export function DockDemo() {
+export function SocialDock() {
   return (
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg md:shadow-xl">
       <span className="pointer-events-none whitespace-pre-wrap text-center text-[#9fb2b2] text-base md:text-xl">
