@@ -11,7 +11,7 @@ const Footer = () => {
           <SocialDock />
         </div>
         <div className="hidden lg:flex items-center justify-center w-full">
-          © 2024 hackersMang All rights reserved.
+          © 2024 HackersMang All rights reserved.
         </div>
         <div className="hidden lg:flex flex-col gap-2 items-center justify-center w-full">
           <div>
@@ -22,7 +22,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex lg:hidden items-center justify-center w-full mt-2">
-          © 2024 hackersmang All rights reserved.
+          © 2024 HackersMang All rights reserved.
         </div>
       </div>
     </footer>
