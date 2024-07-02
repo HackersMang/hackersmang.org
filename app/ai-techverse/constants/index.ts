@@ -9,96 +9,55 @@ export const NAV_LINKS = [
 // Social media links
 export const SOCIAL_LINKS = [
   {
-    label: 'Github',
-    href: '/social/github.svg',
-    icon: '/social/instagram.svg',
+    label: 'github',
+    href: 'https://github.com/',
   },
   {
-    label: 'Facebook',
-    href: '/social/facebook.svg',
-    icon: '/social/facebook.svg',
+    label: 'facebook',
+    href: 'https://m.facebook.com/hackersmang/',
   },
   {
-    label: 'X',
-    href: '/social/x.svg',
-    icon: '/social/x.svg',
+    label: 'x',
+    href: 'https://twitter.com/hackersmang?lang=en',
   },
   {
-    label: 'YouTube',
-    href: '/social/youtube.svg',
-    icon: '/social/youtube.svg',
+    label: 'linkedin',
+    href: 'https://www.linkedin.com/company/hackersmang/about/',
   }
 ];
 
 // Speakers
 export const SPEAKERS = [
   {
-    name: 'Fayaz Mural',
-    designation: '/social/twitter.svgsadad',
-    topic: '/2024-june/twitter.svg',
-    image: '/2024-june/person-1.png',
-    socialLinks: '/2024-june/twitter.svg',
+    name: 'Avinash Shetty',
+    designation: 'Director of R&D at Qxf2 Services',
+    topic: 'Insights and strategies on testing Machine Learning Models',
+    image: '/ai-techverse/speakers/avinash.jpeg',
+    socialLinks: 'http://linkedin.com/in/avinash010',
+    company: "Qxf2 Services"
+  },
+  {
+    name: 'Harshit Poojari',
+    designation: 'Software Engineer at Unicourt',
+    topic: 'A.I in Devops',
+    image: '/ai-techverse/speakers/harshit.jpeg',
+    socialLinks: 'https://www.linkedin.com/in/harshit-poojari-3a590916a/',
     company: "UniCourt"
   },
   {
-    name: 'Sirigiri Vijay',
-    designation: '/2024-june/twitter.svg',
-    topic: '/2024-june/twitter.svg',
-    image: '/2024-june/person-1.png',
-    socialLinks: '/2024-june/twitter.svg',
-    company: "UniCourt"
-  },
-  {
-    name: 'Sidharth Suvarna',
-    designation: '/2024-june/twitter.svg',
-    topic: '/2024-june/twitter.svg',
-    image: '/2024-june/person-1.png',
-    socialLinks: '/2024-june/twitter.svg',
-    company: "UniCourt"
+    name: 'Prajnesh Shetty',
+    designation: 'Software Developer',
+    topic: 'A Basic Guide to Using YOLOv8 and Annotation Tools for Customized Object Detection Models',
+    image: '/ai-techverse/speakers/prajnesh.jpeg',
+    socialLinks: 'https://www.linkedin.com/in/prajnesh-shetty-a44275127/',
+    company: "CodeCraft Technologies Pvt Ltd"
   },
   {
     name: 'Esther Raina Monterio',
-    designation: '/2024-june/twitter.svg',
-    topic: '/2024-june/twitter.svg',
-    image: '/2024-june/person-1.png',
-    socialLinks: '/2024-june/twitter.svg',
-    company: "Code Craft"
-  },
-  {
-    name: 'Augustine Correa',
-    designation: '/2024-june/twitter.svg',
-    topic: '/2024-june/twitter.svg',
-    image: '/2024-june/person-1.png',
-    socialLinks: '/2024-june/twitter.svg',
-    company: "UniCourt"
+    designation: 'Data Scientist',
+    topic: 'A Basic Guide to create a RAG application using LangChain and LLM',
+    image: '/ai-techverse/speakers/esther.jpeg',
+    socialLinks: 'https://in.linkedin.com/in/esther-raina-monteiro-4342161b6',
+    company: "CodeCraft Technologies Pvt Ltd"
   }
 ];
-
-
-// FOOTER SECTION
-export const FOOTER_LINKS = [
-  {
-    title: 'Learn More',
-    links: [
-      'About Hilink',
-      'Press Releases',
-      'Environment',
-      'Jobs',
-      'Privacy Policy',
-      'Contact Us',
-    ],
-  },
-  {
-    title: 'Our Community',
-    links: ['Climbing xixixi', 'Hiking hilink', 'Hilink kinthill'],
-  },
-];
-
-export const FOOTER_CONTACT_INFO = {
-  title: 'Contact Us',
-  links: [
-    { label: 'Admin Officer', value: '123-456-7890' },
-    { label: 'Email Officer', value: 'hilink@akinthil.com' },
-  ],
-};
-
