@@ -7,6 +7,7 @@ import "@/app/ai-techverse/assets/style.css"
 import "@/app/ai-techverse/assets/fonts.css"
 import Speakers from "./components/Speakers";
 import ParticlesDemo from "./components/Particles";
+import Agendas from "./components/Agendas";
 
 function page() {
   return (
@@ -15,6 +16,7 @@ function page() {
       <Cursor />
       <Navbar />
       <Hero />
+      <Agendas />
       <Speakers />
       <Footer />
     </main>
