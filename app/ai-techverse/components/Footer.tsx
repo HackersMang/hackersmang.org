@@ -10,18 +10,18 @@ const Footer = () => {
         <div className='text-lg items-center justify-center w-full'>
           <SocialDock />
         </div>
-        <div className="hidden lg:flex items-center justify-center w-full">
+        <div className="hidden lg:flex items-center justify-center w-full text-gray-30">
           © 2024 HackersMang All rights reserved.
         </div>
         <div className="hidden lg:flex flex-col gap-2 items-center justify-center w-full">
-          <div>
+          <div className='text-gray-30'>
             Privacy Policy
           </div>
-          <div>
+          <div className='text-gray-30'>
             Terms of Use
           </div>
         </div>
-        <div className="flex lg:hidden items-center justify-center w-full mt-2">
+        <div className="flex lg:hidden items-center justify-center w-full mt-2 text-gray-30">
           © 2024 HackersMang All rights reserved.
         </div>
       </div>
