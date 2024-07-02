@@ -11,18 +11,22 @@ export const SOCIAL_LINKS = [
   {
     label: 'github',
     href: 'https://github.com/',
+    icon: '/social/github.svg'
   },
   {
     label: 'facebook',
     href: 'https://m.facebook.com/hackersmang/',
+    icon: '/social/facebook.svg'
   },
   {
     label: 'x',
     href: 'https://twitter.com/hackersmang?lang=en',
+    icon: '/social/twitter.svg'
   },
   {
     label: 'linkedin',
     href: 'https://www.linkedin.com/company/hackersmang/about/',
+    icon: '/social/youtube.svg'
   }
 ];
 
