@@ -3,11 +3,17 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Cursor from "./components/Cursor";
 
-import "@/app/ai-techverse/assets/style.css"
+import "@/app/ai-techverse/assets/ai-techverse.css"
 import "@/app/ai-techverse/assets/fonts.css"
 import Speakers from "./components/Speakers";
 import ParticlesDemo from "./components/Particles";
 import Agendas from "./components/Agendas";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "AI TECHVERSE",
+  description: "AI TECHVERSE - Cutting-edge talks & workshops on AI technologies hosted by Hackerspace Mangaluru.",
+};
 
 function page() {
   return (
