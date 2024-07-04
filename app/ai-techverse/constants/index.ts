@@ -72,5 +72,5 @@ export const SPEAKERS = [
 ];
 
 export const REGISTER_LINK = {
-  link : 'https://www.tickettailor.com/all-tickets/hackerspacemangaluru/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true'
+  link : 'https://www.tickettailor.com/checkout/new-session/id/4341064/chk/d095/'
 }
