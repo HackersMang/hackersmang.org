@@ -18,6 +18,6 @@ export const EVENT_DETAILS = [
         
 Get ready to plug into the future at the UniCourt Office in Mangaluru - a hub where tech dreams take flight and AI comes alive! AI TECHVERSE is designed to ignite creativity and foster collaboration. Interactive exhibits will showcase real-world applications of AI, and networking opportunities will enable attendees to connect with like-minded individuals and potential collaborators.
         
-The event kicks off at 10 AM sharp (because AI doesn't do late!) and wraps up at 5 PM (we'll send you back to reality just in time for dinner). Mark your calendars and register soon to secure your seat at this unmissable convergence of technology and innovation.`
+The event kicks off at 10 AM sharp (because AI doesn&apos;t do late!) and wraps up at 5 PM (we&apos;ll send you back to reality just in time for dinner). Mark your calendars and register soon to secure your seat at this unmissable convergence of technology and innovation.`
     }
 ];
