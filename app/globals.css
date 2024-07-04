@@ -17,6 +17,7 @@ body,
 html {
     font-family: sans-serif;
     cursor: none;
+    scroll-behavior: smooth;
 }
 
 a {
