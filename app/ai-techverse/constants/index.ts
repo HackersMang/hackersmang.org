@@ -27,7 +27,7 @@ export const SPEAKERS = [
   {
     name: 'Esther Raina Monterio',
     designation: 'Data Scientist',
-    topic: 'A Basic Guide to create a RAG application using LangChain and LLM',
+    topic: 'A Basic Guide to Create a RAG Application Using LangChain and LLM',
     image: '/ai-techverse/speakers/esther.jpeg',
     socialLinks: 'https://in.linkedin.com/in/esther-raina-monteiro-4342161b6',
     company: "CodeCraft Technologies Pvt Ltd",
@@ -45,7 +45,7 @@ export const SPEAKERS = [
   {
     name: 'Avinash',
     designation: 'Director of R&D at Qxf2 Services',
-    topic: 'Insights and strategies on testing Machine Learning Models',
+    topic: 'Insights and Strategies On Testing Machine Learning Models',
     image: '/ai-techverse/speakers/avinash.jpeg',
     socialLinks: 'http://linkedin.com/in/avinash010',
     company: "Qxf2 Services",
@@ -63,7 +63,7 @@ export const SPEAKERS = [
   {
     name: 'Kiran Shetty',
     designation: 'Unknown',
-    topic: 'Journey through AI: From perceptron to advanced classification',
+    topic: 'Journey Through AI: From Perceptron to Advanced Classification',
     image: '/ai-techverse/speakers/kiran.jpeg',
     socialLinks: 'https://www.linkedin.com/in/kiran-shetty-b4833899/',
     company: "Bix Bytes Solutions Pvt. Ltd",
@@ -72,5 +72,5 @@ export const SPEAKERS = [
 ];
 
 export const REGISTER_LINK = {
-  link : 'https://www.tickettailor.com/checkout/new-session/id/4341064/chk/d095/'
+  link : 'https://buytickets.at/hackerspacemangaluru/1308788'
 }

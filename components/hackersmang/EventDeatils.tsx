@@ -1,11 +1,6 @@
-import { EVENT_DETAILS } from "@/constants";
 import Image from "next/image";
 
 const EVENT_IMAGES = [
-  "/ai-techverse/cards/hero-card.png",
-  "/ai-techverse/cards/hero-card.png",
-  "/ai-techverse/cards/hero-card.png",
-  "/ai-techverse/cards/hero-card.png",
   "/ai-techverse/cards/hero-card.png"
 ];
 
