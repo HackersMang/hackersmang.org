@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className="col-start-1 col-end-3 flex flex-col justify-left items-start m-2 md:m-3 max-h-[700px]">
+    <div className="col-start-1 col-end-3 flex flex-col justify-left items-start m-2 md:m-4 max-h-[400px] md:max-h-[300px] lg:max-h-[700px] ">
       <h3 className="text-[#9b9b9b] text-2xl font-bold mb-2">About</h3>
       <div className="overflow-y-auto text-[#9b9b9b] no-scrollbar max-h-[700px] flex flex-col gap-2">
         <div className="text-xl">Hackerspace Mangaluru, a vibrant community of tech enthusiasts dedicated to fostering a thriving tech ecosystem in Mangaluru. We host regular talks, workshops, and meetups on the latest open source technologies, providing a platform for individuals to share knowledge, learn from each other, and collaborate on innovative projects.

@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="max-container flex items-center justify-center px-4 lg:px-6 z-0">
         <img src="/hackersmang-logo.svg" alt="hackersmang-logo" />
       </div>
-      <div className="max-container bg-grainy items-center justify-center lg:col-span-3 lg:grid lg:grid-cols-3 w-full nav-link-outline rounded-t-3xl mt-[-1.4rem] md:mt-[-2.5rem] lg:mt-[-4.8rem] p-4 relative z-30">
+      <div className="bg-grainy items-center justify-center lg:col-span-3 lg:grid lg:grid-cols-3 w-full nav-link-outline rounded-t-3xl mt-[-1.4rem] md:mt-[-2.5rem] lg:mt-[-4.8rem] p-4 relative z-30">
         <div className='text-lg items-center justify-center w-full'>
           <SocialDock />
         </div>

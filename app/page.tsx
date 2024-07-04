@@ -1,10 +1,12 @@
 import Header from "@/components/hackersmang/Header";
 import Hero from "@/components/hackersmang/Hero";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
+import Cursor from "./ai-techverse/components/Cursor";
 
 export default function Home() {
   return (
-    <main className="relative bg-grainy max-w-full max-h-full overflow-hidden">
+    <main className="relative bg-grainy max-w-full min-h-full overflow-hidden">
+      <Cursor />
       <Header />
       <VelocityScroll
         text="Open Source, Cloud, Devops, Testing, Big Data, Search Engines, RDBMS, NoSQL, NLP, Machine Learning, Automation, Python, PHP, NodeJS, Angular, HTML5, CSS3, Docker, SaltStack, Ansible, Linux, MySQL, Postgres, MongoDB, Sphinx, ElasticSearch and more."
