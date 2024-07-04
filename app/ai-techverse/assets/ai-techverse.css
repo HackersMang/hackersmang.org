@@ -2,32 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  color: #9fb2b2;
-}
-
-::selection {
-  @apply bg-[#d4e20b] text-black
-}
-
-body,
-html {
-  font-family: sans-serif;
-  cursor: none;
-}
-
-.pencil-studio {
-  font-family: pencil-studio;
-}
-
-a {
-  text-decoration: none;
-  cursor: none;
-}
-
 @layer utilities {
   .btn_white {
     @apply border-white bg-white px-8 py-3 text-green-50
