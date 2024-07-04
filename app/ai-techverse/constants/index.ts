@@ -1,11 +1,3 @@
-// NAVIGATION
-export const NAV_LINKS = [
-  { href: '/ai-techverse', key: 'home', label: 'Home' },
-  { href: '/ai-techverse', key: 'location', label: 'Location' },
-  { href: '/ai-techverse', key: 'register', label: 'Register' },
-  { href: '/ai-techverse', key: 'speakers', label: 'Speakers' },
-];
-
 // Social media links
 export const SOCIAL_LINKS = [
   {
