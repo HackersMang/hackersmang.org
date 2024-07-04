@@ -1,6 +1,5 @@
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import Image from "next/image";
-import Link from "next/link";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 

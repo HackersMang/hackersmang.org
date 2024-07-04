@@ -1,4 +1,5 @@
 import { EVENT_DETAILS } from "@/constants";
+import Link from "next/link";
 
 const Events = () => {
   return (
@@ -7,8 +8,10 @@ const Events = () => {
       <div className="overflow-y-auto text-[#9b9b9b] no-scrollbar max-h-[700px] text-lg flex flex-col gap-2 w-full">
         {EVENT_DETAILS.map((event, index) => (
           <div key={index} className="overflow-hidden min-h-20 p-4 md:p-6 gap-1 my-1 bg-[#1d1d1c] rounded-xl">
-            <div className="text-lg md:text-2xl lg:text-3xl font-bold">{event.title}</div>
-            <p className="text-sm md:text-xl text-gray-30 ">{event.date}</p>
+            <div className="text-lg md:text-2xl lg:text-3xl font-bold">
+              <Link href={"/ai-techverse"} className="view hover:text-[#d4e20b]">{event.title}</Link>
+            </div>
+            <p className="text-sm md:text-xl text-gray-30">{event.date}</p>
           </div>
         ))}
       </div>
