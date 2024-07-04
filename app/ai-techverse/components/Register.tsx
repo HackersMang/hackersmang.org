@@ -19,10 +19,10 @@ const Register = () => {
         className="w-full lg:w-1/2 flex items-center justify-center my-2 lg:mb-4 view"
       >
         <ShineBorder
-          className="group m-2 text-2xl pencil-studio italic bg-black hover:bg-[#d4e20b] w-full"
+          className="group m-2 text-3xl pencil-studio italic bg-black hover:bg-[#d4e20b] w-full"
           color={["#d4e20b", "#9fb2b2", "#FFBE7B"]}
         >
-          Register
+          Click here to buy tickets
         </ShineBorder>
       </Link>
     </div>

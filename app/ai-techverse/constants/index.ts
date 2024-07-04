@@ -63,14 +63,14 @@ export const SPEAKERS = [
   {
     name: 'Kiran Shetty',
     designation: 'Unknown',
-    topic: 'Not Decided',
+    topic: 'Journey through AI: From perceptron to advanced classification',
     image: '/ai-techverse/speakers/kiran.jpeg',
-    socialLinks: 'https://www.linkedin.com/in',
-    company: "Unknown",
+    socialLinks: 'https://www.linkedin.com/in/kiran-shetty-b4833899/',
+    company: "Bix Bytes Solutions Pvt. Ltd",
     order: 5
   }
 ];
 
 export const REGISTER_LINK = {
-  link : 'https://www.linkedin.com/in'
+  link : 'https://www.tickettailor.com/all-tickets/hackerspacemangaluru/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true'
 }
