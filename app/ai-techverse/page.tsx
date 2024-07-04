@@ -12,7 +12,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "AI TECHVERSE",
-  description: "AI TECHVERSE - Cutting-edge talks & workshops on AI technologies hosted by Hackerspace Mangaluru.",
+  description: "AI TECHVERSE - Talks on cutting edge AI technologies hosted by Hackerspace Mangaluru.",
 };
 
 function page() {
