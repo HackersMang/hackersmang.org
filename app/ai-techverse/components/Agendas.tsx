@@ -4,7 +4,7 @@ const Agendas = () => {
     return (
         <section className="max-container flex flex-col md:gap-4 py-4 px-2 nav-link-outline rounded-3xl mx-6 my-6 items-center justify-center">
             <div className="text-3xl">
-                Our Agenda
+                Agenda
             </div>
             {SPEAKERS.map((item, idx) => (
                 <div className="flex flex-col w-full overflow-hidden p-4 md:p-8 gap-1 my-1 bg-[#1d1d1c] rounded-xl" key={idx}>
