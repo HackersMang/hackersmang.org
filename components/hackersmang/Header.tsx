@@ -1,15 +1,30 @@
 import Image from "next/image"
+import { HyperText } from "@/components/magicui/hyper-text";
 
 const Header = () => {
     return (
-        <section className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-1 md:gap-4 justify-center items-center outline outline-1 outline-gray-800">
-            <div className="col-start-1 col-end-2 lg:col-start-2 lg:col-end-3 flex justify-end items-center m-2 md:m-3">
-                <Image src="/hackersmang-logo.jpg" alt="hackersmang-logo" width={75} height={75} className="rounded-full m-2 w-12 md:w-16" />
+        <header className="m-2 mt-2 lg:m-6 lg:mb-1 p-0 outline outline-[1.5px]">
+            <div className="flex items-center justify-between h-16">
+                {/* Logo Section */}
+                <div className="h-full w-20 lg:w-32 flex justify-center items-center text-sm p-0">
+                    <Image src="/hackerspace-mangalore-logo.PNG" alt="hackersmang-logo" width={48} height={48} className="rounded-full" />
+                </div>
+
+                {/* Title Section */}
+                <div className="hidden flex-grow lg:flex justify-center items-center">
+                    <h1 className="text-4xl outfit-bold">HACKERSPACE MANGALURU</h1>
+                </div>
+
+                {/* Menu Button with Outline */}
+                
+                <div className="h-full w-20 lg:w-32 flex justify-center items-center outline outline-[1.5px] text-sm p-0">
+                    <HyperText
+                        className="outfit-bold text-white"
+                        text="MENU"
+                    />
+                </div>
             </div>
-            <div className="col-end-5 col-span-3 md:col-span-4 lg:col-end-6 lg:col-span-3 flex justify-start items-center font-extrabold text-xl md:text-[44px] lg:text-5xl text-[#d4e20b] m-2 md:m-3">
-                Hackerspace Mangaluru
-            </div>
-        </section>
+        </header>
     )
 }
 

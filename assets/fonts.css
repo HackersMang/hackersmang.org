@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'pencil-studio';
+    src: url('/fonts/Pencil-Studio.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outfit-Black';
+    src: url('/fonts/outfit/Outfit-Black.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Outfit-Bold';
+    src: url('/fonts/outfit/Outfit-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Outfit-ExtraBold';
+    src: url('/fonts/outfit/Outfit-ExtraBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Outfit-ExtraLight';
+    src: url('/fonts/outfit/Outfit-ExtraLight.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Outfit-ExtraLight';
+    src: url('/fonts/outfit/Outfit-Light.otf') format('opentype');
+}
+
+.pencil-studio {
+    font-family: pencil-studio;
+}
+
+.outfit-black {
+    font-family: Outfit-Black;
+}
+
+.outfit-bold {
+    font-family: Outfit-Bold;
+}
+
+.outfit-extra-bold {
+    font-family: Outfit-ExtraBold;
+}
+
+.outfit-extra-light {
+    font-family: Outfit-ExtraLight;
+}
+
+.outfit-light {
+    font-family: Outfit-Light;
+}

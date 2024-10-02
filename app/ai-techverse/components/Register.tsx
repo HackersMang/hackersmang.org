@@ -1,4 +1,3 @@
-import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import ShineBorder from "@/components/magicui/shine-border";
 import Link from "next/link";
 import { REGISTER_LINK } from "../constants";

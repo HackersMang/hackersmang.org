@@ -3,8 +3,8 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Cursor from "./components/Cursor";
 
-import "@/app/ai-techverse/assets/ai-techverse.css"
-import "@/app/ai-techverse/assets/fonts.css"
+import "@/assets/ai-techverse.css"
+import "@/assets/fonts.css"
 import Speakers from "./components/Speakers";
 import ParticlesDemo from "./components/Particles";
 import Agendas from "./components/Agendas";
