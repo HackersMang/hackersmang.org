@@ -6,11 +6,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #fafafa;
 }
 
 ::selection {
-    @apply bg-[#d4e20b] text-black
+    @apply bg-white text-black
 }
 
 body,

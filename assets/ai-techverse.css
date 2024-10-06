@@ -6,6 +6,10 @@
   color: #9b9b9b;
 }
 
+::selection {
+  @apply bg-[#d4e20b] text-black
+}
+
 body,
 html {
     font-family: sans-serif;

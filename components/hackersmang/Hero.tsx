@@ -3,7 +3,7 @@ import { WordFadeIn } from "@/components/magicui/word-fade-in";
 export const Hero = () => {
     return (
         <section className="h-screen flex flex-col justify-between m-2 mt-1 lg:m-6 lg:mt-2 p-0 outline outline-[1.5px]">
-            <p className="m-3 text-sm text-center font-bold outfit-extra-light">
+            <p className="m-3 text-base text-center font-bold outfit-extra-light">
                 A VIBRANT COMMUNITY OF TECH ENTHUSIASTS
             </p>
             
