@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  color: #9b9b9b;
+}
+
+body,
+html {
+    font-family: sans-serif;
+    cursor: none;
+    scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  cursor: none;
+}
+
 @layer utilities {
   .btn_white {
     @apply border-white bg-white px-8 py-3 text-green-50

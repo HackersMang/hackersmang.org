@@ -16,10 +16,9 @@ const Header = () => {
                 </div>
 
                 {/* Menu Button with Outline */}
-                
                 <div className="h-full w-20 lg:w-32 flex justify-center items-center outline outline-[1.5px] text-sm p-0">
                     <HyperText
-                        className="outfit-bold text-white"
+                        className="outfit-bold text-white cursor-pointer"
                         text="MENU"
                     />
                 </div>

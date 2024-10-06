@@ -16,13 +16,7 @@
 body,
 html {
     font-family: sans-serif;
-    cursor: none;
     scroll-behavior: smooth;
-}
-
-a {
-    text-decoration: none;
-    cursor: none;
 }
 
 /* Add this to your global CSS file or a relevant CSS module */

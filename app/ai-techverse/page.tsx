@@ -6,9 +6,9 @@ import Cursor from "./components/Cursor";
 import "@/assets/ai-techverse.css"
 import "@/assets/fonts.css"
 import Speakers from "./components/Speakers";
-import ParticlesDemo from "./components/Particles";
 import Agendas from "./components/Agendas";
 import { Metadata } from "next";
+import Particles from "@/components/magicui/particles";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hackersmang.org'),
@@ -68,7 +68,13 @@ export const metadata: Metadata = {
 function page() {
   return (
     <main className="relative bg-grainy">
-      <ParticlesDemo />
+      <Particles
+        className="absolute inset-3"
+        quantity={100}
+        ease={80}
+        color="#d4e20b"
+        refresh
+      />      
       <Cursor />
       <Navbar />
       <Hero />
