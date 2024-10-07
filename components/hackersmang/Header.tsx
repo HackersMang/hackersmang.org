@@ -21,7 +21,7 @@ const Header = () => {
 
                 {/* Title Section */}
                 <div className="hidden flex-grow lg:flex justify-center items-center">
-                    <h1 className="text-4xl outfit-bold">HACKERSPACE MANGALURU</h1>
+                    <h1 className="text-4xl outfit-bold">HACKERSMANG</h1>
                 </div>
 
                 {/* Menu Button with Link */}

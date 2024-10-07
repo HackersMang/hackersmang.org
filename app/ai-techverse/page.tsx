@@ -69,7 +69,6 @@ function page() {
   return (
     <main className="relative bg-grainy">
       <Particles
-        className="absolute inset-3"
         quantity={100}
         ease={80}
         color="#d4e20b"

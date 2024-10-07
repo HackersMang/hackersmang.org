@@ -8,7 +8,6 @@ export default function Home() {
   return (
     <main className="bg-black flex flex-col h-screen w-screen text-white">
       <Particles
-        className="absolute inset-3"
         quantity={40}
         ease={80}
         color="#ffffff"

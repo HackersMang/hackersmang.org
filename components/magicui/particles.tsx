@@ -49,7 +49,7 @@ function hexToRgb(hex: string): number[] {
 }
 
 const Particles: React.FC<ParticlesProps> = ({
-  className = "",
+  className = "absolute inset-3",
   quantity = 100,
   staticity = 50,
   ease = 50,
