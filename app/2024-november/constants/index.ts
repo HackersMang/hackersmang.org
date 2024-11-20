@@ -4,7 +4,7 @@
       name: 'Divya Raj K',
       designation: 'Data Scientist',
       topic: 'Data Manipulation with Polars',
-      image: '/2024-november/speakers/divya.png',
+      image: '/2024-november/speakers/divyak.png',
       socialLinks: 'https://www.linkedin.com/in/divyark22/',
       company: "(UniCourt) Mangalore Infotech Solutions Pvt. Ltd.",
       order: 1
@@ -13,7 +13,7 @@
       name: 'Subramanya C',
       designation: 'Software Developer',
       topic: 'Demystifying Pythons Memory Model',
-      image: '/2024-november/speakers/subramanya.jpg',
+      image: '/2024-november/speakers/subramanyac.jpg',
       socialLinks: 'http://www.linkedin.com/in/subramanya-c',
       company: "CodeCraft Technologies Pvt Ltd",
       order: 2
@@ -31,7 +31,7 @@
       name: 'Manoj Singh',
       designation: 'Software Engineer at Unicourt',
       topic: 'Leveraging AWS Bedrock Hosted Models for Data Extraction from HTML, Images, and PDFs',
-      image: '/2024-november/speakers/manoj.jpg',
+      image: '/2024-november/speakers/manojs.jpg',
       socialLinks: 'https://www.linkedin.com/in/manoj-singh-04434121b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
       company: "(UniCourt) Mangalore Infotech Solutions Pvt. Ltd.",
       order: 4
