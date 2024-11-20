@@ -7,7 +7,7 @@
       image: '/2024-november/speakers/divyak.png',
       socialLinks: 'https://www.linkedin.com/in/divyark22/',
       company: "(UniCourt) Mangalore Infotech Solutions Pvt. Ltd.",
-      order: 1
+      order: 2
     },
     {
       name: 'Subramanya C',
@@ -16,7 +16,7 @@
       image: '/2024-november/speakers/subramanyac.jpg',
       socialLinks: 'http://www.linkedin.com/in/subramanya-c',
       company: "CodeCraft Technologies Pvt Ltd",
-      order: 2
+      order: 1
     },
     {
       name: 'Karthik Suvarna',

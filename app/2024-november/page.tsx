@@ -27,18 +27,18 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: 'Hackers Mang 2024 November edition by Hackerspace Mangaluru',
-    description: 'Hackers Mang 2024 November edition hosted by Hackerspace Mangaluru.',
-    url: 'https://hackersmang.org/ai-techverse',
+    title: 'Hackers Mang | 2024 November edition by Hackerspace Mangaluru',
+    description: 'Hackers Mang | 2024 November edition hosted by Hackerspace Mangaluru.',
+    url: 'https://hackersmang.org/2024-november',
     siteName: 'Hackerspace Mangaluru',
     images: [
       {
-        url: 'https://hackersmang.org/ai-techverse/cards/hero-card.png',
+        url: 'https://hackersmang.org/2024-november/cards/hero-card.png',
         width: 800,
         height: 600,
       },
       {
-        url: 'https://hackersmang.org/ai-techverse/cards/hero-card.png',
+        url: 'https://hackersmang.org/2024-november/cards/hero-card.png',
         width: 1800,
         height: 1600,
         alt: 'AI TECHVERSE',
@@ -50,8 +50,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Hackers Mang 2024 November edition by Hackerspace Mangaluru',
-    description: 'Hackers Mang 2024 November edition hosted by Hackerspace Mangaluru.',
-    images: 'https://hackersmang.org/ai-techverse/cards/hero-card.png'
+    description: 'Hackers Mang | 2024 November edition hosted by Hackerspace Mangaluru.',
+    images: 'https://hackersmang.org/2024-november/cards/hero-card.png'
   },
   alternates: {
     canonical: '/',
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
       'en-US': '/en-US',
     },
   },
-  bookmarks: ['https://hackersmang.org/ai-techverse'],
+  bookmarks: ['https://hackersmang.org/2024-november'],
   category: 'technology',
 };
 
