@@ -10,7 +10,7 @@ export default function Home() {
       <Particles
         quantity={40}
         ease={80}
-        color="#ffffff"
+        color="#fff323"
         refresh
       />
       <Header />
