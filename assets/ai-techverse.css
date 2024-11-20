@@ -13,13 +13,12 @@
 body,
 html {
     font-family: sans-serif;
-    cursor: none;
     scroll-behavior: smooth;
 }
 
 a {
   text-decoration: none;
-  cursor: none;
+  cursor: pointer;
 }
 
 @layer utilities {

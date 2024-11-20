@@ -18,7 +18,7 @@ const alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const getRandomInt = (max: number) => Math.floor(Math.random() * max);
 
 export function HyperText({
-  text,
+  text = "", // Default value in case text is undefined
   duration = 800,
   framerProps = {
     initial: { opacity: 0, y: -10 },
@@ -28,42 +28,43 @@ export function HyperText({
   className,
   animateOnLoad = true,
 }: HyperTextProps) {
-  const [displayText, setDisplayText] = useState(text.split(""));
+  const [displayText, setDisplayText] = useState<string[]>([]);
   const [trigger, setTrigger] = useState(false);
-  const interations = useRef(0);
+  const iterations = useRef(0);
   const isFirstRender = useRef(true);
 
   const triggerAnimation = () => {
-    interations.current = 0;
+    iterations.current = 0;
     setTrigger(true);
   };
 
   useEffect(() => {
-    const interval = setInterval(
-      () => {
-        if (!animateOnLoad && isFirstRender.current) {
-          clearInterval(interval);
-          isFirstRender.current = false;
-          return;
-        }
-        if (interations.current < text.length) {
-          setDisplayText((t) =>
-            t.map((l, i) =>
-              l === " "
-                ? l
-                : i <= interations.current
-                  ? text[i]
-                  : alphabets[getRandomInt(26)],
-            ),
-          );
-          interations.current = interations.current + 0.1;
-        } else {
-          setTrigger(false);
-          clearInterval(interval);
-        }
-      },
-      duration / (text.length * 10),
-    );
+    // Ensure that displayText is reset every time text changes
+    setDisplayText(text.split(""));
+
+    const interval = setInterval(() => {
+      if (!animateOnLoad && isFirstRender.current) {
+        clearInterval(interval);
+        isFirstRender.current = false;
+        return;
+      }
+      if (iterations.current < text.length) {
+        setDisplayText((t) =>
+          t.map((l, i) =>
+            l === " "
+              ? l
+              : i <= iterations.current
+              ? text[i]
+              : alphabets[getRandomInt(26)]
+          )
+        );
+        iterations.current = iterations.current + 0.1;
+      } else {
+        setTrigger(false);
+        clearInterval(interval);
+      }
+    }, duration / (text.length * 10));
+
     // Clean up interval on unmount
     return () => clearInterval(interval);
   }, [text, duration, trigger, animateOnLoad]);
@@ -80,10 +81,12 @@ export function HyperText({
             className={cn("font-mono", letter === " " ? "w-3" : "", className)}
             {...framerProps}
           >
-            {letter.toUpperCase()}
+            {/* Ensure letter is defined and call toUpperCase only on strings */}
+            {letter?.toUpperCase ? letter.toUpperCase() : ""}
           </motion.h1>
         ))}
       </AnimatePresence>
     </div>
   );
 }
+

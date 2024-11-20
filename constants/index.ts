@@ -21,3 +21,28 @@ Get ready to plug into the future at the UniCourt Office in Mangaluru - a hub wh
 The event kicks off at 10 AM sharp (because AI doesn&apos;t do late!) and wraps up at 5 PM (we&apos;ll send you back to reality just in time for dinner). Mark your calendars and register soon to secure your seat at this unmissable convergence of technology and innovation.`
     }
 ];
+
+
+// Social media links
+export const SOCIAL_LINKS = [
+    {
+      label: 'github',
+      href: 'https://github.com/',
+      icon: '/social/github.svg'
+    },
+    {
+      label: 'facebook',
+      href: 'https://m.facebook.com/hackersmang/',
+      icon: '/social/facebook.svg'
+    },
+    {
+      label: 'x',
+      href: 'https://twitter.com/hackersmang?lang=en',
+      icon: '/social/twitter.svg'
+    },
+    {
+      label: 'linkedin',
+      href: 'https://www.linkedin.com/company/hackersmang/about/',
+      icon: '/social/youtube.svg'
+    }
+  ];

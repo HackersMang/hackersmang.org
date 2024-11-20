@@ -1,5 +1,5 @@
 import SocialButton from "./SocialButton"
-import { SOCIAL_LINKS } from "@/app/ai-techverse/constants"
+import { SOCIAL_LINKS } from "@/constants/index"
 
 
 const Social = () => {

@@ -6,7 +6,7 @@ import Particles from "@/components/magicui/particles";
 
 export default function Home() {
   return (
-    <main className="bg-black flex flex-col h-screen w-screen text-white">
+    <main className="bg-grainy flex flex-col h-screen w-screen text-white">
       <Particles
         quantity={40}
         ease={80}

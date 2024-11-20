@@ -16,7 +16,7 @@ const Register = () => {
           className="group m-2 text-3xl pencil-studio italic bg-black hover:bg-[#d4e20b] w-full"
           color={["#d4e20b", "#9fb2b2", "#FFBE7B"]}
         >
-          Registration Closed
+          Click here to register
         </ShineBorder>
       </Link>
     </div>
