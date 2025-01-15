@@ -10,13 +10,13 @@ import { WordFadeIn } from "@/components/magicui/word-fade-in";
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://hackersmang.org'),
-    title: "TECHMANG25 | 2025 edition by Hackerspace Mangaluru",
-    description: "TECHMANG25, 2025 edition hosted by Hackerspace Mangaluru.",
+    title: "TechMang25 | 2025 edition by Hackerspace Mangaluru",
+    description: "TechMang25, 2025 edition hosted by Hackerspace Mangaluru.",
     generator: 'HackersMang',
     applicationName: 'HackersMang',
     referrer: 'origin-when-cross-origin',
     keywords: [
-        'TECHMANG25', 'Hackers Mang', 'Open Source', 'Cloud Computing', 'DevOps', 'Testing', 'Big Data', 'Search Engines', 'RDBMS', 'NoSQL', 'NLP', 'Machine Learning', 'Artificial Intelligence', 'Deep Learning', 'Automation', 'Python', 'PHP', 'Node.js', 'Angular', 'React', 'Vue.js', 'HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'Docker', 'Kubernetes', 'SaltStack', 'Ansible', 'Linux', 'MySQL', 'PostgreSQL', 'MongoDB', 'Sphinx', 'Elasticsearch', 'Data Science', 'TensorFlow', 'PyTorch', 'Blockchain', 'Cybersecurity', 'IoT', 'Edge Computing', 'Quantum Computing', '5G', 'AR/VR', 'Robotics', 'Microservices', 'Serverless', 'GraphQL', 'Jenkins', 'Terraform', 'AWS', 'Azure', 'Google Cloud', 'CI/CD', 'Agile', 'Scrum', 'Kanban', 'JIRA', 'Git', 'GitHub', 'GitLab', 'Bitbucket', 'CI/CD', 'SaaS', 'PaaS', 'IaaS', 'Firebase', 'Heroku', 'API', 'REST', 'GraphQL', 'WebAssembly', 'Progressive Web Apps', 'Single Page Applications', 'Server-Side Rendering', 'Jamstack', 'Headless CMS', 'Contentful', 'Strapi', 'Sanity', 'Hugo', 'Jekyll', 'Gatsby', 'Next.js', 'Nuxt.js', 'Django', 'Flask', 'FastAPI', 'Spring Boot', 'Laravel', 'Ruby on Rails'
+        'TechMang25', 'Hackers Mang', 'Open Source', 'Cloud Computing', 'DevOps', 'Testing', 'Big Data', 'Search Engines', 'RDBMS', 'NoSQL', 'NLP', 'Machine Learning', 'Artificial Intelligence', 'Deep Learning', 'Automation', 'Python', 'PHP', 'Node.js', 'Angular', 'React', 'Vue.js', 'HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'Docker', 'Kubernetes', 'SaltStack', 'Ansible', 'Linux', 'MySQL', 'PostgreSQL', 'MongoDB', 'Sphinx', 'Elasticsearch', 'Data Science', 'TensorFlow', 'PyTorch', 'Blockchain', 'Cybersecurity', 'IoT', 'Edge Computing', 'Quantum Computing', '5G', 'AR/VR', 'Robotics', 'Microservices', 'Serverless', 'GraphQL', 'Jenkins', 'Terraform', 'AWS', 'Azure', 'Google Cloud', 'CI/CD', 'Agile', 'Scrum', 'Kanban', 'JIRA', 'Git', 'GitHub', 'GitLab', 'Bitbucket', 'CI/CD', 'SaaS', 'PaaS', 'IaaS', 'Firebase', 'Heroku', 'API', 'REST', 'GraphQL', 'WebAssembly', 'Progressive Web Apps', 'Single Page Applications', 'Server-Side Rendering', 'Jamstack', 'Headless CMS', 'Contentful', 'Strapi', 'Sanity', 'Hugo', 'Jekyll', 'Gatsby', 'Next.js', 'Nuxt.js', 'Django', 'Flask', 'FastAPI', 'Spring Boot', 'Laravel', 'Ruby on Rails'
     ],
     authors: [{ name: 'Hackerspace' }, { name: 'Mangaluru', url: 'https://hackersmang.org' }],
     creator: 'Mashfooq Hussain',
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
         telephone: false,
     },
     openGraph: {
-        title: "TECHMANG25 | 2025 edition by Hackerspace Mangaluru",
-        description: "TECHMANG25, 2025 edition hosted by Hackerspace Mangaluru.",
+        title: "TechMang25 | 2025 edition by Hackerspace Mangaluru",
+        description: "TechMang25, 2025 edition hosted by Hackerspace Mangaluru.",
         url: 'https://hackersmang.org/techmang25',
         siteName: 'Hackerspace Mangaluru',
         images: [
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: "TECHMANG25 | 2025 edition by Hackerspace Mangaluru",
-        description: "TECHMANG25, 2025 edition hosted by Hackerspace Mangaluru.",
+        title: "TechMang25 | 2025 edition by Hackerspace Mangaluru",
+        description: "TechMang25, 2025 edition hosted by Hackerspace Mangaluru.",
         images: 'https://hackersmang.org/techmang25/cards/hero-card.png',
     },
     alternates: {
