@@ -4,6 +4,7 @@ import Image from "next/image";
 // import Register from "./Register";
 import Venue from "./Venue";
 import Link from "next/link";
+import About from "./About";
 
 const Hero = () => {
   return (
@@ -20,6 +21,7 @@ const Hero = () => {
       </div>
       <div id="main-content" className="relative flex flex-col gap-4 md:mx-2 rounded-3xl">
         <Venue />
+        <About />
         {/* <Register /> */}
       </div>
     </section>

@@ -75,7 +75,7 @@ function page() {
             <Hero />
             {/* <Agendas /> */}
             {/* <Speakers /> */}
-            <footer className='pt-8 slg:pt-24 lg:pb-8'>
+            <footer className='pt-2 lg:pb-8'>
                 <WordFadeIn words="H a c k e r s M a n g" className="text-[2.5rem] text-center mt-auto lg:mb-0 outfit-black -space-x-2" delay={0.08} />
             </footer>
         </main>
