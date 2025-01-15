@@ -76,7 +76,7 @@ function page() {
             {/* <Agendas /> */}
             {/* <Speakers /> */}
             <footer className='pt-8 slg:pt-24 lg:pb-8'>
-                <WordFadeIn words="H A C K E R S M A N G" className="text-[2.5rem] text-center mt-auto lg:mb-0 outfit-black -space-x-2" delay={0.08} />
+                <WordFadeIn words="H a c k e r s M a n g" className="text-[2.5rem] text-center mt-auto lg:mb-0 outfit-black -space-x-2" delay={0.08} />
             </footer>
         </main>
     );

@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section className="flex flex-col gap-2 md:gap-4 py-4 md:py-6 px-2 bg-grainy">
       <div className="relative flex flex-1 flex-col nav-link-outline rounded-2xl gap-4 py-72 lg:py-60 flexCenter md:mx-2">
-        <h1 className="text-5xl md:text-7xl lg:text-9xl text-[#9fb2b2] font-extrabold text-center">TECHMANG<span className="text-[#d4e20b]">25</span></h1>
+        <h1 className="text-5xl md:text-7xl lg:text-9xl text-[#9fb2b2] font-extrabold text-center">TechMang25</h1>
         <Image
           src="/ai-techverse/chevron-down.svg"
           alt="Arrow down"
