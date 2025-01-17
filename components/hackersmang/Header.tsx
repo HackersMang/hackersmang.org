@@ -20,7 +20,7 @@ export default function Header() {
           <div className="h-full w-20 lg:w-32 flex justify-center items-center text-sm p-0 cursor-pointer">
             <Link href="/" passHref>
               <Image
-                src="/hackerspace-mangalore-logo.PNG"
+                src="/icon.png"
                 alt="hackersmang-logo"
                 width={48}
                 height={48}
