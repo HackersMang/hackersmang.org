@@ -7,6 +7,8 @@ import "@/assets/fonts.css"
 import { Metadata } from "next";
 import Particles from "@/components/magicui/particles";
 import { WordFadeIn } from "@/components/magicui/word-fade-in";
+import Header from "@/components/hackersmang/Header";
+import Footer from "../ai-techverse/components/Footer";
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://hackersmang.org'),
@@ -72,12 +74,11 @@ function page() {
                 color="#d4e20b"
                 refresh
             />
+            <Header />
             <Hero />
             {/* <Agendas /> */}
             {/* <Speakers /> */}
-            <footer className='pt-2 lg:pb-8'>
-                <WordFadeIn words="H a c k e r s M a n g" className="text-[2.5rem] text-center mt-auto lg:mb-0 outfit-black -space-x-2" delay={0.08} />
-            </footer>
+            <Footer />
         </main>
     );
 }

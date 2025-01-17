@@ -7,13 +7,13 @@ const Speakers = () => {
     const sortedSpeakers = [...SPEAKERS].sort((a, b) => a.name.localeCompare(b.name));
 
     return (
-        <section className="flex flex-col md:gap-4 py-4 px-2 nav-link-outline rounded-3xl m-2 my-4 md:my-6 md:mx-4  items-center justify-center">
+        <section className="flex flex-col md:gap-4 py-4 px-4 nav-link-outline mx-6 my-4 items-center justify-center">
             <div className="text-3xl pb-2">
                 Speakers
             </div>
 
             {sortedSpeakers.map((speaker, index) => (
-                <div key={index} className="relative mt-1 p-2 bg-[#1d1d1c] lg:hover:bg-[#d4e20b] w-full rounded-2xl flex flex-row gap-2 hover:text-black items-center group">
+                <div key={index} className="relative mt-1 p-2 bg-[#1d1d1c] lg:hover:bg-[#d4e20b] w-full flex flex-row gap-2 hover:text-black items-center group">
                     <div className="hidden lg:block p-8 text-gray-50 lg:group-hover:text-black text-lg lg:text-3xl">
                         {index + 1 < 10 ? `0${index + 1}` : index + 1}.
                     </div>

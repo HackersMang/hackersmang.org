@@ -7,6 +7,7 @@ import Speakers from "./components/Speakers";
 import Agendas from "./components/Agendas";
 import { Metadata } from "next";
 import Particles from "@/components/magicui/particles";
+import Header from "@/components/hackersmang/Header";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hackersmang.org'),
@@ -71,7 +72,8 @@ function page() {
         ease={80}
         color="#d4e20b"
         refresh
-      />      
+      />
+      <Header />
       <Hero />
       <Agendas />
       <Speakers />

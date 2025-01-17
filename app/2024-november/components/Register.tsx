@@ -4,7 +4,7 @@ import { REGISTER_LINK } from "../constants";
 
 const Register = () => {
   return (
-    <div className="nav-link-outline rounded-2xl w-full flex flex-col items-center justify-center text-center">
+    <div className="nav-link-outline w-full flex flex-col items-center justify-center text-center">
       <h3 className="text-2xl text-[#d4e20b] pt-4">RSVP Route</h3>
       <Link
         href={REGISTER_LINK.link}
@@ -16,7 +16,7 @@ const Register = () => {
           className="group m-2 text-3xl pencil-studio italic bg-black hover:bg-[#d4e20b] w-full"
           color={["#d4e20b", "#9fb2b2", "#FFBE7B"]}
         >
-          Click here to register
+          Registration Closed
         </ShineBorder>
       </Link>
     </div>
