@@ -14,7 +14,7 @@ import Script from 'next/script';
 export const metadata: Metadata = {
     metadataBase: new URL('https://hackersmang.org'),
     title: "TechMang25 | Premier Tech Conference in Mangaluru | 2025 edition by Hackerspace Mangaluru",
-    description: "Join TechMang25, Mangaluru's premier tech conference featuring cutting-edge talks on AI, Cloud Computing, DevOps, and more. Network with industry experts and innovators. January 2025 at Hackerspace Mangaluru.",
+    description: "Join TechMang25, Mangaluru's premier tech conference featuring cutting-edge talks on AI, Cloud Computing, DevOps, and more. Network with industry experts and innovators. February 2025 at Hackerspace Mangaluru.",
     generator: 'HackersMang',
     applicationName: 'HackersMang',
     referrer: 'origin-when-cross-origin',
