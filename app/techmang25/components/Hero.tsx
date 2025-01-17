@@ -13,7 +13,7 @@ const Hero = () => {
         <h1 className="text-5xl md:text-7xl lg:text-9xl text-[#9fb2b2] font-extrabold text-center transition-all">
           #TechMang25
         </h1>
-        <div className="absolute bottom-8 animate-pulse">
+        <div className="absolute bottom-36 md:bottom-20 animate-pulse">
           <img
             src="/ai-techverse/chevron-down.svg"
             alt="Arrow down"
