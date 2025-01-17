@@ -9,6 +9,8 @@ import Particles from "@/components/magicui/particles";
 import { WordFadeIn } from "@/components/magicui/word-fade-in";
 import Header from "@/components/hackersmang/Header";
 import Footer from "../ai-techverse/components/Footer";
+import Venue from "./components/Venue";
+import About from "./components/About";
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://hackersmang.org'),
@@ -76,6 +78,11 @@ function page() {
             />
             <Header />
             <Hero />
+            <div id="main-content" className="relative flex flex-col gap-4 md:mx-2">
+                <Venue />
+                <About />
+                {/* <Register /> */}
+            </div>
             {/* <Agendas /> */}
             {/* <Speakers /> */}
             <Footer />

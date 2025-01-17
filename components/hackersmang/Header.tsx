@@ -54,7 +54,7 @@ export default function Header() {
         <div className="flex flex-col items-center justify-center h-full space-y-8 text-3xl">
             <label className='font-medium text-base underline'>Upcoming Events</label>
             <Link href="/techmang25" className="hover:text-gray-300 transition-colors">
-              <HyperText text="TechMang25" className="outfit-bold text-gray-20 cursor-pointer" />
+              <HyperText text="#TechMang25" className="outfit-bold text-gray-20 cursor-pointer" />
             </Link>
             <label className='font-medium text-base underline'>Recent Events</label>
             <Link href="/2024-november" className="hover:text-gray-300 transition-colors">

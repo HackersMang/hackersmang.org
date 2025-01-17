@@ -81,8 +81,7 @@ export function HyperText({
             className={cn("font-mono", letter === " " ? "w-3" : "", className)}
             {...framerProps}
           >
-            {/* Ensure letter is defined and call toUpperCase only on strings */}
-            {letter?.toUpperCase ? letter.toUpperCase() : ""}
+            {letter}
           </motion.h1>
         ))}
       </AnimatePresence>

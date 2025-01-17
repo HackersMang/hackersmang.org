@@ -8,21 +8,18 @@ import About from "./About";
 
 const Hero = () => {
   return (
-    <section className="flex flex-col gap-2 md:gap-4 pt-[6.5rem] px-4 bg-grainy">
-      <div className="relative flex flex-1 flex-col nav-link-outline gap-4 py-72 lg:py-60 flexCenter md:mx-2">
-        <h1 className="text-5xl md:text-7xl lg:text-9xl text-[#9fb2b2] font-extrabold text-center">TechMang25</h1>
-        <Image
-          src="/ai-techverse/chevron-down.svg"
-          alt="Arrow down"
-          width={10}
-          height={10}
-          className="absolute bottom-20 h-5 w-5 animate-pulse self-center"
-        />
-      </div>
-      <div id="main-content" className="relative flex flex-col gap-4 md:mx-2 rounded-3xl">
-        <Venue />
-        <About />
-        {/* <Register /> */}
+    <section className="relative h-screen w-full bg-grainy flex items-center justify-center">
+      <div className="flex flex-col items-center justify-center w-full px-4">
+        <h1 className="text-5xl md:text-7xl lg:text-9xl text-[#9fb2b2] font-extrabold text-center transition-all">
+          #TechMang25
+        </h1>
+        <div className="absolute bottom-8 animate-pulse">
+          <img
+            src="/ai-techverse/chevron-down.svg"
+            alt="Arrow down"
+            className="h-5 w-5"
+          />
+        </div>
       </div>
     </section>
   );
