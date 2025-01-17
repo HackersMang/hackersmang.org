@@ -1,6 +1,5 @@
 import Header from "@/components/hackersmang/Header";
 import Hero from "@/components/hackersmang/Hero";
-import Cursor from "./ai-techverse/components/Cursor";
 import "@/assets/fonts.css"
 import Particles from "@/components/magicui/particles";
 

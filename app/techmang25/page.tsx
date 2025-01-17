@@ -1,28 +1,42 @@
 import Hero from "./components/Hero";
-
 import "@/assets/ai-techverse.css"
 import "@/assets/fonts.css"
 // import Speakers from "./components/Speakers";
 // import Agendas from "./components/Agendas";
 import { Metadata } from "next";
-import Particles from "@/components/magicui/particles";
-import { WordFadeIn } from "@/components/magicui/word-fade-in";
 import Header from "@/components/hackersmang/Header";
 import Footer from "../ai-techverse/components/Footer";
 import Venue from "./components/Venue";
 import About from "./components/About";
+import Particles from "@/components/magicui/particles";
+import Script from 'next/script';
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://hackersmang.org'),
-    title: "TechMang25 | 2025 edition by Hackerspace Mangaluru",
-    description: "TechMang25, 2025 edition hosted by Hackerspace Mangaluru.",
+    title: "TechMang25 | Premier Tech Conference in Mangaluru | 2025 edition by Hackerspace Mangaluru",
+    description: "Join TechMang25, Mangaluru's premier tech conference featuring cutting-edge talks on AI, Cloud Computing, DevOps, and more. Network with industry experts and innovators. January 2025 at Hackerspace Mangaluru.",
     generator: 'HackersMang',
     applicationName: 'HackersMang',
     referrer: 'origin-when-cross-origin',
     keywords: [
-        'TechMang25', 'Hackers Mang', 'Open Source', 'Cloud Computing', 'DevOps', 'Testing', 'Big Data', 'Search Engines', 'RDBMS', 'NoSQL', 'NLP', 'Machine Learning', 'Artificial Intelligence', 'Deep Learning', 'Automation', 'Python', 'PHP', 'Node.js', 'Angular', 'React', 'Vue.js', 'HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'Docker', 'Kubernetes', 'SaltStack', 'Ansible', 'Linux', 'MySQL', 'PostgreSQL', 'MongoDB', 'Sphinx', 'Elasticsearch', 'Data Science', 'TensorFlow', 'PyTorch', 'Blockchain', 'Cybersecurity', 'IoT', 'Edge Computing', 'Quantum Computing', '5G', 'AR/VR', 'Robotics', 'Microservices', 'Serverless', 'GraphQL', 'Jenkins', 'Terraform', 'AWS', 'Azure', 'Google Cloud', 'CI/CD', 'Agile', 'Scrum', 'Kanban', 'JIRA', 'Git', 'GitHub', 'GitLab', 'Bitbucket', 'CI/CD', 'SaaS', 'PaaS', 'IaaS', 'Firebase', 'Heroku', 'API', 'REST', 'GraphQL', 'WebAssembly', 'Progressive Web Apps', 'Single Page Applications', 'Server-Side Rendering', 'Jamstack', 'Headless CMS', 'Contentful', 'Strapi', 'Sanity', 'Hugo', 'Jekyll', 'Gatsby', 'Next.js', 'Nuxt.js', 'Django', 'Flask', 'FastAPI', 'Spring Boot', 'Laravel', 'Ruby on Rails'
+        // Primary Keywords
+        'TechMang25', 'Mangaluru Tech Conference', 'Karnataka Tech Events', 'Tech Conference 2025',
+        // Technology Categories
+        'Artificial Intelligence', 'Cloud Computing', 'DevOps', 'Cybersecurity', 'Blockchain',
+        'Machine Learning', 'Data Science', 'IoT', 'Edge Computing', '5G',
+        // Programming & Frameworks
+        'Python', 'JavaScript', 'React', 'Node.js', 'TypeScript',
+        // Cloud & Infrastructure
+        'AWS', 'Azure', 'Google Cloud', 'Docker', 'Kubernetes',
+        // Development Tools
+        'Git', 'GitHub', 'CI/CD', 'Jenkins', 'Terraform',
+        // Event-specific
+        'Tech Symposium Mangaluru', 'IT Conference Karnataka', 'Developer Conference India'
     ],
-    authors: [{ name: 'Hackerspace' }, { name: 'Mangaluru', url: 'https://hackersmang.org' }],
+    authors: [
+        { name: 'Hackerspace' },
+        { name: 'Mangaluru', url: 'https://hackersmang.org' }
+    ],
     creator: 'Mashfooq Hussain',
     publisher: 'Hackerspace Mangaluru',
     formatDetection: {
@@ -30,22 +44,46 @@ export const metadata: Metadata = {
         address: false,
         telephone: false,
     },
+    robots: {
+        index: true,
+        follow: true,
+        nocache: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            noimageindex: false,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
+    },
+    viewport: {
+        width: 'device-width',
+        initialScale: 1,
+        maximumScale: 1,
+    },
+    verification: {
+        google: 'your-google-site-verification',
+        yandex: 'your-yandex-verification',
+        yahoo: 'your-yahoo-verification',
+    },
     openGraph: {
-        title: "TechMang25 | 2025 edition by Hackerspace Mangaluru",
-        description: "TechMang25, 2025 edition hosted by Hackerspace Mangaluru.",
+        title: "TechMang25 | Premier Tech Conference in Mangaluru | 2025 edition by Hackerspace Mangaluru",
+        description: "Join #TechMang25, Mangaluru's premier tech conference featuring cutting-edge talks on AI, Cloud Computing, DevOps, and more. Network with industry experts and innovators.",
         url: 'https://hackersmang.org/techmang25',
         siteName: 'Hackerspace Mangaluru',
         images: [
             {
-                url: 'https://hackersmang.org/techmang25/cards/hero-card.png',
-                width: 800,
-                height: 600,
+                url: 'https://hackersmang.org/techmang25/cards/og-card.png',
+                width: 1200,
+                height: 630,
+                alt: 'TechMang25 2025 Conference Banner',
             },
             {
-                url: 'https://hackersmang.org/techmang25/cards/hero-card.png',
-                width: 1800,
-                height: 1600,
-                alt: 'TECHMANG 2025',
+                url: 'https://hackersmang.org/techmang25/cards/twitter-card.png',
+                width: 1024,
+                height: 512,
+                alt: 'TechMang25 2025 Twitter Preview',
             },
         ],
         locale: 'en_US',
@@ -53,9 +91,14 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: "TechMang25 | 2025 edition by Hackerspace Mangaluru",
-        description: "TechMang25, 2025 edition hosted by Hackerspace Mangaluru.",
-        images: 'https://hackersmang.org/techmang25/cards/hero-card.png',
+        title: "TechMang25 | Premier Tech Conference in Mangaluru | 2025 edition by Hackerspace Mangaluru",
+        description: "Join us for cutting-edge tech talks, workshops, and networking at Mangaluru's biggest tech conference.",
+        images: {
+            url: 'https://hackersmang.org/techmang25/cards/hero-card.png',
+            alt: 'TechMang25 2025 Conference Preview'
+        },
+        creator: '@hackersmang',
+        site: '@hackersmang',
     },
     alternates: {
         canonical: 'https://hackersmang.org/techmang25',
@@ -67,27 +110,69 @@ export const metadata: Metadata = {
     category: 'technology',
 };
 
+const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Event',
+    name: 'TechMang25 2025',
+    description: 'Mangaluru\'s premier tech conference featuring cutting-edge talks on AI, Cloud Computing, DevOps, and more.',
+    startDate: '2025-01-17T09:00:00+05:30',
+    endDate: '2025-01-17T18:00:00+05:30',
+    location: {
+        '@type': 'Place',
+        name: 'Hackerspace Mangaluru',
+        address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Mangaluru',
+            addressRegion: 'Karnataka',
+            addressCountry: 'IN'
+        }
+    },
+    organizer: {
+        '@type': 'Organization',
+        name: 'Hackerspace Mangaluru',
+        url: 'https://hackersmang.org'
+    },
+    offers: {
+        '@type': 'Offer',
+        url: 'https://hackersmang.org/techmang25/register',
+        price: '0',
+        priceCurrency: 'INR',
+        availability: 'https://schema.org/InStock'
+    },
+    image: [
+        'https://hackersmang.org/techmang25/cards/og-card.png',
+        'https://hackersmang.org/techmang25/cards/twitter-card.png'
+    ]
+};
+
 function page() {
     return (
-        <main className="relative bg-grainy">
-            <Particles
-                quantity={100}
-                ease={80}
-                color="#d4e20b"
-                refresh
+        <>
+            <Script
+                id="json-ld"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
-            <Header />
-            <Hero />
-            <div id="main-content" className="relative flex flex-col gap-4 md:mx-2">
-                <Venue />
-                <About />
-                {/* <Register /> */}
-            </div>
-            {/* <Agendas /> */}
-            {/* <Speakers /> */}
-            <Footer />
-        </main>
+            <main className="relative bg-grainy">
+                <Particles
+                    quantity={100}
+                    ease={80}
+                    color="#d4e20b"
+                    refresh
+                />
+                <Header />
+                <Hero />
+                <div id="main-content" className="relative flex flex-col gap-4 md:mx-2">
+                    <Venue />
+                    <About />
+                    {/* <Register /> */}
+                </div>
+                {/* <Agendas /> */}
+                {/* <Speakers /> */}
+                <Footer />
+            </main>
+        </>
     );
 }
 
-export default page
+export default page;
