@@ -12,9 +12,8 @@ module.exports = {
           pencil: ['pencil-studio', 'sans-serif'],
         },
         primary: '#d4e20b',   // Yellow
-        secondary: '#9b9b9b', // Gray
-        neutral: '#F3F4F6',   // Light Gray
-        accent: '#F59E0B',    // Amber 
+        secondary: '#9b9b9b', // Light Gray
+        neutral: '#374151',   // Gray
       },
       backgroundImage: {
         'grainy' : "url('/ai-techverse/noise.svg')",

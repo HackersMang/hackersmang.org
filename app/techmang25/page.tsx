@@ -10,6 +10,7 @@ import Venue from "./components/Venue";
 import About from "./components/About";
 import Particles from "@/components/magicui/particles";
 import Script from 'next/script';
+import CallForSpeaker from "./components/CallForSpeaker";
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://hackersmang.org'),
@@ -164,6 +165,7 @@ function page() {
                 <Hero />
                 <div id="main-content" className="relative flex flex-col gap-4 md:mx-2">
                     <Venue />
+                    <CallForSpeaker />
                     <About />
                     {/* <Register /> */}
                 </div>
