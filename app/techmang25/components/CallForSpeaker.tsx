@@ -9,7 +9,7 @@ const CallForSpeaker = () => {
                 <p className="text-lg text-neutral leading-relaxed mb-6">
                     We are looking for:
                 </p>
-                <ol className="text-left text-secondary text-lg space-y-4 list-decimal">
+                <ol className="text-left text-secondary text-lg space-y-4 list-decimal ml-6">
                     <li><span className="font-bold text-secondary">Lightning Talks</span> – Short and impactful presentations.</li>
                     <li><span className="font-bold text-secondary">Talks with Demos</span> – Share research, innovative projects, or practical demos.</li>
                     <li><span className="font-bold text-secondary">Workshops</span> – Hands-on sessions to teach skills and engage participants.</li>

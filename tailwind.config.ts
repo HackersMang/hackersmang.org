@@ -13,7 +13,7 @@ module.exports = {
         },
         primary: '#d4e20b',   // Yellow
         secondary: '#9b9b9b', // Light Gray
-        neutral: '#374151',   // Gray
+        neutral: '#666464',   // Gray
       },
       backgroundImage: {
         'grainy' : "url('/ai-techverse/noise.svg')",
