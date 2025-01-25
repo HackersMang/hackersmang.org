@@ -5,8 +5,8 @@ const CallForSpeaker = () => {
     return (
         <div className="w-full flex flex-col items-center justify-center text-center mt-2 px-4">
             <div className="shadow-lg px-4 lg:p-8">
-                <h3 className="text-2xl font-bold text-primary mb-4">Call For Speakers</h3>
-                <p className="text-lg text-neutral leading-relaxed mb-6">
+                <h3 className="text-xl lg:text-2xl font-bold text-primary mb-4">Call For Speakers</h3>
+                <p className="text-lg text-neutral leading-relaxed mb-2">
                     We are looking for:
                 </p>
                 <ol className="text-left text-secondary text-lg space-y-4 list-decimal ml-6">
@@ -23,9 +23,9 @@ const CallForSpeaker = () => {
                     rel="noopener noreferrer" >
                     🔥 Submit Your Proposal Here
                 </Link>
-                <div className="mt-8 text-center">
+                <div className="mt-4 text-center">
                     <p className="text-sm text-neutral leading-relaxed">
-                        Please read <Link href="https://docs.google.com/document/d/1cIPzF312bwwFPK5qOlRHNM16QMeEKukEul5uhg6O2RM" passHref target="_blank" className="text-secondary font-bold underline">
+                        Please read <Link href="https://docs.google.com/document/d/1cIPzF312bwwFPK5qOlRHNM16QMeEKukEul5uhg6O2RM" passHref target="_blank" className="font-bold underline">
                                 Code of Conduct
                         </Link> before submitting your proposal.
                     </p>
