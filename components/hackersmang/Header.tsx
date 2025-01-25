@@ -29,11 +29,6 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Title Section */}
-          {/* <div className="hidden flex-grow lg:flex justify-center items-center">
-            <h1 className="text-4xl outfit-bold">HackersMang</h1>
-          </div> */}
-
           {/* Menu Button */}
           <div className="h-full w-20 lg:w-36 flex justify-center items-center outline outline-[1.5px] outline-[#2b2828] text-sm p-0">
             <button onClick={toggleMenu}>
@@ -52,11 +47,11 @@ export default function Header() {
           } transition-transform duration-300 ease-in-out z-40 pt-20`}
       >
         <div className="flex flex-col items-center justify-center h-full space-y-8 text-3xl text-secondary">
-            <label className='font-medium text-base underline'>Upcoming Events</label>
+            <span className='font-medium text-base italic'>Upcoming Events</span>
             <Link href="/techmang25" className="hover:text-gray-300 transition-colors">
               <HyperText text="#TechMang25" className="outfit-bold text-gray-20 cursor-pointer" />
             </Link>
-            <label className='font-medium text-base underline'>Recent Events</label>
+            <span className='font-medium text-base italic'>Recent Events</span>
             <Link href="/2024-november" className="hover:text-gray-300 transition-colors">
               <HyperText text="2024 November" className="outfit-bold text-gray-20 cursor-pointer" />
             </Link>
