@@ -66,13 +66,8 @@ export const metadata: Metadata = {
 
 function page() {
   return (
-    <main className="relative bg-grainy">
-      <Particles
-        quantity={100}
-        ease={80}
-        color="#d4e20b"
-        refresh
-      />
+    <main className="relative bg-grainy outfit-extra-light">
+      <Particles />
       <Header />  
       <Hero />
       <Agendas />
