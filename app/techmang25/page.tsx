@@ -145,7 +145,7 @@ function page() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
-            <main className="relative bg-grainy">
+            <main className="relative bg-grainy outfit-extra-light">
                 <Particles
                     quantity={100}
                     ease={80}
