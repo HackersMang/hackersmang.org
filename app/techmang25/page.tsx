@@ -158,7 +158,7 @@ function page() {
                     <Venue />
                     {/* <CallForSpeaker /> */}
                     <About />
-                    {/* <Register /> */}
+                    <Register />
                 </div>
                 {/* <Agendas /> */}
                 {/* <Speakers /> */}
