@@ -156,7 +156,7 @@ function page() {
                 <Hero />
                 <div id="main-content" className="relative flex flex-col gap-4 md:mx-2b outfit-light">
                     <Venue />
-                    <CallForSpeaker />
+                    {/* <CallForSpeaker /> */}
                     <About />
                     {/* <Register /> */}
                 </div>
