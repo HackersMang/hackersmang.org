@@ -11,6 +11,7 @@ import About from "./components/About";
 import Particles from "@/components/magicui/particles";
 import Script from 'next/script';
 import CallForSpeaker from "./components/CallForSpeaker";
+import Register from "./components/Register";
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://hackersmang.org'),
@@ -57,16 +58,6 @@ export const metadata: Metadata = {
             'max-image-preview': 'large',
             'max-snippet': -1,
         },
-    },
-    viewport: {
-        width: 'device-width',
-        initialScale: 1,
-        maximumScale: 1,
-    },
-    verification: {
-        google: 'your-google-site-verification',
-        yandex: 'your-yandex-verification',
-        yahoo: 'your-yahoo-verification',
     },
     openGraph: {
         title: "TechMang25 | Premier Tech Conference in Mangaluru | 2025 edition by Hackerspace Mangaluru",
@@ -163,7 +154,7 @@ function page() {
                 />
                 <Header />
                 <Hero />
-                <div id="main-content" className="relative flex flex-col gap-4 md:mx-2">
+                <div id="main-content" className="relative flex flex-col gap-4 md:mx-2b outfit-light">
                     <Venue />
                     <CallForSpeaker />
                     <About />

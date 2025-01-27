@@ -3,9 +3,12 @@ import Hero from "@/components/hackersmang/Hero";
 import "@/assets/fonts.css"
 import Particles from "@/components/magicui/particles";
 
+
+// TODO: Add meta data.
+
 export default function Home() {
   return (
-    <main className="bg-grainy flex flex-col h-screen w-screen text-white">
+    <main className="relative bg-grainy h-full w-full">
       <Particles
         quantity={40}
         ease={80}

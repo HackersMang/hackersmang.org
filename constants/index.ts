@@ -37,7 +37,7 @@ export const SOCIAL_LINKS = [
     },
     {
       label: 'x',
-      href: 'https://twitter.com/hackersmang?lang=en',
+      href: 'https://x.com/hackersmang?lang=en',
       icon: '/social/twitter.svg'
     },
     {
