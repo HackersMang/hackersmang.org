@@ -23,7 +23,7 @@ const SlidingMenu: React.FC<SlidingMenuProps> = ({ isMenuOpen, toggleMenu }) => 
             <Link
               href="/techmang25"
               aria-label="2024 November Edition"
-              className="flex flex-row space-x-3 justify-center text-center p-4 text-neutral hover:text-secondary hover:bg-[#2b2828]"
+              className="flex flex-row space-x-3 justify-center text-center p-4 text-neutral hover:text-secondary hover:bg-charcoal"
             >
               <div className="text-lg font-semibold transition">#TechMang25</div>
               <GoArrowUpRight size={24} className="mt-1" />
@@ -34,7 +34,7 @@ const SlidingMenu: React.FC<SlidingMenuProps> = ({ isMenuOpen, toggleMenu }) => 
             <Link
               href="/2024-november"
               aria-label="2024 November"
-              className="flex flex-row space-x-3 justify-center text-center p-4 text-neutral hover:text-secondary hover:bg-[#2b2828]"
+              className="flex flex-row space-x-3 justify-center text-center p-4 text-neutral hover:text-secondary hover:bg-charcoal"
             >
               <div className="text-lg font-semibold transition">HackersMang 2024 November</div>
               <GoArrowUpRight size={24} className="mt-1" />
@@ -42,7 +42,7 @@ const SlidingMenu: React.FC<SlidingMenuProps> = ({ isMenuOpen, toggleMenu }) => 
             <Link
               href="/ai-techverse"
               aria-label="Ai TechVerse"
-              className="flex flex-row space-x-3 justify-center text-center p-4 text-neutral hover:text-secondary hover:bg-[#2b2828]"
+              className="flex flex-row space-x-3 justify-center text-center p-4 text-neutral hover:text-secondary hover:bg-charcoal"
             >
               <div className="text-lg font-semibold transition">Ai TechVerse by HackersMang</div>
               <GoArrowUpRight size={24} className="mt-1" />
@@ -50,7 +50,7 @@ const SlidingMenu: React.FC<SlidingMenuProps> = ({ isMenuOpen, toggleMenu }) => 
             <Link
               href="https://www.eventbrite.com/e/mangaluru-tech-day-2024-tickets-795844441147?aff=oddtdtcreator"
               aria-label="Mangaluru Tech Day 2024"
-              className="flex flex-row space-x-3 justify-center text-center p-4 text-neutral hover:text-secondary hover:bg-[#2b2828]"
+              className="flex flex-row space-x-3 justify-center text-center p-4 text-neutral hover:text-secondary hover:bg-charcoal"
             >
               <div className="text-lg font-semibold transition">Mangaluru Tech Day 2024</div>
               <GoArrowUpRight size={24} className="mt-1" />
@@ -58,7 +58,7 @@ const SlidingMenu: React.FC<SlidingMenuProps> = ({ isMenuOpen, toggleMenu }) => 
             <Link
               href="https://www.eventbrite.com/e/mangaluru-tech-day-3-techmang3-tickets-82910289909?aff=oddtdtcreator"
               aria-label="Mangaluru Tech Day 2024"
-              className="flex flex-row space-x-3 justify-center text-center p-4 text-neutral hover:text-secondary hover:bg-[#2b2828]"
+              className="flex flex-row space-x-3 justify-center text-center p-4 text-neutral hover:text-secondary hover:bg-charcoal"
             >
               <div className="text-lg font-semibold transition">Mangaluru Tech Day 2023</div>
               <GoArrowUpRight size={24} className="mt-1" />
