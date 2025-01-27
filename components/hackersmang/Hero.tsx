@@ -41,19 +41,19 @@ export default function Hero() {
           <div className="lg:w-1/3 flex flex-col justify-between items-center w-full gap-1">
             <div className="text-base italic text-center p-2">Recent events</div>
             <Link href="/2024-november" aria-label="2024 November Edition" className="flex items-center justify-center gap-2 w-full py-4 text-center hover:text-secondary hover:bg-[#2b2828]">
-              <span className="text-lg font-semibold">HackersMang 2024 November</span>
+              <span className="text-lg text-neutral">HackersMang 2024 November</span>
               <GoArrowUpRight size={24} />
             </Link>
             <Link href="/ai-techverse" aria-label="Ai TechVerse" className="flex items-center justify-center gap-2 w-full py-4 text-center hover:text-secondary hover:bg-[#2b2828]">
-              <span className="text-lg font-semibold">Ai TechVerse by HackersMang</span>
+              <span className="text-lg text-neutral">Ai TechVerse by HackersMang</span>
               <GoArrowUpRight size={24} />
             </Link>
             <Link href="https://www.eventbrite.com/e/mangaluru-tech-day-2024-tickets-795844441147?aff=oddtdtcreator" aria-label="Mangaluru Tech Day 2024" className="flex items-center justify-center gap-2 w-full py-4 text-center hover:text-secondary hover:bg-[#2b2828]">
-              <span className="text-lg font-semibold">Mangaluru Tech Day 2024</span>
+              <span className="text-lg text-neutral">Mangaluru Tech Day 2024</span>
               <GoArrowUpRight size={24} />
             </Link>
             <Link href="https://www.eventbrite.com/e/mangaluru-tech-day-3-techmang3-tickets-82910289909?aff=oddtdtcreator" aria-label="Mangaluru Tech Day 2023" className="flex items-center justify-center gap-2 w-full py-4 text-center hover:text-secondary hover:bg-[#2b2828]">
-              <span className="text-lg font-semibold">Mangaluru Tech Day 2023</span>
+              <span className="text-lg text-neutral">Mangaluru Tech Day 2023</span>
               <GoArrowUpRight size={24} />
             </Link>
           </div>
