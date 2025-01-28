@@ -1,19 +1,144 @@
-import React from 'react';
-import { SPEAKERS_TRACK_1, SPEAKERS_TRACK_2 } from '../constants';
-import ScheduleList from '@/components/eventpage/ScheduleList';
+"use client";
+
+import React, { useEffect, useState } from "react";
+import ErrorCard from "@/components/eventpage/ErrorCard";
+import SessionList from "@/components/eventpage/SessionList";
+import SessionListSkeleton from "@/components/eventpage/SessionListSkeleton";
+
+// Define the SessionizeSpeakers interface
+export interface SessionizeSpeakers {
+    id: string;
+    firstName: string;
+    lastName: string;
+    fullName: string;
+    tagLine: string;
+    profilePicture: string;
+    isTopSpeaker: boolean;
+}
+
+// Define the GridSmart interface
+interface GridSmart {
+    rooms: {
+        id: number;
+        name: string;
+        sessions: {
+            id: string;
+            title: string;
+            description: string;
+            startsAt: string;
+            endsAt: string;
+            isServiceSession: boolean;
+            isPlenumSession: boolean;
+            speakers: {
+                id: string;
+                name: string;
+                // Updated to include profile picture
+                profilePicture?: string;
+            }[];
+        }[];
+    }[];
+}
 
 const Schedule = () => {
-    // Sorting the speakers array by order
-    const sortedSpeakersTrack1 = [...SPEAKERS_TRACK_1].sort((a, b) => a.order - b.order);
-    const sortedSpeakersTrack2 = [...SPEAKERS_TRACK_2].sort((a, b) => a.order - b.order);
+    const [scheduleData, setScheduleData] = useState<GridSmart[] | null>(null);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
+
+    // Function to fetch and process speakers and schedule data
+    const fetchSpeakersAndSchedule = async () => {
+        try {
+            setLoading(true);
+
+            const sessionizeApiId = process.env.SESSIONIZE_API_ID ?? 'jl4ktls0' // API id from sessionize doc.
+            const speakerAPIEndpoint = `https://sessionize.com/api/v2/${sessionizeApiId}/view/Speakers`;
+            const GridSmartAPIEndpoint = `https://sessionize.com/api/v2/${sessionizeApiId}/view/GridSmart`;
+
+            // Fetch speakers
+            const speakerResponse = await fetch(
+                speakerAPIEndpoint
+            );
+            if (!speakerResponse.ok) {
+                throw new Error("Failed to fetch speakers");
+            }
+
+            const speakerResponseData: SessionizeSpeakers[] = await speakerResponse.json();
+
+            // Fetch schedule (GridSmart)
+            const gridSmartResponse = await fetch(
+                GridSmartAPIEndpoint
+            );
+            if (!gridSmartResponse.ok) {
+                throw new Error("Failed to fetch schedule data");
+            }
+
+            let gridSmartData: GridSmart[] = await gridSmartResponse.json();
+
+            // Map speaker profile pictures into the schedule
+            gridSmartData = gridSmartData.map((daySchedule) => ({
+                ...daySchedule,
+                rooms: daySchedule.rooms.map((room) => ({
+                    ...room,
+                    sessions: room.sessions.map((session) => ({
+                        ...session,
+                        speakers: session.speakers.map((sessionSpeaker) => {
+                            const matchedSpeaker = speakerResponseData.find(
+                                (speaker) => speaker.id === sessionSpeaker.id
+                            );
+                            return {
+                                ...sessionSpeaker,
+                                profilePicture: matchedSpeaker?.profilePicture ?? "https://sessionize.com/image/8db9-400o400o1-test4.jpg", // Add profile picture
+                            };
+                        }),
+                    })),
+                })),
+            }));
+
+            // Store updated schedule data
+            setScheduleData(gridSmartData);
+        } catch (err: any) {
+            setError(err.message);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        fetchSpeakersAndSchedule();
+    }, []);
+
+    if (error) {
+        return <ErrorCard />;
+    }
 
     return (
-        <section className="flex flex-col px-4 py-8 items-center justify-center">
-            <h2 className="text-xl lg:text-2xl text-primary pb-4">Schedule</h2>
-            <h3 className="text-md lg:text-xl pb-4 text-neutral">Track 1</h3>
-            <ScheduleList speakers={sortedSpeakersTrack1} />
-            <h3 className="text-md lg:text-xl py-6 lg:pt-8 text-neutral">Track 2</h3>
-            <ScheduleList speakers={sortedSpeakersTrack2} />
+        <section className="flex flex-col px-2 pt-2 lg:px-4 lg:py-8 items-center justify-center w-full">
+            <h2 className="text-xl lg:text-2xl text-primary pb-2 lg:pb-4">Schedule</h2>
+            {loading ? (
+                <SessionListSkeleton />
+            ) : (
+                <>
+                    {scheduleData && scheduleData.length > 0 ? (
+                        scheduleData.map((daySchedule, index) => (
+                            <div key={index} className="mb-8 w-full flex flex-col items-center justify-center">
+                                {daySchedule.rooms.map((room) => (
+                                    <div key={room.id} className="mb-6 lg:w-5/6">
+                                        <h3 className="text-md lg:text-xl pb-4 text-neutral text-center">
+                                            {room.name === 'Track1' ? 'Track 1' : room.name}
+                                        </h3>
+                                        {room.sessions.length > 0 ? (
+                                            <SessionList sessions={room.sessions} />
+                                        ) : (
+                                            <p className="text-sm text-neutral-500">No sessions available.</p>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        ))
+                    ) : (
+                        <p className="text-sm text-neutral-500">No schedule data available.</p>
+                    )}
+                    </>
+            )}
         </section>
     );
 };

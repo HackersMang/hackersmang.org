@@ -10,6 +10,9 @@ import Particles from "@/components/magicui/particles";
 import Script from 'next/script';
 import Register from "./components/Register";
 import Schedule from "./components/Schedule";
+import Agenda from "./components/Agenda";
+import MenuFooter from "@/components/hackersmang/MenuFooter";
+import { REGISTER_LINK } from "./constants";
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://hackersmang.org'),
@@ -150,8 +153,8 @@ function page() {
                     <Hero />
                     <Venue />
                     <About />
-                    <Schedule />
                     <Register />
+                    <Schedule />
                     <Footer />
                 </div>
             </main>
