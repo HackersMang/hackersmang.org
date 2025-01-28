@@ -53,9 +53,6 @@ const Schedule = () => {
             const speakerAPIEndpoint = `https://sessionize.com/api/v2/${sessionizeApiId}/view/Speakers`;
             const GridSmartAPIEndpoint = `https://sessionize.com/api/v2/${sessionizeApiId}/view/GridSmart`;
 
-            console.log("Sessionize API ID:", process.env.NEXT_PUBLIC_SESSIONIZE_API_ID);
-
-
             // Fetch speakers
             const speakerResponse = await fetch(
                 speakerAPIEndpoint
