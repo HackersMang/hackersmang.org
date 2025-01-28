@@ -49,9 +49,12 @@ const Schedule = () => {
         try {
             setLoading(true);
 
-            const sessionizeApiId = process.env.SESSIONIZE_API_ID ?? 'jl4ktls0' // API id from sessionize doc.
+            const sessionizeApiId = process.env.NEXT_PUBLIC_SESSIONIZE_API_ID ?? 'jl4ktls0' // API id from sessionize doc.
             const speakerAPIEndpoint = `https://sessionize.com/api/v2/${sessionizeApiId}/view/Speakers`;
             const GridSmartAPIEndpoint = `https://sessionize.com/api/v2/${sessionizeApiId}/view/GridSmart`;
+
+            console.log("Sessionize API ID:", process.env.NEXT_PUBLIC_SESSIONIZE_API_ID);
+
 
             // Fetch speakers
             const speakerResponse = await fetch(
@@ -78,18 +81,20 @@ const Schedule = () => {
                 ...daySchedule,
                 rooms: daySchedule.rooms.map((room) => ({
                     ...room,
-                    sessions: room.sessions.map((session) => ({
-                        ...session,
-                        speakers: session.speakers.map((sessionSpeaker) => {
-                            const matchedSpeaker = speakerResponseData.find(
-                                (speaker) => speaker.id === sessionSpeaker.id
-                            );
-                            return {
-                                ...sessionSpeaker,
-                                profilePicture: matchedSpeaker?.profilePicture ?? "https://sessionize.com/image/8db9-400o400o1-test4.jpg", // Add profile picture
-                            };
-                        }),
-                    })),
+                    sessions: room.sessions
+                        .filter((session) => session.speakers.length > 0) // Filter out sessions with no speakers
+                        .map((session) => ({
+                            ...session,
+                            speakers: session.speakers.map((sessionSpeaker) => {
+                                const matchedSpeaker = speakerResponseData.find(
+                                    (speaker) => speaker.id === sessionSpeaker.id
+                                );
+                                return {
+                                    ...sessionSpeaker,
+                                    profilePicture: matchedSpeaker?.profilePicture ?? "https://sessionize.com/image/8db9-400o400o1-test4.jpg", // Add profile picture
+                                };
+                            }),
+                        })),
                 })),
             }));
 
@@ -128,14 +133,18 @@ const Schedule = () => {
                                         {room.sessions.length > 0 ? (
                                             <SessionList sessions={room.sessions} />
                                         ) : (
-                                            <p className="text-sm text-neutral-500">No sessions available.</p>
+                                            <div className="w-full p-4 bg-charcoal rounded-lg">
+                                                <p className="text-sm text-center text-neutral">No session available.</p>
+                                            </div>
                                         )}
                                     </div>
                                 ))}
                             </div>
                         ))
                     ) : (
-                        <p className="text-sm text-neutral-500">No schedule data available.</p>
+                        <div className="w-full p-4 bg-charcoal rounded-lg">
+                            <p className="text-sm text-center text-neutral">No session available.</p>
+                        </div>
                     )}
                     </>
             )}

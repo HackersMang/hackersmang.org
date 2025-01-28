@@ -49,8 +49,8 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                 {/* Session Image */}
                 <div className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 lg:w-36 lg:h-36 relative">
                     <Image
-                        src={session.speakers[0].profilePicture ?? "/placeholder.svg?height=150&width=150"}
-                        alt={`session ${session.speakers[0].name}`}
+                        src={session.speakers[0]?.profilePicture ?? "https://sessionize.com/image/8db9-400o400o1-test4.jpg"}
+                        alt={`session ${session.speakers[0]?.name ?? "unknown speaker"}`}
                         width={150}
                         height={150}
                         className="rounded-lg object-cover w-full h-full"
@@ -64,7 +64,7 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                             <h4 className="text-base md:text-xl lg:text-2xl font-bold mb-1">{session.title}</h4>
                             <div className="flex items-center gap-1">
                                 <User size={14} className="text-neutral" />
-                                <span className="text-sm text-neutral">{session.speakers[0].name}</span>
+                                <span className="text-sm text-neutral">{session.speakers[0]?.name ?? "unknown speaker"}</span>
                             </div>
                         </div>
                         <div className="flex-shrink-0 text-right">
