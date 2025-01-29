@@ -5,7 +5,7 @@ export default function MenuFooter() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <div className='absolute bottom-0 w-full bg-[#2b2828] flex flex-col lg:flex-row items-center justify-between p-2 lg:p-8'>
+        <div className='absolute bottom-0 w-full bg-charcoal flex flex-col lg:flex-row items-center justify-between p-2 lg:p-8'>
             <div className='flex items-center justify-center lg:justify-start'>
                 <SocialMedia />
             </div>

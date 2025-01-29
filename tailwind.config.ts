@@ -14,22 +14,10 @@ module.exports = {
         primary: '#d4e20b',   // Yellow
         secondary: '#9b9b9b', // Light Gray
         neutral: '#666464',   // Gray
+        charcoal: '#2b2828',  // Dark Gray
       },
       backgroundImage: {
         'grainy' : "url('/ai-techverse/noise.svg')",
-        pattern: "url('/pattern.png')",
-        'pattern-2': "url('/pattern-bg.png')",
-      },
-      screens: {
-        xs: '400px',
-        '3xl': '1680px',
-        '4xl': '2200px',
-      },
-      maxWidth: {
-        '10xl': '1512px',
-      },
-      borderRadius: {
-        '5xl': '40px',
       },
       animation: {
         'infinite-scroll': 'infinite-scroll 10s linear infinite',

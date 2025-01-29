@@ -1,8 +1,6 @@
 import Hero from "./components/Hero";
 import "@/assets/ai-techverse.css"
 import "@/assets/fonts.css"
-// import Speakers from "./components/Speakers";
-// import Agendas from "./components/Agendas";
 import { Metadata } from "next";
 import Header from "@/components/hackersmang/Header";
 import Footer from "../ai-techverse/components/Footer";
@@ -10,8 +8,8 @@ import Venue from "./components/Venue";
 import About from "./components/About";
 import Particles from "@/components/magicui/particles";
 import Script from 'next/script';
-import CallForSpeaker from "./components/CallForSpeaker";
 import Register from "./components/Register";
+import Schedule from "./components/Schedule";
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://hackersmang.org'),
@@ -146,23 +144,16 @@ function page() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
             <main className="relative bg-grainy outfit-extra-light">
-                <Particles
-                    quantity={100}
-                    ease={80}
-                    color="#d4e20b"
-                    refresh
-                />
-                <Header />
-                <Hero />
-                <div id="main-content" className="relative flex flex-col gap-4 md:mx-2b outfit-light">
+                <Particles />
+                <div className="relative z-10">
+                    <Header />
+                    <Hero />
                     <Venue />
-                    {/* <CallForSpeaker /> */}
                     <About />
                     <Register />
+                    <Schedule />
+                    <Footer />
                 </div>
-                {/* <Agendas /> */}
-                {/* <Speakers /> */}
-                <Footer />
             </main>
         </>
     );

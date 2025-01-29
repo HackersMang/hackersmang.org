@@ -91,7 +91,7 @@ function ParallaxText({
     >
       <motion.div className="inline-block" style={{ x }}>
         {Array.from({ length: repetitions }).map((_, i) => (
-          <span key={i} ref={i === 0 ? textRef : null} className="text-nuetral">
+          <span key={i} ref={i === 0 ? textRef : null} className="text-neutral">
             {children}{" "}
           </span>
         ))}

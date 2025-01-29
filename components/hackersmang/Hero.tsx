@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section className="relative pt-20 lg:pt-24  pb-4 px-2 lg:px-6 h-full">
       {/* Top Section */}
-      <div className='outline outline-[1.5px] outline-[#2b2828] px-2'>
+      <div className='outline outline-[1.5px] outline-charcoal px-2'>
 
         <h1 className="text-center text-base font-bold outfit-extra-light p-2 text-neutral">
           A vibrant community of tech enthusiasts
@@ -31,7 +31,7 @@ export default function Hero() {
             <h2 className="text-3xl lg:text-6xl outfit-extra-bold text-secondary">#TechMang25</h2>
             <p className="text-neutral text-lg lg:text-xl text-center">
              On Saturday, 1st February at UniCourt Mangaluru. Explore exciting lightning talks, insightful demos, and interactive workshops, designed to spark curiosity and expand knowledge.            </p>
-            <Link href="/techmang25" aria-label="#TechMang" className="flex items-center justify-center gap-2 w-full py-4 text-center text-neutral hover:text-secondary hover:bg-[#2b2828] p-4 outline outline-[1.5px] outline-[#2b2828]">
+            <Link href="/techmang25" aria-label="#TechMang" className="flex items-center justify-center gap-2 w-full py-4 text-center text-neutral hover:text-secondary hover:bg-charcoal p-4 outline outline-[1.5px] outline-charcoal">
               <span className="text-lg font-semibold">Visit event page</span>
               <GoArrowUpRight size={24} />
             </Link>
@@ -40,20 +40,20 @@ export default function Hero() {
           {/* Column 3 */}
           <div className="lg:w-1/3 flex flex-col justify-between items-center w-full gap-1">
             <div className="text-base italic text-center p-2">Recent events</div>
-            <Link href="/2024-november" aria-label="2024 November Edition" className="flex items-center justify-center gap-2 w-full py-4 text-center hover:text-secondary hover:bg-[#2b2828]">
-              <span className="text-lg font-semibold">HackersMang 2024 November</span>
+            <Link href="/2024-november" aria-label="2024 November Edition" className="flex items-center justify-center gap-2 w-full py-4 text-center text-neutral hover:text-secondary hover:bg-charcoal p-4">
+              <span className="text-lg">HackersMang 2024 November</span>
               <GoArrowUpRight size={24} />
             </Link>
-            <Link href="/ai-techverse" aria-label="Ai TechVerse" className="flex items-center justify-center gap-2 w-full py-4 text-center hover:text-secondary hover:bg-[#2b2828]">
-              <span className="text-lg font-semibold">Ai TechVerse by HackersMang</span>
+            <Link href="/ai-techverse" aria-label="Ai TechVerse" className="flex items-center justify-center gap-2 w-full py-4 text-center text-neutral hover:text-secondary hover:bg-charcoal p-4">
+              <span className="text-lg">Ai TechVerse by HackersMang</span>
               <GoArrowUpRight size={24} />
             </Link>
-            <Link href="https://www.eventbrite.com/e/mangaluru-tech-day-2024-tickets-795844441147?aff=oddtdtcreator" aria-label="Mangaluru Tech Day 2024" className="flex items-center justify-center gap-2 w-full py-4 text-center hover:text-secondary hover:bg-[#2b2828]">
-              <span className="text-lg font-semibold">Mangaluru Tech Day 2024</span>
+            <Link href="https://www.eventbrite.com/e/mangaluru-tech-day-2024-tickets-795844441147?aff=oddtdtcreator" aria-label="Mangaluru Tech Day 2024" className="flex items-center justify-center gap-2 w-full py-4 text-center text-neutral hover:text-secondary hover:bg-charcoal p-4">
+              <span className="text-lg">Mangaluru Tech Day 2024</span>
               <GoArrowUpRight size={24} />
             </Link>
-            <Link href="https://www.eventbrite.com/e/mangaluru-tech-day-3-techmang3-tickets-82910289909?aff=oddtdtcreator" aria-label="Mangaluru Tech Day 2023" className="flex items-center justify-center gap-2 w-full py-4 text-center hover:text-secondary hover:bg-[#2b2828]">
-              <span className="text-lg font-semibold">Mangaluru Tech Day 2023</span>
+            <Link href="https://www.eventbrite.com/e/mangaluru-tech-day-3-techmang3-tickets-82910289909?aff=oddtdtcreator" aria-label="Mangaluru Tech Day 2023" className="flex items-center justify-center gap-2 w-full py-4 text-center text-neutral hover:text-secondary hover:bg-charcoal p-4">
+              <span className="text-lg">Mangaluru Tech Day 2023</span>
               <GoArrowUpRight size={24} />
             </Link>
           </div>
