@@ -37,7 +37,7 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
         const timeObj = new Date(date)
         const hours = timeObj.getHours()
         const minutes = timeObj.getMinutes()
-        const ampm = hours >= 12 ? "AM" : "AM"
+        const ampm = hours >= 12 ? "PM" : "AM"
         const formattedHours = hours % 12 || 12
         return `${formattedHours}:${minutes.toString().padStart(2, "0")} ${ampm}`
     }

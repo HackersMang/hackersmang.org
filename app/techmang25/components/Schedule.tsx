@@ -124,7 +124,7 @@ const Schedule = () => {
                             <div key={index} className="w-full flex flex-col items-center justify-center">
                                 {daySchedule.rooms.map((room) => (
                                     <div key={room.id} className="w-full mb-6 lg:w-5/6">
-                                        <h3 className="text-md lg:text-xl pb-4 text-primary/60 text-center">
+                                        <h3 className="text-lg lg:text-xl pb-4 text-primary/60 text-center">
                                             {room.name === 'Track1' ? 'Track 1' : room.name}
                                         </h3>
                                         {room.sessions.length > 0 ? (
