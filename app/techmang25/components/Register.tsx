@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Register = () => {
   return (
-    <div className="w-full flex flex-col items-center justify-center text-center mt-2 mb-4 px-4">
+    <div className="w-full flex flex-col items-center justify-center text-center mt-2 mb-4 lg:mb-6 px-4">
       <div className="shadow-lg px-4 lg:px-8">
         <h3 className="text-xl lg:text-2xl font-light text-primary mt-4">RSVP Route</h3>
 

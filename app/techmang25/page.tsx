@@ -149,9 +149,9 @@ function page() {
                     <Header />
                     <Hero />
                     <Venue />
-                    <About />
-                    <Register />
                     <Schedule />
+                    <Register />
+                    <About />
                     <Footer />
                 </div>
             </main>

@@ -113,7 +113,7 @@ const Schedule = () => {
     }
 
     return (
-        <section className="flex flex-col px-2 pt-2 lg:px-4 lg:py-8 items-center justify-center w-full">
+        <section className="flex flex-col px-2 pt-2 lg:px-4 lg:py-4 items-center justify-center w-full">
             <h2 className="text-xl lg:text-2xl text-primary pb-2 lg:pb-4">Schedule</h2>
             {loading ? (
                 <SessionListSkeleton />
@@ -121,10 +121,10 @@ const Schedule = () => {
                 <>
                     {scheduleData && scheduleData.length > 0 ? (
                         scheduleData.map((daySchedule, index) => (
-                            <div key={index} className="mb-8 w-full flex flex-col items-center justify-center">
+                            <div key={index} className="w-full flex flex-col items-center justify-center">
                                 {daySchedule.rooms.map((room) => (
-                                    <div key={room.id} className="mb-6 lg:w-5/6">
-                                        <h3 className="text-md lg:text-xl pb-4 text-neutral text-center">
+                                    <div key={room.id} className="w-full mb-6 lg:w-5/6">
+                                        <h3 className="text-md lg:text-xl pb-4 text-primary/60 text-center">
                                             {room.name === 'Track1' ? 'Track 1' : room.name}
                                         </h3>
                                         {room.sessions.length > 0 ? (
