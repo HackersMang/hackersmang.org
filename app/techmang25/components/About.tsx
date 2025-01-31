@@ -3,7 +3,7 @@ import React from 'react';
 
 const About = () => {
     return (
-        <div className="w-full flex flex-col items-center justify-center text-center mt-4 lg:mt-8 shadow-lg">
+        <div className="w-full flex flex-col items-center justify-center text-center mt-4 lg:my-8 shadow-lg">
             <h3 className="text-xl lg:text-2xl text-primary mt-4 mb-2">About TechMang</h3>
             <div className="lg:w-1/2 mx-6 lg:mx-0">
                 <p className="w-full text-lg md:text-xl leading-relaxed mb-6 text-neutral">
@@ -13,7 +13,7 @@ const About = () => {
                 </p>
 
                 <p className="w-full text-lg md:text-xl leading-relaxed mb-2 text-neutral">
-                    All our past events have been free for everyone and will continue to do so in the future. We are committed to a diverse and inclusive roster of speakers, and attendees. We especially encourage folks that identify themselves as part of an underrepresented group in Mangaluru, to apply. Everyone associated with our events, including speakers, needs to adhere to our <Link href="https://github.com/HackerspaceMangaluru/code-of-conduct/blob/main/coc.md" passHref target="_blank" className="underline">Code of Conduct</Link>.
+                    All our past events have been free for everyone and will continue to do so in the future. We are committed to a diverse and inclusive roster of speakers, and attendees. We especially encourage folks that identify themselves as part of an underrepresented group in Mangaluru, to apply. Everyone associated with our events, including speakers, needs to adhere to our <Link href="/cofc" passHref target="_blank" className="underline">Code of Conduct</Link>.
                 </p>
             </div>
         </div>

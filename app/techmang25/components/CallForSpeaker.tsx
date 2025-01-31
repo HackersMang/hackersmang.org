@@ -25,7 +25,7 @@ const CallForSpeaker = () => {
                 </Link>
                 <div className="mt-4 text-center">
                     <p className="text-sm text-neutral leading-relaxed">
-                        Please read <Link href="https://github.com/HackerspaceMangaluru/code-of-conduct/blob/main/coc.md" passHref target="_blank" className="font-bold underline">
+                        Please read <Link href="/cofc" passHref target="_blank" className="font-bold underline">
                                 Code of Conduct
                         </Link> before submitting your proposal.
                     </p>
