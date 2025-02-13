@@ -1,15 +1,17 @@
-import Hero from "./components/Hero";
 import "@/assets/ai-techverse.css"
 import "@/assets/fonts.css"
 import { Metadata } from "next";
 import Header from "@/components/hackersmang/Header";
-import Footer from "../ai-techverse/components/Footer";
-import Venue from "./components/Venue";
+import Footer from "../../components/eventpage/Footer";
+import Venue from "../../components/eventpage/Venue";
 import About from "./components/About";
 import Particles from "@/components/magicui/particles";
 import Script from 'next/script';
-import Register from "./components/Register";
-import Schedule from "./components/Schedule";
+import Register from "../../components/eventpage/Register";
+import Schedule from "../../components/eventpage/Schedule";
+import Intro from "@/components/eventpage/Intro";
+import { EVENT_DETAIL } from "./constants";
+import CallForSpeaker from "../../components/eventpage/CallForSpeaker";
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://hackersmang.org'),
@@ -147,10 +149,11 @@ function page() {
                 <Particles />
                 <div className="relative z-10">
                     <Header />
-                    <Hero />
-                    <Venue />
-                    <Schedule />
-                    <Register />
+                    <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
+                    <CallForSpeaker registrationLink={EVENT_DETAIL.callForSpeakerLink} registrationStartOn={EVENT_DETAIL.callForSpeakerStartOn} registrationEndOn={EVENT_DETAIL.callForSpeakerEndOn} />
+                    <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl.href} />
+                    <Schedule sessionId={process.env.NEXT_PUBLIC_SESSIONIZE_API_ID} />
+                    <Register registrationLink={EVENT_DETAIL.registrationLink} registrationStartOn={EVENT_DETAIL.registrationStartOn} registrationEndOn={EVENT_DETAIL.registrationEndOn} />
                     <About />
                     <Footer />
                 </div>

@@ -4,52 +4,22 @@ import React, { useEffect, useState } from "react";
 import ErrorCard from "@/components/eventpage/ErrorCard";
 import SessionList from "@/components/eventpage/SessionList";
 import SessionListSkeleton from "@/components/eventpage/SessionListSkeleton";
+import { GridSmart, ScheduleProps, SessionizeSpeakers } from "@/lib/types";
 
-// Define the SessionizeSpeakers interface
-export interface SessionizeSpeakers {
-    id: string;
-    firstName: string;
-    lastName: string;
-    fullName: string;
-    tagLine: string;
-    profilePicture: string;
-    isTopSpeaker: boolean;
-}
-
-// Define the GridSmart interface
-interface GridSmart {
-    rooms: {
-        id: number;
-        name: string;
-        sessions: {
-            id: string;
-            title: string;
-            description: string;
-            startsAt: string;
-            endsAt: string;
-            isServiceSession: boolean;
-            isPlenumSession: boolean;
-            speakers: {
-                id: string;
-                name: string;
-                // Updated to include profile picture
-                profilePicture?: string;
-            }[];
-        }[];
-    }[];
-}
-
-const Schedule = () => {
+const Schedule = ({ sessionId }: ScheduleProps): JSX.Element => {
     const [scheduleData, setScheduleData] = useState<GridSmart[] | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
+
+    const DEMO_API_ID = 'jl4ktls0' // API id from sessionize doc.
+    const DUMMY_PROFILE_PICTURE = "https://sessionize.com/image/8db9-400o400o1-test4.jpg" 
 
     // Function to fetch and process speakers and schedule data
     const fetchSpeakersAndSchedule = async () => {
         try {
             setLoading(true);
 
-            const sessionizeApiId = process.env.NEXT_PUBLIC_SESSIONIZE_API_ID ?? 'jl4ktls0' // API id from sessionize doc.
+            const sessionizeApiId = sessionId ?? DEMO_API_ID;
             const speakerAPIEndpoint = `https://sessionize.com/api/v2/${sessionizeApiId}/view/Speakers`;
             const GridSmartAPIEndpoint = `https://sessionize.com/api/v2/${sessionizeApiId}/view/GridSmart`;
 
@@ -88,7 +58,7 @@ const Schedule = () => {
                                 );
                                 return {
                                     ...sessionSpeaker,
-                                    profilePicture: matchedSpeaker?.profilePicture ?? "https://sessionize.com/image/8db9-400o400o1-test4.jpg", // Add profile picture
+                                    profilePicture: matchedSpeaker?.profilePicture ?? DUMMY_PROFILE_PICTURE, // Add profile picture
                                 };
                             }),
                         })),
