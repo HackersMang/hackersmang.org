@@ -6,7 +6,7 @@ const Speakers = ({ speakers }: { speakers: any[] }): JSX.Element => {
     const sortedSpeakers = [...speakers].sort((a, b) => a.name.localeCompare(b.name));
 
     return (
-        <section className="flex flex-col md:gap-4 py-4 px-4 mx-6 my-4 items-center justify-center">
+        <section className="flex flex-col md:gap-4 py-4 px-4 lg:mx-6 my-4 items-center justify-center">
             <div className="text-xl lg:text-2xl font-light text-primary outfit-extra-light">
                 Speakers
             </div>
