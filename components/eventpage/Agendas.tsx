@@ -6,7 +6,7 @@ const Agendas = ({ speakers }: { speakers: any[] }): JSX.Element => {
     const sortedAgendas = speakers.toSorted((a, b) => a.order - b.order);
 
     return (
-        <section className="flex flex-col md:gap-4 py-4 px-4 mx-6 my-4 items-center justify-center">
+        <section className="flex flex-col md:gap-4 py-4 px-4 lg:mx-6 my-4 items-center justify-center">
             <div className="text-xl lg:text-2xl font-light text-primary outfit-extra-light">
                 Agenda
             </div>
