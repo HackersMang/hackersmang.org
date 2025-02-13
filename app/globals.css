@@ -39,3 +39,19 @@ html {
 .cursor-text {
     @apply text-xs font-extrabold hidden;
 }
+
+
+.curved-underline {
+    position: relative;
+}
+
+.curved-underline:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    border-top: solid 3px #d4e20b;
+    left: 1rem;
+    bottom: -1rem;
+    border-radius: 70%;
+    height: 8px;
+}

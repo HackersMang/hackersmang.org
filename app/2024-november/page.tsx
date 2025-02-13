@@ -1,13 +1,15 @@
-import Footer from "../ai-techverse/components/Footer";
-import Hero from "./components/Hero";
+import Footer from "../../components/eventpage/Footer";
 
-import "@/assets/ai-techverse.css"
 import "@/assets/fonts.css"
-import Speakers from "./components/Speakers";
-import Agendas from "./components/Agendas";
+import Speakers from "../../components/eventpage/Speakers";
+import Agendas from "../../components/eventpage/Agendas";
 import { Metadata } from "next";
 import Particles from "@/components/magicui/particles";
 import Header from "@/components/hackersmang/Header";
+import Intro from "@/components/eventpage/Intro";
+import Venue from "@/components/eventpage/Venue";
+import Register from "@/components/eventpage/Register";
+import { EVENT_DETAIL, SPEAKERS } from "./constants";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hackersmang.org'),
@@ -66,18 +68,19 @@ export const metadata: Metadata = {
 
 function page() {
   return (
-    <main className="relative bg-grainy">
-      <Particles
-        quantity={100}
-        ease={80}
-        color="#d4e20b"
-        refresh
-      />
-      <Header />
-      <Hero />
-      <Agendas />
-      <Speakers />
-      <Footer />
+    <main className="relative bg-grainy outfit-extra-light">
+      <Particles />
+      <div className="relative z-10">
+        <Header />
+        <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
+        <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl.href} />
+        
+        <Agendas speakers={SPEAKERS} />
+        <Speakers speakers={SPEAKERS} />
+
+        <Register registrationLink={EVENT_DETAIL.registrationLink} registrationStartOn={EVENT_DETAIL.registrationStartOn} registrationEndOn={EVENT_DETAIL.registrationEndOn} />
+        <Footer />
+      </div>
     </main>
   );
 }

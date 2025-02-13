@@ -5,23 +5,7 @@ import { useState } from "react"
 import Image from "next/image"
 import { User, ChevronDown, ChevronUp } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
-
-interface SessionListProps {
-    sessions: {
-        id: string
-        title: string
-        description: string
-        startsAt: string
-        endsAt: string
-        isServiceSession: boolean
-        isPlenumSession: boolean
-        speakers: {
-            id: string
-            name: string
-            profilePicture?: string
-        }[]
-    }[]
-}
+import { SessionListProps } from "@/lib/types"
 
 const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ session }) => {
     const [isExpanded, setIsExpanded] = useState(false)

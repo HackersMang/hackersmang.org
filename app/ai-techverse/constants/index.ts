@@ -1,3 +1,5 @@
+import { EventDetailProps } from "@/lib/types";
+
 // Speakers
 export const SPEAKERS = [
   {
@@ -47,6 +49,13 @@ export const SPEAKERS = [
   }
 ];
 
-export const REGISTER_LINK = {
-  link : 'https://buytickets.at/hackerspacemangaluru/1308788'
-}
+export const EVENT_DETAIL: EventDetailProps = {
+  title: "AI TECHVERSE",
+  subtitle: "Talks on cutting edge AI technologies!",
+  locationName: "UniCourt Mangaluru",
+  locationUrl: new URL("https://maps.app.goo.gl/bB6HwqDftS4Nq1LT7"),
+  happeningOn: new Date("07/07/2024"), // MM/DD/YYYY
+  registrationLink: new URL("https://buytickets.at/hackerspacemangaluru/1308788"),
+  registrationStartOn: new Date("07/07/2024"), // MM/DD/YYYY
+  registrationEndOn: new Date("07/07/2024"),
+};
