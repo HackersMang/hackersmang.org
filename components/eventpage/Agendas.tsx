@@ -11,7 +11,7 @@ const Agendas = ({ speakers }: { speakers: any[] }): JSX.Element => {
                 Agenda
             </div>
             {sortedAgendas.map((speaker, idx) => (
-                <div className="flex flex-col w-full overflow-hidden p-4 md:p-8 gap-1 my-1 bg-[#1d1d1c]" key={idx}>
+                <div className="flex flex-col rounded-lg w-full overflow-hidden p-4 md:p-8 gap-1 my-1 bg-[#1d1d1c]" key={idx}>
                     <span className="text-lg md:text-2xl lg:text-3xl whitespace-pre-line">{speaker.topic}</span>
                     <div className="flex items-center gap-1">
                         <User size={14} className="text-neutral" />
