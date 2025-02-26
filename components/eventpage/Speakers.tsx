@@ -12,7 +12,7 @@ const Speakers = ({ speakers }: { speakers: any[] }): JSX.Element => {
             </div>
 
             {sortedSpeakers.map((speaker, index) => (
-                <div key={speaker.id ?? index} className="relative mt-1 p-2 bg-[#1d1d1c] lg:hover:bg-[#d4e20b] w-full flex flex-row gap-2 hover:text-black items-center group">
+                <div key={speaker.id ?? index} className="relative rounded-lg mt-1 p-2 bg-[#1d1d1c] lg:hover:bg-[#d4e20b] w-full flex flex-row gap-2 hover:text-black items-center group">
                     <div className="hidden lg:block p-8 text-neutral lg:group-hover:text-black text-lg lg:text-3xl">
                         {index + 1 < 10 ? `0${index + 1}` : index + 1}.
                     </div>

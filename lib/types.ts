@@ -83,3 +83,16 @@ export interface SessionListProps {
 export interface ScheduleProps {
     sessionId: string | null | undefined;
 }
+export interface Resource {
+    title: string
+    speaker: string
+    resources: {
+        title: string
+        url: string
+        type: "presentation" | "code" | "external"
+    }[]
+}
+
+export interface ResourceListProps {
+    resources: Resource[]
+}
