@@ -5,68 +5,75 @@ import ErrorCard from "@/components/eventpage/ErrorCard";
 import SessionList from "@/components/eventpage/SessionList";
 import SessionListSkeleton from "@/components/eventpage/SessionListSkeleton";
 import { GridSmart, ScheduleProps, SessionizeSpeakers } from "@/lib/types";
+import { TriangleAlert } from "lucide-react";
+import { DEMO_API_ID, DUMMY_PROFILE_PICTURE, DUMMY_PUBLIC_API_URL } from "@/lib/constants";
 
 const Schedule = ({ sessionId }: ScheduleProps): JSX.Element => {
     const [scheduleData, setScheduleData] = useState<GridSmart[] | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
+    const [fromCache, setFromCache] = useState<boolean>(false);
+    const [cachedAt, setCachedAt] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
 
-    const DEMO_API_ID = 'jl4ktls0' // API id from sessionize doc.
-    const DUMMY_PROFILE_PICTURE = "https://sessionize.com/image/8db9-400o400o1-test4.jpg" 
-
-    // Function to fetch and process speakers and schedule data
     const fetchSpeakersAndSchedule = async () => {
         try {
             setLoading(true);
 
             const sessionizeApiId = sessionId ?? DEMO_API_ID;
-            const speakerAPIEndpoint = `https://sessionize.com/api/v2/${sessionizeApiId}/view/Speakers`;
-            const GridSmartAPIEndpoint = `https://sessionize.com/api/v2/${sessionizeApiId}/view/GridSmart`;
+            const publicApiUrl = process.env.NEXT_PUBLIC_API_URL ?? DUMMY_PUBLIC_API_URL;
 
-            // Fetch speakers
-            const speakerResponse = await fetch(
-                speakerAPIEndpoint
-            );
-            if (!speakerResponse.ok) {
-                throw new Error("Failed to fetch speakers");
+            const speakerAPIEndpoint = `${publicApiUrl}/sessionize/Speakers?sessionId=${sessionizeApiId}`;
+            const GridSmartAPIEndpoint = `${publicApiUrl}/sessionize/GridSmart?sessionId=${sessionizeApiId}`;
+
+            const [speakerResponse, gridSmartResponse] = await Promise.all([
+                fetch(speakerAPIEndpoint),
+                fetch(GridSmartAPIEndpoint),
+            ]);
+
+            if (!speakerResponse.ok || !gridSmartResponse.ok) {
+                throw new Error("Failed to fetch data");
             }
 
-            const speakerResponseData: SessionizeSpeakers[] = await speakerResponse.json();
+            const speakerResponseData = await speakerResponse.json();
+            const gridSmartResponseData = await gridSmartResponse.json();
 
-            // Fetch schedule (GridSmart)
-            const gridSmartResponse = await fetch(
-                GridSmartAPIEndpoint
-            );
-            if (!gridSmartResponse.ok) {
-                throw new Error("Failed to fetch schedule data");
+            const speakerData: SessionizeSpeakers[] = speakerResponseData.data;
+
+            const gridSmartData: GridSmart[] = gridSmartResponseData.data;
+
+            let scheduleData = [];
+
+            if (gridSmartResponseData.fromCache || speakerResponseData.fromCache) {
+                setFromCache(true);
+                setCachedAt(gridSmartResponseData.cachedAt 
+                    ? new Date(gridSmartResponseData.cachedAt).toLocaleString() 
+                    : "Unknown time"
+                );
             }
-
-            let gridSmartData: GridSmart[] = await gridSmartResponse.json();
 
             // Map speaker profile pictures into the schedule
-            gridSmartData = gridSmartData.map((daySchedule) => ({
+            scheduleData = gridSmartData.map((daySchedule) => ({
                 ...daySchedule,
                 rooms: daySchedule.rooms.map((room) => ({
                     ...room,
                     sessions: room.sessions
-                        .filter((session) => session.speakers.length > 0) // Filter out sessions with no speakers
+                        .filter((session) => session.speakers.length > 0)
                         .map((session) => ({
                             ...session,
                             speakers: session.speakers.map((sessionSpeaker) => {
-                                const matchedSpeaker = speakerResponseData.find(
+                                const matchedSpeaker = speakerData.find(
                                     (speaker) => speaker.id === sessionSpeaker.id
                                 );
                                 return {
                                     ...sessionSpeaker,
-                                    profilePicture: matchedSpeaker?.profilePicture ?? DUMMY_PROFILE_PICTURE, // Add profile picture
+                                    profilePicture: matchedSpeaker?.profilePicture ?? DUMMY_PROFILE_PICTURE,
                                 };
                             }),
                         })),
                 })),
             }));
 
-            // Store updated schedule data
-            setScheduleData(gridSmartData);
+            setScheduleData(scheduleData);
         } catch (err: any) {
             setError(err.message);
         } finally {
@@ -113,8 +120,16 @@ const Schedule = ({ sessionId }: ScheduleProps): JSX.Element => {
                             <p className="text-sm text-center text-neutral">No session available.</p>
                         </div>
                     )}
-                    </>
+                </>
             )}
+            {!loading && fromCache && cachedAt ? (
+                <div className="flex flex-row items-center justify-center gap-2 w-full">
+                    <TriangleAlert size={14} className="text-neutral" />
+                    <p className="text-sm text-center text-neutral">
+                        This data is served from cache and was last updated at {cachedAt}.
+                    </p>                
+                </div>
+            ) : null}
         </section>
     );
 };
