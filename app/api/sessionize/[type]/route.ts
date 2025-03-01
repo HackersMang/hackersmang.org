@@ -1,6 +1,5 @@
+import { CACHE_DURATION, SESSIONIZE_API_URL } from "@/lib/constants";
 import { NextResponse } from "next/server";
-
-const CACHE_DURATION = 60 * 60 * 1000; // Cache duration (1 Hour)
 
 let cachedData: {
     [sessionId: string]: { [type: string]: { data: any; timestamp: number } };
@@ -20,7 +19,7 @@ export async function GET(req: Request, { params }: { params: { type: string } }
         return NextResponse.json({ error: "Invalid request type." }, { status: 400 });
     }
 
-    const apiEndpoint = `https://sessionize.com/api/v2/${sessionId}/view/${type}`;
+    const apiEndpoint = `${SESSIONIZE_API_URL}/${sessionId}/view/${type}`;
 
     // Ensure cache exists for this sessionId & type
     if (!cachedData[sessionId]) cachedData[sessionId] = {};
