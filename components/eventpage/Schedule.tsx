@@ -6,7 +6,7 @@ import SessionList from "@/components/eventpage/SessionList";
 import SessionListSkeleton from "@/components/eventpage/SessionListSkeleton";
 import { GridSmart, ScheduleProps, SessionizeSpeakers } from "@/lib/types";
 import { TriangleAlert } from "lucide-react";
-import { DEMO_API_ID, DUMMY_PROFILE_PICTURE, DUMMY_PUBLIC_API_URL } from "@/lib/constants";
+import { DEMO_API_ID, DUMMY_PROFILE_PICTURE } from "@/lib/constants";
 
 const Schedule = ({ sessionId }: ScheduleProps): JSX.Element => {
     const [scheduleData, setScheduleData] = useState<GridSmart[] | null>(null);
@@ -20,10 +20,10 @@ const Schedule = ({ sessionId }: ScheduleProps): JSX.Element => {
             setLoading(true);
 
             const sessionizeApiId = sessionId ?? DEMO_API_ID;
-            const publicApiUrl = process.env.NEXT_PUBLIC_API_URL ?? DUMMY_PUBLIC_API_URL;
+            const publicApiUrl = window.location.origin;
 
-            const speakerAPIEndpoint = `${publicApiUrl}/sessionize/Speakers?sessionId=${sessionizeApiId}`;
-            const GridSmartAPIEndpoint = `${publicApiUrl}/sessionize/GridSmart?sessionId=${sessionizeApiId}`;
+            const speakerAPIEndpoint = `${publicApiUrl}/api/sessionize/Speakers?sessionId=${sessionizeApiId}`;
+            const GridSmartAPIEndpoint = `${publicApiUrl}/api/sessionize/GridSmart?sessionId=${sessionizeApiId}`;
 
             const [speakerResponse, gridSmartResponse] = await Promise.all([
                 fetch(speakerAPIEndpoint),
@@ -45,8 +45,8 @@ const Schedule = ({ sessionId }: ScheduleProps): JSX.Element => {
 
             if (gridSmartResponseData.fromCache || speakerResponseData.fromCache) {
                 setFromCache(true);
-                setCachedAt(gridSmartResponseData.cachedAt 
-                    ? new Date(gridSmartResponseData.cachedAt).toLocaleString() 
+                setCachedAt(gridSmartResponseData.cachedAt
+                    ? new Date(gridSmartResponseData.cachedAt).toLocaleString()
                     : "Unknown time"
                 );
             }
@@ -123,11 +123,10 @@ const Schedule = ({ sessionId }: ScheduleProps): JSX.Element => {
                 </>
             )}
             {!loading && fromCache && cachedAt ? (
-                <div className="flex flex-row items-center justify-center gap-2 w-full">
-                    <TriangleAlert size={14} className="text-neutral" />
+                <div className="flex flex-row items-center justify-center gap-2 w-full mx-2">
                     <p className="text-sm text-center text-neutral">
-                        This data is served from cache and was last updated at {cachedAt}.
-                    </p>                
+                        ⚠️ This data is served from cache and was last updated at {cachedAt}.
+                    </p>
                 </div>
             ) : null}
         </section>
