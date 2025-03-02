@@ -5,7 +5,6 @@ import ErrorCard from "@/components/eventpage/ErrorCard";
 import SessionList from "@/components/eventpage/SessionList";
 import SessionListSkeleton from "@/components/eventpage/SessionListSkeleton";
 import { GridSmart, ScheduleProps, SessionizeSpeakers } from "@/lib/types";
-import { TriangleAlert } from "lucide-react";
 import { DEMO_API_ID, DUMMY_PROFILE_PICTURE } from "@/lib/constants";
 
 const Schedule = ({ sessionId }: ScheduleProps): JSX.Element => {
@@ -31,7 +30,7 @@ const Schedule = ({ sessionId }: ScheduleProps): JSX.Element => {
             ]);
 
             if (!speakerResponse.ok || !gridSmartResponse.ok) {
-                throw new Error("Failed to fetch data");
+                throw new Error("Oops! Failed to fetch speaker or grid smart data. Looks like the internet took a coffee break! ☕😅");
             }
 
             const speakerResponseData = await speakerResponse.json();
@@ -86,7 +85,7 @@ const Schedule = ({ sessionId }: ScheduleProps): JSX.Element => {
     }, []);
 
     if (error) {
-        return <ErrorCard />;
+        return <ErrorCard message={error} />;
     }
 
     return (
