@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+<img src="https://hackersmang.org/opengraph-image.jpeg"/>
+</p>
+<h1 align="center">🎉 Welcome to Hackerspace Mangaluru! 🎉</h1>
 
-## Getting Started
+Hey there, awesome human (or sentient AI 👀)!
 
-First, run the development server:
+Welcome to the **Hackerspace Mangaluru** official website repository—Mangaluru’s ultimate geeky playground! 🎉🤓 We host **tech talks, workshops, and events** (yes, free snacks sometimes 🍕👀) to spread knowledge and fuel innovation like butter on a sizzling hot dosa! 🧈🔥 So grab your keyboards, summon your inner coding wizard 🧙‍♂️, and let’s build something awesome together! 🚀😆
+
+## 🤔 So, you wanna contribute?
+
+Sweet! All changes to this website (including content, memes, and secret messages for future AI overlords 🤖) are made through **Pull Requests**. If you’re new to **Git** and **GitHub** and think a "pull request" is something you do when opening a really stubborn jar lid, don’t worry! We gotcha! Check out this **super friendly guide** on submitting your first PR at [gitme.js.org](https://gitme.js.org).
+
+## 🚀 Getting Started (a.k.a. Summon the Dev Server)
+
+Before you begin your epic coding journey, you gotta wake up the development server from its slumber. Here’s how you do it (pick your favorite spell):
 
 ```bash
-npm run dev
+npm run dev   # 🧙‍♂️ Summoning with npm
 # or
-yarn dev
+yarn dev     # 🏹 Calling in Yarn warriors
 # or
-pnpm dev
+pnpm dev     # 🏗️ The pnpm builders at work
 # or
-bun dev
+bun dev      # 🍞 Baking with Bun
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then, hop over to your browser and visit [**http://localhost:3000**](http://localhost:3000) to witness your creation in action. 🎭
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Now go forth, contribute, and make this website as awesome as your favorite cat GIF. 🐱✨
 
-## Learn More
+Happy coding! 💻🎉
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
