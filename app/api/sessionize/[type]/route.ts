@@ -11,7 +11,6 @@ const VALID_TYPES = ["Speakers", "GridSmart"]; // Valid types
 export async function GET(req: Request, { params }: { params: { type: string } }) {
     const { searchParams } = new URL(req.url);
     const sessionId = searchParams.get("sessionId") ?? DEFAULT_SESSION_ID; // Use query param or default
-    const fetchFresh = searchParams.get("fresh") === "true"; // Force fresh fetch
     const type = params.type; // Route param (Speakers or GridSmart)
 
     // Validate request type (Case-sensitive)
@@ -24,15 +23,16 @@ export async function GET(req: Request, { params }: { params: { type: string } }
     // Ensure cache exists for this sessionId & type
     if (!cachedData[sessionId]) cachedData[sessionId] = {};
 
-    // Serve from cache if valid and `fresh=false`
-    if (!fetchFresh && cachedData[sessionId][type] && Date.now() - cachedData[sessionId][type].timestamp < CACHE_DURATION) {
-        console.log(`Serving cached ${type} data for session ${sessionId}`);
-        return NextResponse.json({ fromCache: true, data: cachedData[sessionId][type].data, cachedAt: cachedData[sessionId][type].timestamp });
-    }
-
     try {
         const response = await fetch(apiEndpoint);
+        
         if (!response.ok) {
+            // Serve from cache if available
+            if (cachedData[sessionId][type] && Date.now() - cachedData[sessionId][type].timestamp < CACHE_DURATION) {
+                console.log(`Serving cached ${type} data for session ${sessionId}`);
+                return NextResponse.json({ fromCache: true, data: cachedData[sessionId][type].data, cachedAt: cachedData[sessionId][type].timestamp });
+            }
+
             return NextResponse.json({ error: `Failed to fetch ${type} data` }, { status: 500 });
         }
 
@@ -45,6 +45,12 @@ export async function GET(req: Request, { params }: { params: { type: string } }
 
         return NextResponse.json({ fromCache: false, data });
     } catch (error) {
+        // Serve from cache if available
+        if (cachedData[sessionId][type] && Date.now() - cachedData[sessionId][type].timestamp < CACHE_DURATION) {
+            console.log(`Serving cached ${type} data for session ${sessionId}`);
+            return NextResponse.json({ fromCache: true, data: cachedData[sessionId][type].data, cachedAt: cachedData[sessionId][type].timestamp });
+        }
+
         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
     }
 }
