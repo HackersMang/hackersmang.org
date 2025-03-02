@@ -9,7 +9,7 @@ Welcome to the **Hackerspace Mangaluru** official website repository—Mangaluru
 
 ## 🤔 So, you wanna contribute?
 
-Sweet! All changes to this website (including content, memes, and secret messages for future AI overlords 🤖) are made through **Pull Requests**. If you’re new to **Git** and **GitHub** and think a "pull request" is something you do when opening a really stubborn jar lid, don’t worry! We gotcha! Check out our **super friendly guide** on submitting your first PR at [gitme.js.org](https://gitme.js.org).
+Sweet! All changes to this website (including content, memes, and secret messages for future AI overlords 🤖) are made through **Pull Requests**. If you’re new to **Git** and **GitHub** and think a "pull request" is something you do when opening a really stubborn jar lid, don’t worry! We gotcha! Check out this **super friendly guide** on submitting your first PR at [gitme.js.org](https://gitme.js.org).
 
 ## 🚀 Getting Started (a.k.a. Summon the Dev Server)
 
