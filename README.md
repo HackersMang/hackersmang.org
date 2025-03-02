@@ -5,7 +5,7 @@
 
 Hey there, awesome human (or sentient AI 👀)!
 
-Welcome to **Hackerspace Mangaluru**, the coolest tech hub where we tinker, break, fix, and build awesome things! We host **tech talks, workshops, and events** (yes, free snacks sometimes 🍕) to spread knowledge and innovation like butter on hot toast! 🧈🔥
+Welcome to the **Hackerspace Mangaluru** official website repository—Mangaluru’s ultimate geeky playground! 🎉🤓 We host **tech talks, workshops, and events** (yes, free snacks sometimes 🍕👀) to spread knowledge and fuel innovation like butter on a sizzling hot dosa! 🧈🔥 So grab your keyboards, summon your inner coding wizard 🧙‍♂️, and let’s build something awesome together! 🚀😆
 
 ## 🤔 So, you wanna contribute?
 
