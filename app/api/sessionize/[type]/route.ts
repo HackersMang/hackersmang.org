@@ -29,7 +29,6 @@ export async function GET(req: Request, { params }: { params: { type: string } }
         if (!response.ok) {
             // Serve from cache if available
             if (cachedData[sessionId][type] && Date.now() - cachedData[sessionId][type].timestamp < CACHE_DURATION) {
-                console.log(`Serving cached ${type} data for session ${sessionId}`);
                 return NextResponse.json({ fromCache: true, data: cachedData[sessionId][type].data, cachedAt: cachedData[sessionId][type].timestamp });
             }
 
@@ -41,13 +40,11 @@ export async function GET(req: Request, { params }: { params: { type: string } }
         // Cache the response
         cachedData[sessionId][type] = { data, timestamp: Date.now() };
 
-        console.log(`Fetched fresh ${type} data for session ${sessionId}`);
 
         return NextResponse.json({ fromCache: false, data });
     } catch (error) {
         // Serve from cache if available
         if (cachedData[sessionId][type] && Date.now() - cachedData[sessionId][type].timestamp < CACHE_DURATION) {
-            console.log(`Serving cached ${type} data for session ${sessionId}`);
             return NextResponse.json({ fromCache: true, data: cachedData[sessionId][type].data, cachedAt: cachedData[sessionId][type].timestamp });
         }
 
