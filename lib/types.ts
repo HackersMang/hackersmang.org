@@ -10,6 +10,7 @@ export interface EventDetailProps {
     callForSpeakerLink?: URL | null;
     callForSpeakerStartOn?: Date | null;
     callForSpeakerEndOn?: Date | null;
+    sessionizeApiId?: string | null;
 }
 
 export interface IntroProps {
