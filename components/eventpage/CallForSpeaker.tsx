@@ -14,7 +14,7 @@ const CallForSpeaker = ({ registrationLink, registrationStartOn, registrationEnd
 
     return (
         <div className="w-full flex flex-col items-center justify-center text-center mt-2 lg:mb-6 px-4">
-            <div className="shadow-lg px-4 lg:px-8">
+            <div className="shadow-lg px-4 lg:px-8 pb-6">
                 <h3 className="text-xl lg:text-2xl font-light text-primary mt-4">Call For Speakers</h3>
                 <p className="text-lg text-neutral leading-relaxed mb-2">
                     We are looking for:
@@ -29,7 +29,7 @@ const CallForSpeaker = ({ registrationLink, registrationStartOn, registrationEnd
                 </p>
                 {/* <Link href={registrationLink?.href} passHref */}
                 <div
-                    className="inline-block bg-primary text-black font-semibold py-2 px-6 mt-6 rounded-full hover:bg-primary-dark transition"
+                    className="inline-block bg-primary text-black font-semibold py-2 px-6 m-4 rounded-full hover:bg-primary-dark transition"
                     // target="_blank"
                     // rel="noopener noreferrer"
                     >
