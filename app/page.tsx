@@ -1,14 +1,12 @@
 import Header from "@/components/hackersmang/Header";
 import Hero from "@/components/hackersmang/Hero";
 import "@/assets/fonts.css"
+import "@/assets/ai-techverse.css"
 import Particles from "@/components/magicui/particles";
-
-
-// TODO: Add meta data.
 
 export default function Home() {
   return (
-    <main className="relative bg-grainy h-full lg:h-screen w-full">
+    <main className="relative bg-grainy h-full w-full">
       <Particles
         quantity={40}
         ease={80}

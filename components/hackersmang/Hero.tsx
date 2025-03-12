@@ -5,59 +5,65 @@ import SocialMedia from './SocialMedia';
 
 export default function Hero() {
   return (
-    <section className="relative pt-20 lg:pt-24  pb-4 px-2 lg:px-6 h-full">
+    <section className="relative pt-20 lg:pt-0  pb-4 px-2 lg:px-6 h-full">
       {/* Top Section */}
       <div className='outline outline-[1.5px] outline-charcoal px-2'>
 
-        <h1 className="text-center text-base font-bold outfit-extra-light p-2 text-neutral">
+        <h1 className="lg:pt-24 text-center text-base font-bold outfit-extra-light p-2 text-neutral">
           A vibrant community of tech enthusiasts
         </h1>
 
         {/* Three Column Layout */}
-        <div className="flex flex-col lg:flex-row gap-6 py-4 lg:py-24 lg:px-8 text-neutral">
+        <div className="flex flex-col text-neutral w-full lg:max-w-fit mx-auto">
           {/* Column 1 */}
-          <div className="lg:w-1/3 flex flex-col justify-between gap-1">
-            <p className="text-neutral text-lg lg:text-xl text-center lg:text-start">
-              <span className="text-3xl lg:text-6xl outfit-bold text-secondary">Hackerspace Mangaluru</span> is a community-driven open-source group. Together with the HackersMang community, we host tech talks, workshops, and events aimed at fostering innovation and knowledge-sharing.
+          <div className="flex flex-col justify-center items-center gap-1 lg:h-[80dvh]">
+            <span className="text-3xl lg:text-8xl outfit-extra-bold text-secondary">Hackerspace Mangaluru</span>
+            <p className="text-neutral text-lg lg:text-xl text-center max-w-screen-lg">
+              A community-driven open-source group. Together with the HackersMang community, we host tech talks, workshops, and events aimed at fostering innovation and knowledge-sharing.
             </p>
-            <div className="hidden lg:block w-full">
-              <SocialMedia />
-            </div>
           </div>
 
           {/* Column 2 */}
-          <div className="lg:w-1/3 flex flex-col justify-between items-center gap-1">
+          <div className="flex flex-col justify-center items-center gap-1 lg:h-[80dvh]">
             <div className="text-base italic pt-2">Upcoming event</div>
-            <h2 className="text-3xl lg:text-6xl outfit-extra-bold text-secondary">#TechMang25</h2>
-            <p className="text-neutral text-lg lg:text-xl text-center">
-             On Saturday, 1st February at UniCourt Mangaluru. Explore exciting lightning talks, insightful demos, and interactive workshops, designed to spark curiosity and expand knowledge.            </p>
-            <Link href="/techmang25" aria-label="#TechMang" className="flex items-center justify-center gap-2 w-full py-4 text-center text-neutral hover:text-secondary hover:bg-charcoal p-4 outline outline-[1.5px] outline-charcoal">
-              <span className="text-lg font-semibold">Visit event page</span>
+            <h2 className="text-3xl lg:text-6xl outfit-bold text-secondary">HackersMang</h2>
+            <h2 className="text-xl lg:text-2xl outfit-extra-light text-neutral curved-underline">2025 April Edition</h2>
+            <p className="text-neutral text-lg lg:text-xl text-center max-w-screen-lg lg:p-6">
+              On Saturday, 12th April at UniCourt Mangaluru. Explore exciting lightning talks, insightful demos, and interactive workshops, designed to spark curiosity and expand knowledge.            </p>
+            <Link href="/2025-april" aria-label="HackersMang 2025 April Edition" className="flex items-center justify-center gap-2 w-full py-4 text-center text-neutral hover:text-secondary hover:bg-charcoal p-4 outline outline-[1.5px] outline-charcoal">
+              <span className="text-lg outfit-extra-light">Visit event page</span>
               <GoArrowUpRight size={24} />
             </Link>
           </div>
 
           {/* Column 3 */}
-          <div className="lg:w-1/3 flex flex-col justify-between items-center w-full gap-1">
+          <div className="flex flex-col justify-center items-center w-full gap-1 lg:h-[70dvh]">
             <div className="text-base italic text-center p-2">Recent events</div>
-            <Link href="/2024-november" aria-label="2024 November Edition" className="flex items-center justify-center gap-2 w-full py-4 text-center text-neutral hover:text-secondary hover:bg-charcoal p-4">
-              <span className="text-lg">HackersMang 2024 November</span>
+            <Link href="/techmang25" aria-label="TechMang 2025" className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4">
+              #TechMang25
               <GoArrowUpRight size={24} />
             </Link>
-            <Link href="/ai-techverse" aria-label="Ai TechVerse" className="flex items-center justify-center gap-2 w-full py-4 text-center text-neutral hover:text-secondary hover:bg-charcoal p-4">
-              <span className="text-lg">Ai TechVerse by HackersMang</span>
+            <Link href="/2024-november" aria-label="2024 November Edition" className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4">
+              HackersMang 2024 November
               <GoArrowUpRight size={24} />
             </Link>
-            <Link href="https://www.eventbrite.com/e/mangaluru-tech-day-2024-tickets-795844441147?aff=oddtdtcreator" aria-label="Mangaluru Tech Day 2024" className="flex items-center justify-center gap-2 w-full py-4 text-center text-neutral hover:text-secondary hover:bg-charcoal p-4">
-              <span className="text-lg">Mangaluru Tech Day 2024</span>
+            <Link href="/ai-techverse" aria-label="Ai TechVerse" className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4">
+              Ai TechVerse by HackersMang
               <GoArrowUpRight size={24} />
             </Link>
-            <Link href="https://www.eventbrite.com/e/mangaluru-tech-day-3-techmang3-tickets-82910289909?aff=oddtdtcreator" aria-label="Mangaluru Tech Day 2023" className="flex items-center justify-center gap-2 w-full py-4 text-center text-neutral hover:text-secondary hover:bg-charcoal p-4">
-              <span className="text-lg">Mangaluru Tech Day 2023</span>
+            <Link href="https://www.eventbrite.com/e/mangaluru-tech-day-2024-tickets-795844441147?aff=oddtdtcreator" aria-label="Mangaluru Tech Day 2024" className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4">
+              Mangaluru Tech Day 2024
+              <GoArrowUpRight size={24} />
+            </Link>
+            <Link href="https://www.eventbrite.com/e/mangaluru-tech-day-3-techmang3-tickets-82910289909?aff=oddtdtcreator" aria-label="Mangaluru Tech Day 2023" className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4">
+              Mangaluru Tech Day 2023
               <GoArrowUpRight size={24} />
             </Link>
           </div>
 
+          <div className="hidden lg:block w-full">
+            <SocialMedia />
+          </div>
         </div>
 
         {/* Bottom Section */}

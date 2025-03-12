@@ -27,12 +27,16 @@ const CallForSpeaker = ({ registrationLink, registrationStartOn, registrationEnd
                 <p className="text-lg text-neutral leading-relaxed mt-6 mb-4">
                     This is your chance to inspire and share your knowledge with the tech community. 🌟
                 </p>
-                <Link href={registrationLink?.href} passHref
+                {/* <Link href={registrationLink?.href} passHref */}
+                <div
                     className="inline-block bg-primary text-black font-semibold py-2 px-6 mt-6 rounded-full hover:bg-primary-dark transition"
-                    target="_blank"
-                    rel="noopener noreferrer" >
-                    🔥 Submit Your Proposal Here
-                </Link>
+                    // target="_blank"
+                    // rel="noopener noreferrer"
+                    >
+                    {/* 🔥 Submit Your Proposal Here */}
+                    Coming Soon!
+                {/* </Link> */}
+                </div>
                 
                 <CodeOfConduct />
             </div>
