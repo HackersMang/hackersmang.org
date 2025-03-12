@@ -16,7 +16,7 @@ export default function Hero() {
         {/* Three Column Layout */}
         <div className="flex flex-col text-neutral w-full lg:max-w-fit mx-auto">
           {/* Column 1 */}
-          <div className="flex flex-col justify-center items-center gap-1 lg:h-[80dvh]">
+          <div className="flex flex-col justify-center items-center gap-1 h-[50dvh] lg:h-[80dvh]">
             <span className="text-3xl lg:text-8xl outfit-extra-bold text-secondary">Hackerspace Mangaluru</span>
             <p className="text-neutral text-lg lg:text-xl text-center max-w-screen-lg">
               A community-driven open-source group. Together with the HackersMang community, we host tech talks, workshops, and events aimed at fostering innovation and knowledge-sharing.
@@ -24,7 +24,7 @@ export default function Hero() {
           </div>
 
           {/* Column 2 */}
-          <div className="flex flex-col justify-center items-center gap-1 lg:h-[80dvh]">
+          <div className="flex flex-col justify-center items-center gap-1 h-[30dvh] lg:h-[80dvh]">
             <div className="text-base italic pt-2">Upcoming event</div>
             <h2 className="text-3xl lg:text-6xl outfit-bold text-secondary">HackersMang</h2>
             <h2 className="text-xl lg:text-2xl outfit-extra-light text-neutral curved-underline">2025 April Edition</h2>
@@ -37,7 +37,7 @@ export default function Hero() {
           </div>
 
           {/* Column 3 */}
-          <div className="flex flex-col justify-center items-center w-full gap-1 lg:h-[70dvh]">
+          <div className="flex flex-col justify-center items-center w-full gap-1 h-[80dvh] lg:h-[70dvh]">
             <div className="text-base italic text-center p-2">Recent events</div>
             <Link href="/techmang25" aria-label="TechMang 2025" className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4">
               #TechMang25
@@ -61,7 +61,7 @@ export default function Hero() {
             </Link>
           </div>
 
-          <div className="hidden lg:block w-full">
+          <div className="w-full">
             <SocialMedia />
           </div>
         </div>
