@@ -38,7 +38,7 @@ const CallForSpeaker = ({ registrationLink, registrationStartOn, registrationEnd
                 {/* </Link> */}
                 </div>
                 
-                <CodeOfConduct />
+                {/* <CodeOfConduct /> */}
             </div>
         </div>
     );
