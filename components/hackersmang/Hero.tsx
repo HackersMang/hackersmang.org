@@ -25,9 +25,9 @@ export default function Hero() {
 
           {/* Column 2 */}
           <div className="flex flex-col justify-center items-center gap-1 h-[30dvh] lg:h-[80dvh]">
-            <div className="text-base italic pt-2">Upcoming event</div>
+            <div className="text-base italic pt-2 text-neutral">Upcoming event</div>
             <h2 className="text-3xl lg:text-6xl outfit-bold text-secondary">HackersMang</h2>
-            <h2 className="text-xl lg:text-2xl outfit-extra-light text-neutral curved-underline">2025 April Edition</h2>
+            <h2 className="text-xl lg:text-2xl outfit-extra-light text-secondary">2025 April Edition</h2>
             <p className="text-neutral text-lg lg:text-xl text-center max-w-screen-lg lg:p-6">
               On Saturday, 12th April at UniCourt Mangaluru. Explore exciting lightning talks, insightful demos, and interactive workshops, designed to spark curiosity and expand knowledge.            </p>
             <Link href="/2025-april" aria-label="HackersMang 2025 April Edition" className="flex items-center justify-center gap-2 w-full py-4 text-center text-neutral hover:text-secondary hover:bg-charcoal p-4 outline outline-[1.5px] outline-charcoal">
