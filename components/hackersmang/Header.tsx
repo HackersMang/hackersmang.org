@@ -56,21 +56,24 @@ export default function Header() {
           <div className='lg:w-1/3 flex flex-col justify-between mt-2'>
           </div>
 
-
           <div className='lg:w-1/3 lg:justify-between text-center'>
             <div className='flex flex-col'>
-              <div className='text-xl mt-4 mb-2 italic text-secondary'>
+              <div className='text-xl mt-4 mb-2 italic text-neutral'>
                 Upcoming events
               </div>
-              <Link href="/techmang25" aria-label="2024 November Edition" className='flex flex-row space-x-3 justify-center text-center p-4 text-neutral hover:text-secondary hover:bg-charcoal'>
-                <div className="text-lg font-semibold transition">#TechMang25</div>
+              <Link href="/2025-april" aria-label="HackersMang 2025 April Edition" className='flex flex-row space-x-3 justify-center text-center p-4 text-neutral hover:text-secondary hover:bg-charcoal'>
+                <div className="text-lg font-semibold transition">HackersMang 2025 April</div>
                 <GoArrowUpRight size={24} className='mt-1' />
               </Link>
             </div>
             <div className='flex flex-col'>
-              <div className='text-xl mt-4 mb-2 italic text-secondary'>
+              <div className='text-xl mt-4 mb-2 italic text-neutral'>
                 Recent events
               </div>
+              <Link href="/techmang25" aria-label="#TechMang" className='flex flex-row space-x-3 justify-center text-center p-4 text-neutral hover:text-secondary hover:bg-charcoal'>
+                <div className="text-lg font-semibold transition">#TechMang</div>
+                <GoArrowUpRight size={24} className='mt-1' />
+              </Link>
               <Link href="/2024-november" aria-label="2024 November" className='flex flex-row space-x-3 justify-center text-center p-4 text-neutral hover:text-secondary hover:bg-charcoal'>
                 <div className="text-lg font-semibold transition">HackersMang 2024 November</div>
                 <GoArrowUpRight size={24} className='mt-1' />

@@ -78,7 +78,7 @@ export function HyperText({
         {displayText.map((letter, i) => (
           <motion.span
             key={i}
-            className={cn("font-mono", letter === " " ? "w-3" : "", className)}
+            className={cn(letter === " " ? "w-3" : "", className)}
             {...framerProps}
           >
             {letter}

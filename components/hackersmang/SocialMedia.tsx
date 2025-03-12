@@ -4,7 +4,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 export default function SocialMedia () {
     return (
-        <div className='mt-4 flex flex-col lg:flex-row space-x-3 justify-center text-center outline outline-[1.5px] outline-charcoal p-4 text-neutral'>
+        <div className='mt-4 flex flex-col lg:flex-row space-x-3 justify-center text-center p-4 text-neutral'>
             <div className="text-lg pb-2 lg:pb-0 font-semibold text-neutral">Connect with us</div>
             <div className='flex justify-center lg:justify-start space-x-6'>
                 <Link href="https://www.instagram.com/hackersmang" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-secondary transition">
