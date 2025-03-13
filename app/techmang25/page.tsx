@@ -12,7 +12,7 @@ import Schedule from "../../components/eventpage/Schedule";
 import Intro from "@/components/eventpage/Intro";
 import { EVENT_DETAIL, RESOURCES } from "./constants";
 import CallForSpeaker from "../../components/eventpage/CallForSpeaker";
-import Resources from "./components/Resources";
+import Resources from "../../components/eventpage/Resources";
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://hackersmang.org'),

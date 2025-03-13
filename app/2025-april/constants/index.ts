@@ -105,3 +105,6 @@ export const jsonLd = {
       HERO_CARD_URL,
   ]
 };
+
+// Resources
+export const RESOURCES = [];
