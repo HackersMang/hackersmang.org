@@ -9,14 +9,15 @@ export const EVENT_DETAIL: EventDetailProps = {
   locationUrl: new URL("https://maps.app.goo.gl/bB6HwqDftS4Nq1LT7"),
   happeningOn: new Date("04/12/2025"), // MM/DD/YYYY
 
-  registrationLink: null,
-  registrationStartOn: null,
-  registrationEndOn: null,
-
-  callForSpeakerLink: new URL("https://maps.app.goo.gl/bB6HwqDftS4Nq1LT7"),
+  callForSpeakerLink: new URL("https://sessionize.com/hackersmang-april-2025-edition"),
   callForSpeakerStartOn: new Date("03/08/2025"),
   callForSpeakerEndOn: new Date("04/05/2025"),
 
+  registrationLink: null,
+  registrationStartOn: new Date("03/15/2025"),
+  registrationEndOn: new Date("03/21/2025"),
+
+  isSchedulePublished: false,
   sessionizeApiId: null,
 };
 

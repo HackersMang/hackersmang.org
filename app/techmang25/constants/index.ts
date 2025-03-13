@@ -12,6 +12,7 @@ export const EVENT_DETAIL: EventDetailProps = {
   callForSpeakerLink: new URL("https://sessionize.com/techmang/"),
   callForSpeakerStartOn: new Date("01/05/2025"),
   callForSpeakerEndOn: new Date("01/20/2025"),
+  isSchedulePublished: true,
 };
 
 export const RESOURCES: Resource[] = [

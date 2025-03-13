@@ -10,6 +10,8 @@ export interface EventDetailProps {
     callForSpeakerLink?: URL | null;
     callForSpeakerStartOn?: Date | null;
     callForSpeakerEndOn?: Date | null;
+
+    isSchedulePublished?: boolean;
     sessionizeApiId?: string | null;
 }
 
@@ -83,7 +85,9 @@ export interface SessionListProps {
 
 export interface ScheduleProps {
     sessionId: string | null | undefined;
+    isSchedulePublished?: boolean;
 }
+
 export interface Resource {
     title: string
     speaker: string
@@ -96,4 +100,9 @@ export interface Resource {
 
 export interface ResourceListProps {
     resources: Resource[]
+}
+
+export interface ComingSoonProps {
+    title: string
+    message: string
 }
