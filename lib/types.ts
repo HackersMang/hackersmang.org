@@ -85,7 +85,6 @@ export interface SessionListProps {
 
 export interface ScheduleProps {
     sessionId: string | null | undefined;
-    isSchedulePublished?: boolean;
 }
 
 export interface Resource {
