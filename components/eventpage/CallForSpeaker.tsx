@@ -2,19 +2,28 @@ import { CodeOfConduct } from '@/components/eventpage/CodeOfConduct';
 import { RegisterProps } from '@/lib/types';
 import Link from 'next/link';
 import React from 'react';
+import ComingSoon from './ComingSoon';
 
 const CallForSpeaker = ({ registrationLink, registrationStartOn, registrationEndOn }: RegisterProps): JSX.Element | null => {
       // Convert registration dates to Date objects
     const now = new Date();
     const hasStarted = now >= (registrationStartOn ?? 0);
-    const hasEnded = now > (registrationEndOn ?? 0);
+    const hasEnded = now.getTime() > ((registrationEndOn instanceof Date ? registrationEndOn.getTime() : registrationEndOn ?? 0) + 24 * 60 * 60 * 1000);
 
-      // Render only if registration has started and the link exists
+    // Return null if registration has not started or the link does not exist
     if (!hasStarted || !registrationLink || hasEnded) return null;
 
+    // Return a ComingSoon component if registration has started but the link does not exist.
+    if (hasStarted && !registrationLink) {
+        return (
+            <ComingSoon title="Call For Speakers" message="CFA link will be available soon. Stay tuned! 🌟" />
+        );
+    }
+
+    // Return the Register component if registration has started and the link exists
     return (
-        <div className="w-full flex flex-col items-center justify-center text-center mt-2 lg:mb-6 px-4">
-            <div className="shadow-lg px-4 lg:px-8 pb-6">
+        <div className="w-full flex flex-col items-center justify-center text-center mt-2 px-4">
+            <div className="shadow-lg px-4 lg:px-8">
                 <h3 className="text-xl lg:text-2xl font-light text-primary mt-4">Call For Speakers</h3>
                 <p className="text-lg text-neutral leading-relaxed mb-2">
                     We are looking for:
@@ -27,18 +36,15 @@ const CallForSpeaker = ({ registrationLink, registrationStartOn, registrationEnd
                 <p className="text-lg text-neutral leading-relaxed mt-6 mb-4">
                     This is your chance to inspire and share your knowledge with the tech community. 🌟
                 </p>
-                {/* <Link href={registrationLink?.href} passHref */}
-                <div
+                <Link href={registrationLink?.href} passHref
                     className="inline-block bg-primary text-black font-semibold py-2 px-6 m-4 rounded-full hover:bg-primary-dark transition"
-                    // target="_blank"
-                    // rel="noopener noreferrer"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     >
-                    {/* 🔥 Submit Your Proposal Here */}
-                    Coming Soon!
-                {/* </Link> */}
-                </div>
+                    🔥 Submit Your Proposal Here
+                </Link>
                 
-                {/* <CodeOfConduct /> */}
+                <CodeOfConduct />
             </div>
         </div>
     );

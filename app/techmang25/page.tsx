@@ -12,7 +12,7 @@ import Schedule from "../../components/eventpage/Schedule";
 import Intro from "@/components/eventpage/Intro";
 import { EVENT_DETAIL, RESOURCES } from "./constants";
 import CallForSpeaker from "../../components/eventpage/CallForSpeaker";
-import Resources from "./components/Resources";
+import Resources from "../../components/eventpage/Resources";
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://hackersmang.org'),
@@ -153,7 +153,7 @@ function page() {
                     <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
                     <CallForSpeaker registrationLink={EVENT_DETAIL.callForSpeakerLink} registrationStartOn={EVENT_DETAIL.callForSpeakerStartOn} registrationEndOn={EVENT_DETAIL.callForSpeakerEndOn} />
                     <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl.href} />
-                    <Schedule sessionId={process.env.NEXT_PUBLIC_SESSIONIZE_API_ID} />
+                    <Schedule sessionId={process.env.NEXT_PUBLIC_SESSIONIZE_API_ID} isSchedulePublished={EVENT_DETAIL.isSchedulePublished} />
                     <Resources resources={RESOURCES} />
                     <Register registrationLink={EVENT_DETAIL.registrationLink} registrationStartOn={EVENT_DETAIL.registrationStartOn} registrationEndOn={EVENT_DETAIL.registrationEndOn} />
                     <About />
