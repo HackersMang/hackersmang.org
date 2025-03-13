@@ -7,18 +7,13 @@ import SessionListSkeleton from "@/components/eventpage/SessionListSkeleton";
 import { GridSmart, ScheduleProps, SessionizeSpeakers } from "@/lib/types";
 import { DEMO_API_ID, DUMMY_PROFILE_PICTURE } from "@/lib/constants";
 
-const Schedule = ({ sessionId, isSchedulePublished }: ScheduleProps): JSX.Element => {
+const Schedule = ({ sessionId }: ScheduleProps): JSX.Element => {
     // State variables
     const [scheduleData, setScheduleData] = useState<GridSmart[] | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [fromCache, setFromCache] = useState<boolean>(false);
     const [cachedAt, setCachedAt] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
-
-    // Check if the schedule is published
-    if (!isSchedulePublished) {
-        return <></>;
-    }
 
     const fetchSpeakersAndSchedule = async () => {
         try {
