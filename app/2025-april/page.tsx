@@ -7,11 +7,11 @@ import Venue from "../../components/eventpage/Venue";
 import Particles from "@/components/magicui/particles";
 import Script from 'next/script';
 import Intro from "@/components/eventpage/Intro";
-import { alternates, EVENT_DETAIL, eventMetaData, jsonLd, openGraph, twitter } from "./constants";
+import { alternates, EVENT_DETAIL, eventMetaData, jsonLd, openGraph, RESOURCES, twitter } from "./constants";
 import CallForSpeaker from "../../components/eventpage/CallForSpeaker";
 import { baseMetadata } from "@/lib/basemeta";
 import Register from "@/components/eventpage/Register";
-import Schedule from "@/components/eventpage/Schedule";
+import Resources from "@/components/eventpage/Resources";
 
 export const metadata: Metadata = {
     ...baseMetadata,
@@ -36,8 +36,8 @@ function page() {
                     <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
                     <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl.href} />
                     <CallForSpeaker registrationLink={EVENT_DETAIL.callForSpeakerLink} registrationStartOn={EVENT_DETAIL.callForSpeakerStartOn} registrationEndOn={EVENT_DETAIL.callForSpeakerEndOn} />
-                    <Schedule sessionId={EVENT_DETAIL.sessionizeApiId} />
-                    {/* <Resources resources={RESOURCES} /> */}
+                    {/* <Schedule sessionId={EVENT_DETAIL.sessionizeApiId} /> */}
+                    <Resources resources={RESOURCES} />
                     <Register registrationLink={EVENT_DETAIL.registrationLink} registrationStartOn={EVENT_DETAIL.registrationStartOn} registrationEndOn={EVENT_DETAIL.registrationEndOn} />
                     <Footer />
                 </div>
