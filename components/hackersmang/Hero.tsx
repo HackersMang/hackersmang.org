@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import { GoArrowUpRight } from 'react-icons/go';
 import SocialMedia from './SocialMedia';
+import { Footer } from './Footer';
 
 export default function Hero() {
   return (
@@ -18,7 +19,7 @@ export default function Hero() {
           {/* Column 1 */}
           <div className="flex flex-col justify-center items-center gap-1 h-[50dvh] lg:h-[80dvh]">
             <span className="text-3xl lg:text-8xl outfit-extra-bold text-secondary">Hackerspace Mangaluru</span>
-            <p className="text-neutral text-lg lg:text-xl text-center max-w-screen-lg">
+            <p className="text-neutral text-lg lg:text-xl text-center outfit-extra-light max-w-screen-lg">
               A community-driven open-source group. Together with the HackersMang community, we host tech talks, workshops, and events aimed at fostering innovation and knowledge-sharing.
             </p>
           </div>
@@ -28,7 +29,7 @@ export default function Hero() {
             <div className="text-base italic pt-2 text-neutral">Upcoming event</div>
             <h2 className="text-3xl lg:text-6xl outfit-bold text-secondary">HackersMang</h2>
             <h2 className="text-xl lg:text-2xl outfit-extra-light text-secondary">2025 April Edition</h2>
-            <p className="text-neutral text-lg lg:text-xl text-center max-w-screen-lg lg:p-6">
+            <p className="text-neutral text-lg lg:text-xl text-center outfit-extra-light max-w-screen-lg lg:p-6">
               On Saturday, 12th April at UniCourt Mangaluru. Explore exciting lightning talks, insightful demos, and interactive workshops, designed to spark curiosity and expand knowledge.            </p>
             <Link href="/2025-april" aria-label="HackersMang 2025 April Edition" className="flex items-center justify-center gap-2 w-full py-4 text-center text-neutral hover:text-secondary hover:bg-charcoal p-4 outline outline-[1.5px] outline-charcoal">
               <span className="text-lg outfit-extra-light">Visit event page</span>
@@ -37,8 +38,8 @@ export default function Hero() {
           </div>
 
           {/* Column 3 */}
-          <div className="flex flex-col justify-center items-center w-full gap-1 h-[80dvh] lg:h-[70dvh]">
-            <div className="text-base italic text-center p-2">Recent events</div>
+          <div className="flex flex-col justify-center items-center w-full gap-1 h-[80dvh] lg:h-[70dvh] outfit-extra-light">
+            <div className="text-base italic text-center p-2 text-secondary/90">Recent events</div>
             <Link href="/techmang25" aria-label="TechMang 2025" className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4">
               #TechMang25
               <GoArrowUpRight size={24} />
@@ -67,9 +68,7 @@ export default function Hero() {
         </div>
 
         {/* Bottom Section */}
-        <div className="text-center text-[2rem] md:text-7xl lg:text-[7.5rem] outfit-black text-secondary">
-          Hackerspace Mangaluru
-        </div>
+        <Footer />
       </div>
     </section>
   );

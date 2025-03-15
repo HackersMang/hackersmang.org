@@ -1,5 +1,3 @@
-import Footer from "../../components/eventpage/Footer";
-
 import "@/assets/fonts.css"
 import Speakers from "../../components/eventpage/Speakers";
 import Agendas from "../../components/eventpage/Agendas";
@@ -10,6 +8,7 @@ import Intro from "@/components/eventpage/Intro";
 import Venue from "@/components/eventpage/Venue";
 import Register from "@/components/eventpage/Register";
 import { EVENT_DETAIL, SPEAKERS } from "./constants";
+import { Footer } from "@/components/hackersmang/Footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hackersmang.org'),

@@ -45,7 +45,7 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                 <div className="flex flex-col flex-grow min-w-0 pl-3 md:pl-4 lg:pl-6">
                     <div className="flex justify-between items-start gap-2">
                         <div className="flex-grow">
-                            <h4 className="text-base md:text-xl lg:text-2xl font-bold mb-1">{session.title}</h4>
+                            <h4 className="text-base md:text-xl lg:text-2xl text-secondary font-bold mb-1">{session.title}</h4>
                             <div className="flex items-center gap-1">
                                 <User size={14} className="text-neutral" />
                                 <span className="text-sm text-neutral">{session.speakers[0]?.name ?? "unknown speaker"}</span>

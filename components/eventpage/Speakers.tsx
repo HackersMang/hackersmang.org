@@ -26,7 +26,7 @@ const Speakers = ({ speakers }: { speakers: any[] }): JSX.Element => {
                         />
                     </div>
                     <div className="flex flex-grow flex-col lg:flex-row w-full lg:w-auto lg:items-center">
-                        <div className="flex-1 text-lg md:text-2xl lg:text-3xl lg:group-hover:text-black">
+                        <div className="flex-1 text-lg md:text-2xl lg:text-3xl text-secondary lg:group-hover:text-black">
                             {speaker.socialLinks ? (
                                 <Link href={speaker.socialLinks} rel="noopener noreferrer" target="_blank" className="hover:underline">
                                     {speaker.name}
@@ -35,7 +35,7 @@ const Speakers = ({ speakers }: { speakers: any[] }): JSX.Element => {
                                 <span>{speaker.name}</span>
                             )}
                         </div>
-                        <div className="flex-1 text-sm md:text-xl text-start lg:text-end lg:mx-4 lg:ml-auto text-gray-30 lg:group-hover:text-black">
+                        <div className="flex-1 text-sm md:text-xl text-start lg:text-end lg:mx-4 lg:ml-auto text-neutral lg:group-hover:text-black">
                             {speaker.company}
                         </div>
                     </div>

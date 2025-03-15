@@ -8,7 +8,7 @@
 }
 
 ::selection {
-    @apply bg-white text-black
+    @apply bg-[#d4e20b] text-black
 }
 
 body,

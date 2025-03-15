@@ -1,7 +1,6 @@
 import Header from "@/components/hackersmang/Header";
 import Hero from "@/components/hackersmang/Hero";
 import "@/assets/fonts.css"
-import "@/assets/ai-techverse.css"
 import Particles from "@/components/magicui/particles";
 
 export default function Home() {
