@@ -13,8 +13,8 @@ export const EVENT_DETAIL: EventDetailProps = {
   callForSpeakerStartOn: new Date("03/08/2025"),
   callForSpeakerEndOn: new Date("04/05/2025"),
 
-  registrationLink: null,
-  registrationStartOn: new Date("03/15/2025"),
+  registrationLink: new URL("https://www.tickettailor.com/events/hackerspacemangaluru/1628499"),
+  registrationStartOn: new Date("03/14/2025"),
   registrationEndOn: new Date("03/21/2025"),
 
   isSchedulePublished: false,
