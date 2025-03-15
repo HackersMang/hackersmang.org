@@ -26,9 +26,9 @@ const Register = ({ registrationLink, registrationStartOn, registrationEndOn }: 
       <div className="shadow-lg px-4 lg:px-8 py-6 rounded-lg">
         <h3 className="text-xl lg:text-2xl font-light text-primary mt-4">RSVP Route</h3>
 
-        <p className="text-lg text-neutral leading-relaxed mt-2">
+        {/* <p className="text-lg text-neutral leading-relaxed mt-2">
           This is your chance to learn from and get inspired by tech enthusiasts. 🌟
-        </p>
+        </p> */}
 
         <Link
           href={registrationLink?.href ?? "#"}
