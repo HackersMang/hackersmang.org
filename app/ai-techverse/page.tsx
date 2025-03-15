@@ -1,4 +1,3 @@
-import "@/assets/ai-techverse.css"
 import "@/assets/fonts.css"
 import { Metadata } from "next";
 import Particles from "@/components/magicui/particles";
@@ -7,9 +6,9 @@ import Intro from "@/components/eventpage/Intro";
 import { EVENT_DETAIL, SPEAKERS } from "./constants";
 import Venue from "@/components/eventpage/Venue";
 import Register from "@/components/eventpage/Register";
-import Footer from "../../components/eventpage/Footer";
 import Agendas from "@/components/eventpage/Agendas";
 import Speakers from "@/components/eventpage/Speakers";
+import { Footer } from "@/components/hackersmang/Footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hackersmang.org'),

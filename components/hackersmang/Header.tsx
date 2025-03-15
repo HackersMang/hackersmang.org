@@ -58,37 +58,37 @@ export default function Header() {
 
           <div className='lg:w-1/3 lg:justify-between text-center'>
             <div className='flex flex-col'>
-              <div className='text-xl mt-4 mb-2 italic text-neutral'>
+              <div className='text-xl mt-4 mb-2 italic text-secondary'>
                 Upcoming events
               </div>
               <Link href="/2025-april" aria-label="HackersMang 2025 April Edition" className='flex flex-row space-x-3 justify-center text-center p-4 text-neutral hover:text-secondary hover:bg-charcoal'>
                 <div className="text-lg font-semibold transition">HackersMang 2025 April</div>
-                <GoArrowUpRight size={24} className='mt-1' />
+                <GoArrowUpRight size={24} className='mt-1 text-neutral' />
               </Link>
             </div>
             <div className='flex flex-col'>
-              <div className='text-xl mt-4 mb-2 italic text-neutral'>
+              <div className='text-xl mt-4 mb-2 italic text-secondary'>
                 Recent events
               </div>
               <Link href="/techmang25" aria-label="#TechMang" className='flex flex-row space-x-3 justify-center text-center p-4 text-neutral hover:text-secondary hover:bg-charcoal'>
-                <div className="text-lg font-semibold transition">#TechMang</div>
-                <GoArrowUpRight size={24} className='mt-1' />
+                <div className="text-lg font-semibold transition">#TechMang25</div>
+                <GoArrowUpRight size={24} className='mt-1 text-neutral' />
               </Link>
               <Link href="/2024-november" aria-label="2024 November" className='flex flex-row space-x-3 justify-center text-center p-4 text-neutral hover:text-secondary hover:bg-charcoal'>
                 <div className="text-lg font-semibold transition">HackersMang 2024 November</div>
-                <GoArrowUpRight size={24} className='mt-1' />
+                <GoArrowUpRight size={24} className='mt-1 text-neutral' />
               </Link>
               <Link href="/ai-techverse" aria-label="Ai TechVerse" className='flex flex-row space-x-3 justify-center text-center p-4 text-neutral hover:text-secondary hover:bg-charcoal'>
                 <div className="text-lg font-semibold transition">Ai TechVerse by HackersMang</div>
-                <GoArrowUpRight size={24} className='mt-1' />
+                <GoArrowUpRight size={24} className='mt-1 text-neutral' />
               </Link>
               <Link href="https://www.eventbrite.com/e/mangaluru-tech-day-2024-tickets-795844441147?aff=oddtdtcreator" aria-label="Mangaluru Tech Day 2024" className='flex flex-row space-x-3 justify-center text-center p-4 text-neutral hover:text-secondary hover:bg-charcoal'>
                 <div className="text-lg font-semibold transition">Mangaluru Tech Day 2024</div>
-                <GoArrowUpRight size={24} className='mt-1' />
+                <GoArrowUpRight size={24} className='mt-1 text-neutral' />
               </Link>
               <Link href="https://www.eventbrite.com/e/mangaluru-tech-day-3-techmang3-tickets-82910289909?aff=oddtdtcreator" aria-label="Mangaluru Tech Day 2024" className='flex flex-row space-x-3 justify-center text-center p-4 text-neutral hover:text-secondary hover:bg-charcoal'>
                 <div className="text-lg font-semibold transition">Mangaluru Tech Day 2023</div>
-                <GoArrowUpRight size={24} className='mt-1' />
+                <GoArrowUpRight size={24} className='mt-1 text-neutral' />
               </Link>
             </div>
           </div>

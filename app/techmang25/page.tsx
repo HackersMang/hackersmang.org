@@ -1,8 +1,6 @@
-import "@/assets/ai-techverse.css"
 import "@/assets/fonts.css"
 import { Metadata } from "next";
 import Header from "@/components/hackersmang/Header";
-import Footer from "../../components/eventpage/Footer";
 import Venue from "../../components/eventpage/Venue";
 import About from "./components/About";
 import Particles from "@/components/magicui/particles";
@@ -13,6 +11,7 @@ import Intro from "@/components/eventpage/Intro";
 import { EVENT_DETAIL, RESOURCES } from "./constants";
 import CallForSpeaker from "../../components/eventpage/CallForSpeaker";
 import Resources from "../../components/eventpage/Resources";
+import { Footer } from "@/components/hackersmang/Footer";
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://hackersmang.org'),

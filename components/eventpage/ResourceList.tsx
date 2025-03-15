@@ -12,7 +12,7 @@ const ResourceList: React.FC<ResourceListProps> = ({ resources }) => {
         <Card key={resource.title} className="bg-[#1d1d1c] border-zinc-800">
           <CardHeader className="lg:min-h-32">
             <div>
-              <CardTitle className="text-base md:text-xl font-bold">{resource.title}</CardTitle>
+              <CardTitle className="text-secondary text-base md:text-xl font-bold">{resource.title}</CardTitle>
               <CardDescription className="text-neutral mt-2">
                 Presented by {resource.speaker}
               </CardDescription>
@@ -24,13 +24,13 @@ const ResourceList: React.FC<ResourceListProps> = ({ resources }) => {
                 <Button
                   key={index}
                   variant="outline"
-                  className="w-full justify-start border-neutral/40 hover:bg-neutral/40"
+                  className="w-full justify-start border-neutral/40 hover:bg-neutral/40 text-neutral"
                   asChild
                 >
                   <Link href={item.url} target="_blank" rel="noopener noreferrer">
-                    {item.type === "presentation" && <FileText className="mr-2 h-4 w-4" />}
-                    {item.type === "code" && <Code className="mr-2 h-4 w-4" />}
-                    {item.type === "external" && <ExternalLink className="mr-2 h-4 w-4" />}
+                    {item.type === "presentation" && <FileText className="mr-2 h-4 w-4 text-neutral" />}
+                    {item.type === "code" && <Code className="mr-2 h-4 w-4 text-neutral" />}
+                    {item.type === "external" && <ExternalLink className="mr-2 h-4 w-4 text-neutral" />}
                     {item.title}
                   </Link>
                 </Button>

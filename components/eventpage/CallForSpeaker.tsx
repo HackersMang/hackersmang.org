@@ -3,9 +3,10 @@ import { RegisterProps } from '@/lib/types';
 import Link from 'next/link';
 import React from 'react';
 import ComingSoon from './ComingSoon';
+import { ExternalLink } from 'lucide-react';
 
 const CallForSpeaker = ({ registrationLink, registrationStartOn, registrationEndOn }: RegisterProps): JSX.Element | null => {
-      // Convert registration dates to Date objects
+    // Convert registration dates to Date objects
     const now = new Date();
     const hasStarted = now >= (registrationStartOn ?? 0);
     const hasEnded = now.getTime() > ((registrationEndOn instanceof Date ? registrationEndOn.getTime() : registrationEndOn ?? 0) + 24 * 60 * 60 * 1000);
@@ -36,15 +37,26 @@ const CallForSpeaker = ({ registrationLink, registrationStartOn, registrationEnd
                 <p className="text-lg text-neutral leading-relaxed mt-6 mb-4">
                     This is your chance to inspire and share your knowledge with the tech community. 🌟
                 </p>
-                <Link href={registrationLink?.href} passHref
+                {/* <Link href={registrationLink?.href} passHref
                     className="inline-block bg-primary text-black font-semibold py-2 px-6 m-4 rounded-full hover:bg-primary-dark transition"
                     target="_blank"
                     rel="noopener noreferrer"
-                    >
+                >
                     🔥 Submit Your Proposal Here
+                </Link> */}
+                <Link
+                    href={registrationLink?.href ?? "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg font-semibold rounded-sm transition-all
+                            bg-primary hover:bg-primary/90"
+                    aria-disabled={hasEnded}
+                >
+                    <span className="text-black">{hasEnded ? "Registration Closed" : "Click here to submit your proposal"}</span>
+                    {!hasEnded && <ExternalLink size={24} className="text-black" />}
                 </Link>
-                
-                {/* <CodeOfConduct /> */}
+
+                <CodeOfConduct />
             </div>
         </div>
     );
