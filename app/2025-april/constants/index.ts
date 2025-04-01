@@ -11,14 +11,14 @@ export const EVENT_DETAIL: EventDetailProps = {
 
   callForSpeakerLink: new URL("https://sessionize.com/hackersmang-april-2025-edition"),
   callForSpeakerStartOn: new Date("03/08/2025"),
-  callForSpeakerEndOn: new Date("04/05/2025"),
+  callForSpeakerEndOn: new Date("31/04/2025"),
 
   registrationLink: new URL("https://www.tickettailor.com/events/hackerspacemangaluru/1628499"),
   registrationStartOn: new Date("03/14/2025"),
   registrationEndOn: new Date("03/21/2025"),
 
   isSchedulePublished: false,
-  sessionizeApiId: null,
+  sessionizeApiId: "oav57ftu",
 };
 
 // Hero card

@@ -11,6 +11,7 @@ import { baseMetadata } from "@/lib/basemeta";
 import Register from "@/components/eventpage/Register";
 import Resources from "@/components/eventpage/Resources";
 import { Footer } from "@/components/hackersmang/Footer";
+import Schedule from "@/components/eventpage/Schedule";
 
 export const metadata: Metadata = {
     ...baseMetadata,
@@ -34,9 +35,8 @@ function page() {
                     <Header />
                     <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
                     <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl.href} />
-                    <Register registrationLink={EVENT_DETAIL.registrationLink} registrationStartOn={EVENT_DETAIL.registrationStartOn} registrationEndOn={EVENT_DETAIL.registrationEndOn} />
-                    <CallForSpeaker registrationLink={EVENT_DETAIL.callForSpeakerLink} registrationStartOn={EVENT_DETAIL.callForSpeakerStartOn} registrationEndOn={EVENT_DETAIL.callForSpeakerEndOn} />
                     {/* <Schedule sessionId={EVENT_DETAIL.sessionizeApiId} /> */}
+                    <Register registrationLink={EVENT_DETAIL.registrationLink} registrationStartOn={EVENT_DETAIL.registrationStartOn} registrationEndOn={EVENT_DETAIL.registrationEndOn} />
                     <Resources resources={RESOURCES} />
                     <Footer />
                 </div>
