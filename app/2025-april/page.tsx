@@ -35,7 +35,7 @@ function page() {
                     <Header />
                     <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
                     <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl.href} />
-                    {/* <Schedule sessionId={EVENT_DETAIL.sessionizeApiId} /> */}
+                    <Schedule sessionId={EVENT_DETAIL.sessionizeApiId} />
                     <Register registrationLink={EVENT_DETAIL.registrationLink} registrationStartOn={EVENT_DETAIL.registrationStartOn} registrationEndOn={EVENT_DETAIL.registrationEndOn} />
                     <Resources resources={RESOURCES} />
                     <Footer />
