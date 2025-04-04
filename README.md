@@ -3,7 +3,7 @@
 </p>
 <h1 align="center">🎉 Welcome to Hackerspace Mangaluru! 🎉</h1>
 
-Hey there, awesome human (or sentient AI 👀)!
+Hey there, awesome human!
 
 Welcome to the **Hackerspace Mangaluru** official website repository—Mangaluru’s ultimate geeky playground! 🎉🤓 We host **tech talks, workshops, and events** (yes, free snacks sometimes 🍕👀) to spread knowledge and fuel innovation like butter on a sizzling hot dosa! 🧈🔥 So grab your keyboards, summon your inner coding wizard 🧙‍♂️, and let’s build something awesome together! 🚀😆
 
