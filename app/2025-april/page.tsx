@@ -2,7 +2,7 @@ import "@/assets/fonts.css"
 import { Metadata } from "next";
 import Header from "@/components/hackersmang/Header";
 import Venue from "../../components/eventpage/Venue";
-import Particles from "@/components/magicui/particles";
+import PerformanceParticles from "@/components/magicui/performance-particles";
 import Script from 'next/script';
 import Intro from "@/components/eventpage/Intro";
 import { alternates, EVENT_DETAIL, eventMetaData, jsonLd, openGraph, RESOURCES, twitter } from "./constants";
@@ -35,7 +35,7 @@ function page() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
             <main className="relative bg-grainy outfit-extra-light">
-                <Particles />
+                <PerformanceParticles />
                 <div className="relative z-10">
                     <Header />
                     <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
