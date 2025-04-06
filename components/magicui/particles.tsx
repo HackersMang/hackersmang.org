@@ -58,6 +58,24 @@ function isMobile(): boolean {
   ) || (window.innerWidth <= 768);
 }
 
+type Circle = {
+  x: number;
+  y: number;
+  translateX: number;
+  translateY: number;
+  size: number;
+  alpha: number;
+  targetAlpha: number;
+  dx: number;
+  dy: number;
+  magnetism: number;
+};
+
+// Extended array type with animation timestamp
+interface CirclesArray extends Array<Circle> {
+  _lastFrameTime?: number;
+}
+
 const Particles: React.FC<ParticlesProps> = ({
   className = "absolute inset-0 z-0",
   quantity = 100,
@@ -73,7 +91,7 @@ const Particles: React.FC<ParticlesProps> = ({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const canvasContainerRef = useRef<HTMLDivElement>(null);
   const context = useRef<CanvasRenderingContext2D | null>(null);
-  const circles = useRef<any[]>([]);
+  const circles = useRef<CirclesArray>([]);
   const mousePosition = MousePosition();
   const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 });
@@ -147,19 +165,6 @@ const Particles: React.FC<ParticlesProps> = ({
         mouse.current.y = y;
       }
     }
-  };
-
-  type Circle = {
-    x: number;
-    y: number;
-    translateX: number;
-    translateY: number;
-    size: number;
-    alpha: number;
-    targetAlpha: number;
-    dx: number;
-    dy: number;
-    magnetism: number;
   };
 
   const resizeCanvas = () => {
@@ -278,7 +283,7 @@ const Particles: React.FC<ParticlesProps> = ({
       circles.current._lastFrameTime = now;
     }
     
-    const elapsed = now - circles.current._lastFrameTime;
+    const elapsed = now - (circles.current._lastFrameTime || 0);
     const shouldDraw = elapsed > (1000 / 30) * frameSkip;
     
     if (shouldDraw || !isMobileDevice.current) {

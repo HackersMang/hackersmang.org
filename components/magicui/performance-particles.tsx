@@ -3,32 +3,44 @@
 import React, { useEffect, useState } from "react";
 import Particles from "./particles";
 
+// Add interfaces for additional Navigator properties
+interface NavigatorWithConnection extends Navigator {
+  connection?: {
+    effectiveType?: string;
+    saveData?: boolean;
+  };
+  deviceMemory?: number;
+}
+
 // Performance detection function
 const detectLowEndDevice = (): boolean => {
   if (typeof window === 'undefined') return false;
   
+  // Cast navigator to extended type
+  const nav = navigator as NavigatorWithConnection;
+  
   // Check for mobile device
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
+    nav.userAgent
   );
   
   // Check for low-end device based on hardware concurrency
-  const isLowCPU = navigator.hardwareConcurrency !== undefined && navigator.hardwareConcurrency <= 4;
+  const isLowCPU = nav.hardwareConcurrency !== undefined && nav.hardwareConcurrency <= 4;
   
   // Check for small screen
   const isSmallScreen = window.innerWidth < 768;
   
   // Check for slow connection
-  const isSlowConnection = navigator.connection && 
-    (navigator.connection.effectiveType === 'slow-2g' || 
-     navigator.connection.effectiveType === '2g' ||
-     navigator.connection.saveData === true);
+  const isSlowConnection = nav.connection && 
+    ((nav.connection.effectiveType === 'slow-2g' || 
+     nav.connection.effectiveType === '2g') ||
+     nav.connection.saveData === true);
   
   // Check memory if available (Chrome-only)
-  const isLowMemory = navigator.deviceMemory !== undefined && navigator.deviceMemory < 4;
+  const isLowMemory = nav.deviceMemory !== undefined && nav.deviceMemory < 4;
   
   // Determine if device is low-end
-  return (isMobile && isSmallScreen && (isLowCPU || isLowMemory || isSlowConnection));
+  return (isMobile && isSmallScreen && (isLowCPU || isLowMemory || !!isSlowConnection));
 };
 
 interface PerformanceParticlesProps {
