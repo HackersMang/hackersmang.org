@@ -53,9 +53,14 @@ export const EVENT_DETAIL: EventDetailProps = {
   title: "HackersMang",
   subtitle: "2024 November Edition",
   locationName: "UniCourt Mangaluru",
-  locationUrl: new URL("https://maps.app.goo.gl/bB6HwqDftS4Nq1LT7"),
+  locationUrl: "https://maps.app.goo.gl/bB6HwqDftS4Nq1LT7",
   happeningOn: new Date("11/23/2024"), // MM/DD/YYYY
-  registrationLink: new URL('https://www.tickettailor.com/events/hackerspacemangaluru/1475735'),
+  tracks: [
+    {
+      name: "Main Track",
+      registrationLink: "https://www.tickettailor.com/events/hackerspacemangaluru/1475735"
+    }
+  ],
   registrationStartOn: new Date("11/20/2024"), // MM/DD/YYYY
   registrationEndOn: new Date("11/23/2024"),
 };

@@ -9,6 +9,7 @@ import Venue from "@/components/eventpage/Venue";
 import Register from "@/components/eventpage/Register";
 import { EVENT_DETAIL, SPEAKERS } from "./constants";
 import { Footer } from "@/components/hackersmang/Footer";
+import { TrackRegistration } from "@/lib/types";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hackersmang.org'),
@@ -66,18 +67,25 @@ export const metadata: Metadata = {
 };
 
 function page() {
+  // Extract the registration link from the first track for backward compatibility
+  const registrationLink = EVENT_DETAIL.tracks?.[0]?.registrationLink || null;
+
   return (
     <main className="relative bg-grainy outfit-extra-light">
       <Particles />
       <div className="relative z-10">
         <Header />
         <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
-        <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl.href} />
+        <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
         
         <Agendas speakers={SPEAKERS} />
         <Speakers speakers={SPEAKERS} />
 
-        <Register registrationLink={EVENT_DETAIL.registrationLink} registrationStartOn={EVENT_DETAIL.registrationStartOn} registrationEndOn={EVENT_DETAIL.registrationEndOn} />
+        <Register 
+          registrationLink={registrationLink} 
+          registrationStartOn={EVENT_DETAIL.registrationStartOn} 
+          registrationEndOn={EVENT_DETAIL.registrationEndOn} 
+        />
         <Footer />
       </div>
     </main>

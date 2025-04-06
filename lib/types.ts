@@ -30,7 +30,7 @@ export interface VenueInfoProps {
 }
 
 export interface RegisterProps {
-    registrationLink?: URL | null;
+    registrationLink?: string | null;
     registrationStartOn?: Date | null;
     registrationEndOn?: Date | null;
 }
