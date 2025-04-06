@@ -45,7 +45,7 @@ const CallForSpeaker = ({ registrationLink, registrationStartOn, registrationEnd
                     🔥 Submit Your Proposal Here
                 </Link> */}
                 <Link
-                    href={registrationLink?.href ?? "#"}
+                    href={registrationLink ?? "#"}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg font-semibold rounded-sm transition-all

@@ -18,20 +18,7 @@ html {
     background-color: black;
 }
 
-/* Add this to your global CSS file or a relevant CSS module */
-.no-scrollbar::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-}
-
-.no-scrollbar {
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
-}
-
-/* Hide the custom cursor by default */
+/* Custom cursor styles */
 .custom-cursor {
     @apply hidden lg:flex h-4 w-4 top-0 bottom-0 z-50 fixed rounded-full bg-[#d4e20b] transform -translate-x-1/2 -translate-y-1/2 pointer-events-none mix-blend-difference p-2 justify-center items-center;
 }
@@ -39,7 +26,6 @@ html {
 .cursor-text {
     @apply text-xs font-extrabold hidden;
 }
-
 
 .curved-underline {
     position: relative;
