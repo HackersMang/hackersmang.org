@@ -138,6 +138,9 @@ const jsonLd = {
 };
 
 function page() {
+    // Extract registration link from the first track for backward compatibility
+    const registrationLink = EVENT_DETAIL.tracks?.[0]?.registrationLink || null;
+
     return (
         <>
             <Script
@@ -151,10 +154,14 @@ function page() {
                     <Header />
                     <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
                     <CallForSpeaker registrationLink={EVENT_DETAIL.callForSpeakerLink} registrationStartOn={EVENT_DETAIL.callForSpeakerStartOn} registrationEndOn={EVENT_DETAIL.callForSpeakerEndOn} />
-                    <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl.href} />
+                    <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
                     <Schedule sessionId={process.env.NEXT_PUBLIC_SESSIONIZE_API_ID} />
                     <Resources resources={RESOURCES} />
-                    <Register registrationLink={EVENT_DETAIL.registrationLink} registrationStartOn={EVENT_DETAIL.registrationStartOn} registrationEndOn={EVENT_DETAIL.registrationEndOn} />
+                    <Register 
+                        registrationLink={registrationLink} 
+                        registrationStartOn={EVENT_DETAIL.registrationStartOn} 
+                        registrationEndOn={EVENT_DETAIL.registrationEndOn} 
+                    />
                     <About />
                     <Footer />
                 </div>
