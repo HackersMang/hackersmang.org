@@ -3,7 +3,6 @@ import { Metadata } from "next";
 import Header from "@/components/hackersmang/Header";
 import Venue from "../../components/eventpage/Venue";
 import About from "./components/About";
-import PerformanceParticles from "@/components/magicui/performance-particles";
 import Script from 'next/script';
 import Register from "../../components/eventpage/Register";
 import Schedule from "../../components/eventpage/Schedule";
@@ -149,7 +148,6 @@ function page() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
             <main className="relative bg-grainy outfit-extra-light">
-                <PerformanceParticles />
                 <div className="relative z-10">
                     <Header />
                     <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
