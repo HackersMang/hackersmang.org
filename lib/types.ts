@@ -3,11 +3,14 @@ export interface EventDetailProps {
     subtitle?: string;
     happeningOn: Date;
     locationName: string;
-    locationUrl: URL;
-    registrationLink?: URL | null;
+    locationUrl: string;
+    tracks: {
+        name: string;
+        registrationLink: string | null;
+    }[];
     registrationStartOn?: Date | null;
     registrationEndOn?: Date | null;
-    callForSpeakerLink?: URL | null;
+    callForSpeakerLink?: string | null;
     callForSpeakerStartOn?: Date | null;
     callForSpeakerEndOn?: Date | null;
 
@@ -104,4 +107,15 @@ export interface ResourceListProps {
 export interface ComingSoonProps {
     title: string
     message: string
+}
+
+export interface TrackRegistration {
+    track: string;
+    registrationLink: string | null;
+}
+
+export interface ScheduleWithRegisterProps extends ScheduleProps {
+    trackRegistrations: TrackRegistration[];
+    registrationStartOn?: Date | null;
+    registrationEndOn?: Date | null;
 }
