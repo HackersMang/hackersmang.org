@@ -21,6 +21,7 @@ export async function GET(req: Request, { params }: { params: { type: string } }
 
     try {
         const response = await fetch(apiEndpoint, {
+            cache: "no-store",
             headers: {
                 "Cache-Control": "no-store", // ✅ Force fresh data
             },
