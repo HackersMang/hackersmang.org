@@ -6,12 +6,11 @@ import Particles from "@/components/magicui/particles";
 import Script from 'next/script';
 import Intro from "@/components/eventpage/Intro";
 import { alternates, EVENT_DETAIL, eventMetaData, jsonLd, openGraph, RESOURCES, twitter } from "./constants";
-import CallForSpeaker from "../../components/eventpage/CallForSpeaker";
 import { baseMetadata } from "@/lib/basemeta";
-import Register from "@/components/eventpage/Register";
 import Resources from "@/components/eventpage/Resources";
 import { Footer } from "@/components/hackersmang/Footer";
-import Schedule from "@/components/eventpage/Schedule";
+import ScheduleWithRegister from "@/components/eventpage/ScheduleWithRegister";
+import { TrackRegistration } from "@/lib/types";
 
 export const metadata: Metadata = {
     ...baseMetadata,
@@ -22,6 +21,12 @@ export const metadata: Metadata = {
 };
 
 function page() {
+    // Map EVENT_DETAIL tracks to TrackRegistration format
+    const trackRegistrations: TrackRegistration[] = EVENT_DETAIL.tracks.map(track => ({
+        track: track.name,
+        registrationLink: track.registrationLink
+    }));
+
     return (
         <>
             <Script
@@ -34,9 +39,13 @@ function page() {
                 <div className="relative z-10">
                     <Header />
                     <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
-                    <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl.href} />
-                    <Schedule sessionId={EVENT_DETAIL.sessionizeApiId} />
-                    <Register registrationLink={EVENT_DETAIL.registrationLink} registrationStartOn={EVENT_DETAIL.registrationStartOn} registrationEndOn={EVENT_DETAIL.registrationEndOn} />
+                    <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
+                    <ScheduleWithRegister 
+                        sessionId={EVENT_DETAIL.sessionizeApiId}
+                        trackRegistrations={trackRegistrations}
+                        registrationStartOn={EVENT_DETAIL.registrationStartOn}
+                        registrationEndOn={EVENT_DETAIL.registrationEndOn}
+                    />
                     <Resources resources={RESOURCES} />
                     <Footer />
                 </div>

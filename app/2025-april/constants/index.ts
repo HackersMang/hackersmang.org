@@ -6,14 +6,24 @@ export const EVENT_DETAIL: EventDetailProps = {
   subtitle: "2025 April Edition",
 
   locationName: "UniCourt Mangaluru",
-  locationUrl: new URL("https://maps.app.goo.gl/bB6HwqDftS4Nq1LT7"),
+  locationUrl: "https://maps.app.goo.gl/bB6HwqDftS4Nq1LT7",
   happeningOn: new Date("04/12/2025"), // MM/DD/YYYY
 
-  callForSpeakerLink: new URL("https://sessionize.com/hackersmang-april-2025-edition"),
+  tracks: [
+    {
+      name: "AI Workshops",
+      registrationLink: "https://www.tickettailor.com/events/hackerspacemangaluru/1657140"
+    },
+    {
+      name: "Tech Talks [Web, AI, IOT]",
+      registrationLink: "https://www.tickettailor.com/events/hackerspacemangaluru/1628499"
+    }
+  ],
+
+  callForSpeakerLink: "https://sessionize.com/hackersmang-april-2025-edition",
   callForSpeakerStartOn: new Date("03/08/2025"),
   callForSpeakerEndOn: new Date("31/04/2025"),
 
-  registrationLink: new URL("https://www.tickettailor.com/events/hackerspacemangaluru/1628499"),
   registrationStartOn: new Date("03/14/2025"),
   registrationEndOn: new Date("05/11/2025"),
 
