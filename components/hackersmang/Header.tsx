@@ -4,8 +4,6 @@ import { useState } from 'react'
 import Image from "next/image"
 import { HyperText } from "@/components/magicui/hyper-text"
 import Link from "next/link"
-import { GoArrowUpRight } from 'react-icons/go'
-import MenuFooter from './MenuFooter'
 import SlidingMenu from './SlidingMenu'
 
 export default function Header() {
@@ -34,7 +32,12 @@ export default function Header() {
 
           {/* Menu Button */}
           <div className="h-full w-20 lg:w-36 flex justify-center items-center outline outline-[1.5px] outline-charcoal text-sm p-0">
-            <button onClick={toggleMenu} className="w-full h-full flex items-center justify-center">
+            <button 
+              onClick={toggleMenu} 
+              className="w-full h-full flex items-center justify-center"
+              aria-expanded={isMenuOpen}
+              aria-label={isMenuOpen ? "Close menu" : "Open events menu"}
+            >
               <HyperText
                 className="outfit-bold text-secondary cursor-pointer"
                 text={isMenuOpen ? "CLOSE" : "EVENTS"}
