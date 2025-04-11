@@ -2,7 +2,6 @@ import "@/assets/fonts.css"
 import Speakers from "../../components/eventpage/Speakers";
 import Agendas from "../../components/eventpage/Agendas";
 import { Metadata } from "next";
-import PerformanceParticles from "@/components/magicui/performance-particles";
 import Header from "@/components/hackersmang/Header";
 import Intro from "@/components/eventpage/Intro";
 import Venue from "@/components/eventpage/Venue";
@@ -72,7 +71,6 @@ function page() {
 
   return (
     <main className="relative bg-grainy outfit-extra-light">
-      <PerformanceParticles />
       <div className="relative z-10">
         <Header />
         <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />

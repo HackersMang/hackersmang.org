@@ -32,7 +32,7 @@ const Intro = ({ title, subtitle }: IntroProps): JSX.Element => {
           {title}
         </h1>
         {subtitle && (
-          <h2 className="text-xl text-neutral lg:text-3xl mx-3 text-center font-light">
+          <h2 className="text-xl text-neutral lg:text-3xl mx-3 mt-2 text-center font-light">
             {processSubtitle(subtitle)}
           </h2>
         )}
