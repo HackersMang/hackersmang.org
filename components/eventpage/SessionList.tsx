@@ -81,7 +81,7 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
             <div className="md:hidden">
                 <button
                     onClick={toggleExpand}
-                    className="w-full px-4 py-2 flex items-center justify-center text-xs text-primary hover:text-primary/90 focus:outline-none border-t border-neutral/20"
+                    className="w-full px-4 py-2 flex items-center justify-center text-xs text-primary/50 focus:outline-none border-t border-neutral/20"
                 >
                     {isExpanded ? (
                         <ChevronUp size={14} className="ml-1" />
