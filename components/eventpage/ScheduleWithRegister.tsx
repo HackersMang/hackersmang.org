@@ -109,7 +109,7 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                     href={trackRegistration.registrationLink ?? "#"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full max-w-md py-4 text-center text-lg font-semibold rounded-sm transition-all
+                    className="flex items-center justify-center gap-2 w-full max-w-md p-4 text-center text-lg font-semibold rounded-sm transition-all
                         bg-primary hover:bg-primary/90"
                     aria-disabled={hasEnded}
                 >
