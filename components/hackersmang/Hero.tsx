@@ -34,7 +34,7 @@ export default function Hero() {
             <Link
               href="/2025-april"
               aria-label="HackersMang 2025 April Edition"
-              className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-primary hover:bg-charcoal p-4 active:scale-95 transition-transform"
+              className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform"
             >
               Visit event page
               <GoArrowUpRight size={24} />
