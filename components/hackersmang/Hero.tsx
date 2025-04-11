@@ -51,50 +51,40 @@ export default function Hero() {
               aria-label="TechMang 2025" 
               className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform"
             >
-              <div className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral p-4">
-                #TechMang25
-                <GoArrowUpRight size={24} />
-              </div>
+              #TechMang25
+              <GoArrowUpRight size={24} />
             </Link>
             <Link 
               href="/2024-november" 
               aria-label="2024 November Edition" 
               className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform"
             >
-              <div className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral p-4">
-                HackersMang 2024 November
-                <GoArrowUpRight size={24} />
-              </div>
+              HackersMang 2024 November
+              <GoArrowUpRight size={24} />
             </Link>
             <Link 
               href="/ai-techverse" 
               aria-label="Ai TechVerse" 
               className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform"
             >
-              <div className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral p-4">
-                Ai TechVerse by HackersMang
-                <GoArrowUpRight size={24} />
-              </div>
+              Ai TechVerse by HackersMang
+              <GoArrowUpRight size={24} />
             </Link>
             <Link 
               href="https://www.eventbrite.com/e/mangaluru-tech-day-2024-tickets-795844441147?aff=oddtdtcreator" 
               aria-label="Mangaluru Tech Day 2024" 
               className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform"
             >
-              <div className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral p-4">
-                Mangaluru Tech Day 2024
-                <GoArrowUpRight size={24} />
-              </div>
+              Mangaluru Tech Day 2024
+              <GoArrowUpRight size={24} />
             </Link>
             <Link 
               href="https://www.eventbrite.com/e/mangaluru-tech-day-3-techmang3-tickets-82910289909?aff=oddtdtcreator" 
               aria-label="Mangaluru Tech Day 2023" 
               className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform"
             >
-              <div className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral p-4">
-                Mangaluru Tech Day 2023
-                <GoArrowUpRight size={24} />
-              </div>
+              Mangaluru Tech Day 2023
+              <GoArrowUpRight size={24} />
             </Link>
           </div>
 
