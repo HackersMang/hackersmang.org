@@ -2,8 +2,8 @@ import { SITE_CREATOR, SITE_NAME, SITE_URL } from "@/lib/basemeta";
 import { EventDetailProps } from "@/lib/types";
 
 export const EVENT_DETAIL: EventDetailProps = {
-  title: "HackersMang",
-  subtitle: "2025 April Edition",
+  title: "#HMApr25",
+  subtitle: "HackersMang, 2025 April Edition",
 
   locationName: "UniCourt Mangaluru",
   locationUrl: "https://maps.app.goo.gl/bB6HwqDftS4Nq1LT7",
