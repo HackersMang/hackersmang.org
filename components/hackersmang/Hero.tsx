@@ -31,7 +31,7 @@ export default function Hero() {
             <h2 className="text-xl lg:text-2xl outfit-extra-light text-secondary">HackersMang, 2025 April Edition</h2>
             <p className="text-neutral text-lg lg:text-xl text-center outfit-extra-light max-w-screen-lg px-4 lg:px-6">
               On Saturday, 12th April at UniCourt Mangaluru. Explore exciting lightning talks, insightful demos, and interactive workshops, designed to spark curiosity and expand knowledge.</p>
-            <div className="w-full max-w-md relative z-10 mt-4">
+            <div className="w-full max-w-screen-lg relative z-10 mt-4">
               <Link
                 href="/2025-april"
                 aria-label="HackersMang 2025 April Edition"
@@ -44,7 +44,7 @@ export default function Hero() {
           </div>
 
           {/* Column 3 */}
-          <div className="flex flex-col justify-center items-center w-full gap-1 h-[80dvh] lg:h-[70dvh] outfit-extra-light mt-8 lg:mt-0">
+          <div className="flex flex-col justify-center items-center w-full gap-1 h-[80dvh] lg:h-[65dvh] outfit-extra-light mt-8 lg:mt-0">
             <div className="text-base italic text-center p-2 text-secondary/90">Recent events</div>
             <div className="w-full max-w-md space-y-2 relative z-10">
               <Link
