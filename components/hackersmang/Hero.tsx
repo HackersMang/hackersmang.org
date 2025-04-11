@@ -34,9 +34,7 @@ export default function Hero() {
             <Link 
               href="/2025-april" 
               aria-label="HackersMang 2025 April Edition" 
-              className="flex items-center justify-center gap-2 w-full py-4 text-center text-neutral hover:text-secondary hover:bg-charcoal p-4 outline outline-[1.5px] outline-charcoal active:scale-95 transition-transform "
-              role="button"
-              tabIndex={0}
+              className="flex items-center justify-center gap-2 w-full py-4 text-center text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform border border-charcoal"
             >
               <span className="text-lg outfit-extra-light">Visit event page</span>
               <GoArrowUpRight size={24} />
@@ -50,8 +48,6 @@ export default function Hero() {
               href="/techmang25" 
               aria-label="TechMang 2025" 
               className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform"
-              role="button"
-              tabIndex={0}
             >
               #TechMang25
               <GoArrowUpRight size={24} />
@@ -60,8 +56,6 @@ export default function Hero() {
               href="/2024-november" 
               aria-label="2024 November Edition" 
               className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform"
-              role="button"
-              tabIndex={0}
             >
               HackersMang 2024 November
               <GoArrowUpRight size={24} />
@@ -70,8 +64,6 @@ export default function Hero() {
               href="/ai-techverse" 
               aria-label="Ai TechVerse" 
               className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform"
-              role="button"
-              tabIndex={0}
             >
               Ai TechVerse by HackersMang
               <GoArrowUpRight size={24} />
@@ -80,8 +72,6 @@ export default function Hero() {
               href="https://www.eventbrite.com/e/mangaluru-tech-day-2024-tickets-795844441147?aff=oddtdtcreator" 
               aria-label="Mangaluru Tech Day 2024" 
               className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform"
-              role="button"
-              tabIndex={0}
             >
               Mangaluru Tech Day 2024
               <GoArrowUpRight size={24} />
@@ -90,8 +80,6 @@ export default function Hero() {
               href="https://www.eventbrite.com/e/mangaluru-tech-day-3-techmang3-tickets-82910289909?aff=oddtdtcreator" 
               aria-label="Mangaluru Tech Day 2023" 
               className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform"
-              role="button"
-              tabIndex={0}
             >
               Mangaluru Tech Day 2023
               <GoArrowUpRight size={24} />
