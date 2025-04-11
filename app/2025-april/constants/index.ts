@@ -12,11 +12,13 @@ export const EVENT_DETAIL: EventDetailProps = {
   tracks: [
     {
       name: "AI Workshops",
-      registrationLink: "https://www.tickettailor.com/events/hackerspacemangaluru/1657140"
+      registrationLink: "https://www.tickettailor.com/events/hackerspacemangaluru/1657140",
+      buttonText: "Register for AI Workshops"
     },
     {
       name: "Tech Talks [Web, AI, IOT]",
-      registrationLink: "https://www.tickettailor.com/events/hackerspacemangaluru/1628499"
+      registrationLink: "https://www.tickettailor.com/events/hackerspacemangaluru/1628499",
+      buttonText: "Register for Tech Talks"
     }
   ],
 
