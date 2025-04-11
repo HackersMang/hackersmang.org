@@ -34,10 +34,12 @@ export default function Hero() {
             <Link 
               href="/2025-april" 
               aria-label="HackersMang 2025 April Edition" 
-              className="flex items-center justify-center gap-2 w-full py-4 text-center text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform border border-charcoal"
+              className="block w-full border border-charcoal hover:text-secondary hover:bg-charcoal active:scale-95 transition-transform"
             >
-              <span className="text-lg outfit-extra-light">Visit event page</span>
-              <GoArrowUpRight size={24} />
+              <div className="flex items-center justify-center gap-2 w-full py-4 text-center text-neutral p-4">
+                <span className="text-lg outfit-extra-light">Visit event page</span>
+                <GoArrowUpRight size={24} />
+              </div>
             </Link>
           </div>
 
