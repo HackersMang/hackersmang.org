@@ -7,6 +7,7 @@ export interface EventDetailProps {
     tracks: {
         name: string;
         registrationLink: string | null;
+        buttonText?: string;
     }[];
     registrationStartOn?: Date | null;
     registrationEndOn?: Date | null;
@@ -112,6 +113,7 @@ export interface ComingSoonProps {
 export interface TrackRegistration {
     track: string;
     registrationLink: string | null;
+    buttonText: string;
 }
 
 export interface ScheduleWithRegisterProps extends ScheduleProps {
@@ -119,3 +121,9 @@ export interface ScheduleWithRegisterProps extends ScheduleProps {
     registrationStartOn?: Date | null;
     registrationEndOn?: Date | null;
 }
+
+export type EventTrack = {
+  name: string;
+  registrationLink: string | null;
+  buttonText?: string;
+};

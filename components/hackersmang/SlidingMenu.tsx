@@ -18,10 +18,11 @@ type EventLink = {
 const SlidingMenu: React.FC<SlidingMenuProps> = ({ isMenuOpen }) => {
   // Define events with proper typing
   const upcomingEvents: EventLink[] = [
-    { href: "/2025-april", label: "HackersMang 2025 April" }
+    // Add upcoming event details
   ];
 
   const recentEvents: EventLink[] = [
+    { href: "/2025-april", label: "HackersMang 2025 April" },
     { href: "/techmang25", label: "#TechMang25" },
     { href: "/2024-november", label: "HackersMang 2024 November" },
     { href: "/ai-techverse", label: "Ai TechVerse by HackersMang" },

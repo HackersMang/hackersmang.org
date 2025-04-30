@@ -109,11 +109,13 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                     href={trackRegistration.registrationLink ?? "#"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full max-w-md py-4 text-center text-lg font-semibold rounded-sm transition-all
+                    className="flex items-center justify-center gap-2 w-full max-w-md p-4 text-center text-lg font-semibold rounded-sm transition-all
                         bg-primary hover:bg-primary/90"
                     aria-disabled={hasEnded}
                 >
-                    <span className="text-black">{hasEnded ? "Registration Closed" : "Click here to register"}</span>
+                    <span className="text-black">
+                      {hasEnded ? "Registration Closed" : trackRegistration.buttonText}
+                    </span>
                     {!hasEnded && <ExternalLink size={24} className="text-black" />}
                 </Link>
                 <CodeOfConduct />
@@ -134,7 +136,7 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                                 {daySchedule.rooms.map((room) => (
                                     <div key={room.id} className="w-full mb-6 lg:w-5/6">
                                         <h3 className="text-lg lg:text-xl pb-4 text-primary/60 text-center">
-                                            {room.name === 'Track1' ? 'Track 1' : room.name}
+                                            {room.name}
                                         </h3>
                                         {room.sessions.length > 0 ? (
                                             <>
