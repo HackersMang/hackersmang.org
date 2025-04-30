@@ -1,5 +1,5 @@
 import { SITE_CREATOR, SITE_NAME, SITE_URL } from "@/lib/basemeta";
-import { EventDetailProps } from "@/lib/types";
+import { EventDetailProps, Resource } from "@/lib/types";
 
 export const EVENT_DETAIL: EventDetailProps = {
   title: "#HMApr25",
@@ -119,4 +119,103 @@ export const jsonLd = {
 };
 
 // Resources
-export const RESOURCES = [];
+export const RESOURCES: Resource[] = [
+  {
+    title: "How UniCourt Serves Millions of Requests Under 60ms with PHP",
+    speaker: "Vivek Texeira",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://docs.google.com/presentation/d/1lxBxs4dU2d18CtS8t5F7yAEysgBWv1Hf/edit#slide=id.g34bb19db7a9_0_110",
+        type: "presentation",
+      },
+    ],
+  },
+  {
+    title: "An Introduction to Angular 19",
+    speaker: "Tejas Prabhu",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://example.com/angular19-slideshttps://docs.google.com/presentation/d/1PqFQT4bdCPVfUxiXSX7OMI49MzRH_u5F/edit#slide=id.p1",
+        type: "presentation",
+      },
+      {
+        title: "More Resources",
+        url: "https://drive.google.com/file/d/1LHB0GyvkybOpApszYgZm-89EIPjMNuGG/view?usp=sharing",
+        type: "external",
+      },
+      {
+        title: "GitHub Repository",
+        url: "https://github.com/tejasprabhuk/hackersmang-demo",
+        type: "external",
+      },
+    ],
+  },
+  {
+    title: "Tanstack Query : Taming async state management",
+    speaker: "Reevan Dsouza",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://drive.google.com/file/d/1OMxSxXzSngVv1o7YhRCDaXv42uVchNYb/view?usp=sharing",
+        type: "presentation",
+      },
+    ],
+  },
+  {
+    title: "Need for Speed: Minimizing the impact of Bufferbloat",
+    speaker: "Mohit P. Tahiliani",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://drive.google.com/file/d/1bU6kHgLV91TANGRpobs9c9Ta7evNC5LJ/view?usp=sharing",
+        type: "presentation",
+      },
+    ],
+  },
+  {
+    title: "Hello AI, Am I Really Safe Here?",
+    speaker: "Amrit Shenava",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://docs.google.com/presentation/d/1EJ4RvU7Xkv3bEYhlMFLsLLQaNDx8a2h1/edit?usp=sharing&ouid=114461731221800587026&rtpof=true&sd=true",
+        type: "presentation",
+      },
+    ],
+  },
+  {
+    title: "A Developer’s Guide to Building Cloud-Native AI ready apps with .NET Aspire",
+    speaker: "Augustine Correa",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://drive.google.com/file/d/1G50oDr_tYVIt1T2myJSyJ7cAcBBzdtXj/view?usp=sharing",
+        type: "presentation",
+      },
+    ],
+  },
+  {
+    title: "Mastering Deadlock Resolution in PostgreSQL: Unleash the Power of SKIP LOCKED",
+    speaker: "Vineet Stewart Lasrado",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://docs.google.com/presentation/d/1nSEyv_CVX8WL7mtFLWY58SIcy00QmP87/edit?usp=sharing&ouid=114461731221800587026&rtpof=true&sd=true",
+        type: "presentation",
+      },
+    ],
+  },
+  {
+    title: "Beyond Traditional RAG: Building Intelligent Apps with Agentic Retrieval and MCP",
+    speaker: "Akshay Kumar U",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://drive.google.com/file/d/1KDovSgi-s6XPBwHh4eVJpisaIhPL8VT2/view?usp=sharing",
+        type: "presentation",
+      },
+    ],
+  },
+];
