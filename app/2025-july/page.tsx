@@ -4,12 +4,10 @@ import Header from "@/components/hackersmang/Header";
 import Venue from "../../components/eventpage/Venue";
 import Script from 'next/script';
 import Intro from "@/components/eventpage/Intro";
-import { alternates, EVENT_DETAIL, eventMetaData, jsonLd, openGraph, RESOURCES, twitter } from "./constants";
+import { alternates, EVENT_DETAIL, eventMetaData, jsonLd, openGraph, twitter } from "./constants";
 import { baseMetadata } from "@/lib/basemeta";
-import Resources from "@/components/eventpage/Resources";
 import { Footer } from "@/components/hackersmang/Footer";
-import ScheduleWithRegister from "@/components/eventpage/ScheduleWithRegister";
-import { TrackRegistration } from "@/lib/types";
+import About from "./components/About";
 
 export const metadata: Metadata = {
     ...baseMetadata,
@@ -20,12 +18,6 @@ export const metadata: Metadata = {
 };
 
 function page() {
-    // Map EVENT_DETAIL tracks to TrackRegistration format
-    const trackRegistrations: TrackRegistration[] = EVENT_DETAIL.tracks?.map(track => ({
-        track: track.name,
-        registrationLink: track.registrationLink,
-        buttonText: `Register for ${track.name}`
-    })) || [];
 
     return (
         <>
@@ -39,13 +31,7 @@ function page() {
                     <Header />
                     <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
                     <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
-                    <ScheduleWithRegister 
-                        sessionId={EVENT_DETAIL.sessionizeApiId}
-                        trackRegistrations={trackRegistrations}
-                        registrationStartOn={EVENT_DETAIL.registrationStartOn}
-                        registrationEndOn={EVENT_DETAIL.registrationEndOn}
-                    />
-                    <Resources resources={RESOURCES} />
+                    <About />
                     <Footer />
                 </div>
             </main>

@@ -25,7 +25,7 @@ export default function Hero() {
           </div>
 
           {/* Column 2 */}
-          {/* <div className="flex flex-col justify-center items-center gap-1 h-[30dvh] lg:h-[80dvh] relative mt-8 lg:mt-0">
+          <div className="flex flex-col justify-center items-center gap-1 h-[30dvh] lg:h-[80dvh] relative mt-8 lg:mt-0">
             <div className="text-base italic pt-2 text-neutral">Upcoming event</div>
             <h2 className="text-3xl lg:text-6xl outfit-bold text-secondary">#HMApr25</h2>
             <h2 className="text-xl lg:text-2xl outfit-extra-light text-secondary">HackersMang, 2025 April Edition</h2>
@@ -33,15 +33,15 @@ export default function Hero() {
               On Saturday, 12th April at UniCourt Mangaluru. Explore exciting lightning talks, insightful demos, and interactive workshops, designed to spark curiosity and expand knowledge.</p>
             <div className="w-full max-w-screen-lg relative z-10 mt-4">
               <Link
-                href="/2025-april"
-                aria-label="HackersMang 2025 April Edition"
+                href="/2025-july"
+                aria-label="HackersMang 2025 July Edition"
                 className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform outline outline-[1.5px] outline-charcoal"
               >
                 Visit event page
                 <GoArrowUpRight size={24} />
               </Link>
             </div>
-          </div> */}
+          </div>
 
           {/* Column 3 */}
           <div className="flex flex-col justify-center items-center w-full gap-1 h-[80dvh] lg:h-[65dvh] outfit-extra-light mt-8 lg:mt-0">
