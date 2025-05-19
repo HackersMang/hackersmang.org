@@ -8,7 +8,7 @@ export interface EventDetailProps {
         name: string;
         registrationLink: string | null;
         buttonText?: string;
-    }[];
+    }[] | null;
     registrationStartOn?: Date | null;
     registrationEndOn?: Date | null;
     callForSpeakerLink?: string | null;
