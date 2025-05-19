@@ -33,7 +33,6 @@ function page() {
                     <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
                     <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
                     <About />
-                    <Resources resources={RESOURCES} />
                     <Footer />
                 </div>
             </main>
