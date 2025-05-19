@@ -21,11 +21,11 @@ export const metadata: Metadata = {
 
 function page() {
     // Map EVENT_DETAIL tracks to TrackRegistration format
-    const trackRegistrations: TrackRegistration[] = EVENT_DETAIL.tracks.map(track => ({
+    const trackRegistrations: TrackRegistration[] = EVENT_DETAIL.tracks?.map(track => ({
         track: track.name,
         registrationLink: track.registrationLink,
         buttonText: `Register for ${track.name}`
-    }));
+    })) || [];
 
     return (
         <>
