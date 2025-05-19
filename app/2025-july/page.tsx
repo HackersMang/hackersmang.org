@@ -4,9 +4,8 @@ import Header from "@/components/hackersmang/Header";
 import Venue from "../../components/eventpage/Venue";
 import Script from 'next/script';
 import Intro from "@/components/eventpage/Intro";
-import { alternates, EVENT_DETAIL, eventMetaData, jsonLd, openGraph, RESOURCES, twitter } from "./constants";
+import { alternates, EVENT_DETAIL, eventMetaData, jsonLd, openGraph, twitter } from "./constants";
 import { baseMetadata } from "@/lib/basemeta";
-import Resources from "@/components/eventpage/Resources";
 import { Footer } from "@/components/hackersmang/Footer";
 import About from "./components/About";
 
