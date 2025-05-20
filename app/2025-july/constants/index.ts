@@ -7,7 +7,7 @@ export const EVENT_DETAIL: EventDetailProps = {
 
   locationName: "UniCourt Mangaluru",
   locationUrl: "https://maps.app.goo.gl/bB6HwqDftS4Nq1LT7",
-  happeningOn: new Date("07/13/2025"), // MM/DD/YYYY
+  happeningOn: new Date("07/26/2025"), // MM/DD/YYYY
 
   tracks: null,
 
