@@ -2,12 +2,12 @@ import { SITE_CREATOR, SITE_NAME, SITE_URL } from "@/lib/basemeta";
 import { EventDetailProps, Resource } from "@/lib/types";
 
 export const EVENT_DETAIL: EventDetailProps = {
-  title: "#HMJul25",
-  subtitle: "HackersMang, 2025 July Edition",
+  title: "#HMAug25",
+  subtitle: "HackersMang, 2025 August Edition",
 
   locationName: "UniCourt Mangaluru",
   locationUrl: "https://maps.app.goo.gl/bB6HwqDftS4Nq1LT7",
-  happeningOn: new Date("07/26/2025"), // MM/DD/YYYY
+  happeningOn: new Date("08/23/2025"), // MM/DD/YYYY
 
   tracks: null,
 
@@ -27,8 +27,8 @@ export const HERO_CARD_URL = "https://hackersmang.org/2025/July-hero-card.png";
 
 // Meta data
 export const eventMetaData = {
-  title: "HackersMang | 2025 July edition by Hackerspace Mangaluru | Premier Tech Conference in Mangaluru",
-  description: "Join HackersMang, Mangaluru's premier tech conference featuring cutting-edge talks on AI, Cloud Computing, DevOps, and more. Network with industry experts and innovators. July 2025 at Hackerspace Mangaluru.",
+  title: "HackersMang | 2025 August edition by Hackerspace Mangaluru | Premier Tech Conference in Mangaluru",
+  description: "Join HackersMang, Mangaluru's premier tech conference featuring cutting-edge talks on AI, Cloud Computing, DevOps, and more. Network with industry experts and innovators. August 2025 at Hackerspace Mangaluru.",
   bookmarks: 'https://hackersmang.org/2025-july',
   category: 'Tech Conference',
 };
