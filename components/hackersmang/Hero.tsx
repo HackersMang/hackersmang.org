@@ -27,14 +27,14 @@ export default function Hero() {
           {/* Column 2 */}
           <div className="flex flex-col justify-center items-center gap-1 h-[30dvh] lg:h-[80dvh] relative mt-8 lg:mt-0">
             <div className="text-base italic pt-2 text-neutral">Upcoming event</div>
-            <h2 className="text-3xl lg:text-6xl outfit-bold text-secondary">#HMApr25</h2>
-            <h2 className="text-xl lg:text-2xl outfit-extra-light text-secondary">HackersMang, 2025 April Edition</h2>
+            <h2 className="text-3xl lg:text-6xl outfit-bold text-secondary">#HMAug25</h2>
+            <h2 className="text-xl lg:text-2xl outfit-extra-light text-secondary">HackersMang, 2025 August Edition</h2>
             <p className="text-neutral text-lg lg:text-xl text-center outfit-extra-light max-w-screen-lg px-4 lg:px-6">
-              On Saturday, 12th April at UniCourt Mangaluru. Explore exciting lightning talks, insightful demos, and interactive workshops, designed to spark curiosity and expand knowledge.</p>
+              On Saturday, 23rd August at UniCourt Mangaluru. Explore exciting lightning talks, insightful demos, and interactive workshops, designed to spark curiosity and expand knowledge.</p>
             <div className="w-full max-w-screen-lg relative z-10 mt-4">
               <Link
                 href="/2025-july"
-                aria-label="HackersMang 2025 July Edition"
+                aria-label="HackersMang 2025 August Edition"
                 className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform outline outline-[1.5px] outline-charcoal"
               >
                 Visit event page
