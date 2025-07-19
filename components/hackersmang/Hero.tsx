@@ -33,7 +33,7 @@ export default function Hero() {
               On Saturday, 23rd August at UniCourt Mangaluru. Explore exciting lightning talks, insightful demos, and interactive workshops, designed to spark curiosity and expand knowledge.</p>
             <div className="w-full max-w-screen-lg relative z-10 mt-4">
               <Link
-                href="/2025-july"
+                href="/2025-august"
                 aria-label="HackersMang 2025 August Edition"
                 className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform outline outline-[1.5px] outline-charcoal"
               >
