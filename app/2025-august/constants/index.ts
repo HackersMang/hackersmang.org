@@ -11,9 +11,9 @@ export const EVENT_DETAIL: EventDetailProps = {
 
   tracks: null,
 
-  callForSpeakerLink: null,
-  callForSpeakerStartOn: null,
-  callForSpeakerEndOn: null,
+  callForSpeakerLink: "https://sessionize.com/hackersmang-august-2025-edition/",
+  callForSpeakerStartOn: new Date("07/21/2025"),
+  callForSpeakerEndOn: new Date("08/17/2025"),
 
   registrationStartOn: null,
   registrationEndOn: null,

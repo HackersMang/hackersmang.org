@@ -8,6 +8,7 @@ import { alternates, EVENT_DETAIL, eventMetaData, jsonLd, openGraph, twitter } f
 import { baseMetadata } from "@/lib/basemeta";
 import { Footer } from "@/components/hackersmang/Footer";
 import About from "./components/About";
+import CallForSpeaker from "@/components/eventpage/CallForSpeaker";
 
 export const metadata: Metadata = {
     ...baseMetadata,
@@ -31,6 +32,11 @@ function page() {
                     <Header />
                     <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
                     <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
+                    <CallForSpeaker
+                        registrationLink={EVENT_DETAIL.callForSpeakerLink}
+                        registrationStartOn={EVENT_DETAIL.callForSpeakerStartOn}
+                        registrationEndOn={EVENT_DETAIL.callForSpeakerEndOn}
+                    />
                     <About />
                     <Footer />
                 </div>
