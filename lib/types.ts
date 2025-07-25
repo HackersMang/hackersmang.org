@@ -35,6 +35,7 @@ export interface RegisterProps {
     registrationStartOn?: Date | null;
     registrationEndOn?: Date | null;
     buttonText?: string;
+    disableCodeOfConduct?: boolean;
 }
 
 // Define the SessionizeSpeakers interface

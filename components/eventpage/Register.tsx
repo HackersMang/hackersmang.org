@@ -4,7 +4,7 @@ import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import ComingSoon from "./ComingSoon";
 
-const Register = ({ registrationLink, registrationStartOn, registrationEndOn, buttonText }: RegisterProps): JSX.Element | null => {
+const Register = ({ registrationLink, registrationStartOn, registrationEndOn, buttonText, disableCodeOfConduct }: RegisterProps): JSX.Element | null => {
   // Convert registration dates to Date objects
   const now = new Date();
   const hasStarted = now >= (registrationStartOn ?? 0);
@@ -26,8 +26,8 @@ const Register = ({ registrationLink, registrationStartOn, registrationEndOn, bu
 
   // Return the Register component if registration has started and the link exists
   return (
-    <div className="w-full flex flex-col items-center justify-center text-center my-4 lg:my-8 px-4">
-      <div className="shadow-lg px-4 lg:px-8 py-6 rounded-lg">
+    <div className="w-full flex flex-col items-center justify-center text-center px-4">
+      <div className="shadow-lg py-6 rounded-lg w-full">
         <h3 className="text-xl lg:text-2xl font-light text-primary mb-4">RSVP Route</h3>
 
         {/* <p className="text-lg text-neutral leading-relaxed mt-2">
@@ -38,7 +38,7 @@ const Register = ({ registrationLink, registrationStartOn, registrationEndOn, bu
           href={registrationLink ?? "#"}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg font-semibold rounded-sm transition-all
+          className="flex items-center justify-center gap-2 w-full p-4 text-center text-lg font-semibold rounded-sm transition-all
             bg-primary hover:bg-primary/90"
           aria-disabled={hasEnded}
         >
@@ -46,7 +46,7 @@ const Register = ({ registrationLink, registrationStartOn, registrationEndOn, bu
           {!hasEnded && <ExternalLink size={24} className="text-black" />}
         </Link>
 
-        <CodeOfConduct />
+        {!disableCodeOfConduct && <CodeOfConduct />}
       </div>
     </div>
   );
