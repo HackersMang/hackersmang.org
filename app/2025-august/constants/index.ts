@@ -9,14 +9,25 @@ export const EVENT_DETAIL: EventDetailProps = {
   locationUrl: "https://maps.app.goo.gl/bB6HwqDftS4Nq1LT7",
   happeningOn: new Date("08/23/2025"), // MM/DD/YYYY
 
-  tracks: null,
+  tracks: [
+    {
+      name: "AI Workshops",
+      registrationLink: "https://buytickets.at/hackerspacemangaluru/1704645",
+      buttonText: "Register for AI Workshops"
+    },
+    {
+      name: "Tech Talks [Web, AI, IOT]",
+      registrationLink: "https://buytickets.at/hackerspacemangaluru/1704644",
+      buttonText: "Register for Tech Talks"
+    }
+  ],
 
   callForSpeakerLink: "https://sessionize.com/hackersmang-august-2025-edition/",
   callForSpeakerStartOn: new Date("07/21/2025"),
   callForSpeakerEndOn: new Date("08/17/2025"),
 
-  registrationStartOn: null,
-  registrationEndOn: null,
+  registrationStartOn: new Date("07/24/2025"),
+  registrationEndOn: new Date("08/23/2025"),
 
   isSchedulePublished: false,
   sessionizeApiId: null,

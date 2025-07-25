@@ -4,11 +4,15 @@ import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import ComingSoon from "./ComingSoon";
 
-const Register = ({ registrationLink, registrationStartOn, registrationEndOn }: RegisterProps): JSX.Element | null => {
+const Register = ({ registrationLink, registrationStartOn, registrationEndOn, buttonText }: RegisterProps): JSX.Element | null => {
   // Convert registration dates to Date objects
   const now = new Date();
   const hasStarted = now >= (registrationStartOn ?? 0);
   const hasEnded = now.getTime() > ((registrationEndOn instanceof Date ? registrationEndOn.getTime() : registrationEndOn ?? 0) + 24 * 60 * 60 * 1000);
+
+  if (!buttonText) {
+    buttonText = "Click here to register";
+  }
 
   // Return null if registration has not started or the link does not exist
   if (!hasStarted) return null;
@@ -22,7 +26,7 @@ const Register = ({ registrationLink, registrationStartOn, registrationEndOn }: 
 
   // Return the Register component if registration has started and the link exists
   return (
-    <div className="w-full flex flex-col items-center justify-center text-center mt-2 mb-4 lg:mb-6 px-4">
+    <div className="w-full flex flex-col items-center justify-center text-center my-4 lg:my-8 px-4">
       <div className="shadow-lg px-4 lg:px-8 py-6 rounded-lg">
         <h3 className="text-xl lg:text-2xl font-light text-primary mb-4">RSVP Route</h3>
 
@@ -38,7 +42,7 @@ const Register = ({ registrationLink, registrationStartOn, registrationEndOn }: 
             bg-primary hover:bg-primary/90"
           aria-disabled={hasEnded}
         >
-          <span className="text-black">{hasEnded ? "Registration Closed" : "Click here to register"}</span>
+          <span className="text-black">{hasEnded ? "Registration Closed" : buttonText}</span>
           {!hasEnded && <ExternalLink size={24} className="text-black" />}
         </Link>
 

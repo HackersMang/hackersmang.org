@@ -9,6 +9,9 @@ import { baseMetadata } from "@/lib/basemeta";
 import { Footer } from "@/components/hackersmang/Footer";
 import About from "./components/About";
 import CallForSpeaker from "@/components/eventpage/CallForSpeaker";
+import ScheduleWithRegister from "@/components/eventpage/ScheduleWithRegister";
+import { TrackRegistration } from "@/lib/types";
+import Register from "@/components/eventpage/Register";
 
 export const metadata: Metadata = {
     ...baseMetadata,
@@ -19,6 +22,11 @@ export const metadata: Metadata = {
 };
 
 function page() {
+    const trackRegistrations: TrackRegistration[] = EVENT_DETAIL.tracks?.map(track => ({
+        track: track.name,
+        registrationLink: track.registrationLink,
+        buttonText: `Register for ${track.name}`
+    })) || [];
 
     return (
         <>
@@ -36,6 +44,18 @@ function page() {
                         registrationLink={EVENT_DETAIL.callForSpeakerLink}
                         registrationStartOn={EVENT_DETAIL.callForSpeakerStartOn}
                         registrationEndOn={EVENT_DETAIL.callForSpeakerEndOn}
+                    />
+                    <Register
+                        registrationLink={trackRegistrations[0].registrationLink}
+                        registrationStartOn={EVENT_DETAIL.registrationStartOn}
+                        registrationEndOn={EVENT_DETAIL.registrationEndOn}
+                        buttonText={trackRegistrations[0].buttonText}
+                    />
+                    <Register
+                        registrationLink={trackRegistrations[1].registrationLink}
+                        registrationStartOn={EVENT_DETAIL.registrationStartOn}
+                        registrationEndOn={EVENT_DETAIL.registrationEndOn}
+                        buttonText={trackRegistrations[1].buttonText}
                     />
                     <About />
                     <Footer />

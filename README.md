@@ -13,7 +13,19 @@ Sweet! All changes to this website (including content, memes, and secret message
 
 ## 🚀 Getting Started (a.k.a. Summon the Dev Server)
 
-Before you begin your epic coding journey, you gotta wake up the development server from its slumber. Here’s how you do it (pick your favorite spell):
+Before you begin your epic coding journey, you gotta wake up the development server from its slumber. Here's how you do it (pick your favorite spell):
+
+### 🛠️ Initial Setup (First Time Only)
+
+```bash
+# Install all the magical dependencies
+npm install
+
+# Build the project (optional but recommended)
+npm run build
+```
+
+### 🧙‍♂️ Start Development Server
 
 ```bash
 npm run dev   # 🧙‍♂️ Summoning with npm

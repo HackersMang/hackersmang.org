@@ -34,6 +34,7 @@ export interface RegisterProps {
     registrationLink?: string | null;
     registrationStartOn?: Date | null;
     registrationEndOn?: Date | null;
+    buttonText?: string;
 }
 
 // Define the SessionizeSpeakers interface
