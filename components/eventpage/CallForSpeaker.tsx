@@ -48,7 +48,7 @@ const CallForSpeaker = ({ registrationLink, registrationStartOn, registrationEnd
                     href={registrationLink ?? "#"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg font-semibold rounded-sm transition-all
+                    className="flex items-center justify-center gap-2 w-full mt-8 mb-4 py-4 text-center text-lg font-semibold rounded-sm transition-all
                             bg-primary hover:bg-primary/90"
                     aria-disabled={hasEnded}
                 >
