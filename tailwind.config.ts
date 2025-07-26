@@ -8,13 +8,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        fontFamily: {
-          pencil: ['pencil-studio', 'sans-serif'],
-        },
         primary: '#d4e20b',   // Yellow
         secondary: '#9b9b9b', // Light Gray
         neutral: '#666464',   // Gray
         charcoal: '#2b2828',  // Dark Gray
+      },
+      fontFamily: {
+        pencil: ['pencil-studio', 'sans-serif'],
       },
       backgroundImage: {
         'grainy' : "url('/ai-techverse/noise.svg')",
