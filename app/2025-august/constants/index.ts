@@ -30,7 +30,7 @@ export const EVENT_DETAIL: EventDetailProps = {
   registrationEndOn: new Date("08/23/2025"),
 
   isSchedulePublished: false,
-  sessionizeApiId: null,
+  sessionizeApiId: 'bufbqryp',
 };
 
 // Hero card
