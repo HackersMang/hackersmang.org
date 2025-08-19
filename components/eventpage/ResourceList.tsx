@@ -7,7 +7,7 @@ import { ResourceListProps } from "@/lib/types"
 
 const ResourceList: React.FC<ResourceListProps> = ({ resources }) => {
   return (
-    <div className="grid gap-3 lg:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:w-5/6">
+    <div className="grid gap-3 lg:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {resources.map((resource) => (
         <Card key={resource.title} className="bg-[#1d1d1c] border-zinc-800">
           <CardHeader className="lg:min-h-32">

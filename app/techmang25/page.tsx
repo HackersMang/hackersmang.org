@@ -150,6 +150,8 @@ function page() {
             <main className="relative bg-grainy outfit-extra-light">
                 <div className="relative z-10">
                     <Header />
+                    <div className="w-full flex flex-col items-center justify-center text-center">
+                        <div className="w-full max-w-screen-xl flex flex-col items-center justify-center text-center">
                     <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
                     <CallForSpeaker registrationLink={EVENT_DETAIL.callForSpeakerLink} registrationStartOn={EVENT_DETAIL.callForSpeakerStartOn} registrationEndOn={EVENT_DETAIL.callForSpeakerEndOn} />
                     <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
@@ -161,6 +163,8 @@ function page() {
                         registrationEndOn={EVENT_DETAIL.registrationEndOn} 
                     />
                     <About />
+                    </div>
+                    </div>
                     <Footer />
                 </div>
             </main>
