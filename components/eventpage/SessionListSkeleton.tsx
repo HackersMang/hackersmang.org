@@ -5,7 +5,7 @@ const SessionListSkeleton: React.FC = () => {
     <>
       <div className="h-3 lg:h-4 bg-[#1d1d1c] mb-4 rounded w-1/6"></div>
 
-      <div className="flex flex-col gap-4 w-full lg:w-5/6 animate-pulse">
+      <div className="flex flex-col gap-4 w-full animate-pulse">
         {Array.from({ length: 5 }).map((_, index) => (
           <div
             key={index}
@@ -16,14 +16,16 @@ const SessionListSkeleton: React.FC = () => {
 
             {/* Skeleton for Speaker Details */}
             <div className="flex flex-col flex-grow pl-2 lg:pl-4 justify-center">
+              <div className="h-3 lg:h-4 bg-gray-600 rounded w-24 mb-2"></div>
               <div className="h-4 lg:h-6 bg-gray-700 rounded w-3/4 mb-2"></div>
-              <div className="h-4 lg:h-6 bg-gray-700 rounded w-3/4 mb-2"></div>
-              <div className="h-3 lg:h-4 bg-gray-600 rounded w-1/2"></div>
+              <div className="h-4 lg:h-6 bg-gray-800 rounded w-1/4 mb-2"></div>
+              <div className="h-3 lg:h-4 bg-gray-600 rounded w-full mb-1"></div>
+              <div className="h-3 lg:h-4 bg-gray-600 rounded w-full"></div>
             </div>
 
             {/* Skeleton for Speaker Time */}
             <div className="text-sm md:text-base lg:text-lg text-right font-medium ml-2 mt-4 lg:mt-0 lg:ml-auto lg:px-4">
-              <div className="h-3 lg:h-4 bg-gray-600 rounded w-12"></div>
+              <div className="h-3 lg:h-4 bg-gray-600 rounded w-24"></div>
             </div>
           </div>
         ))}
