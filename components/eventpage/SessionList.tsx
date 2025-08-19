@@ -36,32 +36,7 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
             <div className="flex flex-row items-start p-2 lg:p-4">
                 {/* Speaker Images Section - Mobile: Horizontal, Desktop: Vertical */}
                 <div className="flex-shrink-0 mr-2 md:mr-4 lg:mr-6">
-                    {/* Mobile: Horizontal layout */}
-                    <div className="flex flex-col gap-1 md:hidden">
-                        {session.speakers.slice(0, 3).map((speaker, index) => (
-                            <div key={speaker.id} className="flex flex-col items-center">
-                                <div className="w-24 h-24 relative">
-                                    <Image
-                                        src={speaker.profilePicture ?? "https://sessionize.com/image/8db9-400o400o1-test4.jpg"}
-                                        alt={`${speaker.name} profile`}
-                                        width={48}
-                                        height={48}
-                                        className="rounded-lg object-cover w-full h-full"
-                                    />
-                                </div>
-                                <span className="hidden md:block text-xs text-neutral text-center max-w-20 truncate mt-1">{speaker.name}</span>
-                            </div>
-                        ))}
-                        {session.speakers.length > 3 && (
-                            <div className="flex flex-col items-center">
-                                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-                                    <span className="text-xs text-primary">+{session.speakers.length - 3}</span>
-                                </div>
-                                <span className="text-xs text-neutral text-center max-w-12 truncate mt-1">More</span>
-                            </div>
-                        )}
-                    </div>
-                    
+                                        
                     {/* Tablet/Desktop: Vertical layout */}
                     <div className="hidden md:flex flex-col gap-2 justify-start items-start">
                         {session.speakers.map((speaker, index) => (
@@ -106,8 +81,32 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                     </div>
 
                     <div className="flex flex-col items-start gap-1">
-                        <h4 className="text-sm md:text-xl lg:text-2xl text-secondary text-left font-bold mb-1">{session.title}</h4>
+                        <h4 className="text-xl lg:text-2xl text-secondary text-left font-bold mb-1">{session.title}</h4>
                         {/* Show all speakers in the main content area */}
+                        {/* Mobile: Horizontal layout */}
+                        <div className="flex flex-row gap-2 mb-1 md:hidden">
+                            {session.speakers.slice(0, 3).map((speaker, index) => (
+                                <div key={speaker.id} className="flex flex-col items-center">
+                                    <div className="w-16 h-16 relative">
+                                        <Image
+                                            src={speaker.profilePicture ?? "https://sessionize.com/image/8db9-400o400o1-test4.jpg"}
+                                            alt={`${speaker.name} profile`}
+                                            width={48}
+                                            height={48}
+                                            className="rounded-lg object-cover w-full h-full"
+                                        />
+                                    </div>
+                                </div>
+                            ))}
+                            {session.speakers.length > 3 && (
+                                <div className="flex flex-col items-center">
+                                    <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                                        <span className="text-xs text-primary">+{session.speakers.length - 3}</span>
+                                    </div>
+                                    <span className="text-xs text-neutral text-center max-w-12 truncate mt-1">More</span>
+                                </div>
+                            )}
+                        </div>
                         <div className="flex flex-wrap items-center gap-2">
                             {session.speakers.map((speaker, index) => (
                                 <div key={speaker.id} className="flex items-center gap-1">
