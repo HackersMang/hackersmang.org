@@ -58,6 +58,10 @@ export function extractTagsFromSession(session: { categories: Category[] }): Cat
     category.categoryItems.forEach(item => {
       // Avoid duplicates by checking if tag already exists
       if (!tags.find(tag => tag.id === item.id)) {
+        // If the tag name is "AI TECHVERSE (10 Mins)", then remove the text added in the brackets
+        if (item.name.includes("(")) {
+          item.name = item.name.split("(")[0].trim();
+        }
         tags.push(item);
       }
     });
