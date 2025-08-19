@@ -68,6 +68,7 @@ export interface GridSmart {
                 // Updated to include profile picture
                 profilePicture?: string;
             }[];
+            categories: Category[];
         }[];
     }[];
 }

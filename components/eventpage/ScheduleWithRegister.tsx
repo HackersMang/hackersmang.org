@@ -67,6 +67,7 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                         .filter((session) => session.speakers.length > 0)
                         .map((session) => ({
                             ...session,
+                            categories: session.categories || [],
                             speakers: session.speakers.map((sessionSpeaker) => {
                                 const matchedSpeaker = speakerData.find(
                                     (speaker) => speaker.id === sessionSpeaker.id
