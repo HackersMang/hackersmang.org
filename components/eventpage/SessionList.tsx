@@ -62,7 +62,7 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                             </div>
                         </div>
                         <div className="flex-shrink-0 text-right">
-                            <span className="text-xs md:text-base whitespace-nowrap text-primary/50">{formatTime(session.startsAt)}</span>
+                            <span className="text-xs md:text-base whitespace-nowrap text-primary/50">{formatTime(session.startsAt)} - {formatTime(session.endsAt)}</span>
                         </div>
                     </div>
 
