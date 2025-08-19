@@ -11,7 +11,7 @@ export const EVENT_DETAIL: EventDetailProps = {
 
   tracks: [
     {
-      name: "AI Workshops",
+      name: "AI [Workshops & Talks]",
       registrationLink: "https://buytickets.at/hackerspacemangaluru/1704645",
       buttonText: "Register for AI Workshops"
     },

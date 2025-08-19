@@ -118,18 +118,18 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                     </div>
 
                     {/* Description - Desktop Only */}
-                    <div className="hidden md:block mt-2">
+                    <div className="hidden md:block mt-2 text-left">
                         <motion.div
                             animate={{ height: isExpanded ? "auto" : maxHeight }}
                             transition={{ duration: 0.3 }}
-                            className="overflow-hidden relative"
+                            className="overflow-hidden relative text-left"
                         >
                             <p className="text-base md:text-base text-left text-neutral">{session.description}</p>
                         </motion.div>
                         {session.description.length > 300 && (
                             <button
                                 onClick={toggleExpand}
-                                className="text-xs text-secondary focus:outline-none mt-1"
+                                className="text-xs text-secondary text-left focus:outline-none mt-1"
                             >
                                 {isExpanded ? "[-] Read Less" : "[+] Read More"}
                             </button>
