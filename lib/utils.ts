@@ -44,3 +44,24 @@ function getOrdinalSuffix(day: number): string {
     default: return "th";
   }
 }
+
+// Tag utility functions
+import { Category, CategoryItem } from './types';
+
+/**
+ * Extract all tags from a session's categories
+ */
+export function extractTagsFromSession(session: { categories: Category[] }): CategoryItem[] {
+  const tags: CategoryItem[] = [];
+  
+  session.categories.forEach(category => {
+    category.categoryItems.forEach(item => {
+      // Avoid duplicates by checking if tag already exists
+      if (!tags.find(tag => tag.id === item.id)) {
+        tags.push(item);
+      }
+    });
+  });
+  
+  return tags;
+}

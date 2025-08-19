@@ -6,6 +6,7 @@ import Image from "next/image"
 import { User, ChevronDown, ChevronUp } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { SessionListProps } from "@/lib/types"
+import { extractTagsFromSession } from "@/lib/utils"
 
 const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ session }) => {
     const [isExpanded, setIsExpanded] = useState(false)
@@ -26,6 +27,9 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
         return `${formattedHours}:${minutes.toString().padStart(2, "0")} ${ampm}`
     }
 
+    // Extract all tags from the session
+    const sessionTags = extractTagsFromSession(session)
+
     return (
         <div className="flex flex-col bg-[#1d1d1c] rounded-lg shadow-lg">
             {/* Main Content Row */}
@@ -41,18 +45,32 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                     />
                 </div>
 
-                {/* Title, Speaker, and Time for Mobile */}
+                {/* Title, Speaker, Time and Tags */}
                 <div className="flex flex-col flex-grow min-w-0 pl-3 md:pl-4 lg:pl-6">
                     <div className="flex justify-between items-start gap-2">
-                        <div className="flex-grow">
-                            <h4 className="text-base md:text-xl lg:text-2xl text-secondary text-left font-bold mb-1">{session.title}</h4>
-                            <div className="flex items-center gap-1">
-                                <User size={14} className="text-neutral" />
-                                <span className="text-sm text-neutral">{session.speakers[0]?.name ?? "unknown speaker"}</span>
+                        <div className="flex-grow justify-start items-start">
+                            {/* Display all tags */}
+                            <div className="flex flex-wrap gap-1 mb-2">
+                                {sessionTags.map((tag) => (
+                                    <span 
+                                        key={tag.id}
+                                        className="inline-block px-2 py-1 text-xs bg-primary/10 text-primary/70 rounded-md border border-secondary/30"
+                                    >
+                                        {tag.name}
+                                    </span>
+                                ))}
                             </div>
                         </div>
                         <div className="flex-shrink-0 text-right">
                             <span className="text-xs md:text-base whitespace-nowrap text-primary/50">{formatTime(session.startsAt)}</span>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col items-start gap-1">
+                        <h4 className="text-base md:text-xl lg:text-2xl text-secondary text-left font-bold mb-1">{session.title}</h4>
+                        <div className="flex items-center gap-1">
+                            <User size={14} className="text-neutral" />
+                            <span className="text-sm text-neutral">{session.speakers[0]?.name ?? "unknown speaker"}</span>
                         </div>
                     </div>
 

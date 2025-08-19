@@ -72,6 +72,18 @@ export interface GridSmart {
     }[];
 }
 
+export interface CategoryItem {
+    id: number;
+    name: string;
+}
+
+export interface Category {
+    id: number;
+    name: string;
+    categoryItems: CategoryItem[];
+    sort: number;
+}
+
 export interface SessionListProps {
     sessions: {
         id: string
@@ -85,7 +97,8 @@ export interface SessionListProps {
             id: string
             name: string
             profilePicture?: string
-        }[]
+        }[],
+        categories: Category[]
     }[]
 }
 
@@ -129,3 +142,11 @@ export type EventTrack = {
   registrationLink: string | null;
   buttonText?: string;
 };
+
+// Utility types for tags functionality
+export type SessionTags = CategoryItem[];
+
+export type ExtractTagsFromSession = (session: SessionListProps['sessions'][0]) => SessionTags;
+
+// Helper function type to get all unique tags from categories
+export type GetAllTags = (categories: Category[]) => CategoryItem[];
