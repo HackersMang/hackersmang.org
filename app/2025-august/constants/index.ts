@@ -163,5 +163,27 @@ export const RESOURCES: Resource[] = [
         type: "presentation"
       }
     ]
+  },
+  {
+    title: "Break Up with useEffect, Fetch Like a Pro",
+    speaker: "Deveesh Shetty",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://brainy-quart-ace.notion.site/Breakup-with-UseEffect-2565e52c1e1980d19d38ebed538d35a4",
+        type: "presentation"
+      }
+    ]
+  },
+  {
+    title: "Platform Engineering: Crafting the Golden Path to the Future",
+    speaker: "Darshan Dinesh Bhandary",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://www.canva.com/design/DAGwz-ZKOJ8/GdMFprbTwrO8XFOAydtjhQ/view",
+        type: "presentation"
+      }
+    ]
   }
 ];
