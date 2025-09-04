@@ -119,4 +119,49 @@ export const jsonLd = {
 };
 
 // Resources
-export const RESOURCES: Resource[] = [];
+export const RESOURCES: Resource[] = [
+  {
+    title: "OpenUSD: An Open Source Bridge for 3D",
+    speaker: "Koushik Shanbhag",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://drive.google.com/file/d/1Ix69Qjuyxkn5yKtJkYoBUCk3xT4AmrKI/view",
+        type: "presentation"
+      }
+    ]
+  },
+  {
+    title: "Building private LLM-powered second brain on Intel CPU",
+    speaker: "Pradeep Sharma",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://drive.google.com/file/d/18AR5wE-6MpLzWdBa-8o2ihlGu2YaXXPY/view",
+        type: "presentation"
+      }
+    ]
+  },
+  {
+    title: "Voice AI Agents: From Concept to Real-World Impact in Hospitality",
+    speaker: "Shreyas Udupa",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://drive.google.com/file/d/1Igee7tl_5ana3OC0p1HFIiY1mwG2fxPJ/view",
+        type: "presentation"
+      }
+    ]
+  },
+  {
+    title: "Google's Agent Development Kit",
+    speaker: "Vedanth V",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://drive.google.com/file/d/1n75k5Gn4ndMos4PUTAXujJQasgDMgyq5/view",
+        type: "presentation"
+      }
+    ]
+  }
+];

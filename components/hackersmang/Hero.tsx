@@ -27,13 +27,15 @@ export default function Hero() {
           {/* Column 2 */}
           <div className="flex flex-col justify-center items-center gap-1 h-[30dvh] lg:h-[80dvh] relative mt-8 lg:mt-0">
             <div className="text-base italic pt-2 text-neutral">Upcoming event</div>
-            <h2 className="text-3xl lg:text-6xl outfit-bold text-secondary">#HMAug25</h2>
-            <h2 className="text-xl lg:text-2xl outfit-extra-light text-secondary">HackersMang, 2025 August Edition</h2>
+            <h2 className="text-3xl lg:text-6xl outfit-bold text-secondary">#HMNov25</h2>
+            <h2 className="text-xl lg:text-2xl outfit-extra-light text-secondary">HackersMang, 2025 November Edition</h2>
             <p className="text-neutral text-lg lg:text-xl text-center outfit-extra-light max-w-screen-lg px-4 lg:px-6">
-              On Saturday, 23rd August at UniCourt Mangaluru. Explore exciting lightning talks, insightful demos, and interactive workshops, designed to spark curiosity and expand knowledge.</p>
+              {/* On Saturday, 23rd November at UniCourt Mangaluru.  */}
+              Explore exciting lightning talks, insightful demos, and interactive workshops, designed to spark curiosity and expand knowledge.
+            </p>
             <div className="w-full max-w-screen-lg relative z-10 mt-4">
               <Link
-                href="/2025-august"
+                href="/hmnov25"
                 aria-label="HackersMang 2025 August Edition"
                 className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform outline outline-[1.5px] outline-charcoal"
               >
@@ -47,6 +49,14 @@ export default function Hero() {
           <div className="flex flex-col justify-center items-center w-full gap-1 h-[80dvh] lg:h-[65dvh] outfit-extra-light mt-8 lg:mt-0">
             <div className="text-base italic text-center p-2 text-secondary/90">Recent events</div>
             <div className="w-full max-w-md space-y-2 relative z-10">
+              <Link
+                href="/2025-august"
+                aria-label="HackersMang 2025 August Edition"
+                className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform"
+              >
+                HackersMang, 2025 August
+                <GoArrowUpRight size={24} />
+              </Link>
               <Link
                 href="/2025-april"
                 aria-label="HackersMang 2025 April Edition"
