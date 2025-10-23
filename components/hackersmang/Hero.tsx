@@ -1,120 +1,63 @@
-import Link from 'next/link';
 import React from 'react';
-import { GoArrowUpRight } from 'react-icons/go';
-import SocialMedia from './SocialMedia';
-import { Footer } from './Footer';
+import CreativeElements from './CreativeElements';
 
 export default function Hero() {
   return (
-    <section className="relative pt-20 lg:pt-0  pb-4 px-2 lg:px-6 h-full">
-      {/* Top Section */}
-      <div className='outline outline-[1.5px] outline-charcoal px-2'>
-
-        <h1 className="lg:pt-24 text-center text-base font-bold outfit-extra-light p-2 text-neutral">
-          A vibrant community of tech enthusiasts
-        </h1>
-
-        {/* Three Column Layout */}
-        <div className="flex flex-col text-neutral w-full lg:max-w-fit mx-auto gap-4 lg:gap-8">
-          {/* Column 1 */}
-          <div className="flex flex-col justify-center items-center gap-1 h-[50dvh] lg:h-[80dvh]">
-            <span className="text-3xl lg:text-8xl outfit-extra-bold text-secondary text-center">Hackerspace Mangaluru</span>
-            <p className="text-neutral text-lg lg:text-xl text-center outfit-extra-light max-w-screen-lg px-4">
-              A community-driven open-source group. Together with the HackersMang community, we host tech talks, workshops, and events aimed at fostering innovation and knowledge-sharing.
-            </p>
+    <section className="relative pt-20 lg:pt-24 h-full px-5 lg:px-12">
+      {/* Hero Card - Main Branding */}
+      <div className="w-full py-12 lg:py-16 flex flex-col lg:flex-row justify-center items-center relative overflow-hidden min-h-[85vh]">
+        {/* Left Side - Text Content */}
+        <div className="relative z-10 max-w-2xl lg:max-w-3xl lg:mr-16 mb-12 lg:mb-0">
+          {/* Subtitle */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-yellow/10 rounded-full mb-6">
+            <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+            <span className="text-sm outfit-extra-light text-neutral-navy font-bold">
+              A vibrant community of tech enthusiasts
+            </span>
           </div>
 
-          {/* Column 2 */}
-          <div className="flex flex-col justify-center items-center gap-1 h-[30dvh] lg:h-[80dvh] relative mt-8 lg:mt-0">
-            <div className="text-base italic pt-2 text-neutral">Upcoming event</div>
-            <h2 className="text-3xl lg:text-6xl outfit-bold text-secondary">#HMNov25</h2>
-            <h2 className="text-xl lg:text-2xl outfit-extra-light text-secondary">HackersMang, 2025 November Edition</h2>
-            <p className="text-neutral text-lg lg:text-xl text-center outfit-extra-light max-w-screen-lg px-4 lg:px-6">
-              {/* On Saturday, 23rd November at UniCourt Mangaluru.  */}
-              Explore exciting lightning talks, insightful demos, and interactive workshops, designed to spark curiosity and expand knowledge.
-            </p>
-            <div className="w-full max-w-screen-lg relative z-10 mt-4">
-              <Link
-                href="/hmnov25"
-                aria-label="HackersMang 2025 August Edition"
-                className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform outline outline-[1.5px] outline-charcoal"
-              >
-                Visit event page
-                <GoArrowUpRight size={24} />
-              </Link>
+          {/* Main Title */}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl outfit-extra-bold text-neutral-navy leading-[0.9] mb-8">
+            Hackerspace Mangaluru
+          </h1>
+
+          {/* Description */}
+          <p className="text-lg lg:text-xl text-neutral-navy/80 outfit-extra-light leading-relaxed mb-10 max-w-2xl">
+            A community-driven open-source group. Together with the HackersMang community, we host tech talks, workshops, and events aimed at fostering innovation and knowledge-sharing.
+          </p>
+
+          {/* Interactive Stats */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+            <div className="group bg-gradient-to-br from-primary-yellow/20 to-primary-yellow/5 p-6 lg:p-8 rounded-2xl border border-primary-yellow/20 hover:border-primary-yellow/40 transition-all duration-300 hover:scale-105 cursor-pointer">
+              <div className="flex items-center justify-between mb-3">
+                <div className="text-3xl lg:text-4xl outfit-extra-bold text-neutral-navy">500+</div>
+                <div className="w-8 h-8 bg-primary-yellow/20 rounded-lg flex items-center justify-center group-hover:bg-primary-yellow/30 transition-colors">
+                  <svg className="w-4 h-4 text-neutral-navy" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A1.5 1.5 0 0 0 18.54 8H16c-.8 0-1.54.37-2.01.99L12 11l-1.99-2.01A2.5 2.5 0 0 0 8 8H5.46c-.8 0-1.54.37-2.01.99L1 12.5V22h2v-6h2.5l2.5 6h2l-2.5-6H12v6h2v-6h2.5l2.5 6h2l-2.5-6H20v6h2z"/>
+                  </svg>
+                </div>
+              </div>
+              <div className="text-sm outfit-extra-light text-neutral-navy/70">Active Members</div>
+              <div className="w-full h-1 bg-gradient-to-r from-primary-yellow/30 to-primary-yellow/10 rounded-full mt-3 group-hover:from-primary-yellow/50 group-hover:to-primary-yellow/20 transition-all"></div>
             </div>
-          </div>
 
-          {/* Column 3 */}
-          <div className="flex flex-col justify-center items-center w-full gap-1 h-[80dvh] lg:h-[65dvh] outfit-extra-light mt-8 lg:mt-0">
-            <div className="text-base italic text-center p-2 text-secondary/90">Recent events</div>
-            <div className="w-full max-w-md space-y-2 relative z-10">
-              <Link
-                href="/2025-august"
-                aria-label="HackersMang 2025 August Edition"
-                className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform"
-              >
-                HackersMang, 2025 August
-                <GoArrowUpRight size={24} />
-              </Link>
-              <Link
-                href="/2025-april"
-                aria-label="HackersMang 2025 April Edition"
-                className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform"
-              >
-                HackersMang, 2025 April
-                <GoArrowUpRight size={24} />
-              </Link>
-              <Link
-                href="/techmang25"
-                aria-label="TechMang 2025"
-                className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform"
-              >
-                #TechMang25
-                <GoArrowUpRight size={24} />
-              </Link>
-              <Link
-                href="/2024-november"
-                aria-label="2024 November Edition"
-                className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform"
-              >
-                HackersMang, 2024 November
-                <GoArrowUpRight size={24} />
-              </Link>
-              <Link
-                href="/ai-techverse"
-                aria-label="Ai TechVerse"
-                className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform"
-              >
-                Ai TechVerse by HackersMang
-                <GoArrowUpRight size={24} />
-              </Link>
-              <Link
-                href="https://www.eventbrite.com/e/mangaluru-tech-day-2024-tickets-795844441147?aff=oddtdtcreator"
-                aria-label="Mangaluru Tech Day 2024"
-                className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform"
-              >
-                Mangaluru Tech Day 2024
-                <GoArrowUpRight size={24} />
-              </Link>
-              <Link
-                href="https://www.eventbrite.com/e/mangaluru-tech-day-3-techmang3-tickets-82910289909?aff=oddtdtcreator"
-                aria-label="Mangaluru Tech Day 2023"
-                className="flex items-center justify-center gap-2 w-full py-4 text-center text-lg text-neutral hover:text-secondary hover:bg-charcoal p-4 active:scale-95 transition-transform"
-              >
-                Mangaluru Tech Day 2023
-                <GoArrowUpRight size={24} />
-              </Link>
+            <div className="group bg-gradient-to-br from-primary-yellow/20 to-primary-yellow/5 p-6 lg:p-8 rounded-2xl border border-primary-yellow/20 hover:border-primary-yellow/40 transition-all duration-300 hover:scale-105 cursor-pointer">
+              <div className="flex items-center justify-between mb-3">
+                <div className="text-3xl lg:text-4xl outfit-extra-bold text-neutral-navy">5+</div>
+                <div className="w-8 h-8 bg-primary-yellow/20 rounded-lg flex items-center justify-center group-hover:bg-primary-yellow/30 transition-colors">
+                  <svg className="w-4 h-4 text-neutral-navy" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                </div>
+              </div>
+              <div className="text-sm outfit-extra-light text-neutral-navy/70">Events Hosted</div>
+              <div className="w-full h-1 bg-gradient-to-r from-primary-yellow/30 to-primary-yellow/10 rounded-full mt-3 group-hover:from-primary-yellow/50 group-hover:to-primary-yellow/20 transition-all"></div>
             </div>
-          </div>
-
-          <div className="w-full">
-            <SocialMedia />
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <Footer />
+        {/* Right Side - Creative Elements */}
+        <CreativeElements />
       </div>
     </section>
   );
