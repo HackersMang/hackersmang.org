@@ -28,7 +28,7 @@ export default function Hero() {
 
           {/* Interactive Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
-            <div className="group bg-gradient-to-br from-primary-yellow/20 to-primary-yellow/5 p-6 lg:p-8 rounded-2xl border border-primary-yellow/20 hover:border-primary-yellow/40 transition-all duration-300 hover:scale-105 cursor-pointer">
+            <div className="group bg-gradient-to-br from-primary-yellow/30 to-primary-yellow/10 p-6 lg:p-8 rounded-2xl border border-primary-yellow/20 hover:border-primary-yellow/40 transition-all duration-300 hover:scale-105 cursor-pointer">
               <div className="flex items-center justify-between mb-3">
                 <div className="text-3xl lg:text-4xl outfit-extra-bold text-neutral-navy">500+</div>
                 <div className="w-8 h-8 bg-primary-yellow/20 rounded-lg flex items-center justify-center group-hover:bg-primary-yellow/30 transition-colors">
@@ -37,11 +37,10 @@ export default function Hero() {
                   </svg>
                 </div>
               </div>
-              <div className="text-sm outfit-extra-light text-neutral-navy/70">Active Members</div>
-              <div className="w-full h-1 bg-gradient-to-r from-primary-yellow/30 to-primary-yellow/10 rounded-full mt-3 group-hover:from-primary-yellow/50 group-hover:to-primary-yellow/20 transition-all"></div>
+              <div className="text-sm outfit-extra-light text-neutral-navy/70 mb-3">Active Members</div>
             </div>
 
-            <div className="group bg-gradient-to-br from-primary-yellow/20 to-primary-yellow/5 p-6 lg:p-8 rounded-2xl border border-primary-yellow/20 hover:border-primary-yellow/40 transition-all duration-300 hover:scale-105 cursor-pointer">
+            <div className="group bg-gradient-to-br from-primary-yellow/30 to-primary-yellow/10 p-6 lg:p-8 rounded-2xl border border-primary-yellow/20 hover:border-primary-yellow/40 transition-all duration-300 hover:scale-105 cursor-pointer">
               <div className="flex items-center justify-between mb-3">
                 <div className="text-3xl lg:text-4xl outfit-extra-bold text-neutral-navy">5+</div>
                 <div className="w-8 h-8 bg-primary-yellow/20 rounded-lg flex items-center justify-center group-hover:bg-primary-yellow/30 transition-colors">
@@ -50,8 +49,7 @@ export default function Hero() {
                   </svg>
                 </div>
               </div>
-              <div className="text-sm outfit-extra-light text-neutral-navy/70">Events Hosted</div>
-              <div className="w-full h-1 bg-gradient-to-r from-primary-yellow/30 to-primary-yellow/10 rounded-full mt-3 group-hover:from-primary-yellow/50 group-hover:to-primary-yellow/20 transition-all"></div>
+              <div className="text-sm outfit-extra-light text-neutral-navy/70 mb-3">Events Hosted</div>
             </div>
           </div>
         </div>
