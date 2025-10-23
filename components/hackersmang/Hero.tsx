@@ -3,9 +3,9 @@ import CreativeElements from './CreativeElements';
 
 export default function Hero() {
   return (
-    <section className="relative pt-20 lg:pt-24 h-full px-5 lg:px-12">
+    <section className="relative pt-20 lg:pt-24 h-full">
       {/* Hero Card - Main Branding */}
-      <div className="w-full py-12 lg:py-16 flex flex-col lg:flex-row justify-center items-center relative overflow-hidden min-h-[85vh]">
+      <div className="max-w-7xl mx-auto px-5 lg:px-12 py-12 lg:py-16 flex flex-col lg:flex-row justify-center items-center relative overflow-hidden min-h-[85vh]">
         {/* Left Side - Text Content */}
         <div className="relative z-10 max-w-2xl lg:max-w-3xl lg:mr-16 mb-12 lg:mb-0">
           {/* Subtitle */}

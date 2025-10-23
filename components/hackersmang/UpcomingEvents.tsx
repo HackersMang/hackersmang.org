@@ -4,8 +4,8 @@ import { GoArrowUpRight } from 'react-icons/go';
 
 export default function UpcomingEvents() {
     return (
-        <div className="bg-neutral-white relative py-20 lg:py-32 px-5 lg:px-12 overflow-hidden">
-            <div className="max-w-7xl mx-auto text-left md:text-center flex flex-col items-start md:items-center justify-center gap-4 lg:gap-8">
+        <div className="bg-neutral-white relative py-20 lg:py-32 overflow-hidden">
+            <div className="max-w-7xl mx-auto px-5 lg:px-12 text-left md:text-center flex flex-col items-start md:items-center justify-center gap-4 lg:gap-8">
                 <span className="text-xl lg:text-2xl font-bold outfit-extra-light text-neutral-navy tracking-tight">
                     Upcoming event
                 </span>
