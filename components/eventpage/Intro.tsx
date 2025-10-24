@@ -3,39 +3,32 @@ import React from "react";
 
 
 const Intro = ({ title, subtitle }: IntroProps): JSX.Element => {
-  // Function to process subtitle
-  const processSubtitle = (text?: string) => {
-    if (!text) return null;
-
-    const words = text.split(" ");
-    if (words.length <= 2) {
-      return text; // Return as is if it has 2 or fewer words
-    }
-
-    const mainText = words.slice(0, -2).join(" "); // First part
-    const highlightedText = words.slice(-2).join(" "); // Last two words
-
-    return (
-      <>
-        {mainText}{" "}
-        <span className="text-neutral whitespace-nowrap curved-underline">
-          {highlightedText}
-        </span>
-      </>
-    );
-  };
-
   return (
-    <section className="pt-28 pb-12 w-full flex items-center justify-center">
-      <div className="flex flex-col items-center w-full px-4">
-        <h1 className="text-5xl md:text-7xl lg:text-9xl text-secondary outfit-bold text-center transition-all">
-          {title}
-        </h1>
-        {subtitle && (
-          <h2 className="text-xl text-neutral lg:text-3xl mx-3 mt-2 text-center font-light">
-            {processSubtitle(subtitle)}
-          </h2>
-        )}
+    <section className="relative pt-20 lg:pt-24 h-full">
+      {/* Hero Card - Main Branding */}
+      <div className="max-w-7xl mx-auto px-5 lg:px-12 py-12 lg:py-16 flex flex-col justify-center items-center relative overflow-hidden min-h-[60vh]">
+        {/* Content */}
+        <div className="relative z-10 max-w-4xl text-center">
+          {/* Subtitle */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-yellow/10 rounded-full mb-6">
+            <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+            <span className="text-sm outfit-extra-light text-neutral-navy font-bold">
+              HackersMang Event
+            </span>
+          </div>
+
+          {/* Main Title */}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl outfit-extra-bold text-neutral-navy leading-[0.9] mb-8 tracking-tight">
+            {title}
+          </h1>
+
+          {/* Description */}
+          {subtitle && (
+            <p className="text-lg lg:text-xl text-neutral-navy/80 outfit-extra-light leading-relaxed mb-10 max-w-3xl mx-auto">
+              {subtitle}
+            </p>
+          )}
+        </div>
       </div>
     </section>
   );

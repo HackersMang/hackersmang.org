@@ -34,24 +34,20 @@ function page() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
-            <main className="relative bg-grainy outfit-extra-light">
+            <main className="relative bg-white outfit-extra-light">
                 <div className="relative z-10">
                     <Header />
-                    <div className="w-full flex flex-col items-center justify-center text-center">
-                        <div className="w-full max-w-screen-xl flex flex-col items-center justify-center text-center">
-                        <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
-                        <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
-                        <ScheduleWithRegister 
-                            sessionId={EVENT_DETAIL.sessionizeApiId}
-                            trackRegistrations={trackRegistrations}
-                            registrationStartOn={EVENT_DETAIL.registrationStartOn}
-                            registrationEndOn={EVENT_DETAIL.registrationEndOn}
-                        />
-                        <Resources resources={RESOURCES} />
-                    </div>
-                    </div>
-                    <Footer />
+                    <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
+                    <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
+                    <ScheduleWithRegister
+                        sessionId={EVENT_DETAIL.sessionizeApiId}
+                        trackRegistrations={trackRegistrations}
+                        registrationStartOn={EVENT_DETAIL.registrationStartOn}
+                        registrationEndOn={EVENT_DETAIL.registrationEndOn}
+                    />
+                    <Resources resources={RESOURCES} />
                 </div>
+                <Footer />
             </main>
         </>
     );

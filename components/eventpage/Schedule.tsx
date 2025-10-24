@@ -90,45 +90,68 @@ const Schedule = ({ sessionId }: ScheduleProps): JSX.Element => {
     }
 
     return (
-        <section className="flex flex-col px-2 pt-2 lg:px-4 lg:py-4 items-center justify-center w-full">
-            <h2 className="text-xl lg:text-2xl text-primary pb-2 lg:pb-4">Schedule</h2>
-            {loading ? (
-                <SessionListSkeleton />
-            ) : (
-                <>
-                    {scheduleData && scheduleData.length > 0 ? (
-                        scheduleData.map((daySchedule, index) => (
-                            <div key={index} className="w-full flex flex-col items-center justify-center">
-                                {daySchedule.rooms.map((room) => (
-                                    <div key={room.id} className="w-full mb-6">
-                                        <h3 className="text-lg lg:text-xl pb-4 text-primary/60 text-center">
-                                            {room.name === 'Track1' ? 'Track 1' : room.name}
-                                        </h3>
-                                        {room.sessions.length > 0 ? (
-                                            <SessionList sessions={room.sessions} />
-                                        ) : (
-                                            <div className="w-full p-4 bg-charcoal rounded-lg">
-                                                <p className="text-sm text-center text-neutral">No session available.</p>
-                                            </div>
-                                        )}
-                                    </div>
-                                ))}
-                            </div>
-                        ))
-                    ) : (
-                        <div className="w-full p-4 bg-charcoal rounded-lg">
-                            <p className="text-sm text-center text-neutral">No session available.</p>
-                        </div>
-                    )}
-                </>
-            )}
-            {!loading && fromCache && cachedAt ? (
-                <div className="flex flex-row items-center justify-center gap-2 w-full mx-2">
-                    <p className="text-sm text-center text-neutral">
-                        ⚠️ This data is served from cache and was last updated at {cachedAt}.
-                    </p>
+        <section className="relative bg-primary-yellow/70 py-20 lg:py-32 overflow-hidden">
+            <div className="max-w-7xl mx-auto px-5 lg:px-12 relative z-10">
+                {/* Header Section - Matching Resources.tsx */}
+                <div className="text-left lg:text-center mb-8 lg:mb-12 flex flex-col items-start lg:items-center justify-center gap-4 lg:gap-8 text-neutral-navy">
+                    <span className="text-xl lg:text-2xl font-bold outfit-extra-light text-neutral-navy tracking-tight">
+                        Event Schedule
+                    </span>
+                    <h3 className="text-2xl lg:text-6xl xl:text-7xl outfit-extra-bold text-neutral-navy mb-4 lg:mb-6 tracking-tight">
+                        Schedule
+                    </h3>
                 </div>
-            ) : null}
+                
+                {loading ? (
+                    <SessionListSkeleton />
+                ) : (
+                    <>
+                        {scheduleData && scheduleData.length > 0 ? (
+                            scheduleData.map((daySchedule, index) => (
+                                <div key={index} className="w-full">
+                                    {daySchedule.rooms.map((room) => (
+                                        <div key={room.id} className="w-full mb-16 lg:mb-20">
+                                            {/* Track Header - Eyebrow Style */}
+                                            <div className="mb-12 lg:mb-16">
+                                                <div className="relative inline-block">
+                                                    {/* Eyebrow Background */}
+                                                    <div className="absolute inset-0 bg-neutral-white/80 rounded-lg transform rotate-1"></div>
+                                                    <div className="relative bg-gradient-to-r from-neutral-white/90 to-neutral-white/70 px-6 py-3 rounded-lg border border-primary-yellow/30">
+                                                        <h3 className="text-xl lg:text-2xl font-bold text-neutral-navy uppercase tracking-wide outfit-extra-bold">
+                                                            {room.name === 'Track1' ? 'Track 1' : room.name}
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            {room.sessions.length > 0 ? (
+                                                <SessionList sessions={room.sessions} />
+                                            ) : (
+                                                <div className="w-full p-8 bg-gradient-to-br from-primary-yellow/20 to-primary-yellow/5 rounded-2xl text-center border border-primary-yellow/30">
+                                                    <p className="text-lg text-neutral-navy/70 outfit-extra-light">No session available.</p>
+                                                </div>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
+                            ))
+                        ) : (
+                            <div className="w-full p-8 bg-gradient-to-br from-primary-yellow/20 to-primary-yellow/5 rounded-2xl text-center border border-primary-yellow/30">
+                                <p className="text-lg text-neutral-navy/70 outfit-extra-light">No session available.</p>
+                            </div>
+                        )}
+                    </>
+                )}
+                {!loading && fromCache && cachedAt ? (
+                    <div className="flex flex-row items-center justify-center gap-2 w-full mt-8">
+                        <div className="bg-gradient-to-br from-primary-yellow/20 to-primary-yellow/5 p-4 rounded-xl border border-primary-yellow/30">
+                            <p className="text-sm text-center text-neutral-navy/70 outfit-extra-light">
+                                ⚠️ This data is served from cache and was last updated at {cachedAt}.
+                            </p>
+                        </div>
+                    </div>
+                ) : null}
+            </div>
         </section>
     );
 };

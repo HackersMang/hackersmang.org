@@ -6,41 +6,59 @@ const Speakers = ({ speakers }: { speakers: any[] }): JSX.Element => {
     const sortedSpeakers = [...speakers].sort((a, b) => a.name.localeCompare(b.name));
 
     return (
-        <section className="flex flex-col md:gap-4 py-4 px-4 lg:mx-6 my-4 items-center justify-center">
-            <div className="text-xl lg:text-2xl font-light text-primary outfit-extra-light">
-                Speakers
+        <section className="w-full flex flex-col items-center justify-center mt-8 lg:my-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-yellow/10 rounded-full mb-6">
+                <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                <span className="text-sm outfit-extra-light text-neutral-navy font-medium">
+                    Our Speakers
+                </span>
             </div>
+            
+            <h3 className="text-2xl lg:text-3xl text-neutral-navy outfit-extra-bold mb-8">Speakers</h3>
 
-            {sortedSpeakers.map((speaker, index) => (
-                <div key={speaker.id ?? index} className="relative rounded-lg mt-1 p-2 bg-[#1d1d1c] lg:hover:bg-[#d4e20b] w-full flex flex-row gap-2 hover:text-black items-center group">
-                    <div className="hidden lg:block p-8 text-neutral lg:group-hover:text-black text-lg lg:text-3xl">
-                        {index + 1 < 10 ? `0${index + 1}` : index + 1}.
-                    </div>
-                    <div className="relative p-1 lg:hidden lg:absolute lg:top-10 lg:right-80 lg:group-hover:block lg:transform lg:-translate-y-1/2 lg:z-20">
-                        <Image 
-                            src={speaker.image} 
-                            alt={speaker.name} 
-                            width={300} 
-                            height={300} 
-                            className="w-16 md:w-24 lg:w-72 rounded-xl lg:rounded-full outline outline-2 outline-charcoal lg:outline-[#d4e20b]" 
-                        />
-                    </div>
-                    <div className="flex flex-grow flex-col lg:flex-row w-full lg:w-auto lg:items-center">
-                        <div className="flex-1 text-lg md:text-2xl lg:text-3xl text-secondary lg:group-hover:text-black">
-                            {speaker.socialLinks ? (
-                                <Link href={speaker.socialLinks} rel="noopener noreferrer" target="_blank" className="hover:underline">
-                                    {speaker.name}
-                                </Link>
-                            ) : (
-                                <span>{speaker.name}</span>
-                            )}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
+                {sortedSpeakers.map((speaker, index) => (
+                    <div key={speaker.id ?? index} className="group bg-gradient-to-br from-primary-yellow/20 to-primary-yellow/5 backdrop-blur-sm text-neutral-navy p-6 rounded-2xl border border-primary-yellow/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer">
+                        <div className="flex flex-col items-center text-center">
+                            <div className="relative mb-4">
+                                <Image 
+                                    src={speaker.image} 
+                                    alt={speaker.name} 
+                                    width={120} 
+                                    height={120} 
+                                    className="w-24 h-24 rounded-full border-4 border-primary-yellow/30 group-hover:border-primary-yellow/60 transition-all duration-300" 
+                                />
+                                <div className="absolute -top-2 -right-2 w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs font-bold">
+                                    {index + 1}
+                                </div>
+                            </div>
+                            
+                            <div className="space-y-2">
+                                <h4 className="text-lg font-semibold outfit-extra-bold">
+                                    {speaker.socialLinks ? (
+                                        <Link 
+                                            href={speaker.socialLinks} 
+                                            rel="noopener noreferrer" 
+                                            target="_blank" 
+                                            className="text-neutral-navy hover:text-primary transition-colors"
+                                        >
+                                            {speaker.name}
+                                        </Link>
+                                    ) : (
+                                        <span className="text-neutral-navy">{speaker.name}</span>
+                                    )}
+                                </h4>
+                                
+                                {speaker.company && (
+                                    <p className="text-sm text-neutral-navy/70 outfit-extra-light">
+                                        {speaker.company}
+                                    </p>
+                                )}
+                            </div>
                         </div>
-                        <div className="flex-1 text-sm md:text-xl text-start lg:text-end lg:mx-4 lg:ml-auto text-neutral lg:group-hover:text-black">
-                            {speaker.company}
-                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
         </section>
     );
 }

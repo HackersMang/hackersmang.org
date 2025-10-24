@@ -69,19 +69,19 @@ function page() {
   const registrationLink = EVENT_DETAIL.tracks?.[0]?.registrationLink || null;
 
   return (
-    <main className="relative bg-grainy outfit-extra-light">
+    <main className="relative bg-white outfit-extra-light">
       <div className="relative z-10">
         <Header />
         <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
         <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
-        
+
         <Agendas speakers={SPEAKERS} />
         <Speakers speakers={SPEAKERS} />
 
-        <Register 
-          registrationLink={registrationLink} 
-          registrationStartOn={EVENT_DETAIL.registrationStartOn} 
-          registrationEndOn={EVENT_DETAIL.registrationEndOn} 
+        <Register
+          registrationLink={registrationLink}
+          registrationStartOn={EVENT_DETAIL.registrationStartOn}
+          registrationEndOn={EVENT_DETAIL.registrationEndOn}
         />
         <Footer />
       </div>

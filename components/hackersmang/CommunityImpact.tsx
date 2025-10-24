@@ -11,7 +11,7 @@ export default function CommunityImpact() {
                         <div className="text-lg lg:text-xl outfit-extra-light text-neutral-navy">Active Members</div>
                     </div>
                     <div className="text-start md:text-center">
-                        <div className="text-5xl lg:text-6xl outfit-extra-bold text-neutral-navy mb-4">50+</div>
+                        <div className="text-5xl lg:text-6xl outfit-extra-bold text-neutral-navy mb-4">5+</div>
                         <div className="text-lg lg:text-xl outfit-extra-light text-neutral-navy">Events Hosted</div>
                     </div>
                     <div className="text-start md:text-center">

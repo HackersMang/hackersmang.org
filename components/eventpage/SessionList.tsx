@@ -31,138 +31,83 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
     const sessionTags = extractTagsFromSession(session)
 
     return (
-        <div className="flex flex-col bg-[#1d1d1c] rounded-lg shadow-lg">
-            {/* Main Content Row */}
-            <div className="flex flex-row items-start p-2 lg:p-4">
-                {/* Speaker Images Section - Mobile: Horizontal, Desktop: Vertical */}
-                <div className="flex-shrink-0 mr-2 md:mr-4 lg:mr-6">
-                                        
-                    {/* Tablet/Desktop: Vertical layout */}
-                    <div className="hidden md:flex flex-col gap-2 justify-start items-start">
-                        {session.speakers.map((speaker, index) => (
-                            <div key={speaker.id} className="flex flex-col items-start mb-2">
-                                <div className="w-32 h-32 relative">
-                                    <Image
-                                        src={speaker.profilePicture ?? "https://sessionize.com/image/8db9-400o400o1-test4.jpg"}
-                                        alt={`${speaker.name} profile`}
-                                        width={96}
-                                        height={96}
-                                        className="rounded-lg object-cover w-full h-full"
-                                    />
-                                </div>
-                                <div className="flex items-center gap-1 mt-2">
-                                    <User size={12} className="text-neutral" />
-                                    <span className="text-xs text-neutral text-center max-w-24 truncate">{speaker.name}</span>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Title, Speaker, Time and Tags */}
-                <div className="flex flex-col flex-grow min-w-0">
-                    <div className="flex justify-between items-start gap-2 mb-2">
-                        <div className="flex-grow">
-                            {/* Display all tags */}
-                            <div className="flex flex-wrap gap-1">
-                                {sessionTags.map((tag) => (
-                                    <span 
-                                        key={tag.id}
-                                        className="inline-block px-2 py-1 text-xs bg-primary/10 text-primary/70 rounded-md border border-secondary/30"
-                                    >
-                                        {tag.name}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-                        <div className="flex-shrink-0 text-right">
-                            <span className="text-xs md:text-base whitespace-nowrap text-primary/50">{formatTime(session.startsAt)} - {formatTime(session.endsAt)}</span>
-                        </div>
+        <div className="w-full bg-neutral-white/95 pt-4 lg:pt-8 border-t border-neutral-navy/30 transition-all duration-300 hover:scale-[1.02]">
+            <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
+                {/* Left Side - Time and Content */}
+                <div className="flex-1 w-full lg:w-auto">
+                    {/* Time Slot */}
+                    <div className="mb-6">
+                        <span className="text-sm font-mono text-neutral-navy/70 outfit-extra-light bg-primary-yellow/10 px-3 py-1 rounded-full">
+                            [ {formatTime(session.startsAt)}–{formatTime(session.endsAt)} ]
+                        </span>
                     </div>
 
-                    <div className="flex flex-col items-start gap-1">
-                        <h4 className="text-xl lg:text-2xl text-secondary text-left font-bold mb-1">{session.title}</h4>
-                        {/* Show all speakers in the main content area */}
-                        {/* Mobile: Horizontal layout */}
-                        <div className="flex flex-row gap-2 mb-1 md:hidden">
-                            {session.speakers.slice(0, 3).map((speaker, index) => (
-                                <div key={speaker.id} className="flex flex-col items-center">
-                                    <div className="w-16 h-16 relative">
-                                        <Image
-                                            src={speaker.profilePicture ?? "https://sessionize.com/image/8db9-400o400o1-test4.jpg"}
-                                            alt={`${speaker.name} profile`}
-                                            width={48}
-                                            height={48}
-                                            className="rounded-lg object-cover w-full h-full"
-                                        />
-                                    </div>
-                                </div>
-                            ))}
-                            {session.speakers.length > 3 && (
-                                <div className="flex flex-col items-center">
-                                    <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-                                        <span className="text-xs text-primary">+{session.speakers.length - 3}</span>
-                                    </div>
-                                    <span className="text-xs text-neutral text-center max-w-12 truncate mt-1">More</span>
-                                </div>
-                            )}
-                        </div>
-                        <div className="flex flex-wrap items-center gap-2">
-                            {session.speakers.map((speaker, index) => (
-                                <div key={speaker.id} className="flex items-center gap-1">
-                                    <User size={12} className="text-neutral md:text-sm" />
-                                    <span className="text-xs text-neutral md:text-sm">{speaker.name}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+                    {/* Title */}
+                    <h4 className="text-xl lg:text-2xl font-bold text-neutral-navy mb-4 uppercase tracking-wide outfit-extra-bold">
+                        {session.title}
+                    </h4>
 
-                    {/* Description - Desktop Only */}
-                    <div className="hidden md:block mt-2 text-left">
+                    {/* Description */}
+                    <div className="mb-6">
                         <motion.div
                             animate={{ height: isExpanded ? "auto" : maxHeight }}
                             transition={{ duration: 0.3 }}
-                            className="overflow-hidden relative text-left"
+                            className="overflow-hidden relative"
                         >
-                            <p className="text-base md:text-base text-left text-neutral">{session.description}</p>
+                            <p className="text-base lg:text-lg text-neutral-navy/80 leading-relaxed outfit-extra-light">
+                                {session.description}
+                            </p>
                         </motion.div>
                         {session.description.length > 300 && (
                             <button
                                 onClick={toggleExpand}
-                                className="text-xs text-secondary text-left focus:outline-none mt-1"
+                                className="text-sm text-neutral-navy hover:text-neutral-navy/80 focus:outline-none mt-3 transition-colors outfit-extra-light font-semibold underline hover:no-underline"
                             >
-                                {isExpanded ? "[-] Read Less" : "[+] Read More"}
+                                {isExpanded ? "Read Less" : "Read More"}
                             </button>
                         )}
                     </div>
-                </div>
-            </div>
 
-            {/* Mobile Description - Expandable Section */}
-            <div className="md:hidden">
-                <button
-                    onClick={toggleExpand}
-                    className="w-full px-4 py-2 flex items-center justify-center text-xs text-primary/50 focus:outline-none border-t border-neutral/20"
-                >
-                    {isExpanded ? (
-                        <ChevronUp size={14} className="ml-1" />
-                    ) : (
-                        <ChevronDown size={14} className="ml-1" />
+                    {/* Tags */}
+                    {sessionTags.length > 0 && (
+                        <div className="flex flex-wrap gap-2">
+                            {sessionTags.map((tag) => (
+                                <span 
+                                    key={tag.id}
+                                    className="inline-block px-3 py-1 text-xs bg-primary-yellow/20 text-neutral-navy rounded-full font-medium outfit-extra-light border border-primary-yellow/30"
+                                >
+                                    {tag.name}
+                                </span>
+                            ))}
+                        </div>
                     )}
-                </button>
-                <AnimatePresence>
-                    {isExpanded && (
-                        <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className="overflow-hidden"
-                        >
-                            <p className="px-4 pb-4 text-base text-left text-neutral">{session.description}</p>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
+                </div>
+
+                {/* Right Side - Speaker Images */}
+                <div className="flex-shrink-0 w-full lg:w-auto">
+                    <div className="flex flex-wrap justify-start lg:justify-end gap-4 lg:gap-6">
+                        {session.speakers.map((speaker, index) => (
+                            <div key={speaker.id} className="flex flex-col items-start justify-start lg:items-center lg:justify-center group">
+                                <div className="relative">
+                                    <Image
+                                        src={speaker.profilePicture ?? "https://sessionize.com/image/8db9-400o400o1-test4.jpg"}
+                                        alt={`${speaker.name} profile`}
+                                        width={80}
+                                        height={80}
+                                        className="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl object-cover border-2 border-primary-yellow/30 group-hover:border-primary-yellow/60 transition-all duration-300"
+                                    />
+                                    {/* Speaker Number Badge */}
+                                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-primary rounded-full flex items-center justify-center text-neutral-navy text-xs font-bold">
+                                        {index + 1}
+                                    </div>
+                                </div>
+                                <span className="text-xs lg:text-sm text-neutral-navy/70 outfit-extra-light mt-3 text-center max-w-20 lg:max-w-24 truncate">
+                                    {speaker.name}
+                                </span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
         </div>
     )
@@ -170,7 +115,7 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
 
 const SessionList: React.FC<SessionListProps> = ({ sessions }) => {
     return (
-        <div className="flex flex-col gap-4 w-full">
+        <div className="w-full space-y-8 lg:space-y-12">
             {sessions.map((session) => (
                 <SessionCard key={session.id} session={session} />
             ))}
