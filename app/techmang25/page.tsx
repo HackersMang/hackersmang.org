@@ -2,15 +2,14 @@ import "@/assets/fonts.css"
 import { Metadata } from "next";
 import Header from "@/components/hackersmang/Header";
 import Venue from "../../components/eventpage/Venue";
-import About from "./components/About";
 import Script from 'next/script';
-import Register from "../../components/eventpage/Register";
-import Schedule from "../../components/eventpage/Schedule";
 import Intro from "@/components/eventpage/Intro";
 import { EVENT_DETAIL, RESOURCES } from "./constants";
 import CallForSpeaker from "../../components/eventpage/CallForSpeaker";
 import Resources from "../../components/eventpage/Resources";
 import { Footer } from "@/components/hackersmang/Footer";
+import ScheduleWithRegister from "@/components/eventpage/ScheduleWithRegister";
+import { TrackRegistration } from "@/lib/types";
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://hackersmang.org'),
@@ -138,7 +137,11 @@ const jsonLd = {
 
 function page() {
     // Extract registration link from the first track for backward compatibility
-    const registrationLink = EVENT_DETAIL.tracks?.[0]?.registrationLink || null;
+    const trackRegistrations: TrackRegistration[] = EVENT_DETAIL.tracks?.map(track => ({
+        track: track.name,
+        registrationLink: track.registrationLink,
+        buttonText: `Register for ${track.name}`
+    })) || [];
 
     return (
         <>
@@ -153,14 +156,8 @@ function page() {
                     <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
                     <CallForSpeaker registrationLink={EVENT_DETAIL.callForSpeakerLink} registrationStartOn={EVENT_DETAIL.callForSpeakerStartOn} registrationEndOn={EVENT_DETAIL.callForSpeakerEndOn} />
                     <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
-                    <Schedule sessionId={process.env.NEXT_PUBLIC_SESSIONIZE_API_ID} />
+                    <ScheduleWithRegister sessionId={EVENT_DETAIL.sessionizeApiId} trackRegistrations={trackRegistrations} registrationStartOn={EVENT_DETAIL.registrationStartOn} registrationEndOn={EVENT_DETAIL.registrationEndOn} />
                     <Resources resources={RESOURCES} />
-                    <Register
-                        registrationLink={registrationLink}
-                        registrationStartOn={EVENT_DETAIL.registrationStartOn}
-                        registrationEndOn={EVENT_DETAIL.registrationEndOn}
-                    />
-                    <About />
                     <Footer />
                 </div>
             </main>

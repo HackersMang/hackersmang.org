@@ -35,15 +35,51 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
             <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
                 {/* Left Side - Time and Content */}
                 <div className="flex-1 w-full lg:w-auto">
-                    {/* Time Slot */}
-                    <div className="mb-6">
-                        <span className="text-sm font-mono text-neutral-navy/70 outfit-extra-light bg-primary-yellow/10 px-3 py-1 rounded-full">
+                    {/* Time Slot and Tags Row */}
+                    <div className="flex justify-between items-start mb-6">
+                        <span className="text-sm font-mono text-neutral-navy/90 outfit-extra-light bg-primary-yellow/10 px-3 py-1 rounded-full">
                             [ {formatTime(session.startsAt)}–{formatTime(session.endsAt)} ]
                         </span>
+                        
+                        {/* Tags */}
+                        {sessionTags.length > 0 && (
+                            <div className="flex flex-wrap gap-2 justify-end">
+                                {sessionTags.map((tag) => (
+                                    <span 
+                                        key={tag.id}
+                                        className="inline-block px-3 py-1 text-xs bg-primary-yellow/20 text-neutral-navy rounded-full font-medium outfit-extra-light border border-primary-yellow/30"
+                                    >
+                                        {tag.name}
+                                    </span>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Speaker Images - Mobile Only */}
+                    <div className="mb-6 lg:hidden">
+                        <div className="flex flex-wrap gap-4">
+                            {session.speakers.map((speaker, index) => (
+                                <div key={speaker.id} className="flex flex-col items-center group">
+                                    <div className="relative">
+                                        <Image
+                                            src={speaker.profilePicture ?? "https://sessionize.com/image/8db9-400o400o1-test4.jpg"}
+                                            alt={`${speaker.name} profile`}
+                                            width={80}
+                                            height={80}
+                                            className="w-20 h-20 rounded-2xl object-cover border-2 border-primary-yellow/30 group-hover:border-primary-yellow/60 transition-all duration-300"
+                                        />
+                                    </div>
+                                    <span className="text-xs text-neutral-navy/70 outfit-extra-light mt-2 text-center max-w-20 truncate">
+                                        {speaker.name}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
                     {/* Title */}
-                    <h4 className="text-xl lg:text-2xl font-bold text-neutral-navy mb-4 uppercase tracking-wide outfit-extra-bold">
+                    <h4 className="text-xl lg:text-2xl font-bold text-neutral-navy mb-4 tracking-wide outfit-extra-bold">
                         {session.title}
                     </h4>
 
@@ -68,40 +104,23 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                         )}
                     </div>
 
-                    {/* Tags */}
-                    {sessionTags.length > 0 && (
-                        <div className="flex flex-wrap gap-2">
-                            {sessionTags.map((tag) => (
-                                <span 
-                                    key={tag.id}
-                                    className="inline-block px-3 py-1 text-xs bg-primary-yellow/20 text-neutral-navy rounded-full font-medium outfit-extra-light border border-primary-yellow/30"
-                                >
-                                    {tag.name}
-                                </span>
-                            ))}
-                        </div>
-                    )}
                 </div>
 
-                {/* Right Side - Speaker Images */}
-                <div className="flex-shrink-0 w-full lg:w-auto">
-                    <div className="flex flex-wrap justify-start lg:justify-end gap-4 lg:gap-6">
+                {/* Right Side - Speaker Images - Desktop Only */}
+                <div className="hidden lg:flex flex-shrink-0 w-auto">
+                    <div className="flex flex-wrap justify-end gap-6">
                         {session.speakers.map((speaker, index) => (
-                            <div key={speaker.id} className="flex flex-col items-start justify-start lg:items-center lg:justify-center group">
+                            <div key={speaker.id} className="flex flex-col items-center group">
                                 <div className="relative">
                                     <Image
                                         src={speaker.profilePicture ?? "https://sessionize.com/image/8db9-400o400o1-test4.jpg"}
                                         alt={`${speaker.name} profile`}
                                         width={80}
                                         height={80}
-                                        className="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl object-cover border-2 border-primary-yellow/30 group-hover:border-primary-yellow/60 transition-all duration-300"
+                                        className="w-24 h-24 rounded-2xl object-cover border-2 border-primary-yellow/30 group-hover:border-primary-yellow/60 transition-all duration-300"
                                     />
-                                    {/* Speaker Number Badge */}
-                                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-primary rounded-full flex items-center justify-center text-neutral-navy text-xs font-bold">
-                                        {index + 1}
-                                    </div>
                                 </div>
-                                <span className="text-xs lg:text-sm text-neutral-navy/70 outfit-extra-light mt-3 text-center max-w-20 lg:max-w-24 truncate">
+                                <span className="text-sm text-neutral-navy/70 outfit-extra-light mt-3 text-center max-w-24 truncate">
                                     {speaker.name}
                                 </span>
                             </div>

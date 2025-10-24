@@ -8,16 +8,18 @@ export const EVENT_DETAIL: EventDetailProps = {
   happeningOn: new Date("02/01/2025"), // MM/DD/YYYY
   tracks: [
     {
-      name: "Main Track",
-      registrationLink: "https://buytickets.at/hackerspacemangaluru/1308788"
+      name: "Main Hall",
+      registrationLink: "https://buytickets.at/hackerspacemangaluru/1308788",
+      buttonText: "Register for Main Track"
     }
   ],
-  registrationStartOn: new Date("01/21/2025"),
-  registrationEndOn: new Date("01/31/2025"),
+  registrationStartOn: new Date("2024-12-01"),
+  registrationEndOn: new Date("2025-01-31"),
   callForSpeakerLink: "https://sessionize.com/techmang/",
   callForSpeakerStartOn: new Date("01/05/2025"),
   callForSpeakerEndOn: new Date("01/20/2025"),
   isSchedulePublished: true,
+  sessionizeApiId: "bvixkopq",
 };
 
 export const RESOURCES: Resource[] = [

@@ -2,36 +2,72 @@ import React from 'react';
 
 const SessionListSkeleton: React.FC = () => {
   return (
-    <>
-      <div className="h-3 lg:h-4 bg-[#1d1d1c] mb-4 rounded w-1/6"></div>
+    <div className="w-full space-y-8 lg:space-y-12">
+      <div className="text-left lg:text-center mb-8 lg:mb-12 flex flex-col items-start lg:items-center justify-center gap-4 lg:gap-8 text-neutral-navy">
+        <div className="h-24 bg-neutral-navy/20 rounded w-2/3"></div>
+      </div>
+      {Array.from({ length: 5 }).map((_, index) => (
+        <div
+          key={index}
+          className="w-full bg-neutral-white/95 pt-4 lg:pt-8 border-t border-neutral-navy/30 animate-pulse"
+        >
+          <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
+            {/* Left Side - Time and Content */}
+            <div className="flex-1 w-full lg:w-auto">
+              {/* Time Slot and Tags Row */}
+              <div className="flex justify-between items-start mb-6">
+                {/* Time Slot Skeleton */}
+                <div className="h-6 bg-neutral-navy/20 rounded-full w-32"></div>
+                
+                {/* Tags Skeleton */}
+                <div className="flex gap-2">
+                  <div className="h-5 bg-primary-yellow/20 rounded-full w-16"></div>
+                  <div className="h-5 bg-primary-yellow/20 rounded-full w-20"></div>
+                </div>
+              </div>
 
-      <div className="flex flex-col gap-4 w-full animate-pulse">
-        {Array.from({ length: 5 }).map((_, index) => (
-          <div
-            key={index}
-            className="flex flex-row bg-[#1d1d1c] rounded-lg shadow-lg p-4"
-          >
-            {/* Skeleton for Image */}
-            <div className="flex-shrink-0 w-24 h-24 lg:w-36 lg:h-36 bg-gray-700 rounded-lg"></div>
+              {/* Speaker Images - Mobile Only */}
+              <div className="mb-6 lg:hidden">
+                <div className="flex flex-wrap gap-4">
+                  <div className="flex flex-col items-center">
+                    <div className="w-20 h-20 bg-neutral-navy/20 rounded-2xl"></div>
+                    <div className="h-3 bg-neutral-navy/20 rounded w-16 mt-2"></div>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <div className="w-20 h-20 bg-neutral-navy/20 rounded-2xl"></div>
+                    <div className="h-3 bg-neutral-navy/20 rounded w-14 mt-2"></div>
+                  </div>
+                </div>
+              </div>
 
-            {/* Skeleton for Speaker Details */}
-            <div className="flex flex-col flex-grow pl-2 lg:pl-4 justify-center">
-              <div className="h-3 lg:h-4 bg-gray-600 rounded w-24 mb-2"></div>
-              <div className="h-4 lg:h-6 bg-gray-700 rounded w-3/4 mb-2"></div>
-              <div className="h-4 lg:h-6 bg-gray-800 rounded w-1/4 mb-2"></div>
-              <div className="h-3 lg:h-4 bg-gray-600 rounded w-full mb-1"></div>
-              <div className="h-3 lg:h-4 bg-gray-600 rounded w-full"></div>
+              {/* Title Skeleton */}
+              <div className="h-6 lg:h-8 bg-neutral-navy/30 rounded w-3/4 mb-4"></div>
+
+              {/* Description Skeleton */}
+              <div className="mb-6 space-y-2">
+                <div className="h-4 lg:h-5 bg-neutral-navy/20 rounded w-full"></div>
+                <div className="h-4 lg:h-5 bg-neutral-navy/20 rounded w-5/6"></div>
+                <div className="h-4 lg:h-5 bg-neutral-navy/20 rounded w-4/5"></div>
+              </div>
             </div>
 
-            {/* Skeleton for Speaker Time */}
-            <div className="text-sm md:text-base lg:text-lg text-right font-medium ml-2 mt-4 lg:mt-0 lg:ml-auto lg:px-4">
-              <div className="h-3 lg:h-4 bg-gray-600 rounded w-24"></div>
+            {/* Right Side - Speaker Images - Desktop Only */}
+            <div className="hidden lg:flex flex-shrink-0 w-auto">
+              <div className="flex flex-wrap justify-end gap-6">
+                <div className="flex flex-col items-center">
+                  <div className="w-24 h-24 bg-neutral-navy/20 rounded-2xl"></div>
+                  <div className="h-3 bg-neutral-navy/20 rounded w-20 mt-3"></div>
+                </div>
+                <div className="flex flex-col items-center">
+                  <div className="w-24 h-24 bg-neutral-navy/20 rounded-2xl"></div>
+                  <div className="h-3 bg-neutral-navy/20 rounded w-18 mt-3"></div>
+                </div>
+              </div>
             </div>
           </div>
-        ))}
-      </div>
-    </>
-
+        </div>
+      ))}
+    </div>
   );
 };
 

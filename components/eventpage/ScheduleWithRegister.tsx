@@ -105,61 +105,75 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
         if (!trackRegistration?.registrationLink) return null;
 
         return (
-            <div className="mt-12 lg:mt-16">
-                <div className="bg-neutral-white/95 p-8 lg:p-10 relative overflow-hidden">
-                    {/* Interconnected Corner Cuts */}
-                    <div className="absolute top-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 -translate-y-4"></div>
-                    <div className="absolute bottom-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 translate-y-4"></div>
-                    <div className="absolute bottom-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 translate-y-4"></div>
-                    <div className="absolute top-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 -translate-y-4"></div>
+            <div className="mt-12 lg:mt-16 animate-fade-in-up">
+                <div className="bg-neutral-white/95 p-8 lg:p-10 relative overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-lg group">
+                    {/* Animated Background Glow */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary-yellow/5 via-transparent to-primary-yellow/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    {/* Interconnected Corner Cuts with Animation */}
+                    <div className="absolute top-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 -translate-y-4 transition-all duration-300 group-hover:bg-primary-yellow/90 group-hover:scale-110"></div>
+                    <div className="absolute bottom-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 translate-y-4 transition-all duration-300 group-hover:bg-primary-yellow/90 group-hover:scale-110"></div>
+                    <div className="absolute bottom-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 translate-y-4 transition-all duration-300 group-hover:bg-primary-yellow/90 group-hover:scale-110"></div>
+                    <div className="absolute top-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 -translate-y-4 transition-all duration-300 group-hover:bg-primary-yellow/90 group-hover:scale-110"></div>
+                    
+                    {/* Floating Particles */}
+                    <div className="absolute top-4 right-4 w-2 h-2 bg-primary/40 rounded-full animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ animationDelay: '0.2s' }}></div>
+                    <div className="absolute bottom-4 left-4 w-1.5 h-1.5 bg-primary-yellow/60 rounded-full animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ animationDelay: '0.6s' }}></div>
+                    <div className="absolute top-1/2 right-8 w-1 h-1 bg-primary/50 rounded-full animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ animationDelay: '1s' }}></div>
                     
                     <div className="relative z-10 flex flex-col items-start justify-start md:items-center md:justify-center">
-                        {/* Badge */}
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-yellow/10 rounded-full mb-6">
+                        {/* Badge with Enhanced Animation */}
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-yellow/10 rounded-full mb-6 transition-all duration-300 group-hover:bg-primary-yellow/20 group-hover:scale-105">
                             <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
                             <span className="text-sm outfit-extra-light text-neutral-navy font-medium">
                                 Registration
                             </span>
                         </div>
                         
-                        {/* Title */}
-                        <h4 className="text-2xl lg:text-3xl text-neutral-navy outfit-extra-bold mb-6 tracking-tight">
+                        {/* Title with Animation */}
+                        <h4 className="text-2xl lg:text-3xl text-neutral-navy outfit-extra-bold mb-6 tracking-tight transition-all duration-300">
                             Register for {roomName}
                         </h4>
                         
-                        {/* Registration Button */}
+                        {/* Registration Button with Enhanced Animation */}
                         <Link
                             href={trackRegistration.registrationLink ?? "#"}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group relative w-full inline-flex items-center justify-center gap-3 py-4 px-8 bg-gradient-to-r from-primary-yellow to-primary-yellow/80 text-neutral-navy font-semibold rounded-2xl border border-primary-yellow/30 transition-all duration-300 hover:from-primary-yellow/90 hover:to-primary-yellow/70 overflow-hidden text-lg lg:text-xl"
+                            className="group/btn relative w-full inline-flex items-center justify-center gap-3 py-4 px-8 bg-gradient-to-r from-primary-yellow to-primary-yellow/80 text-neutral-navy font-semibold rounded-2xl border border-primary-yellow/30 transition-all duration-300 hover:from-primary-yellow/90 hover:to-primary-yellow/70 overflow-hidden text-lg lg:text-xl hover:scale-105 hover:shadow-xl"
                             aria-disabled={hasEnded}
                         >
+                            {/* Animated Background Layer */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-primary-yellow/20 to-primary-yellow/10 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                            
                             {/* Button Content */}
                             <div className="relative flex items-center gap-3">
-                                {/* Icon */}
+                                {/* Icon with Enhanced Animation */}
                                 <div className="w-6 h-6 flex items-center justify-center">
                                     {!hasEnded && (
                                         <ExternalLink 
                                             size={20} 
-                                            className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" 
+                                            className="transition-all duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 group-hover/btn:rotate-12" 
                                         />
                                     )}
                                 </div>
                                 
-                                {/* Text */}
-                                <span className="outfit-bold tracking-wide">
+                                {/* Text with Animation */}
+                                <span className="outfit-bold tracking-wide transition-all duration-300 group-hover/btn:tracking-wider">
                                     {hasEnded ? "Registration Closed" : trackRegistration.buttonText}
                                 </span>
                                 
-                                {/* Animated Dot */}
+                                {/* Enhanced Animated Dot */}
                                 {!hasEnded && (
-                                    <div className="w-2 h-2 bg-primary rounded-full animate-pulse opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    <div className="w-2 h-2 bg-primary rounded-full animate-pulse opacity-60 group-hover/btn:opacity-100 group-hover/btn:scale-125 transition-all duration-300"></div>
                                 )}
                             </div>
+                            
+                            {/* Shimmer Effect */}
+                            <div className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
                         </Link>
                         
-                        <div className="mt-6">
+                        <div className="mt-6 transition-all duration-300 group-hover:translate-y-1">
                             <CodeOfConduct />
                         </div>
                     </div>
@@ -176,9 +190,6 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                     <span className="text-xl lg:text-2xl font-bold outfit-extra-light text-neutral-navy tracking-tight">
                         Event Schedule
                     </span>
-                    <h3 className="text-2xl lg:text-6xl xl:text-7xl outfit-extra-bold text-neutral-navy mb-4 lg:mb-6 tracking-tight">
-                        Schedule
-                    </h3>
                 </div>
                 
                 {loading ? (
@@ -196,8 +207,8 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                                                     {/* Eyebrow Background */}
                                                     <div className="absolute inset-0 bg-neutral-white/80 rounded-lg transform rotate-1"></div>
                                                     <div className="relative">
-                                                        <h3 className="text-xl lg:text-2xl font-bold text-neutral-navy uppercase tracking-wide outfit-extra-bold">
-                                                            {room.name === 'Track1' ? 'Track 1' : room.name}
+                                                        <h3 className="text-2xl lg:text-6xl xl:text-7xl outfit-extra-bold text-neutral-navy mb-4 lg:mb-6 tracking-tight">
+                                                            {room.name}
                                                         </h3>
                                                     </div>
                                                 </div>
