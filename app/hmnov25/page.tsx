@@ -8,6 +8,7 @@ import { baseMetadata } from "@/lib/basemeta";
 import { Footer } from "@/components/hackersmang/Footer";
 import About from "./components/About";
 import { TrackRegistration } from "@/lib/types";
+import Venue from "@/components/eventpage/Venue";
 
 export const metadata: Metadata = {
     ...baseMetadata,
@@ -36,6 +37,7 @@ function page() {
                     <Header />
                     <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
                     <About />
+                    <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
                     <Footer />
                 </div>
             </main>
