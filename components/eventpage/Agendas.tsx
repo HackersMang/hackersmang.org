@@ -3,37 +3,48 @@ import { User } from "lucide-react";
 const Agendas = ({ speakers }: { speakers: any[] }): JSX.Element => {
 
     return (
-        <section className="w-full flex flex-col items-center justify-center mt-8 lg:my-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-yellow/10 rounded-full mb-6">
-                <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                <span className="text-sm outfit-extra-light text-neutral-navy font-medium">
-                    Event Agenda
-                </span>
-            </div>
-            
-            <h3 className="text-2xl lg:text-3xl text-neutral-navy outfit-extra-bold mb-8">Agenda</h3>
+        <section className="relative bg-neutral-white py-20 lg:py-32 lg:pb-20 overflow-hidden">
+            <div className="max-w-7xl mx-auto px-5 lg:px-12 relative z-10">
+                {/* Header Section - Matching ScheduleWithRegister.tsx */}
+                <div className="text-left lg:text-center mb-8 lg:mb-12 flex flex-col items-start lg:items-center justify-center gap-4 lg:gap-8 text-neutral-navy">
+                    <span className="text-xl lg:text-2xl font-bold outfit-extra-light text-neutral-navy tracking-tight">
+                        Event Schedule
+                    </span>
+                    <h3 className="text-2xl lg:text-6xl xl:text-7xl outfit-extra-bold text-neutral-navy mb-4 lg:mb-6 tracking-tight">
+                        Tech Talks [Web, AI, IOT]
+                    </h3>
+                </div>
 
-            <div className="w-full max-w-4xl space-y-4">
-                {speakers.map((speaker, idx) => (
-                    <div key={idx} className="group bg-gradient-to-br from-primary-yellow/20 to-primary-yellow/5 backdrop-blur-sm text-neutral-navy p-6 rounded-2xl border border-primary-yellow/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] cursor-pointer">
-                        <div className="flex items-start gap-4">
-                            <div className="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-sm font-bold">
-                                {idx + 1}
-                            </div>
-                            <div className="flex-1">
-                                <h4 className="text-lg lg:text-xl font-semibold outfit-extra-bold text-neutral-navy mb-2 leading-relaxed">
-                                    {speaker.topic}
-                                </h4>
-                                <div className="flex items-center gap-2">
-                                    <User size={16} className="text-primary" />
-                                    <span className="text-sm lg:text-base text-neutral-navy/70 outfit-extra-light">
-                                        {speaker.name}
-                                    </span>
+                <div className="w-full space-y-8 lg:space-y-12">
+                    {speakers.map((speaker, idx) => (
+                        <div key={idx} className="w-full bg-neutral-white/95 pt-4 lg:pt-8 border-t border-neutral-navy/30 transition-all duration-300 hover:scale-[1.02]">
+                            <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
+                                {/* Left Side - Content */}
+                                <div className="flex-1 w-full lg:w-auto">
+                                    {/* Session Number Badge */}
+                                    <div className="flex justify-between items-start mb-6">
+                                        <span className="text-sm font-mono text-neutral-navy/90 outfit-extra-light bg-primary-yellow/10 px-3 py-1 rounded-full">
+                                            [ Session {idx + 1} ]
+                                        </span>
+                                    </div>
+
+                                    {/* Title */}
+                                    <h4 className="text-xl lg:text-2xl font-bold text-neutral-navy mb-4 tracking-wide outfit-extra-bold">
+                                        {speaker.topic}
+                                    </h4>
+
+                                    {/* Speaker Info */}
+                                    <div className="flex items-center gap-2 mb-6">
+                                        <User size={16} className="text-primary" />
+                                        <span className="text-sm lg:text-base text-neutral-navy/70 outfit-extra-light">
+                                            {speaker.name}
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
         </section>
     )

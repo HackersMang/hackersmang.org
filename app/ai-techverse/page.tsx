@@ -3,7 +3,7 @@ import Speakers from "../../components/eventpage/Speakers";
 import Agendas from "../../components/eventpage/Agendas";
 import { Metadata } from "next";
 import Header from "@/components/hackersmang/Header";
-import Intro from "@/components/eventpage/Intro";
+import Intro from "@/components/eventpage/Hero";
 import Venue from "@/components/eventpage/Venue";
 import Register from "@/components/eventpage/Register";
 import { EVENT_DETAIL, SPEAKERS } from "./constants";
@@ -76,13 +76,13 @@ function page() {
         <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
 
         <Agendas speakers={SPEAKERS} />
-        <Speakers speakers={SPEAKERS} />
 
         <Register
           registrationLink={registrationLink}
           registrationStartOn={EVENT_DETAIL.registrationStartOn}
           registrationEndOn={EVENT_DETAIL.registrationEndOn}
         />
+        <Speakers speakers={SPEAKERS} />
         <Footer />
       </div>
     </main>

@@ -50,8 +50,8 @@ export const SPEAKERS = [
 ];
 
 export const EVENT_DETAIL: EventDetailProps = {
-  title: "HackersMang",
-  subtitle: "2024 November Edition",
+  title: "#HMNov24",
+  subtitle: "HackersMang, 2024 November Edition",
   locationName: "UniCourt Mangaluru",
   locationUrl: "https://maps.app.goo.gl/bB6HwqDftS4Nq1LT7",
   happeningOn: new Date("11/23/2024"), // MM/DD/YYYY

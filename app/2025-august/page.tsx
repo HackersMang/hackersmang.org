@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import Header from "@/components/hackersmang/Header";
 import Venue from "../../components/eventpage/Venue";
 import Script from 'next/script';
-import Intro from "@/components/eventpage/Intro";
+import Intro from "@/components/eventpage/Hero";
 import { alternates, EVENT_DETAIL, eventMetaData, jsonLd, openGraph, RESOURCES, twitter } from "./constants";
 import { baseMetadata } from "@/lib/basemeta";
 import { Footer } from "@/components/hackersmang/Footer";

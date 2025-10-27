@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import Header from "@/components/hackersmang/Header";
 import Venue from "../../components/eventpage/Venue";
 import Script from 'next/script';
-import Intro from "@/components/eventpage/Intro";
+import Intro from "@/components/eventpage/Hero";
 import { EVENT_DETAIL, RESOURCES } from "./constants";
 import CallForSpeaker from "../../components/eventpage/CallForSpeaker";
 import Resources from "../../components/eventpage/Resources";
