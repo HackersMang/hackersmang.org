@@ -44,7 +44,7 @@ const defaultFloatingElements: FloatingElement[] = [
     { id: 'ai-ml', label: 'AI & ML', position: 'top-left', animationDelay: '0s' },
     { id: 'lightning-talks', label: 'Lightning Talks', position: 'top-right', animationDelay: '0.5s' },
     { id: 'workshops', label: 'Workshops', position: 'bottom-left', animationDelay: '1s' },
-    { id: 'live-demos', label: 'Live Demos', position: 'bottom-right', animationDelay: '1.5s' },
+    { id: 'demos', label: 'Demos', position: 'bottom-right', animationDelay: '1.5s' },
     { id: 'tech-talks', label: 'Tech Talks', position: 'left-center', size: 'small', animationDelay: '2s' },
     { id: 'events', label: 'Events', position: 'right-center', size: 'small', animationDelay: '2.5s' },
 ];
@@ -108,9 +108,9 @@ export default function CreativeElements({
 
     const getDotColorClasses = (dotColor: string) => {
         const colors = {
-            primary: 'bg-gradient-to-r from-neutral-navy to-primary-yellow',
-            secondary: 'bg-gradient-to-r from-primary-yellow to-neutral-navy',
-            mixed: 'bg-gradient-to-r from-neutral-navy to-primary-yellow',
+            primary: 'bg-gradient-to-r from-primary-yellow to-secondary-yellow',
+            secondary: 'bg-gradient-to-r from-secondary-yellow to-primary-yellow',
+            mixed: 'bg-gradient-to-r from-primary-yellow to-neutral-navy',
         };
         return colors[dotColor as keyof typeof colors] || colors.mixed;
     };
@@ -141,7 +141,7 @@ export default function CreativeElements({
                 {/* Dynamic Floating Tech Elements */}
                 {floatingElements.map((element, index) => (
                     <div key={element.id} className={`absolute ${getPositionClasses(element.position)} group`}>
-                        <div className={`bg-gradient-to-br from-primary-yellow/70 to-primary-yellow/20 text-neutral-navy ${getSizeClasses(element.size)} font-semibold border border-primary-yellow/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-default`}>
+                        <div className={`bg-secondary-yellow text-neutral-navy ${getSizeClasses(element.size)} font-semibold border border-primary-yellow/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-default`}>
                             {element.href ? (
                                 <a href={element.href} className="flex items-center gap-2">
                                     <div className={`${getDotSizeClasses(element.size || 'medium')} bg-neutral-navy rounded-full animate-pulse`} style={{ animationDelay: element.animationDelay }}></div>
@@ -159,32 +159,32 @@ export default function CreativeElements({
 
                 {/* Central Interactive Brand Element */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 group">
-                    <div className="bg-gradient-to-br from-primary-yellow/70 to-primary-yellow/20 text-neutral-navy p-6 rounded-3xl text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-110 cursor-default z-50 border border-primary-yellow/40">
+                    <div className="bg-secondary-yellow text-neutral-navy p-6 rounded-3xl text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-110 cursor-default z-50 border border-primary-yellow/40">
                         <div className="text-lg font-bold outfit-extra-bold mb-1">{title}</div>
                         <div className="text-xs text-neutral-navy/70 outfit-extra-light">{subtitle}</div>
-                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-primary to-primary-yellow rounded-full animate-ping"></div>
-                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-primary to-primary-yellow rounded-full"></div>
+                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-neutral-navy rounded-full animate-ping"></div>
+                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-neutral-navy rounded-full animate-ping"></div>
                     </div>
                 </div>
 
                 {/* Enhanced Floating Particles */}
                 {showParticles && (
                     <>
-                        <div className="absolute top-8 left-1/4 w-1.5 h-1.5 bg-gradient-to-r from-primary to-primary-yellow rounded-full animate-ping shadow-sm" style={{ animationDelay: '0.3s' }}></div>
-                        <div className="absolute top-8 right-1/4 w-1.5 h-1.5 bg-gradient-to-r from-primary-yellow to-primary rounded-full animate-ping shadow-sm" style={{ animationDelay: '0.9s' }}></div>
-                        <div className="absolute bottom-8 left-1/4 w-1.5 h-1.5 bg-gradient-to-r from-primary to-primary-yellow rounded-full animate-ping shadow-sm" style={{ animationDelay: '1.3s' }}></div>
-                        <div className="absolute bottom-8 right-1/4 w-1.5 h-1.5 bg-gradient-to-r from-primary-yellow to-primary rounded-full animate-ping shadow-sm" style={{ animationDelay: '1.9s' }}></div>
-                        <div className="absolute bottom-1/3 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-gradient-to-r from-primary to-primary-yellow rounded-full animate-ping shadow-sm" style={{ animationDelay: '2.3s' }}></div>
+                        <div className="absolute -top-4 left-1/4 w-1.5 h-1.5 bg-neutral-navy rounded-full animate-ping shadow-sm" style={{ animationDelay: '0.3s' }}></div>
+                        <div className="absolute -top-8 right-1/4 w-1.5 h-1.5 bg-neutral-navy rounded-full animate-ping shadow-sm" style={{ animationDelay: '0.9s' }}></div>
+                        <div className="absolute -bottom-8 left-1/4 w-1.5 h-1.5 bg-neutral-navy rounded-full animate-ping shadow-sm" style={{ animationDelay: '1.3s' }}></div>
+                        <div className="absolute -bottom-4 right-1/4 w-1.5 h-1.5 bg-neutral-navy rounded-full animate-ping shadow-sm" style={{ animationDelay: '1.9s' }}></div>
+                        <div className="absolute bottom-1/3 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-neutral-navy rounded-full animate-ping shadow-sm" style={{ animationDelay: '2.3s' }}></div>
                     </>
                 )}
 
                 {/* Subtle Geometric Shapes */}
                 {showGeometricShapes && (
                     <>
-                        <div className="absolute top-1/4 right-12 w-4 h-4 bg-gradient-to-br from-primary-yellow/40 to-primary/40 rounded-sm transform rotate-45 animate-pulse shadow-sm" style={{ animationDelay: '1s' }}></div>
-                        <div className="absolute bottom-1/4 left-12 w-3 h-3 bg-gradient-to-br from-primary/40 to-primary-yellow/40 rounded-full animate-ping shadow-sm" style={{ animationDelay: '0.5s' }}></div>
-                        <div className="absolute top-1/2 left-8 w-6 h-1.5 bg-gradient-to-r from-primary-yellow/40 to-primary/40 rounded-full animate-pulse shadow-sm" style={{ animationDelay: '1.5s' }}></div>
-                        <div className="absolute bottom-1/2 right-8 w-1.5 h-6 bg-gradient-to-b from-primary/40 to-primary-yellow/40 rounded-full animate-bounce shadow-sm" style={{ animationDelay: '0.8s' }}></div>
+                        <div className="absolute top-1/4 right-12 w-4 h-4 bg-gradient-to-br from-neutral-navy/40 to-neutral-navy/40 rounded-sm transform rotate-45 animate-pulse shadow-sm" style={{ animationDelay: '1s' }}></div>
+                        <div className="absolute bottom-1/4 left-12 w-3 h-3 bg-gradient-to-br from-neutral-navy/40 to-neutral-navy/40 rounded-full animate-ping shadow-sm" style={{ animationDelay: '0.5s' }}></div>
+                        <div className="absolute top-1/2 left-8 w-6 h-1.5 bg-gradient-to-r from-neutral-navy/40 to-neutral-navy/40 rounded-full animate-pulse shadow-sm" style={{ animationDelay: '1.5s' }}></div>
+                        <div className="absolute bottom-1/2 right-8 w-1.5 h-6 bg-gradient-to-b from-neutral-navy/40 to-neutral-navy/40 rounded-full animate-bounce shadow-sm" style={{ animationDelay: '0.8s' }}></div>
                     </>
                 )}
             </div>
