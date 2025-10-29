@@ -9,7 +9,7 @@ export const CodeOfConduct = () => {
                 <Link href="/cofc" target="_blank" className="font-bold underline">
                     Code of Conduct
                 </Link>{" "}
-                before submitting the registration form.
+                before submitting the form.
             </p>
         </div>
     )

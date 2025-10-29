@@ -9,6 +9,7 @@ import { Footer } from "@/components/hackersmang/Footer";
 import About from "./components/About";
 import { TrackRegistration } from "@/lib/types";
 import Venue from "@/components/eventpage/Venue";
+import CallForSpeaker from "@/components/eventpage/CallForSpeaker";
 
 export const metadata: Metadata = {
     ...baseMetadata,
@@ -36,8 +37,9 @@ function page() {
                 <div className="relative z-10">
                     <Header />
                     <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
-                    <About />
                     <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
+                    <CallForSpeaker registrationLink={EVENT_DETAIL.callForSpeakerLink} registrationStartOn={EVENT_DETAIL.callForSpeakerStartOn} registrationEndOn={EVENT_DETAIL.callForSpeakerEndOn} />
+                    <About />
                     <Footer />
                 </div>
             </main>

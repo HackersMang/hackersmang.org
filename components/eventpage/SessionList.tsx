@@ -37,7 +37,7 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                 <div className="flex-1 w-full lg:w-auto">
                     {/* Time Slot and Tags Row */}
                     <div className="flex justify-between items-start mb-6">
-                        <span className="text-sm font-mono text-neutral-navy/90 outfit-extra-light bg-primary-yellow/10 px-3 py-1 rounded-full">
+                        <span className="text-sm font-mono text-neutral-navy outfit-extra-light bg-primary-yellow/10 px-3 py-1 rounded-full">
                             [ {formatTime(session.startsAt)}–{formatTime(session.endsAt)} ]
                         </span>
                         
@@ -70,7 +70,7 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                                             className="w-20 h-20 rounded-2xl object-cover border-2 border-primary-yellow/30 group-hover:border-primary-yellow/60 transition-all duration-300"
                                         />
                                     </div>
-                                    <span className="text-xs text-neutral-navy/70 outfit-extra-light mt-2 text-center max-w-20 truncate">
+                                    <span className="text-xs text-neutral-navy outfit-extra-light mt-2 text-center max-w-20 truncate">
                                         {speaker.name}
                                     </span>
                                 </div>
@@ -90,14 +90,14 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                             transition={{ duration: 0.3 }}
                             className="overflow-hidden relative"
                         >
-                            <p className="text-base lg:text-lg text-neutral-navy/80 leading-relaxed outfit-extra-light">
+                            <p className="text-base lg:text-lg text-neutral-navy leading-relaxed outfit-extra-light">
                                 {session.description}
                             </p>
                         </motion.div>
                         {session.description.length > 300 && (
                             <button
                                 onClick={toggleExpand}
-                                className="text-sm text-neutral-navy hover:text-neutral-navy/80 focus:outline-none mt-3 transition-colors outfit-extra-light font-semibold underline hover:no-underline"
+                                className="text-sm text-neutral-navy hover:text-neutral-navy focus:outline-none mt-3 transition-colors outfit-extra-light font-semibold underline hover:no-underline"
                             >
                                 {isExpanded ? "Read Less" : "Read More"}
                             </button>
@@ -120,7 +120,7 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                                         className="w-24 h-24 rounded-2xl object-cover border-2 border-primary-yellow/30 group-hover:border-primary-yellow/60 transition-all duration-300"
                                     />
                                 </div>
-                                <span className="text-sm text-neutral-navy/70 outfit-extra-light mt-3 text-center max-w-24 truncate">
+                                <span className="text-sm text-neutral-navy outfit-extra-light mt-3 text-center max-w-24 truncate">
                                     {speaker.name}
                                 </span>
                             </div>

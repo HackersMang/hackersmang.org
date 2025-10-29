@@ -10,8 +10,8 @@ const Intro = ({ title, subtitle }: IntroProps): JSX.Element => {
         {/* Content */}
         <div className="relative z-10 max-w-4xl text-center">
           {/* Subtitle */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-yellow/10 rounded-full mb-6">
-            <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary-yellow rounded-full mb-6">
+            <div className="w-2 h-2 bg-neutral-navy rounded-full animate-pulse"></div>
             <span className="text-sm outfit-extra-light text-neutral-navy font-bold">
               HackersMang Event
             </span>
@@ -24,7 +24,7 @@ const Intro = ({ title, subtitle }: IntroProps): JSX.Element => {
 
           {/* Description */}
           {subtitle && (
-            <p className="text-lg lg:text-xl text-neutral-navy/80 outfit-extra-light leading-relaxed mb-10 max-w-3xl mx-auto">
+            <p className="text-lg lg:text-xl text-neutral-navy outfit-extra-light leading-relaxed mb-10 max-w-3xl mx-auto">
               {subtitle}
             </p>
           )}

@@ -18,7 +18,7 @@ const ComingSoon = ({ title, message }: ComingSoonProps): JSX.Element | null => 
                         <h3 className="text-2xl lg:text-3xl text-neutral-navy outfit-extra-bold mb-6 tracking-tight">{title}</h3>
 
                         <div className="bg-gradient-to-br from-primary-yellow/20 to-primary-yellow/5 backdrop-blur-sm text-neutral-navy p-8 rounded-2xl border border-primary-yellow/30">
-                            <p className="text-lg text-neutral-navy/80 leading-relaxed outfit-extra-light">
+                            <p className="text-lg text-neutral-navy leading-relaxed outfit-extra-light">
                                 {message}
                             </p>
                         </div>

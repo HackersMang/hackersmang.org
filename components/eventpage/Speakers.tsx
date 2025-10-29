@@ -16,7 +16,7 @@ const Speakers = ({ speakers }: { speakers: any[] }): JSX.Element => {
                     <h3 className="text-2xl lg:text-6xl xl:text-7xl outfit-extra-bold text-neutral-navy mb-4 lg:mb-6 tracking-tight">
                         Meet the experts
                     </h3>
-                    <p className="text-lg lg:text-xl text-neutral-navy/80 outfit-extra-light leading-relaxed max-w-4xl">
+                    <p className="text-lg lg:text-xl text-neutral-navy outfit-extra-light leading-relaxed max-w-4xl">
                         Learn from industry professionals and thought leaders who are passionate about sharing their knowledge and experience.
                     </p>
                 </div>
@@ -58,7 +58,7 @@ const Speakers = ({ speakers }: { speakers: any[] }): JSX.Element => {
                                     </h4>
                                     
                                     {speaker.company && (
-                                        <p className="text-neutral-navy/80 leading-relaxed outfit-extra-light">
+                                        <p className="text-neutral-navy leading-relaxed outfit-extra-light">
                                             {speaker.company}
                                         </p>
                                     )}

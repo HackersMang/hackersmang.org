@@ -27,7 +27,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, className = "" }) => {
         <h3 className="text-lg outfit-extra-bold text-neutral-navy mb-3 transition-colors">
           {event.title}
         </h3>
-        <p className="text-sm text-neutral-navy/80 outfit-extra-light leading-relaxed flex-1">
+        <p className="text-sm text-neutral-navy outfit-extra-light leading-relaxed flex-1">
           {event.subtitle}
         </p>
         <div className="mt-4 flex items-center text-neutral-navy group-hover:translate-x-1 transition-transform">

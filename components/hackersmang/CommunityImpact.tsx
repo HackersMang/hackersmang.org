@@ -33,7 +33,7 @@ export default function CommunityImpact({
     subtitle,
     stats = defaultStats,
     columns = 3,
-    backgroundColor = "bg-primary-yellow/70",
+    backgroundColor = "bg-secondary-yellow",
     className = "",
 }: CommunityImpactProps) {
     return (
@@ -43,7 +43,7 @@ export default function CommunityImpact({
                     {title}
                 </h3>
                 {subtitle && (
-                    <p className="text-lg lg:text-xl text-neutral-navy/80 outfit-extra-light max-w-3xl">
+                    <p className="text-lg lg:text-xl text-neutral-navy outfit-extra-light max-w-3xl">
                         {subtitle}
                     </p>
                 )}
@@ -57,7 +57,7 @@ export default function CommunityImpact({
                                 {stat.label}
                             </div>
                             {stat.description && (
-                                <div className="text-sm lg:text-base outfit-extra-light text-neutral-navy/70 mt-2">
+                                <div className="text-sm lg:text-base outfit-extra-light text-neutral-navy mt-2">
                                     {stat.description}
                                 </div>
                             )}

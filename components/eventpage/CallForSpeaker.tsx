@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React from 'react';
 import ComingSoon from './ComingSoon';
 import { ExternalLink } from 'lucide-react';
+import Register from './Register';
 
 const CallForSpeaker = ({ registrationLink, registrationStartOn, registrationEndOn }: RegisterProps): JSX.Element | null => {
     // Convert registration dates to Date objects
@@ -23,87 +24,143 @@ const CallForSpeaker = ({ registrationLink, registrationStartOn, registrationEnd
 
     // Return the Register component if registration has started and the link exists
     return (
-        <div className="w-full flex flex-col items-center justify-center text-center mt-8 lg:my-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-yellow/10 rounded-full mb-6">
-                <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                <span className="text-sm outfit-extra-light text-neutral-navy font-medium">
-                    Call For Speakers
-                </span>
-            </div>
-            
-            <div className="max-w-4xl w-full">
-                <h3 className="text-2xl lg:text-3xl text-neutral-navy outfit-extra-bold mb-6">Call For Speakers</h3>
-                
-                <div className="bg-gradient-to-br from-primary-yellow/20 to-primary-yellow/5 backdrop-blur-sm text-neutral-navy p-8 rounded-2xl border border-primary-yellow/30 shadow-lg">
-                    <p className="text-lg lg:text-xl text-neutral-navy/80 outfit-extra-light leading-relaxed mb-6">
-                        We are looking for:
+        <section className="relative bg-neutral-white/95 py-20 lg:py-32 overflow-hidden">
+            <div className="max-w-7xl mx-auto px-5 lg:px-12 relative z-10">
+                {/* Header Section - Matching Resources.tsx */}
+                <div className="text-left lg:text-center mb-8 lg:mb-12 flex flex-col items-start lg:items-center justify-center gap-4 lg:gap-8 text-neutral-navy">
+                    <span className="text-xl lg:text-2xl font-bold outfit-extra-light text-neutral-navy tracking-tight">
+                        Call For Speakers
+                    </span>
+                    <h3 className="text-2xl lg:text-6xl xl:text-7xl outfit-extra-bold text-neutral-navy mb-4 lg:mb-6 tracking-tight">
+                        Share your knowledge
+                    </h3>
+                    <p className="text-lg lg:text-xl text-neutral-navy outfit-extra-light leading-relaxed max-w-4xl">
+                        We&apos;re looking for passionate speakers to share their expertise and inspire our tech community.
                     </p>
-                    
-                    <div className="space-y-4 mb-8">
-                        <div className="flex items-start gap-4 p-4 bg-white/50 rounded-xl border border-primary-yellow/20">
-                            <div className="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-sm font-bold">1</div>
-                            <div>
-                                <h4 className="font-semibold outfit-extra-bold text-neutral-navy mb-1">Lightning Talks</h4>
-                                <p className="text-sm text-neutral-navy/70 outfit-extra-light">Short and impactful presentations.</p>
-                            </div>
-                        </div>
-                        
-                        <div className="flex items-start gap-4 p-4 bg-white/50 rounded-xl border border-primary-yellow/20">
-                            <div className="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-sm font-bold">2</div>
-                            <div>
-                                <h4 className="font-semibold outfit-extra-bold text-neutral-navy mb-1">Talks with Demos</h4>
-                                <p className="text-sm text-neutral-navy/70 outfit-extra-light">Share research, innovative projects, or practical demos.</p>
-                            </div>
-                        </div>
-                        
-                        <div className="flex items-start gap-4 p-4 bg-white/50 rounded-xl border border-primary-yellow/20">
-                            <div className="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-sm font-bold">3</div>
-                            <div>
-                                <h4 className="font-semibold outfit-extra-bold text-neutral-navy mb-1">Workshops</h4>
-                                <p className="text-sm text-neutral-navy/70 outfit-extra-light">Hands-on sessions to teach skills and engage participants.</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+                    <div className="relative bg-secondary-yellow p-8 lg:p-10 rounded-3xl transition-all duration-300 hover:scale-105 group">
+                        <div className="relative z-10">
+                            {/* Title */}
+                            <h4 className="text-2xl lg:text-3xl outfit-extra-bold text-neutral-navy mb-4 tracking-tight">
+                                Lightning Talks
+                            </h4>
+
+                            {/* Description */}
+                            <p className="text-neutral-navy leading-relaxed outfit-extra-light mb-6">
+                                Short and impactful presentations that deliver maximum value in minimal time.
+                            </p>
+
+                            {/* Features */}
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-3 p-3 bg-neutral-white/95 hover:bg-neutral-white/80 text-neutral-navy rounded-xl border border-primary-yellow/30 transition-all duration-300">
+                                    <div className="w-2 h-2 bg-neutral-navy rounded-full"></div>
+                                    <span className="text-sm font-medium outfit-extra-light">
+                                        5-10 minute presentations
+                                    </span>
+                                </div>
+                                <div className="flex items-center gap-3 p-3 bg-neutral-white/95 hover:bg-neutral-white/80 text-neutral-navy rounded-xl border border-primary-yellow/30 transition-all duration-300">
+                                    <div className="w-2 h-2 bg-neutral-navy rounded-full"></div>
+                                    <span className="text-sm font-medium outfit-extra-light">
+                                        Quick insights and tips
+                                    </span>
+                                </div>
+                                <div className="flex items-center gap-3 p-3 bg-neutral-white/95 hover:bg-neutral-white/80 text-neutral-navy rounded-xl border border-primary-yellow/30 transition-all duration-300">
+                                    <div className="w-2 h-2 bg-neutral-navy rounded-full"></div>
+                                    <span className="text-sm font-medium outfit-extra-light">
+                                        Perfect for beginners
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <p className="text-lg lg:text-xl text-neutral-navy/80 outfit-extra-light leading-relaxed mb-6">
-                        This is your chance to inspire and share your knowledge with the tech community. 🌟
-                    </p>
-                    
-                    <Link
-                        href={registrationLink ?? "#"}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group relative w-full inline-flex items-center justify-center gap-3 py-4 px-8 bg-gradient-to-r from-primary-yellow to-primary-yellow/80 text-neutral-navy font-semibold rounded-2xl border border-primary-yellow/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:from-primary-yellow/90 hover:to-primary-yellow/70 overflow-hidden text-lg lg:text-xl"
-                        aria-disabled={hasEnded}
-                    >
-                        {/* Button Content */}
-                        <div className="relative flex items-center gap-3">
-                            {/* Icon */}
-                            <div className="w-6 h-6 flex items-center justify-center">
-                                {!hasEnded && (
-                                    <ExternalLink 
-                                        size={20} 
-                                        className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" 
-                                    />
-                                )}
-                            </div>
-                            
-                            {/* Text */}
-                            <span className="outfit-bold tracking-wide">
-                                {hasEnded ? "Registration Closed" : "Submit Your Proposal"}
-                            </span>
-                            
-                            {/* Animated Dot */}
-                            {!hasEnded && (
-                                <div className="w-2 h-2 bg-primary rounded-full animate-pulse opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            )}
-                        </div>
-                    </Link>
 
-                    <CodeOfConduct />
+                    <div className="relative bg-secondary-yellow p-8 lg:p-10 rounded-3xl transition-all duration-300 hover:scale-105 group">
+                        <div className="relative z-10">
+                            {/* Title */}
+                            <h4 className="text-2xl lg:text-3xl outfit-extra-bold text-neutral-navy mb-4 tracking-tight">
+                                Talks with Demos
+                            </h4>
+
+                            {/* Description */}
+                            <p className="text-neutral-navy leading-relaxed outfit-extra-light mb-6">
+                                Share your research, innovative projects, or practical demonstrations with the community.
+                            </p>
+
+                            {/* Features */}
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-3 p-3 bg-neutral-white/95 hover:bg-neutral-white/80 text-neutral-navy rounded-xl border border-primary-yellow/30 transition-all duration-300">
+                                    <div className="w-2 h-2 bg-neutral-navy rounded-full"></div>
+                                    <span className="text-sm font-medium outfit-extra-light">
+                                        20-30 minute presentations
+                                    </span>
+                                </div>
+                                <div className="flex items-center gap-3 p-3 bg-neutral-white/95 hover:bg-neutral-white/80 text-neutral-navy rounded-xl border border-primary-yellow/30 transition-all duration-300">
+                                    <div className="w-2 h-2 bg-neutral-navy rounded-full"></div>
+                                    <span className="text-sm font-medium outfit-extra-light">
+                                        Live coding and demos
+                                    </span>
+                                </div>
+                                <div className="flex items-center gap-3 p-3 bg-neutral-white/95 hover:bg-neutral-white/80 text-neutral-navy rounded-xl border border-primary-yellow/30 transition-all duration-300">
+                                    <div className="w-2 h-2 bg-neutral-navy rounded-full"></div>
+                                    <span className="text-sm font-medium outfit-extra-light">
+                                        Interactive Q&A sessions
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="relative bg-secondary-yellow p-8 lg:p-10 rounded-3xl transition-all duration-300 hover:scale-105 group">
+                        <div className="relative z-10">
+                            {/* Title */}
+                            <h4 className="text-2xl lg:text-3xl outfit-extra-bold text-neutral-navy mb-4 tracking-tight">
+                                Workshops
+                            </h4>
+
+                            {/* Description */}
+                            <p className="text-neutral-navy leading-relaxed outfit-extra-light mb-6">
+                                Hands-on sessions to teach skills and engage participants in practical learning.
+                            </p>
+
+                            {/* Features */}
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-3 p-3 bg-neutral-white/95 hover:bg-neutral-white/80 text-neutral-navy rounded-xl border border-primary-yellow/30 transition-all duration-300">
+                                    <div className="w-2 h-2 bg-neutral-navy rounded-full"></div>
+                                    <span className="text-sm font-medium outfit-extra-light">
+                                        45-60 minute sessions
+                                    </span>
+                                </div>
+                                <div className="flex items-center gap-3 p-3 bg-neutral-white/95 hover:bg-neutral-white/80 text-neutral-navy rounded-xl border border-primary-yellow/30 transition-all duration-300">
+                                    <div className="w-2 h-2 bg-neutral-navy rounded-full"></div>
+                                    <span className="text-sm font-medium outfit-extra-light">
+                                        Hands-on practice
+                                    </span>
+                                </div>
+                                <div className="flex items-center gap-3 p-3 bg-neutral-white/95 hover:bg-neutral-white/80 text-neutral-navy rounded-xl border border-primary-yellow/30 transition-all duration-300">
+                                    <div className="w-2 h-2 bg-neutral-navy rounded-full"></div>
+                                    <span className="text-sm font-medium outfit-extra-light">
+                                        Take-home projects
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <p className="text-lg lg:text-xl text-neutral-navy outfit-extra-light leading-relaxed mb-8 text-center mt-8">
+                    This is your chance to inspire and share your knowledge with the tech community. 🌟
+                </p>
             </div>
-        </div>
+
+            <Register
+                registrationLink={registrationLink}
+                registrationStartOn={registrationStartOn}
+                registrationEndOn={registrationEndOn}
+                buttonText="Submit Your Proposal"
+            />
+        </section>
     );
 };
 

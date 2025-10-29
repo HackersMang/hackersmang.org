@@ -22,18 +22,17 @@ interface CreativeElementsProps {
     // Main content
     title?: string;
     subtitle?: string;
-    
+
     // Floating elements
     floatingElements?: FloatingElement[];
-    
+
     // Orbit configuration
     orbits?: OrbitConfig[];
-    
+
     // Display options
     showOrbits?: boolean;
     showParticles?: boolean;
-    showGeometricShapes?: boolean;
-    
+
     // Styling
     size?: 'small' | 'medium' | 'large';
     className?: string;
@@ -44,7 +43,7 @@ const defaultFloatingElements: FloatingElement[] = [
     { id: 'ai-ml', label: 'AI & ML', position: 'top-left', animationDelay: '0s' },
     { id: 'lightning-talks', label: 'Lightning Talks', position: 'top-right', animationDelay: '0.5s' },
     { id: 'workshops', label: 'Workshops', position: 'bottom-left', animationDelay: '1s' },
-    { id: 'demos', label: 'Demos', position: 'bottom-right', animationDelay: '1.5s' },
+    { id: 'demos', label: 'Talks with Demos', position: 'bottom-right', animationDelay: '1.5s' },
     { id: 'tech-talks', label: 'Tech Talks', position: 'left-center', size: 'small', animationDelay: '2s' },
     { id: 'events', label: 'Events', position: 'right-center', size: 'small', animationDelay: '2.5s' },
 ];
@@ -68,7 +67,6 @@ export default function CreativeElements({
     orbits = defaultOrbits,
     showOrbits = true,
     showParticles = true,
-    showGeometricShapes = true,
     size = 'medium',
     className = "",
 }: CreativeElementsProps) {
@@ -79,7 +77,7 @@ export default function CreativeElements({
             'top-left': 'top-6 left-6',
             'top-right': 'top-6 right-6',
             'bottom-left': 'bottom-6 left-6',
-            'bottom-right': 'bottom-6 right-6',
+            'bottom-right': 'bottom-6 right-0 lg:right-6',
             'top-center': 'top-6 left-1/2 transform -translate-x-1/2',
             'bottom-center': 'bottom-6 left-1/2 transform -translate-x-1/2',
             'left-center': 'top-1/3 left-0 transform -translate-x-1/2',
@@ -110,7 +108,7 @@ export default function CreativeElements({
         const colors = {
             primary: 'bg-gradient-to-r from-primary-yellow to-secondary-yellow',
             secondary: 'bg-gradient-to-r from-secondary-yellow to-primary-yellow',
-            mixed: 'bg-gradient-to-r from-primary-yellow to-neutral-navy',
+            mixed: 'bg-gradient-to-r from-primary-yellow to-neutral-navy/30',
         };
         return colors[dotColor as keyof typeof colors] || colors.mixed;
     };
@@ -119,22 +117,35 @@ export default function CreativeElements({
         <div className={`relative z-10 flex flex-col items-center justify-center lg:ml-16 mt-8 lg:mt-0 ${className}`}>
             {/* Interactive Tech Universe */}
             <div className={`relative ${sizeClasses.container} ${sizeClasses.lg}`}>
-                
+
                 {/* Animated Background Orbits */}
                 {showOrbits && (
                     <div className="absolute top-0 -left-1/4 md:-top-1/4 md:-left-1/2 w-80 h-80 lg:w-[420px] lg:h-[420px] rounded-full">
-                        {orbits.map((orbit, index) => (
-                            <div
-                                key={index}
-                                className={`absolute top-1/2 left-1/2 lg:top-0 lg:left-0 transform -translate-x-1/2 -translate-y-1/2 lg:transform-none w-${orbit.size} h-${orbit.size} lg:w-${orbit.size} lg:h-${orbit.size} border border-gradient-to-r from-primary/30 via-primary/50 to-primary/30 rounded-full animate-spin`}
-                                style={{ 
-                                    animationDuration: orbit.duration,
-                                    animationDirection: orbit.direction || 'normal'
-                                }}
-                            >
-                                <div className={`absolute top-0 left-1/2 ${getDotSizeClasses(orbit.dotSize)} ${getDotColorClasses(orbit.dotColor)} rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-lg`}></div>
-                            </div>
-                        ))}
+                        {orbits.map((orbit, index) => {
+                            const getOrbitSizeClasses = (size: number) => {
+                                const sizeMap: { [key: number]: string } = {
+                                    48: 'w-48 h-48',
+                                    60: 'w-60 h-60',
+                                    72: 'w-72 h-72',
+                                    80: 'w-80 h-80',
+                                    96: 'w-96 h-96',
+                                };
+                                return sizeMap[size] || `w-${size} h-${size}`;
+                            };
+
+                            return (
+                                <div
+                                    key={index}
+                                    className={`absolute top-1/2 left-1/2 lg:top-0 lg:left-0 transform -translate-x-1/2 -translate-y-1/2 lg:transform-none ${getOrbitSizeClasses(orbit.size)} border border-gradient-to-r from-primary/30 via-primary/50 to-primary/30 rounded-full animate-spin`}
+                                    style={{
+                                        animationDuration: orbit.duration,
+                                        animationDirection: orbit.direction || 'normal'
+                                    }}
+                                >
+                                    <div className={`absolute top-0 left-1/2 ${getDotSizeClasses(orbit.dotSize)} ${getDotColorClasses(orbit.dotColor)} rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-lg`}></div>
+                                </div>
+                            );
+                        })}
                     </div>
                 )}
 
@@ -161,9 +172,9 @@ export default function CreativeElements({
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 group">
                     <div className="bg-secondary-yellow text-neutral-navy p-6 rounded-3xl text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-110 cursor-default z-50 border border-primary-yellow/40">
                         <div className="text-lg font-bold outfit-extra-bold mb-1">{title}</div>
-                        <div className="text-xs text-neutral-navy/70 outfit-extra-light">{subtitle}</div>
-                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-neutral-navy rounded-full animate-ping"></div>
-                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-neutral-navy rounded-full animate-ping"></div>
+                        <div className="text-xs text-neutral-navy outfit-extra-light">{subtitle}</div>
+                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-secondary-yellow rounded-full animate-ping"></div>
+                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-primary-yellow rounded-full animate-ping"></div>
                     </div>
                 </div>
 
@@ -175,16 +186,6 @@ export default function CreativeElements({
                         <div className="absolute -bottom-8 left-1/4 w-1.5 h-1.5 bg-neutral-navy rounded-full animate-ping shadow-sm" style={{ animationDelay: '1.3s' }}></div>
                         <div className="absolute -bottom-4 right-1/4 w-1.5 h-1.5 bg-neutral-navy rounded-full animate-ping shadow-sm" style={{ animationDelay: '1.9s' }}></div>
                         <div className="absolute bottom-1/3 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-neutral-navy rounded-full animate-ping shadow-sm" style={{ animationDelay: '2.3s' }}></div>
-                    </>
-                )}
-
-                {/* Subtle Geometric Shapes */}
-                {showGeometricShapes && (
-                    <>
-                        <div className="absolute top-1/4 right-12 w-4 h-4 bg-gradient-to-br from-neutral-navy/40 to-neutral-navy/40 rounded-sm transform rotate-45 animate-pulse shadow-sm" style={{ animationDelay: '1s' }}></div>
-                        <div className="absolute bottom-1/4 left-12 w-3 h-3 bg-gradient-to-br from-neutral-navy/40 to-neutral-navy/40 rounded-full animate-ping shadow-sm" style={{ animationDelay: '0.5s' }}></div>
-                        <div className="absolute top-1/2 left-8 w-6 h-1.5 bg-gradient-to-r from-neutral-navy/40 to-neutral-navy/40 rounded-full animate-pulse shadow-sm" style={{ animationDelay: '1.5s' }}></div>
-                        <div className="absolute bottom-1/2 right-8 w-1.5 h-6 bg-gradient-to-b from-neutral-navy/40 to-neutral-navy/40 rounded-full animate-bounce shadow-sm" style={{ animationDelay: '0.8s' }}></div>
                     </>
                 )}
             </div>

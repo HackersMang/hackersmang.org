@@ -14,6 +14,7 @@ module.exports = {
         
         // Secondary Colors from palette
         'secondary-blue': '#2F55D9',
+        'secondary-yellow': '#F9FA004D',
         'secondary-purple': '#7440CE',
         'secondary-orange': '#F26333',
         'secondary-red': '#C20205',

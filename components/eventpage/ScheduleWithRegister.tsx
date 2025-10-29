@@ -111,10 +111,10 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                     <div className="absolute inset-0 bg-gradient-to-br from-primary-yellow/5 via-transparent to-primary-yellow/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
                     {/* Interconnected Corner Cuts with Animation */}
-                    <div className="absolute top-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 -translate-y-4 transition-all duration-300 group-hover:bg-primary-yellow/90 group-hover:scale-110"></div>
-                    <div className="absolute bottom-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 translate-y-4 transition-all duration-300 group-hover:bg-primary-yellow/90 group-hover:scale-110"></div>
-                    <div className="absolute bottom-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 translate-y-4 transition-all duration-300 group-hover:bg-primary-yellow/90 group-hover:scale-110"></div>
-                    <div className="absolute top-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 -translate-y-4 transition-all duration-300 group-hover:bg-primary-yellow/90 group-hover:scale-110"></div>
+                    <div className="absolute top-0 left-0 w-8 h-8 bg-primary-yellow transform rotate-45 -translate-x-4 -translate-y-4 transition-all duration-300 group-hover:bg-primary-yellow/90 group-hover:scale-110"></div>
+                    <div className="absolute bottom-0 right-0 w-8 h-8 bg-primary-yellow transform rotate-45 translate-x-4 translate-y-4 transition-all duration-300 group-hover:bg-primary-yellow/90 group-hover:scale-110"></div>
+                    <div className="absolute bottom-0 left-0 w-8 h-8 bg-primary-yellow transform rotate-45 -translate-x-4 translate-y-4 transition-all duration-300 group-hover:bg-primary-yellow/90 group-hover:scale-110"></div>
+                    <div className="absolute top-0 right-0 w-8 h-8 bg-primary-yellow transform rotate-45 translate-x-4 -translate-y-4 transition-all duration-300 group-hover:bg-primary-yellow/90 group-hover:scale-110"></div>
                     
                     {/* Floating Particles */}
                     <div className="absolute top-4 right-4 w-2 h-2 bg-primary/40 rounded-full animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ animationDelay: '0.2s' }}></div>
@@ -122,14 +122,6 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                     <div className="absolute top-1/2 right-8 w-1 h-1 bg-primary/50 rounded-full animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ animationDelay: '1s' }}></div>
                     
                     <div className="relative z-10 flex flex-col items-start justify-start md:items-center md:justify-center">
-                        {/* Badge with Enhanced Animation */}
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-yellow/10 rounded-full mb-6 transition-all duration-300 group-hover:bg-primary-yellow/20 group-hover:scale-105">
-                            <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                            <span className="text-sm outfit-extra-light text-neutral-navy font-medium">
-                                Registration
-                            </span>
-                        </div>
-                        
                         {/* Title with Animation */}
                         <h4 className="text-2xl lg:text-3xl text-neutral-navy outfit-extra-bold mb-6 tracking-tight transition-all duration-300">
                             Register for {roomName}
@@ -140,7 +132,7 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                             href={trackRegistration.registrationLink ?? "#"}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group/btn relative w-full inline-flex items-center justify-center gap-3 py-4 px-8 bg-gradient-to-r from-primary-yellow to-primary-yellow/80 text-neutral-navy font-semibold rounded-2xl border border-primary-yellow/30 transition-all duration-300 hover:from-primary-yellow/90 hover:to-primary-yellow/70 overflow-hidden text-lg lg:text-xl hover:scale-105 hover:shadow-xl"
+                            className="group/btn relative w-full inline-flex items-center justify-center gap-3 py-4 px-8 bg-gradient-to-r from-primary-yellow to-primary-yellow/80 text-neutral-navy font-semibold rounded-2xl border border-primary-yellow/30 transition-all duration-300 hover:from-primary-yellow/90 hover:to-primary-yellow overflow-hidden text-lg lg:text-xl hover:scale-105 hover:shadow-xl"
                             aria-disabled={hasEnded}
                         >
                             {/* Animated Background Layer */}
@@ -221,7 +213,7 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                                                 </>
                                             ) : (
                                                 <div className="w-full p-8 bg-gradient-to-br from-primary-yellow/20 to-primary-yellow/5 rounded-2xl text-center border border-primary-yellow/30">
-                                                    <p className="text-lg text-neutral-navy/70 outfit-extra-light">No session available.</p>
+                                                    <p className="text-lg text-neutral-navy outfit-extra-light">No session available.</p>
                                                 </div>
                                             )}
                                         </div>
@@ -230,7 +222,7 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                             ))
                         ) : (
                             <div className="w-full p-8 bg-gradient-to-br from-primary-yellow/20 to-primary-yellow/5 rounded-2xl text-center border border-primary-yellow/30">
-                                <p className="text-lg text-neutral-navy/70 outfit-extra-light">No session available.</p>
+                                <p className="text-lg text-neutral-navy outfit-extra-light">No session available.</p>
                             </div>
                         )}
                     </>
@@ -238,7 +230,7 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                 {!loading && fromCache && cachedAt ? (
                     <div className="flex flex-row items-center justify-center gap-2 w-full mt-8">
                         <div className="bg-gradient-to-br from-primary-yellow/20 to-primary-yellow/5 p-4 rounded-xl border border-primary-yellow/30">
-                            <p className="text-sm text-center text-neutral-navy/70 outfit-extra-light">
+                            <p className="text-sm text-center text-neutral-navy outfit-extra-light">
                                 ⚠️ This data is served from cache and was last updated at {cachedAt}.
                             </p>
                         </div>

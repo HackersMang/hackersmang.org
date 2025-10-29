@@ -21,8 +21,8 @@ const SessionListSkeleton: React.FC = () => {
                 
                 {/* Tags Skeleton */}
                 <div className="flex gap-2">
-                  <div className="h-5 bg-primary-yellow/20 rounded-full w-16"></div>
-                  <div className="h-5 bg-primary-yellow/20 rounded-full w-20"></div>
+                  <div className="h-5 bg-neutral-navy/20 rounded-full w-16"></div>
+                  <div className="h-5 bg-neutral-navy/20 rounded-full w-20"></div>
                 </div>
               </div>
 

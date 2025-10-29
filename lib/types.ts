@@ -1,6 +1,7 @@
 export interface EventDetailProps {
     title: string;
     subtitle?: string;
+    pageUrl?: string | null;
     happeningOn: Date;
     locationName: string;
     locationUrl: string;

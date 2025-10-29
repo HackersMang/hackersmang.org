@@ -7,27 +7,13 @@ const Venue = ({ locationName, locationUrl, happeningOn }: VenueInfoProps): JSX.
     const formattedDate = formatEventDate(happeningOn.toUTCString());
 
     return (
-        <section className="relative bg-primary-yellow/70 py-20 lg:py-32 overflow-hidden">
+        <section className="relative bg-secondary-yellow py-20 lg:py-32 overflow-hidden">
             <div className="max-w-7xl mx-auto px-5 lg:px-12 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                     {/* Left Side - Event Details Card */}
                     <div className="relative">
                         <div className="bg-neutral-white/95 p-8 lg:p-12 rounded-3xl border border-primary-yellow/30 relative overflow-hidden">
-                            {/* Interconnected Corner Cuts */}
-                            <div className="absolute top-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 -translate-y-4"></div>
-                            <div className="absolute bottom-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 translate-y-4"></div>
-                            <div className="absolute bottom-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 translate-y-4"></div>
-                            <div className="absolute top-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 -translate-y-4"></div>
-                            
                             <div className="relative z-10">
-                                {/* Badge */}
-                                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-yellow/10 rounded-full mb-6">
-                                    <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                                    <span className="text-sm outfit-extra-light text-neutral-navy font-medium">
-                                        Event Details
-                                    </span>
-                                </div>
-                                
                                 {/* Title */}
                                 <h3 className="text-2xl lg:text-3xl text-neutral-navy outfit-extra-bold mb-6 tracking-tight">
                                     When & Where
@@ -43,7 +29,7 @@ const Venue = ({ locationName, locationUrl, happeningOn }: VenueInfoProps): JSX.
                                         </div>
                                         <span className="text-lg font-semibold text-neutral-navy outfit-extra-bold">Date</span>
                                     </div>
-                                    <p className="text-xl lg:text-2xl text-neutral-navy/80 outfit-extra-light ml-11">
+                                    <p className="text-xl lg:text-2xl text-neutral-navy outfit-extra-light ml-11">
                                         {formattedDate}
                                     </p>
                                 </div>
@@ -62,7 +48,7 @@ const Venue = ({ locationName, locationUrl, happeningOn }: VenueInfoProps): JSX.
                                         href={locationUrl} 
                                         target="_blank" 
                                         rel="noopener noreferrer" 
-                                        className="text-xl lg:text-2xl text-neutral-navy hover:text-neutral-navy/80 transition-colors font-semibold outfit-extra-light ml-11 hover:underline"
+                                        className="text-xl lg:text-2xl text-neutral-navy hover:text-neutral-navy transition-colors font-semibold outfit-extra-light ml-11 hover:underline"
                                     >
                                         {locationName}
                                     </Link>
@@ -94,21 +80,7 @@ const Venue = ({ locationName, locationUrl, happeningOn }: VenueInfoProps): JSX.
                     {/* Right Side - Event Information */}
                     <div className="relative">
                         <div className="bg-neutral-white/95 p-8 lg:p-12 rounded-3xl border border-primary-yellow/30 relative overflow-hidden">
-                            {/* Interconnected Corner Cuts */}
-                            <div className="absolute top-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 -translate-y-4"></div>
-                            <div className="absolute bottom-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 translate-y-4"></div>
-                            <div className="absolute bottom-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 translate-y-4"></div>
-                            <div className="absolute top-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 -translate-y-4"></div>
-                            
                             <div className="relative z-10">
-                                {/* Badge */}
-                                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-yellow/10 rounded-full mb-6">
-                                    <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                                    <span className="text-sm outfit-extra-light text-neutral-navy font-medium">
-                                        What to Expect
-                                    </span>
-                                </div>
-                                
                                 {/* Title */}
                                 <h3 className="text-2xl lg:text-3xl text-neutral-navy outfit-extra-bold mb-6 tracking-tight">
                                     Event Highlights
@@ -124,7 +96,7 @@ const Venue = ({ locationName, locationUrl, happeningOn }: VenueInfoProps): JSX.
                                         </div>
                                         <div>
                                             <h4 className="text-lg font-semibold text-neutral-navy outfit-extra-bold mb-2">Expert Speakers</h4>
-                                            <p className="text-neutral-navy/80 outfit-extra-light leading-relaxed">
+                                            <p className="text-neutral-navy outfit-extra-light leading-relaxed">
                                                 Learn from industry experts and thought leaders sharing their insights and experiences.
                                             </p>
                                         </div>
@@ -138,7 +110,7 @@ const Venue = ({ locationName, locationUrl, happeningOn }: VenueInfoProps): JSX.
                                         </div>
                                         <div>
                                             <h4 className="text-lg font-semibold text-neutral-navy outfit-extra-bold mb-2">Networking Opportunities</h4>
-                                            <p className="text-neutral-navy/80 outfit-extra-light leading-relaxed">
+                                            <p className="text-neutral-navy outfit-extra-light leading-relaxed">
                                                 Connect with like-minded professionals and expand your network in the tech community.
                                             </p>
                                         </div>
@@ -152,7 +124,7 @@ const Venue = ({ locationName, locationUrl, happeningOn }: VenueInfoProps): JSX.
                                         </div>
                                         <div>
                                             <h4 className="text-lg font-semibold text-neutral-navy outfit-extra-bold mb-2">Hands-on Workshops</h4>
-                                            <p className="text-neutral-navy/80 outfit-extra-light leading-relaxed">
+                                            <p className="text-neutral-navy outfit-extra-light leading-relaxed">
                                                 Participate in interactive sessions and gain practical skills you can apply immediately.
                                             </p>
                                         </div>

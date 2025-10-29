@@ -4,19 +4,19 @@ import { EventDetailProps, Resource } from "@/lib/types";
 export const EVENT_DETAIL: EventDetailProps = {
   title: "#HMNov25",
   subtitle: "HackersMang, 2025 November Edition",
-
+  pageUrl: "/hmnov25",
   locationName: "UniCourt Mangaluru",
   locationUrl: "https://maps.app.goo.gl/bB6HwqDftS4Nq1LT7",
   happeningOn: new Date("11/29/2025"), // MM/DD/YYYY
 
   tracks: null,
 
-  callForSpeakerLink: null,
-  callForSpeakerStartOn: null,
-  callForSpeakerEndOn: null,
+  callForSpeakerLink: "https://sessionize.com/hmnov25/",
+  callForSpeakerStartOn: new Date("10/29/2025"),
+  callForSpeakerEndOn: new Date("11/23/2025"),
 
   registrationStartOn: null,
-  registrationEndOn: null,
+  registrationEndOn: new Date("11/28/2025"),
 
   isSchedulePublished: false,
   sessionizeApiId: null,

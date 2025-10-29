@@ -23,7 +23,7 @@ const Agendas = ({ speakers }: { speakers: any[] }): JSX.Element => {
                                 <div className="flex-1 w-full lg:w-auto">
                                     {/* Session Number Badge */}
                                     <div className="flex justify-between items-start mb-6">
-                                        <span className="text-sm font-mono text-neutral-navy/90 outfit-extra-light bg-primary-yellow/10 px-3 py-1 rounded-full">
+                                        <span className="text-sm font-mono text-neutral-navy outfit-extra-light bg-primary-yellow/10 px-3 py-1 rounded-full">
                                             [ Session {idx + 1} ]
                                         </span>
                                     </div>
@@ -36,7 +36,7 @@ const Agendas = ({ speakers }: { speakers: any[] }): JSX.Element => {
                                     {/* Speaker Info */}
                                     <div className="flex items-center gap-2 mb-6">
                                         <User size={16} className="text-primary" />
-                                        <span className="text-sm lg:text-base text-neutral-navy/70 outfit-extra-light">
+                                        <span className="text-sm lg:text-base text-neutral-navy outfit-extra-light">
                                             {speaker.name}
                                         </span>
                                     </div>

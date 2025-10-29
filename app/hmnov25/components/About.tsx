@@ -3,7 +3,7 @@ import React from 'react';
 
 const About = () => {
     return (
-        <section className="relative bg-primary-yellow/70 py-20 lg:py-32 overflow-hidden">
+        <section className="relative bg-secondary-yellow py-20 lg:py-32 overflow-hidden">
             <div className="max-w-7xl mx-auto px-5 lg:px-12 relative z-10">
                 {/* Header Section - Matching Resources.tsx */}
                 <div className="text-left lg:text-center mb-8 lg:mb-12 flex flex-col items-start lg:items-center justify-center gap-4 lg:gap-8 text-neutral-navy">
@@ -13,18 +13,12 @@ const About = () => {
                     <h3 className="text-2xl lg:text-6xl xl:text-7xl outfit-extra-bold text-neutral-navy mb-4 lg:mb-6 tracking-tight">
                         Building the future of tech
                     </h3>
-                    <p className="text-lg lg:text-xl text-neutral-navy/80 outfit-extra-light leading-relaxed max-w-4xl">
-                        We're passionate about fostering innovation, knowledge sharing, and building a vibrant tech community in Mangaluru.
+                    <p className="text-lg lg:text-xl text-neutral-navy outfit-extra-light leading-relaxed max-w-4xl">
+                        We&apos;re passionate about fostering innovation, knowledge sharing, and building a vibrant tech community in Mangaluru.
                     </p>
                 </div>
 
                 <div className="relative bg-neutral-white/95 p-8 lg:p-10 rounded-3xl transition-all duration-300 group">
-                    {/* Interconnected Corner Cut */}
-                    <div className="absolute top-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 -translate-y-4"></div>
-                    <div className="absolute bottom-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 translate-y-4"></div>
-                    <div className="absolute bottom-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 translate-y-4"></div>
-                    <div className="absolute top-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 -translate-y-4"></div>
-                    
                     <div className="relative z-10">
                         <div className="max-w-4xl mx-auto">
                             <p className="w-full text-lg lg:text-xl leading-relaxed mb-6 text-neutral-navy outfit-extra-light">

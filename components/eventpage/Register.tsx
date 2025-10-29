@@ -26,7 +26,7 @@ const Register = ({ registrationLink, registrationStartOn, registrationEndOn, bu
 
   // Return the Register component if registration has started and the link exists
   return (
-    <section className="relative bg-neutral-white pb-20 lg:pb-32 overflow-hidden">
+    <div className="relative bg-neutral-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 lg:px-12 relative z-10 w-full">
         <div className="w-full flex flex-col items-center justify-center text-center">
           <div className="bg-neutral-white/95 p-8 lg:p-10 relative overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-lg group w-full">
@@ -45,19 +45,6 @@ const Register = ({ registrationLink, registrationStartOn, registrationEndOn, bu
             <div className="absolute top-1/2 right-8 w-1 h-1 bg-primary/50 rounded-full animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ animationDelay: '1s' }}></div>
 
             <div className="relative z-10 flex flex-col items-start justify-start md:items-center md:justify-center">
-              {/* Badge with Enhanced Animation */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-yellow/10 rounded-full mb-6 transition-all duration-300 group-hover:bg-primary-yellow/20 group-hover:scale-105">
-                <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                <span className="text-sm outfit-extra-light text-neutral-navy font-medium">
-                  Registration
-                </span>
-              </div>
-
-              {/* Title with Animation */}
-              <h4 className="text-2xl lg:text-3xl text-neutral-navy outfit-extra-bold mb-6 tracking-tight transition-all duration-300">
-                Register for Event
-              </h4>
-
               {/* Registration Button with Enhanced Animation */}
               <Link
                 href={registrationLink ?? "#"}
@@ -103,7 +90,7 @@ const Register = ({ registrationLink, registrationStartOn, registrationEndOn, bu
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

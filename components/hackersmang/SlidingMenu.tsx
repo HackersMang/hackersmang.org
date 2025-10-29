@@ -67,7 +67,7 @@ const SlidingMenu: React.FC<SlidingMenuProps> = ({ isMenuOpen, toggleMenu }) => 
               <h2 className="text-2xl lg:text-3xl outfit-extra-bold text-neutral-navy mb-2">
                 Our Events
               </h2>
-              <p className="text-neutral-navy/70 outfit-extra-light">
+              <p className="text-neutral-navy outfit-extra-light">
                 Discover upcoming tech events and conferences
               </p>
             </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function FutureSection() {
   return (
-    <section className="relative bg-primary-yellow/70 py-20 lg:py-32 overflow-hidden">
+    <section className="relative bg-secondary-yellow py-20 lg:py-32 overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-5 lg:px-12 relative z-10">
         {/* Header Section */}
@@ -19,12 +19,6 @@ export default function FutureSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Top Left - LEARN FROM OTHERS */}
           <div className="relative bg-neutral-white/95 p-8 lg:p-10 rounded-3xl transition-all duration-300 hover:scale-105 group">
-            {/* Interconnected Corner Cut */}
-            <div className="absolute top-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 -translate-y-4"></div>
-            <div className="absolute bottom-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 translate-y-4"></div>
-            <div className="absolute bottom-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 translate-y-4"></div>
-            <div className="absolute top-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 -translate-y-4"></div>
-            
             <div className="relative z-10">
               {/* Icon - Three Users */}
               <div className="w-16 h-16 mb-6 flex items-center justify-center">
@@ -35,11 +29,11 @@ export default function FutureSection() {
               
               {/* Title */}
               <h3 className="text-2xl lg:text-3xl outfit-extra-bold text-neutral-navy mb-4 tracking-tight">
-                LEARN FROM OTHERS
+                Learn from others
               </h3>
               
               {/* Description */}
-              <p className="text-neutral-navy/80 leading-relaxed outfit-extra-light">
+              <p className="text-neutral-navy leading-relaxed outfit-extra-light">
                 Hear from experts and peers and get new ideas. See how others tackle similar challenges, and gain fresh perspectives on your own work. Share experiences and learn together.
               </p>
             </div>
@@ -47,13 +41,6 @@ export default function FutureSection() {
 
           {/* Top Right - CONNECT */}
           <div className="relative bg-neutral-white/95 p-8 lg:p-10 rounded-3xl transition-all duration-300 hover:scale-105 group">
-            {/* Interconnected Corner Cut */}
-            <div className="absolute top-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 -translate-y-4"></div>
-            <div className="absolute bottom-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 translate-y-4"></div>
-            <div className="absolute bottom-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 translate-y-4"></div>
-            <div className="absolute top-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 -translate-y-4"></div>
-
-            
             <div className="relative z-10">
               {/* Icon - Handshake */}
               <div className="w-16 h-16 mb-6 flex items-center justify-center">
@@ -64,11 +51,11 @@ export default function FutureSection() {
               
               {/* Title */}
               <h3 className="text-2xl lg:text-3xl outfit-extra-bold text-neutral-navy mb-4 tracking-tight">
-                CONNECT
+                Connect with others
               </h3>
               
               {/* Description */}
-              <p className="text-neutral-navy/80 leading-relaxed outfit-extra-light">
+              <p className="text-neutral-navy leading-relaxed outfit-extra-light">
                 Connect with like-minded people. Build relationships that can last beyond the event. Help grow your network for future opportunities.
               </p>
             </div>
@@ -76,12 +63,6 @@ export default function FutureSection() {
 
           {/* Bottom Left - GROW */}
           <div className="relative bg-neutral-white/95 p-8 lg:p-10 rounded-3xl transition-all duration-300 hover:scale-105 group">
-            {/* Interconnected Corner Cut */}
-            <div className="absolute top-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 -translate-y-4"></div>
-            <div className="absolute bottom-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 translate-y-4"></div>
-            <div className="absolute bottom-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 translate-y-4"></div>
-            <div className="absolute top-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 -translate-y-4"></div>
-
             <div className="relative z-10">
               {/* Icon - Shooting Star */}
               <div className="w-16 h-16 mb-6 flex items-center justify-center">
@@ -92,11 +73,11 @@ export default function FutureSection() {
               
               {/* Title */}
               <h3 className="text-2xl lg:text-3xl outfit-extra-bold text-neutral-navy mb-4 tracking-tight">
-                GROW
+                Grow yourself
               </h3>
               
               {/* Description */}
-              <p className="text-neutral-navy/80 leading-relaxed outfit-extra-light">
+              <p className="text-neutral-navy leading-relaxed outfit-extra-light">
                 Gain new skills, insights, and strategies to move forward. Apply what you learn, improve your work, and grow as an individual.
               </p>
             </div>
@@ -104,12 +85,6 @@ export default function FutureSection() {
 
           {/* Bottom Right - GET INSPIRED */}
           <div className="relative bg-neutral-white/95 p-8 lg:p-10 rounded-3xl transition-all duration-300 hover:scale-105 group">
-            {/* Interconnected Corner Cut */}
-            <div className="absolute top-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 -translate-y-4"></div>
-            <div className="absolute bottom-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 translate-y-4"></div>
-            <div className="absolute bottom-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 translate-y-4"></div>
-            <div className="absolute top-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 -translate-y-4"></div>
-
             <div className="relative z-10">
               {/* Icon - Lightbulb */}
               <div className="w-16 h-16 mb-6 flex items-center justify-center">
@@ -120,11 +95,11 @@ export default function FutureSection() {
               
               {/* Title */}
               <h3 className="text-2xl lg:text-3xl outfit-extra-bold text-neutral-navy mb-4 tracking-tight">
-                GET INSPIRED
+                Get inspired
               </h3>
               
               {/* Description */}
-              <p className="text-neutral-navy/80 leading-relaxed outfit-extra-light">
+              <p className="text-neutral-navy leading-relaxed outfit-extra-light">
                 Hear stories, ideas, and experiences that spark creativity. Walk away with fresh motivation and the energy to tackle new challenges with confidence.
               </p>
             </div>
