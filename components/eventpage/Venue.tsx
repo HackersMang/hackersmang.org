@@ -58,18 +58,17 @@ const Venue = ({ locationName, locationUrl, happeningOn }: VenueInfoProps): JSX.
 
                                 {/* Action Button */}
                                 <div className="w-full flex flex-col items-center justify-center text-center">
-                                    <div className="bg-neutral-white/95 relative overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-lg group w-full">
-                                        <div className="relative z-10 flex flex-col items-start justify-start md:items-center md:justify-center">
-                                            <Link href={locationUrl} target="_blank" rel="noopener noreferrer" className="group/btn relative w-full inline-flex items-center justify-center gap-3 py-4 px-8 bg-gradient-to-r from-primary-yellow to-primary-yellow/80 text-neutral-navy font-semibold rounded-2xl border border-primary-yellow/30 transition-all duration-300 hover:from-primary-yellow/90 hover:to-primary-yellow/70 overflow-hidden text-lg lg:text-xl hover:scale-105 hover:shadow-xl">
-                                                <ExternalLink
-                                                    size={20}
-                                                    className="transition-all duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 group-hover/btn:rotate-12"
-                                                />
-                                                <span className="outfit-bold tracking-wide transition-all duration-300 group-hover/btn:tracking-wider">
-                                                    Get Directions
-                                                </span>
-                                            </Link>
-                                        </div>
+
+                                    <div className="relative z-10 flex flex-col items-start justify-start md:items-center md:justify-center w-full">
+                                        <Link href={locationUrl} target="_blank" rel="noopener noreferrer" className="group/btn relative w-full inline-flex items-center justify-center gap-3 py-4 px-8 bg-gradient-to-r from-primary-yellow to-primary-yellow/80 text-neutral-navy font-semibold rounded-2xl border border-primary-yellow/30 transition-all duration-300 hover:from-primary-yellow/90 hover:to-primary-yellow/70 overflow-hidden text-lg lg:text-xl hover:scale-105 hover:shadow-xl">
+                                            <ExternalLink
+                                                size={20}
+                                                className="transition-all duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 group-hover/btn:rotate-12"
+                                            />
+                                            <span className="outfit-bold tracking-wide transition-all duration-300 group-hover/btn:tracking-wider">
+                                                Get Directions
+                                            </span>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
