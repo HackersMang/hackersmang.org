@@ -77,11 +77,13 @@ function page() {
 
         <Agendas speakers={SPEAKERS} />
 
-        <Register
-          registrationLink={registrationLink}
-          registrationStartOn={EVENT_DETAIL.registrationStartOn}
-          registrationEndOn={EVENT_DETAIL.registrationEndOn}
-        />
+        <div className="max-w-7xl mx-auto pb-10 lg:pb-20 relative z-10 w-full">
+          <Register
+            registrationLink={registrationLink}
+            registrationStartOn={EVENT_DETAIL.registrationStartOn}
+            registrationEndOn={EVENT_DETAIL.registrationEndOn}
+          />
+        </div>
         <Speakers speakers={SPEAKERS} />
         <Footer />
       </div>

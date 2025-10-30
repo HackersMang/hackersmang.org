@@ -6,7 +6,7 @@ const Speakers = ({ speakers }: { speakers: any[] }): JSX.Element => {
     const sortedSpeakers = [...speakers].sort((a, b) => a.name.localeCompare(b.name));
 
     return (
-        <section className="relative bg-primary-yellow/70 py-20 lg:py-32 overflow-hidden">
+        <section className="relative bg-secondary-yellow py-20 lg:py-32 overflow-hidden">
             <div className="max-w-7xl mx-auto px-5 lg:px-12 relative z-10">
                 {/* Header Section - Matching Resources.tsx */}
                 <div className="text-left lg:text-center mb-8 lg:mb-12 flex flex-col items-start lg:items-center justify-center gap-4 lg:gap-8 text-neutral-navy">
@@ -24,12 +24,6 @@ const Speakers = ({ speakers }: { speakers: any[] }): JSX.Element => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
                     {sortedSpeakers.map((speaker, index) => (
                         <div key={speaker.id ?? index} className="relative bg-neutral-white/95 p-8 lg:p-10 rounded-3xl transition-all duration-300 hover:scale-105 group">
-                            {/* Interconnected Corner Cut */}
-                            <div className="absolute top-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 -translate-y-4"></div>
-                            <div className="absolute bottom-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 translate-y-4"></div>
-                            <div className="absolute bottom-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 translate-y-4"></div>
-                            <div className="absolute top-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 -translate-y-4"></div>
-                            
                             <div className="relative z-10 flex flex-col items-center text-center">
                                 <div className="relative mb-6">
                                     <Image 
