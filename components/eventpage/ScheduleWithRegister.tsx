@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import ErrorCard from "@/components/eventpage/ErrorCard";
 import SessionList from "@/components/eventpage/SessionList";
 import SessionListSkeleton from "@/components/eventpage/SessionListSkeleton";
@@ -23,7 +23,7 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
     const hasStarted = registrationStartOn ? now >= registrationStartOn : false;
     const hasEnded = registrationEndOn ? now.getTime() > registrationEndOn.getTime() + 24 * 60 * 60 * 1000 : false;
 
-    const fetchSpeakersAndSchedule = async () => {
+    const fetchSpeakersAndSchedule = useCallback(async () => {
         try {
             setLoading(true);
 
@@ -87,11 +87,11 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
         } finally {
             setLoading(false);
         }
-    };
+    }, [sessionId]);
 
     useEffect(() => {
         fetchSpeakersAndSchedule();
-    }, []);
+    }, [fetchSpeakersAndSchedule]);
 
     if (error) {
         return <ErrorCard message={error} />;
