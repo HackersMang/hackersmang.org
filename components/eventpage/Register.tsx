@@ -4,7 +4,7 @@ import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import ComingSoon from "./ComingSoon";
 
-const Register = ({ registrationLink, registrationStartOn, registrationEndOn, buttonText, disableCodeOfConduct }: RegisterProps): JSX.Element | null => {
+const Register = ({ registrationLink, registrationStartOn, registrationEndOn, buttonText, disableCodeOfConduct, target = "_blank" }: RegisterProps): JSX.Element | null => {
   // Convert registration dates to Date objects
   const now = new Date();
   const hasStarted = now >= (registrationStartOn ?? 0);
@@ -34,22 +34,22 @@ const Register = ({ registrationLink, registrationStartOn, registrationEndOn, bu
             <div className="hidden md:block absolute inset-0 bg-gradient-to-br from-primary-yellow/5 via-transparent to-primary-yellow/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
             {/* Interconnected Corner Cuts with Animation */}
-            <div className="hidden md:block absolute top-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 -translate-y-4 transition-all duration-300 group-hover:bg-primary-yellow/90 group-hover:scale-110"></div>
-            <div className="hidden md:block absolute bottom-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 translate-y-4 transition-all duration-300 group-hover:bg-primary-yellow/90 group-hover:scale-110"></div>
-            <div className="hidden md:block absolute bottom-0 left-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 -translate-x-4 translate-y-4 transition-all duration-300 group-hover:bg-primary-yellow/90 group-hover:scale-110"></div>
-            <div className="hidden md:block absolute top-0 right-0 w-8 h-8 bg-primary-yellow/70 transform rotate-45 translate-x-4 -translate-y-4 transition-all duration-300 group-hover:bg-primary-yellow/90 group-hover:scale-110"></div>
+            <div className="hidden md:block absolute top-0 left-0 w-8 h-8 bg-secondary-yellow transform rotate-45 -translate-x-4 -translate-y-4 transition-all duration-300 group-hover:scale-110"></div>
+            <div className="hidden md:block absolute bottom-0 right-0 w-8 h-8 bg-secondary-yellow transform rotate-45 translate-x-4 translate-y-4 transition-all duration-300 group-hover:scale-110"></div>
+            <div className="hidden md:block absolute bottom-0 left-0 w-8 h-8 bg-secondary-yellow transform rotate-45 -translate-x-4 translate-y-4 transition-all duration-300 group-hover:scale-110"></div>
+            <div className="hidden md:block absolute top-0 right-0 w-8 h-8 bg-secondary-yellow transform rotate-45 translate-x-4 -translate-y-4 transition-all duration-300 group-hover:scale-110"></div>
 
             <div className="relative z-10 flex flex-col items-start justify-start md:items-center md:justify-center">
               {/* Registration Button with Enhanced Animation */}
               <Link
                 href={registrationLink ?? "#"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group/btn relative w-full inline-flex items-center justify-center gap-3 py-4 px-8 bg-gradient-to-r from-primary-yellow to-primary-yellow/80 text-neutral-navy font-semibold rounded-2xl border border-primary-yellow/30 transition-all duration-300 hover:from-primary-yellow/90 hover:to-primary-yellow/70 overflow-hidden text-lg lg:text-xl hover:md:scale-105 hover:md:shadow-xl"
+                target={target}
+                rel={target === "_blank" ? "noopener noreferrer" : undefined}
+                className="group/btn relative w-full md:w-fit inline-flex items-center justify-center gap-3 py-4 px-8 bg-gradient-to-r from-primary-green to-primary-green/80 text-neutral-white font-semibold rounded-2xl border border-primary-green/30 transition-all duration-300 overflow-hidden text-lg lg:text-xl hover:md:scale-105 hover:md:shadow-xl"
                 aria-disabled={hasEnded}
               >
                 {/* Animated Background Layer */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-yellow/20 to-primary-yellow/10 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-green/20 to-primary-green/10 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
 
                 {/* Button Content */}
                 <div className="relative flex items-center gap-3">
@@ -70,7 +70,7 @@ const Register = ({ registrationLink, registrationStartOn, registrationEndOn, bu
 
                   {/* Enhanced Animated Dot */}
                   {!hasEnded && (
-                    <div className="w-2 h-2 bg-primary rounded-full animate-pulse opacity-60 group-hover/btn:opacity-100 group-hover/btn:scale-125 transition-all duration-300"></div>
+                    <div className="w-2 h-2 bg-neutral-white rounded-full animate-pulse opacity-60 group-hover/btn:opacity-100 group-hover/btn:scale-125 transition-all duration-300"></div>
                   )}
                 </div>
 

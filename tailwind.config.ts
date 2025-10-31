@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         // Primary Colors from palette
         'primary-yellow': '#F9FA00',
-        'primary-green': '#008B31',
+        'primary-green': '#047857',
         
         // Secondary Colors from palette
         'secondary-blue': '#2F55D9',

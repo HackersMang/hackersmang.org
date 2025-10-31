@@ -76,7 +76,7 @@ export default function CreativeElements({
         const positions = {
             'top-left': 'top-6 left-6',
             'top-right': 'top-6 right-6',
-            'bottom-left': 'bottom-6 left-6',
+            'bottom-left': 'bottom-6 left-2',
             'bottom-right': 'bottom-6 right-0 lg:right-6',
             'top-center': 'top-6 left-1/2 transform -translate-x-1/2',
             'bottom-center': 'bottom-6 left-1/2 transform -translate-x-1/2',

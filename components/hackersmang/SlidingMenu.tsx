@@ -52,11 +52,11 @@ const SlidingMenu: React.FC<SlidingMenuProps> = ({ isMenuOpen, toggleMenu }) => 
         aria-hidden={!isMenuOpen}
       >
         <div
-          className={`bg-neutral-white/95 rounded-xl p-8 lg:p-12 pr-6 lg:pr-10 max-w-7xl w-full max-h-[80vh] overflow-y-auto transform transition-all duration-300 pointer-events-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-primary/60 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb:hover]:bg-primary/80 [&::-webkit-scrollbar]:bg-transparent [&::-webkit-scrollbar]:mr-2
+          className={`bg-neutral-white/95 rounded-xl p-8 lg:p-12 pr-6 lg:pr-10 max-w-7xl w-full max-h-[80vh] overflow-y-auto transform transition-all duration-300 pointer-events-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-secondary-yellow [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb:hover]:bg-secondary-yellow [&::-webkit-scrollbar]:bg-transparent [&::-webkit-scrollbar]:mr-2
             ${isMenuOpen ? 'scale-100 translate-y-0' : 'scale-95 translate-y-4'}`}
           style={{
             scrollbarWidth: 'thin',
-            scrollbarColor: '#F59E0B transparent',
+            scrollbarColor: '#F9FA00 transparent',
             scrollbarGutter: 'stable'
           }}
           onClick={(e) => e.stopPropagation()}
