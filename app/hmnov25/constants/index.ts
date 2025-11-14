@@ -9,17 +9,28 @@ export const EVENT_DETAIL: EventDetailProps = {
   locationUrl: "https://maps.app.goo.gl/bB6HwqDftS4Nq1LT7",
   happeningOn: new Date("11/29/2025"), // MM/DD/YYYY
 
-  tracks: null,
+  tracks: [
+    {
+      name: "AI Tech Talks",
+      registrationLink: "https://buytickets.at/hackerspacemangaluru/1949547",
+      buttonText: "Register for AI Tech Talks"
+    },
+    {
+      name: "AI workshops",
+      registrationLink: "https://buytickets.at/hackerspacemangaluru/1949530",
+      buttonText: "Register for AI workshops"
+    }
+  ],
 
   callForSpeakerLink: "https://sessionize.com/hmnov25/",
   callForSpeakerStartOn: new Date("10/29/2025"),
   callForSpeakerEndOn: new Date("11/23/2025"),
 
-  registrationStartOn: null,
+  registrationStartOn: new Date("11/14/2025"),
   registrationEndOn: new Date("11/28/2025"),
 
   isSchedulePublished: false,
-  sessionizeApiId: null,
+  sessionizeApiId: 'y1gwwoew',
 };
 
 // Hero card

@@ -153,3 +153,29 @@ export type ExtractTagsFromSession = (session: SessionListProps['sessions'][0]) 
 
 // Helper function type to get all unique tags from categories
 export type GetAllTags = (categories: Category[]) => CategoryItem[];
+
+// Define the Sessionize Sessions interface
+export interface SessionizeSession {
+    id: string;
+    title: string;
+    description: string;
+    startsAt: string;
+    endsAt: string;
+    isServiceSession: boolean;
+    isPlenumSession: boolean;
+    speakers: {
+        id: string;
+        name: string;
+    }[];
+    categories: Category[];
+    roomId: number;
+    room: string;
+    status: string;
+}
+
+export interface SessionizeSessionsResponse {
+    groupId: string | null;
+    groupName: string;
+    sessions: SessionizeSession[];
+    isDefault: boolean;
+}

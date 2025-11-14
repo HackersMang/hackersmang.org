@@ -10,6 +10,8 @@ import About from "./components/About";
 import { TrackRegistration } from "@/lib/types";
 import Venue from "@/components/eventpage/Venue";
 import CallForSpeaker from "@/components/eventpage/CallForSpeaker";
+import ScheduleWithRegister from "@/components/eventpage/ScheduleWithRegister";
+import EventHighlights from "@/components/eventpage/EventHighlights";
 
 export const metadata: Metadata = {
     ...baseMetadata,
@@ -38,8 +40,9 @@ function page() {
                     <Header />
                     <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
                     <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
+                    <ScheduleWithRegister sessionId={EVENT_DETAIL.sessionizeApiId} trackRegistrations={trackRegistrations} registrationStartOn={EVENT_DETAIL.registrationStartOn} registrationEndOn={EVENT_DETAIL.registrationEndOn} />
+                    <EventHighlights sessionId={EVENT_DETAIL.sessionizeApiId} />
                     <CallForSpeaker registrationLink={EVENT_DETAIL.callForSpeakerLink} registrationStartOn={EVENT_DETAIL.callForSpeakerStartOn} registrationEndOn={EVENT_DETAIL.callForSpeakerEndOn} />
-                    <About />
                     <Footer />
                 </div>
             </main>

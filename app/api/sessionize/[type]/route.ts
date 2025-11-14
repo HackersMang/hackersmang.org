@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 export const dynamic = "force-dynamic";
 
 const DEFAULT_SESSION_ID = "jl4ktls0"; // Default session ID
-const VALID_TYPES = ["Speakers", "GridSmart"]; // Valid types
+const VALID_TYPES = ["Speakers", "GridSmart", "Sessions"]; // Valid types
 
 export async function GET(req: Request, { params }: { params: { type: string } }) {
     const { searchParams } = new URL(req.url);
