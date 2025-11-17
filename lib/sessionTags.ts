@@ -16,22 +16,6 @@ export const SESSION_TITLE_TAGS: Array<{
       { id: 1, name: "Students Only" },
     ]
   },
-//   {
-//     titleMatch: ["Rock8.ai", "Rock8"],
-//     tags: [
-//       { id: 4, name: "AI" },
-//       { id: 5, name: "Business" },
-//       { id: 6, name: "Communication" }
-//     ]
-//   },
-//   {
-//     titleMatch: "Web3 Growth",
-//     tags: [
-//       { id: 7, name: "Web3" },
-//       { id: 8, name: "Blockchain" },
-//       { id: 9, name: "Community" }
-//     ]
-//   },
 ];
 
 /**
