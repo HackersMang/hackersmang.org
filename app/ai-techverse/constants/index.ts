@@ -50,7 +50,7 @@ export const SPEAKERS = [
 ];
 
 export const EVENT_DETAIL: EventDetailProps = {
-  title: "AI TECHVERSE",
+  title: "#AiTechVerse",
   subtitle: "Talks on cutting edge AI technologies!",
   locationName: "UniCourt Mangaluru",
   locationUrl: "https://maps.app.goo.gl/bB6HwqDftS4Nq1LT7",

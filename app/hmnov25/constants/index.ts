@@ -39,7 +39,7 @@ export const HERO_CARD_URL = "https://hackersmang.org/2025/november-hero-card.pn
 
 // Meta data
 export const eventMetaData = {
-  title: "HackersMang | 2025 November edition by Hackerspace Mangaluru | Premier Tech Conference in Mangaluru",
+  title: "HMNov25 | HackersMang, 2025 November Edition by Hackerspace Mangaluru | Premier Tech Conference in Mangaluru",
   description: "Join HackersMang, Mangaluru's premier tech conference featuring cutting-edge talks on AI, Cloud Computing, DevOps, and more. Network with industry experts and innovators. November 2025 at Hackerspace Mangaluru.",
   bookmarks: 'https://hackersmang.org/hmnov25',
   category: 'Tech Conference',

@@ -12,8 +12,8 @@ import { TrackRegistration } from "@/lib/types";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hackersmang.org'),
-  title: "Hackers Mang | 2024 November edition by Hackerspace Mangaluru",
-  description: "Hackers Mang 2024 November edition hosted by Hackerspace Mangaluru.",
+  title: "HMNov24 | HackersMang, 2024 November Edition by Hackerspace Mangaluru",
+  description: "HackersMang, 2024 November Edition hosted by Hackerspace Mangaluru.",
   generator: 'Hackers Mang',
   applicationName: 'Hackers Mang',
   referrer: 'origin-when-cross-origin',

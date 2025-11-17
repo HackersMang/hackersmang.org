@@ -38,7 +38,7 @@ export const HERO_CARD_URL = "https://hackersmang.org/2025/april-hero-card.png";
 
 // Meta data
 export const eventMetaData = {
-  title: "HackersMang | 2025 April edition by Hackerspace Mangaluru | Premier Tech Conference in Mangaluru",
+  title: "HMApr25 | HackersMang, 2025 April Edition by Hackerspace Mangaluru | Premier Tech Conference in Mangaluru",
   description: "Join HackersMang, Mangaluru's premier tech conference featuring cutting-edge talks on AI, Cloud Computing, DevOps, and more. Network with industry experts and innovators. April 2025 at Hackerspace Mangaluru.",
   bookmarks: 'https://hackersmang.org/2025-april',
   category: 'Tech Conference',

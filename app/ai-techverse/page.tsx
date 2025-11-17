@@ -11,27 +11,19 @@ import { Footer } from "@/components/hackersmang/Footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hackersmang.org'),
-  title: "AI TechVerse by Hackerspace Mangaluru",
-  description: "AI TECHVERSE is hosted by Hackerspace Mangaluru, a community-driven open-source group based in Mangaluru, India. It's a vibrant community of tech enthusiasts that hosts tech talks, workshops, and events aimed at fostering innovation and knowledge-sharing.",
-  generator: 'Hackers Mang',
-  applicationName: 'Hackers Mang',
+  title: "AI TechVerse | HackersMang, 2024 July Edition by Hackerspace Mangaluru",
+  description: "HackersMang, 2024 July Edition hosted by Hackerspace Mangaluru.",
+  generator: 'HackersMang',
+  applicationName: 'HackersMang',
   referrer: 'origin-when-cross-origin',
   keywords: [
-    'Hackers Mang', 'Open Source', 'Cloud Computing', 'DevOps', 'Testing', 'Big Data', 'Search Engines', 'RDBMS', 'NoSQL', 'NLP', 'Machine Learning', 'Artificial Intelligence', 'Deep Learning', 'Automation', 'Python', 'PHP', 'Node.js', 'Angular', 'React', 'Vue.js', 'HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'Docker', 'Kubernetes', 'SaltStack', 'Ansible', 'Linux', 'MySQL', 'PostgreSQL', 'MongoDB', 'Sphinx', 'Elasticsearch', 'Data Science', 'TensorFlow', 'PyTorch', 'Blockchain', 'Cybersecurity', 'IoT', 'Edge Computing', 'Quantum Computing', '5G', 'AR/VR', 'Robotics', 'Microservices', 'Serverless', 'GraphQL', 'Jenkins', 'Terraform', 'AWS', 'Azure', 'Google Cloud', 'CI/CD', 'Agile', 'Scrum', 'Kanban', 'JIRA', 'Git', 'GitHub', 'GitLab', 'Bitbucket', 'CI/CD', 'SaaS', 'PaaS', 'IaaS', 'Firebase', 'Heroku', 'API', 'REST', 'GraphQL', 'WebAssembly', 'Progressive Web Apps', 'Single Page Applications', 'Server-Side Rendering', 'Jamstack', 'Headless CMS', 'Contentful', 'Strapi', 'Sanity', 'Hugo', 'Jekyll', 'Gatsby', 'Next.js', 'Nuxt.js', 'Django', 'Flask', 'FastAPI', 'Spring Boot', 'Laravel', 'Ruby on Rails'
+    'HackersMang', 'Open Source', 'Cloud Computing', 'DevOps', 'Testing', 'Big Data', 'Search Engines', 'RDBMS', 'NoSQL', 'NLP', 'Machine Learning', 'Artificial Intelligence', 'Deep Learning', 'Automation', 'Python', 'PHP', 'Node.js', 'Angular', 'React', 'Vue.js', 'HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'Docker', 'Kubernetes', 'SaltStack', 'Ansible', 'Linux', 'MySQL', 'PostgreSQL', 'MongoDB', 'Sphinx', 'Elasticsearch', 'Data Science', 'TensorFlow', 'PyTorch', 'Blockchain', 'Cybersecurity', 'IoT', 'Edge Computing', 'Quantum Computing', '5G', 'AR/VR', 'Robotics', 'Microservices', 'Serverless', 'GraphQL', 'Jenkins', 'Terraform', 'AWS', 'Azure', 'Google Cloud', 'CI/CD', 'Agile', 'Scrum', 'Kanban', 'JIRA', 'Git', 'GitHub', 'GitLab', 'Bitbucket', 'CI/CD', 'SaaS', 'PaaS', 'IaaS', 'Firebase', 'Heroku', 'API', 'REST', 'GraphQL', 'WebAssembly', 'Progressive Web Apps', 'Single Page Applications', 'Server-Side Rendering', 'Jamstack', 'Headless CMS', 'Contentful', 'Strapi', 'Sanity', 'Hugo', 'Jekyll', 'Gatsby', 'Next.js', 'Nuxt.js', 'Django', 'Flask', 'FastAPI', 'Spring Boot', 'Laravel', 'Ruby on Rails'
   ],
-  authors: [{ name: 'Hackerspace' }, { name: 'Mangaluru', url: 'https://hackersmang.org' }],
-  creator: 'Mashfooq Hussain',
-  publisher: 'Hackerspace Mangaluru',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
   openGraph: {
-    title: 'AI TECHVERSE by Hackerspace Mangaluru',
-    description: 'AI TECHVERSE is hosted by Hackerspace Mangaluru, a community-driven open-source group based in Mangaluru, India. It\'s a vibrant community of tech enthusiasts that hosts tech talks, workshops, and events aimed at fostering innovation and knowledge-sharing.',
+    title: 'AI TechVerse | HackersMang, 2024 July Edition by Hackerspace Mangaluru',
+    description: 'HackersMang, 2024 July Edition hosted by Hackerspace Mangaluru.',
     url: 'https://hackersmang.org/ai-techverse',
-    siteName: 'Hackerspace Mangaluru',
+    siteName: 'HackersMang',
     images: [
       {
         url: 'https://hackersmang.org/ai-techverse/cards/hero-card.png',
@@ -50,18 +42,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI TECHVERSE by Hackerspace Mangaluru',
-    description: 'AI TECHVERSE is hosted by Hackerspace Mangaluru, a community-driven open-source group based in Mangaluru, India.',
+    title: 'AI TechVerse | HackersMang, 2024 July Edition by Hackerspace Mangaluru',
+    description: 'HackersMang, 2024 July Edition hosted by Hackerspace Mangaluru.',
     images: 'https://hackersmang.org/ai-techverse/cards/hero-card.png'
   },
-  alternates: {
-    canonical: '/',
-    languages: {
-      'en-US': '/en-US',
-    },
-  },
-  bookmarks: ['https://hackersmang.org/ai-techverse'],
-  category: 'technology',
 };
 
 function page() {
