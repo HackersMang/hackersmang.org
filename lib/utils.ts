@@ -47,22 +47,36 @@ function getOrdinalSuffix(day: number): string {
 
 // Tag utility functions
 import { Category, CategoryItem } from './types';
+import { getHardcodedTagsForSession } from './sessionTags';
 
 /**
  * Extract all tags from a session's categories
+ * First checks hardcoded tags based on session title, then adds tags from API response
  */
-export function extractTagsFromSession(session: { categories: Category[] }): CategoryItem[] {
+export function extractTagsFromSession(session: { title: string; categories: Category[] }): CategoryItem[] {
   const tags: CategoryItem[] = [];
-  
+  const tagIds = new Set<number>(); // Track tag IDs to avoid duplicates
+
+  // Step 1: Add hardcoded tags first (based on session title)
+  const hardcodedTags = getHardcodedTagsForSession(session.title);
+  hardcodedTags.forEach(tag => {
+    if (!tagIds.has(tag.id)) {
+      tags.push(tag);
+      tagIds.add(tag.id);
+    }
+  });
+
+  // Step 2: Add tags from API response (avoiding duplicates)
   session.categories.forEach(category => {
     category.categoryItems.forEach(item => {
-      // Avoid duplicates by checking if tag already exists
-      if (!tags.find(tag => tag.id === item.id)) {
+      // Avoid duplicates by checking if tag ID already exists
+      if (!tagIds.has(item.id)) {
         // If the tag name is "AI TECHVERSE (10 Mins)", then remove the text added in the brackets
         if (item.name.includes("(")) {
           item.name = item.name.split("(")[0].trim();
         }
         tags.push(item);
+        tagIds.add(item.id);
       }
     });
   });
