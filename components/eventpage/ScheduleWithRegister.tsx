@@ -9,8 +9,9 @@ import { DEMO_API_ID, DUMMY_PROFILE_PICTURE } from "@/lib/constants";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { CodeOfConduct } from "./CodeOfConduct";
+import ComingSoonBanner from "./ComingSoonBanner";
 
-const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStartOn, registrationEndOn }: ScheduleWithRegisterProps): JSX.Element => {
+const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStartOn, registrationEndOn, showComingSoonBanner = false }: ScheduleWithRegisterProps): JSX.Element => {
     // State variables
     const [scheduleData, setScheduleData] = useState<GridSmart[] | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
@@ -212,6 +213,7 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                                             {room.sessions.length > 0 ? (
                                                 <>
                                                     <SessionList sessions={room.sessions} />
+                                                    {!loading && showComingSoonBanner && <ComingSoonBanner />}
                                                     {hasStarted && <RegistrationButton roomName={room.name} />}
                                                 </>
                                             ) : (

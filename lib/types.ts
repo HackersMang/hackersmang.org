@@ -18,6 +18,7 @@ export interface EventDetailProps {
 
     isSchedulePublished?: boolean;
     sessionizeApiId?: string | null;
+    showComingSoonBanner?: boolean;
 }
 
 export interface IntroProps {
@@ -138,6 +139,7 @@ export interface ScheduleWithRegisterProps extends ScheduleProps {
     trackRegistrations: TrackRegistration[];
     registrationStartOn?: Date | null;
     registrationEndOn?: Date | null;
+    showComingSoonBanner?: boolean;
 }
 
 export type EventTrack = {

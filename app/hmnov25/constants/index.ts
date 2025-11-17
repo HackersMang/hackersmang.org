@@ -31,6 +31,7 @@ export const EVENT_DETAIL: EventDetailProps = {
 
   isSchedulePublished: false,
   sessionizeApiId: 'y1gwwoew',
+  showComingSoonBanner: true,
 };
 
 // Hero card
