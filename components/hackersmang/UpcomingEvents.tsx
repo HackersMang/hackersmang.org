@@ -13,7 +13,7 @@ export default function UpcomingEvents() {
                     Upcoming event
                 </span>
                 <h3 className="text-2xl lg:text-6xl xl:text-7xl outfit-bold text-neutral-navy mb-4 lg:mb-6 tracking-tight">
-                    #HMNov25, HackersMang 2025 November Edition
+                    #HMNov25, HackersMang 2025 November Edition on AI
                 </h3>
                 <p className="text-neutral-navy text-lg lg:text-xl mb-4 lg:mb-6 leading-relaxed max-w-3xl outfit-extra-light">
                     Explore exciting lightning talks, insightful demos, and interactive workshops, designed to spark curiosity and expand knowledge.

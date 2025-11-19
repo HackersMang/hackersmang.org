@@ -6,14 +6,14 @@ import { EventLink } from "@/components/hackersmang/EventCard";
  */
 
 export const UPCOMING_EVENTS: EventLink[] = [
-  { href: "/hmnov25", title: "#HMNov25", subtitle: "HackersMang 2025 November edition" }
+  { href: "/hmnov25", title: "#HMNov25", subtitle: "HackersMang, 2025 November edition on AI" }
 ];
 
 export const PAST_EVENTS: EventLink[] = [
-  { href: "/2025-august", title: "#HMAug25", subtitle: "HackersMang 2025 August edition" },
-  { href: "/2025-april", title: "#HMApr25", subtitle: "HackersMang 2025 April edition" },
+  { href: "/2025-august", title: "#HMAug25", subtitle: "HackersMang, 2025 August edition" },
+  { href: "/2025-april", title: "#HMApr25", subtitle: "HackersMang, 2025 April edition" },
   { href: "/techmang25", title: "#TechMang25", subtitle: "Mangaluru Tech Day 2025" },
-  { href: "/2024-november", title: "#HMNov24", subtitle: "HackersMang 2024 November edition" },
+  { href: "/2024-november", title: "#HMNov24", subtitle: "HackersMang, 2024 November edition" },
   { href: "/ai-techverse", title: "#AiTechVerse", subtitle: "Ai TechVerse by HackersMang" },
   {
     href: "https://www.eventbrite.com/e/mangaluru-tech-day-2024-tickets-795844441147",

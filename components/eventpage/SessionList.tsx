@@ -70,7 +70,7 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                                             className="w-20 h-20 rounded-2xl object-cover border-2 border-primary-yellow/30 group-hover:border-primary-yellow/60 transition-all duration-300"
                                         />
                                     </div>
-                                    <span className="text-xs text-neutral-navy outfit-extra-light mt-2 text-center max-w-20 truncate">
+                                    <span className="text-xs text-neutral-navy outfit-extra-light mt-2 text-center max-w-20 md:truncate" title={speaker.name} >
                                         {speaker.name}
                                     </span>
                                 </div>
@@ -120,7 +120,10 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                                         className="w-24 h-24 rounded-2xl object-cover border-2 border-primary-yellow/30 group-hover:border-primary-yellow/60 transition-all duration-300"
                                     />
                                 </div>
-                                <span className="text-sm text-neutral-navy outfit-extra-light mt-3 text-center max-w-24 truncate">
+                                <span 
+                                    className="text-sm text-neutral-navy outfit-extra-light mt-3 text-center max-w-24 truncate"
+                                    title={speaker.name}
+                                >
                                     {speaker.name}
                                 </span>
                             </div>
