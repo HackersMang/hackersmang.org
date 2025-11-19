@@ -22,7 +22,7 @@ export default function Header() {
         {/* Modern Events Button */}
         <Link
           href="/events"
-          className="group relative flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-green to-primary-green/80 text-neutral-white font-semibold rounded-2xl border border-primary-green/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:from-primary-green/90 hover:to-primary-green/70 overflow-hidden"
+          className="group relative flex items-center justify-center gap-2 md:px-6 py-3 text-neutral-navy font-semibold rounded-2xl transition-all duration-300 overflow-hidden hover:underline"
           aria-label="View all events"
         >
           {/* Button Content */}
