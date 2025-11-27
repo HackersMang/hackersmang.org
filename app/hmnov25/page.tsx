@@ -38,7 +38,11 @@ function page() {
             <main className="relative bg-white outfit-extra-light">
                 <div className="relative z-10">
                     <Header />
-                    <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
+                    <Intro 
+                        title={EVENT_DETAIL.title} 
+                        subtitle={EVENT_DETAIL.subtitle}
+                        summitAffiliation={EVENT_DETAIL.summitAffiliation}
+                    />
                     <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
                     <ScheduleWithRegister sessionId={EVENT_DETAIL.sessionizeApiId} trackRegistrations={trackRegistrations} registrationStartOn={EVENT_DETAIL.registrationStartOn} registrationEndOn={EVENT_DETAIL.registrationEndOn} showComingSoonBanner={EVENT_DETAIL.showComingSoonBanner} />
                     <EventHighlights sessionId={EVENT_DETAIL.sessionizeApiId} />

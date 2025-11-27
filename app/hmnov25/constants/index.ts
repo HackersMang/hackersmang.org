@@ -32,6 +32,14 @@ export const EVENT_DETAIL: EventDetailProps = {
   isSchedulePublished: false,
   sessionizeApiId: 'y1gwwoew',
   showComingSoonBanner: false,
+  summitAffiliation: {
+    isEnabled: true,
+    summitName: "AI Impact Summit 2026",
+    summitDate: "19–20 February 2026",
+    summitLocation: "New Delhi",
+    tagline: "Official Pre-Summit Event of the India - AI Impact Summit 2026",
+    summitWebsiteUrl: "https://impact.indiaai.gov.in/",
+  },
 };
 
 // Hero card
@@ -39,8 +47,8 @@ export const HERO_CARD_URL = "https://hackersmang.org/2025/november-hero-card.pn
 
 // Meta data
 export const eventMetaData = {
-  title: "HMNov25 | HackersMang, 2025 November Edition on AI by Hackerspace Mangaluru | Premier Tech Conference in Mangaluru",
-  description: "Join HackersMang, Mangaluru's premier tech conference featuring cutting-edge talks on AI. Network with industry experts and innovators. November 2025 at Hackerspace Mangaluru.",
+  title: "HMNov25 | HackersMang, 2025 November Edition on AI | Official Pre-Summit Event of AI Impact Summit 2026 | Hackerspace Mangaluru",
+  description: "Join HackersMang, Mangaluru's premier tech conference featuring cutting-edge talks on AI. Official Pre-Summit Event of the AI Impact Summit 2026. Network with industry experts and innovators. November 2025 at Hackerspace Mangaluru.",
   bookmarks: 'https://hackersmang.org/hmnov25',
   category: 'Tech Conference',
 };
@@ -85,7 +93,7 @@ export const alternates = {
 };
 
 // JSON-LD
-export const jsonLd = {
+const baseJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Event',
   name: eventMetaData.title,
@@ -118,6 +126,25 @@ export const jsonLd = {
       HERO_CARD_URL,
   ]
 };
+
+export const jsonLd = EVENT_DETAIL.summitAffiliation?.isEnabled ? {
+  ...baseJsonLd,
+  relatedOrganization: {
+      '@type': 'Organization',
+      name: EVENT_DETAIL.summitAffiliation.summitName,
+      url: 'https://impact.indiaai.gov.in'
+  },
+  superEvent: {
+      '@type': 'Event',
+      name: EVENT_DETAIL.summitAffiliation.summitName,
+      startDate: '2026-02-19',
+      endDate: '2026-02-20',
+      location: {
+          '@type': 'Place',
+          name: EVENT_DETAIL.summitAffiliation.summitLocation
+      }
+  }
+} : baseJsonLd;
 
 // Resources
 export const RESOURCES: Resource[] = [];

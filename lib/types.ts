@@ -1,3 +1,13 @@
+export interface SummitAffiliationConfig {
+    isEnabled: boolean;
+    tagline?: string;
+    summitName: string;
+    summitDate: string;
+    summitLocation: string;
+    disclaimer?: string;
+    summitWebsiteUrl?: string;
+}
+
 export interface EventDetailProps {
     title: string;
     subtitle?: string;
@@ -19,11 +29,13 @@ export interface EventDetailProps {
     isSchedulePublished?: boolean;
     sessionizeApiId?: string | null;
     showComingSoonBanner?: boolean;
+    summitAffiliation?: SummitAffiliationConfig | null;
 }
 
 export interface IntroProps {
     title: string;
     subtitle?: string;
+    summitAffiliation?: SummitAffiliationConfig | null;
 }
 
 export interface VenueInfoProps {
