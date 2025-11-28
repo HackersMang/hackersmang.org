@@ -54,14 +54,15 @@ const Register = ({ registrationLink, registrationStartOn, registrationEndOn, bu
                 {/* Button Content */}
                 <div className="relative flex items-center gap-3">
                   {/* Icon with Enhanced Animation */}
-                  <div className="w-6 h-6 flex items-center justify-center">
-                    {!hasEnded && (
+                  {!hasEnded && (
+                    <div className="w-6 h-6 flex items-center justify-center">
                       <ExternalLink
                         size={20}
                         className="transition-all duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 group-hover/btn:rotate-12"
                       />
-                    )}
-                  </div>
+                    </div>
+                  )}
+
 
                   {/* Text with Animation */}
                   <span className="outfit-bold tracking-wide transition-all duration-300 group-hover/btn:tracking-wider">

@@ -19,7 +19,7 @@ export default function UpcomingEvents() {
                     Explore exciting lightning talks, insightful demos, and interactive workshops, designed to spark curiosity and expand knowledge.
                 </p>
             </div>
-                <Register registrationLink={EVENT_DETAIL.pageUrl} registrationStartOn={EVENT_DETAIL.registrationStartOn} registrationEndOn={EVENT_DETAIL.registrationEndOn} buttonText="Visit Event Page" disableCodeOfConduct={true} target="_self" />
+            <Register registrationLink={EVENT_DETAIL.pageUrl} registrationStartOn={EVENT_DETAIL.registrationStartOn} registrationEndOn={EVENT_DETAIL.registrationEndOn} buttonText="Visit Event Page" disableCodeOfConduct={true} target="_self" />
         </div>
     );
 }
