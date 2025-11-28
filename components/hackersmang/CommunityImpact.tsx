@@ -37,7 +37,7 @@ export default function CommunityImpact({
     className = "",
 }: CommunityImpactProps) {
     return (
-        <div className={`${backgroundColor} relative py-20 lg:py-32 overflow-hidden ${className}`}>
+        <section className={`${backgroundColor} relative py-20 lg:py-32 overflow-hidden ${className}`}>
             <div className="max-w-7xl mx-auto px-5 lg:px-12 text-left md:text-center flex flex-col items-start md:items-center justify-center gap-4 lg:gap-8">
                 <h3 className="text-xl lg:text-2xl font-bold outfit-extra-light text-neutral-navy tracking-tight">
                     {title}
@@ -65,6 +65,6 @@ export default function CommunityImpact({
                     ))}
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
