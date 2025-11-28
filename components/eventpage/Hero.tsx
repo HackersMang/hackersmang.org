@@ -3,7 +3,7 @@ import React from "react";
 import SummitCoBranding from "./SummitCoBranding";
 
 
-const Intro = ({ title, subtitle, summitAffiliation }: IntroProps): JSX.Element => {
+const Intro = ({ title, subtitle, summitAffiliation, eventTag = "HackersMang Event" }: IntroProps): JSX.Element => {
   return (
     <section className="relative pt-20 lg:pt-24 h-full">
       {/* Hero Card - Main Branding */}
@@ -15,7 +15,7 @@ const Intro = ({ title, subtitle, summitAffiliation }: IntroProps): JSX.Element 
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary-yellow rounded-full">
               <div className="w-2 h-2 bg-neutral-navy rounded-full animate-pulse"></div>
               <span className="text-sm outfit-extra-light text-neutral-navy font-bold">
-                HackersMang Event
+                {eventTag}
               </span>
             </div>
 
@@ -40,7 +40,7 @@ const Intro = ({ title, subtitle, summitAffiliation }: IntroProps): JSX.Element 
 
           {/* Description */}
           {subtitle && (
-            <p className="text-lg lg:text-xl text-neutral-navy outfit-extra-light leading-relaxed mb-10 max-w-3xl mx-auto">
+            <p className="text-lg lg:text-2xl text-neutral-navy outfit-extra-light leading-relaxed mb-10 max-w-3xl mx-auto">
               {subtitle}
             </p>
           )}

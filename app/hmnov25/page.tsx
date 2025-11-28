@@ -6,7 +6,6 @@ import Intro from "@/components/eventpage/Hero";
 import { alternates, EVENT_DETAIL, eventMetaData, jsonLd, openGraph, RESOURCES, twitter } from "./constants";
 import { baseMetadata } from "@/lib/basemeta";
 import { Footer } from "@/components/hackersmang/Footer";
-import About from "./components/About";
 import { TrackRegistration } from "@/lib/types";
 import Venue from "@/components/eventpage/Venue";
 import CallForSpeaker from "@/components/eventpage/CallForSpeaker";

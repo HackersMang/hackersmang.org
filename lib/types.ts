@@ -35,6 +35,7 @@ export interface EventDetailProps {
 export interface IntroProps {
     title: string;
     subtitle?: string;
+    eventTag?: string;
     summitAffiliation?: SummitAffiliationConfig | null;
 }
 

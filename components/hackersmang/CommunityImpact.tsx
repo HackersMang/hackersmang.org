@@ -15,7 +15,7 @@ interface CommunityImpactProps {
     className?: string;
 }
 
-const defaultStats: ImpactStat[] = [
+export const defaultStats: ImpactStat[] = [
     { value: '12+', label: 'Events Hosted' },
     { value: '50+', label: 'Speakers' },
     { value: '500+', label: 'Active Members' },

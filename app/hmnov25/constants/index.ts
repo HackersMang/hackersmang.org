@@ -37,7 +37,7 @@ export const EVENT_DETAIL: EventDetailProps = {
     summitName: "AI Impact Summit 2026",
     summitDate: "19–20 February 2026",
     summitLocation: "New Delhi",
-    tagline: "Official Pre-Summit Event of the India - AI Impact Summit 2026",
+    tagline: "Official Pre-Summit Event of India - AI Impact Summit 2026",
     summitWebsiteUrl: "https://impact.indiaai.gov.in/",
   },
 };
