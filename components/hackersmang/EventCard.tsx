@@ -30,9 +30,9 @@ const EventCard: React.FC<EventCardProps> = ({ event, className = "" }) => {
         <p className="text-sm text-neutral-navy outfit-extra-light leading-relaxed flex-1">
           {event.subtitle}
         </p>
-        <div className="mt-4 flex items-center text-neutral-navy group-hover:translate-x-1 transition-transform">
-          <span className="text-sm outfit-bold">Learn more</span>
-          <GoArrowUpRight size={16} className="ml-2 text-neutral-navy" />
+        <div className="mt-4 flex items-center text-neutral-navy gap-2">
+          <span className="text-sm outfit-extra-light font-semibold">Learn more</span>
+          <GoArrowUpRight size={16} className="text-neutral-navy" />
         </div>
       </div>
     </Link>
