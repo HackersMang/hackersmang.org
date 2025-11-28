@@ -31,13 +31,13 @@ function page() {
                 <div className="relative z-10">
                     <Header />
                     <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} eventTag="TechMang Events" />
-                    <CommunityStats />
+                    <About />
                     <CallForSpeaker 
                         registrationLink={EVENT_DETAIL.callForSpeakerLink} 
                         registrationStartOn={EVENT_DETAIL.callForSpeakerStartOn} 
                         registrationEndOn={EVENT_DETAIL.callForSpeakerEndOn} 
                     />
-                    <About />
+                    <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
                     <Footer />
                 </div>
             </main>

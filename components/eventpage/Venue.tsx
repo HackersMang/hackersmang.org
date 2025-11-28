@@ -3,6 +3,7 @@ import { formatEventDate } from "@/lib/utils";
 import Link from "next/link";
 import React from "react";
 import { ExternalLink } from "lucide-react";
+import ComingSoonBanner from "./ComingSoonBanner";
 
 const Venue = ({ locationName, locationUrl, happeningOn }: VenueInfoProps): JSX.Element => {
     const formattedDate = formatEventDate(happeningOn.toUTCString());
@@ -45,31 +46,40 @@ const Venue = ({ locationName, locationUrl, happeningOn }: VenueInfoProps): JSX.
                                         </div>
                                         <span className="text-lg font-semibold text-neutral-navy outfit-extra-bold">Venue</span>
                                     </div>
-                                    <Link
-                                        href={locationUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-xl lg:text-2xl text-neutral-navy hover:text-neutral-navy transition-colors font-semibold outfit-extra-light ml-11 hover:underline"
-                                    >
-                                        {locationName}
-                                    </Link>
+                                    {locationName && locationUrl && locationUrl !== "#" ? (
+                                        <>
+                                            <Link
+                                                href={locationUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-xl lg:text-2xl text-neutral-navy hover:text-neutral-navy transition-colors font-semibold outfit-extra-light ml-11 hover:underline"
+                                            >
+                                                {locationName}
+                                            </Link>
+                                        </>
+                                    ) : (
+                                        <div className="ml-11">
+                                            <ComingSoonBanner message="Venue details coming soon" className="justify-start! w-full" />
+                                        </div>
+                                    )}
                                 </div>
 
                                 {/* Action Button */}
-                                <div className="w-full flex flex-col items-center justify-center text-center">
-
-                                    <div className="relative z-10 flex flex-col items-start justify-start md:items-center md:justify-center w-full">
-                                        <Link href={locationUrl} target="_blank" rel="noopener noreferrer" className="group/btn relative w-full inline-flex items-center justify-center gap-3 py-4 px-8 bg-gradient-to-r from-primary-green to-primary-green/80 text-neutral-white font-semibold rounded-2xl border border-primary-green/30 transition-all duration-300 hover:from-primary-green/90 hover:to-primary-green/70 overflow-hidden text-lg lg:text-xl hover:scale-105 hover:shadow-xl">
-                                            <ExternalLink
-                                                size={20}
-                                                className="transition-all duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 group-hover/btn:rotate-12"
-                                            />
-                                            <span className="outfit-bold tracking-wide transition-all duration-300 group-hover/btn:tracking-wider">
-                                                Get Directions
-                                            </span>
-                                        </Link>
+                                {locationName && locationUrl && locationUrl !== "#" && (
+                                    <div className="w-full flex flex-col items-center justify-center text-center">
+                                        <div className="relative z-10 flex flex-col items-start justify-start md:items-center md:justify-center w-full">
+                                            <Link href={locationUrl} target="_blank" rel="noopener noreferrer" className="group/btn relative w-full inline-flex items-center justify-center gap-3 py-4 px-8 bg-gradient-to-r from-primary-green to-primary-green/80 text-neutral-white font-semibold rounded-2xl border border-primary-green/30 transition-all duration-300 hover:from-primary-green/90 hover:to-primary-green/70 overflow-hidden text-lg lg:text-xl hover:scale-105 hover:shadow-xl">
+                                                <ExternalLink
+                                                    size={20}
+                                                    className="transition-all duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 group-hover/btn:rotate-12"
+                                                />
+                                                <span className="outfit-bold tracking-wide transition-all duration-300 group-hover/btn:tracking-wider">
+                                                    Get Directions
+                                                </span>
+                                            </Link>
+                                        </div>
                                     </div>
-                                </div>
+                                )}
                             </div>
                         </div>
                     </div>

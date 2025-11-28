@@ -13,8 +13,8 @@ export interface EventDetailProps {
     subtitle?: string;
     pageUrl?: string | null;
     happeningOn: Date;
-    locationName: string;
-    locationUrl: string;
+    locationName?: string;
+    locationUrl?: string;
     tracks: {
         name: string;
         registrationLink: string | null;
@@ -40,8 +40,8 @@ export interface IntroProps {
 }
 
 export interface VenueInfoProps {
-    locationName: string;
-    locationUrl: string;
+    locationName?: string;
+    locationUrl?: string;
     happeningOn: Date
 }
 

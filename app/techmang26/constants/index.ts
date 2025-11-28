@@ -5,12 +5,12 @@ export const EVENT_DETAIL: EventDetailProps = {
   title: "#TechMang26",
   subtitle: "Announcing the Annual Flagship Event of Hackerspace Mangaluru",
   pageUrl: "/techmang26",
-  locationName: "UniCourt Mangaluru",
-  locationUrl: "https://maps.app.goo.gl/bB6HwqDftS4Nq1LT7",
+  locationName: undefined,
+  locationUrl: undefined,
   happeningOn: new Date("01/31/2026"), // MM/DD/YYYY - Update with actual date
   tracks: null,
-  registrationStartOn: null,
-  registrationEndOn: null,
+  registrationStartOn: new Date("11/28/2025"), // MM/DD/YYYY
+  registrationEndOn: new Date("01/10/2026"), // MM/DD/YYYY
   callForSpeakerLink: "https://sessionize.com/hackersmang-techmang-2026/",
   callForSpeakerStartOn: new Date("11/28/2025"), // MM/DD/YYYY
   callForSpeakerEndOn: new Date("01/10/2026"), // MM/DD/YYYY
