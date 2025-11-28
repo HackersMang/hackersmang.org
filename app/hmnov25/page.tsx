@@ -11,6 +11,7 @@ import Venue from "@/components/eventpage/Venue";
 import CallForSpeaker from "@/components/eventpage/CallForSpeaker";
 import ScheduleWithRegister from "@/components/eventpage/ScheduleWithRegister";
 import EventHighlights from "@/components/eventpage/EventHighlights";
+import SprintToImagine from "@/components/eventpage/SprintToImagine";
 
 export const metadata: Metadata = {
     ...baseMetadata,
@@ -42,8 +43,9 @@ function page() {
                         subtitle={EVENT_DETAIL.subtitle}
                         summitAffiliation={EVENT_DETAIL.summitAffiliation}
                     />
-                    <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
+                    <SprintToImagine />
                     <ScheduleWithRegister sessionId={EVENT_DETAIL.sessionizeApiId} trackRegistrations={trackRegistrations} registrationStartOn={EVENT_DETAIL.registrationStartOn} registrationEndOn={EVENT_DETAIL.registrationEndOn} showComingSoonBanner={EVENT_DETAIL.showComingSoonBanner} />
+                    <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
                     <EventHighlights sessionId={EVENT_DETAIL.sessionizeApiId} />
                     <CallForSpeaker registrationLink={EVENT_DETAIL.callForSpeakerLink} registrationStartOn={EVENT_DETAIL.callForSpeakerStartOn} registrationEndOn={EVENT_DETAIL.callForSpeakerEndOn} />
                     <Footer />

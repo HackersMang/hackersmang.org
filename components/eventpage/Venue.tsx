@@ -101,20 +101,6 @@ const Venue = ({ locationName, locationUrl, happeningOn }: VenueInfoProps): JSX.
                                     <div className="flex items-start gap-4">
                                         <div className="w-8 h-8 bg-primary-yellow/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
                                             <svg className="w-4 h-4 text-neutral-navy" fill="currentColor" viewBox="0 0 24 24">
-                                                <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A1.5 1.5 0 0 0 18.54 8H16c-.8 0-1.54.37-2.01.99L12 11l-1.99-2.01A2.5 2.5 0 0 0 8 8H5.46c-.8 0-1.54.37-2.01.99L1 12.5V22h2v-6h2.5l2.5 6h2l-2.5-6H12v6h2v-6h2.5l2.5 6h2l-2.5-6H20v6h2z" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h4 className="text-lg font-semibold text-neutral-navy outfit-extra-bold mb-2">Networking Opportunities</h4>
-                                            <p className="text-neutral-navy outfit-extra-light leading-relaxed">
-                                                Connect with like-minded professionals and expand your network in the tech community.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-8 h-8 bg-primary-yellow/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                                            <svg className="w-4 h-4 text-neutral-navy" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                                             </svg>
                                         </div>
@@ -122,6 +108,20 @@ const Venue = ({ locationName, locationUrl, happeningOn }: VenueInfoProps): JSX.
                                             <h4 className="text-lg font-semibold text-neutral-navy outfit-extra-bold mb-2">Hands-on Workshops</h4>
                                             <p className="text-neutral-navy outfit-extra-light leading-relaxed">
                                                 Participate in interactive sessions and gain practical skills you can apply immediately.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex items-start gap-4">
+                                        <div className="w-8 h-8 bg-primary-yellow/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                            <svg className="w-4 h-4 text-neutral-navy" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A1.5 1.5 0 0 0 18.54 8H16c-.8 0-1.54.37-2.01.99L12 11l-1.99-2.01A2.5 2.5 0 0 0 8 8H5.46c-.8 0-1.54.37-2.01.99L1 12.5V22h2v-6h2.5l2.5 6h2l-2.5-6H12v6h2v-6h2.5l2.5 6h2l-2.5-6H20v6h2z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-lg font-semibold text-neutral-navy outfit-extra-bold mb-2">Networking Opportunities</h4>
+                                            <p className="text-neutral-navy outfit-extra-light leading-relaxed">
+                                                Connect with like-minded professionals and expand your network in the tech community.
                                             </p>
                                         </div>
                                     </div>
