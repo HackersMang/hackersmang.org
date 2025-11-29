@@ -30,7 +30,7 @@ const About = () => {
                             </p>
 
                             <p className="w-full text-lg lg:text-xl leading-relaxed text-neutral-navy outfit-extra-light">
-                                As Mangaluru&apos;s premier tech conference, TechMang is committed to fostering diversity, inclusion, and knowledge sharing. All our events have been <span className="font-semibold text-neutral-navy">free and open to everyone</span>, and we actively encourage participation from underrepresented groups in technology. We believe in creating a welcoming environment where everyone can learn, share, and grow together.
+                                As Mangaluru&apos;s premier tech conference, TechMang is committed to fostering diversity, inclusion, and knowledge sharing. All our events have been <span className="font-semibold text-neutral-navy">free and open to tech enthusiasts</span>, and we actively encourage participation from underrepresented groups in technology. We believe in creating a welcoming environment where everyone can learn, share, and grow together.
                             </p>
 
                             <p className="w-full text-lg lg:text-xl leading-relaxed mb-2 text-neutral-navy outfit-extra-light">
