@@ -153,7 +153,7 @@ function page() {
             <main className="relative bg-white outfit-extra-light">
                 <div className="relative z-10">
                     <Header />
-                    <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} />
+                    <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} eventTag="TechMang Events" />
                     <CallForSpeaker registrationLink={EVENT_DETAIL.callForSpeakerLink} registrationStartOn={EVENT_DETAIL.callForSpeakerStartOn} registrationEndOn={EVENT_DETAIL.callForSpeakerEndOn} />
                     <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
                     <ScheduleWithRegister sessionId={EVENT_DETAIL.sessionizeApiId} trackRegistrations={trackRegistrations} registrationStartOn={EVENT_DETAIL.registrationStartOn} registrationEndOn={EVENT_DETAIL.registrationEndOn} />
