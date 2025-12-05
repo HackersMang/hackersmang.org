@@ -213,7 +213,7 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                                             {room.sessions.length > 0 ? (
                                                 <>
                                                     <SessionList sessions={room.sessions} />
-                                                    {!loading && showComingSoonBanner && <ComingSoonBanner />}
+                                                    {!loading && showComingSoonBanner && <ComingSoonBanner message="More sessions coming soon" className="justify-center" />}
                                                     {hasStarted && <RegistrationButton roomName={room.name} />}
                                                 </>
                                             ) : (

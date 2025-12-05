@@ -10,6 +10,9 @@ import CallForSpeaker from "@/components/eventpage/CallForSpeaker";
 import Venue from "@/components/eventpage/Venue";
 import About from "./components/About";
 import CommunityStats from "@/components/hackersmang/CommunityImpact";
+import SessionList from "@/components/eventpage/SessionList";
+import ScheduleWithRegister from "@/components/eventpage/ScheduleWithRegister";
+import { TrackRegistration } from "@/lib/types";
 
 export const metadata: Metadata = {
     ...baseMetadata,
@@ -20,6 +23,12 @@ export const metadata: Metadata = {
 };
 
 function page() {
+    const trackRegistrations: TrackRegistration[] = EVENT_DETAIL.tracks?.map(track => ({
+        track: track.name,
+        registrationLink: track.registrationLink,
+        buttonText: `Register for ${track.name}`
+    })) || [];
+
     return (
         <>
             <Script
@@ -37,6 +46,7 @@ function page() {
                         registrationStartOn={EVENT_DETAIL.callForSpeakerStartOn} 
                         registrationEndOn={EVENT_DETAIL.callForSpeakerEndOn} 
                     />
+                    <ScheduleWithRegister sessionId={EVENT_DETAIL.sessionizeApiId} trackRegistrations={trackRegistrations} registrationStartOn={EVENT_DETAIL.registrationStartOn} registrationEndOn={EVENT_DETAIL.registrationEndOn} showComingSoonBanner={EVENT_DETAIL.showComingSoonBanner} />
                     <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
                     <Footer />
                 </div>
