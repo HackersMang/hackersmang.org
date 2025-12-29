@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useMemo } from "react";
 import ErrorCard from "@/components/eventpage/ErrorCard";
 import SessionList from "@/components/eventpage/SessionList";
 import SessionListSkeleton from "@/components/eventpage/SessionListSkeleton";
@@ -94,11 +94,27 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
         fetchSpeakersAndSchedule();
     }, [fetchSpeakersAndSchedule]);
 
+    // Collect all unique rooms/tracks from schedule data
+    const allTracks = useMemo(() => {
+        if (!scheduleData) return [];
+        const tracks: Array<{ name: string; id: string }> = [];
+        scheduleData.forEach(daySchedule => {
+            daySchedule.rooms.forEach(room => {
+                if (!tracks.find(t => t.id === room.id)) {
+                    tracks.push({ name: room.name, id: room.id });
+                }
+            });
+        });
+        return tracks;
+    }, [scheduleData]);
+
+    const hasMultipleTracks = allTracks.length > 1;
+
     if (error) {
         return <ErrorCard message={error} />;
     }
 
-    const RegistrationButton = ({ roomName }: { roomName: string }) => {
+    const RegistrationButton = ({ roomName, trackNumber }: { roomName: string, trackNumber: number }) => {
         const trackRegistration = trackRegistrations.find(
             tr => tr.track.toLowerCase() === roomName.toLowerCase()
         );
@@ -106,8 +122,8 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
         if (!trackRegistration?.registrationLink) return null;
 
         return (
-            <div className="mt-6 md:mt-12 lg:mt-16 animate-fade-in-up">
-                <div className="bg-neutral-white/95 px-0 p-8 lg:p-10 relative overflow-hidden transition-all duration-500 md:hover:scale-[1.02] md:hover:shadow-lg group">
+            <div className="animate-fade-in-up w-full">
+                <div className="bg-neutral-white/95 p-6 lg:p-10 relative overflow-hidden transition-all duration-500 md:hover:scale-[1.02] md:hover:shadow-lg group rounded-2xl md:rounded-none">
                     {/* Animated Background Glow */}
                     <div className="absolute inset-0 bg-gradient-to-br from-primary-yellow/5 via-transparent to-primary-yellow/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
@@ -122,13 +138,15 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                     <div className="hidden md:block absolute bottom-4 left-4 w-1.5 h-1.5 bg-secondary-yellow/60 rounded-full animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ animationDelay: '0.6s' }}></div>
                     <div className="hidden md:block absolute top-1/2 right-8 w-1 h-1 bg-secondary-yellow/50 rounded-full animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ animationDelay: '1s' }}></div>
 
-                    <div className="relative z-10 flex flex-col items-start justify-start md:items-center md:justify-center">
+                    <div className="relative z-10 flex flex-col items-start justify-start md:items-center md:justify-center gap-4">
+                        <div className="inline-flex items-center gap-2 text-sm font-mono text-neutral-navy outfit-extra-light bg-primary-yellow/10 px-3 py-1 rounded-full">
+                            <div className="w-2 h-2 bg-neutral-navy rounded-full animate-pulse"></div>
+                            <span className="text-sm outfit-extra-light text-neutral-navy font-bold">Track {trackNumber}</span>
+                        </div>
                         {/* Title with Animation */}
-                        {!hasEnded && (
-                            <h4 className="text-2xl lg:text-3xl text-neutral-navy outfit-extra-bold mb-6 tracking-tight transition-all duration-300">
-                                Register for {roomName}
-                            </h4>
-                        )}
+                        <h4 className="text-2xl lg:text-3xl text-neutral-navy outfit-extra-bold tracking-tight transition-all duration-300">
+                            {roomName}
+                        </h4>
 
                         {/* Registration Button with Enhanced Animation */}
                         <Link
@@ -168,10 +186,6 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                             {/* Shimmer Effect */}
                             <div className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
                         </Link>
-
-                        <div className="mt-6 transition-all duration-300 group-hover:translate-y-1">
-                            <CodeOfConduct />
-                        </div>
                     </div>
                 </div>
             </div>
@@ -193,36 +207,58 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                 ) : (
                     <>
                         {scheduleData && scheduleData.length > 0 ? (
-                            scheduleData.map((daySchedule, index) => (
-                                <div key={index} className="w-full">
-                                    {daySchedule.rooms.map((room) => (
-                                        <div key={room.id} className="w-full mb-16 lg:mb-20">
-                                            {/* Track Header - Eyebrow Style */}
-                                            <div className="mb-12 lg:mb-16 flex items-start justify-start md:items-center md:justify-center text-center">
-                                                <div className="relative inline-block">
-                                                    {/* Eyebrow Background */}
-                                                    <div className="absolute inset-0 bg-neutral-white/80 rounded-lg transform rotate-1"></div>
-                                                    <div className="relative">
-                                                        <h3 className="text-2xl lg:text-6xl xl:text-7xl outfit-extra-bold text-neutral-navy mb-4 lg:mb-6 tracking-tight">
-                                                            {room.name}
-                                                        </h3>
-                                                    </div>
-                                                </div>
-                                            </div>
+                            scheduleData.map((daySchedule, dayIndex) => (
+                                <div key={dayIndex} className="w-full">
+                                    {daySchedule.rooms.map((room, roomIndex) => {
+                                        const totalTracks = daySchedule.rooms.length;
+                                        return (
+                                            <div key={room.id} className="w-full mb-16 lg:mb-20">
+                                                {/* Enhanced Track Header with Visual Separator */}
+                                                <div className="mb-0 lg:mb-16">
 
-                                            {room.sessions.length > 0 ? (
-                                                <>
-                                                    <SessionList sessions={room.sessions} />
-                                                    {!loading && showComingSoonBanner && <ComingSoonBanner message="More sessions coming soon" className="justify-center" />}
-                                                    {hasStarted && <RegistrationButton roomName={room.name} />}
-                                                </>
-                                            ) : (
-                                                <div className="w-full p-8 bg-gradient-to-br from-primary-yellow/20 to-primary-yellow/5 rounded-2xl text-center border border-primary-yellow/30">
-                                                    <p className="text-lg text-neutral-navy outfit-extra-light">No session available.</p>
+                                                    {/* Track indicator badge */}
+                                                    {hasMultipleTracks && (
+                                                        <div className="flex items-start justify-start md:items-center md:justify-center mb-4">
+                                                            <div className="inline-flex items-center gap-2 text-sm font-mono text-neutral-navy outfit-extra-light bg-primary-yellow/10 px-3 py-1 rounded-full">
+                                                                <div className="w-2 h-2 bg-neutral-navy rounded-full animate-pulse"></div>
+                                                                <span className="text-sm text-neutral-navy outfit-extra-light font-bold">
+                                                                    Track {roomIndex + 1} of {totalTracks}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    )}
+
+                                                    <div className="flex items-start justify-start md:items-center md:justify-center text-center mb-6">
+                                                        <div className="relative inline-block">
+                                                            {/* Eyebrow Background */}
+                                                            <div className="absolute inset-0 bg-neutral-white/80 rounded-lg transform rotate-1"></div>
+                                                            <div className="relative">
+                                                                <h3 className="text-4xl lg:text-6xl xl:text-7xl outfit-extra-bold text-neutral-navy mb-4 lg:mb-6 tracking-tight">
+                                                                    {room.name}
+                                                                </h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    {/* Visual separator line */}
+                                                    <div className="max-w-3xl mx-auto h-px bg-gradient-to-r from-transparent via-primary-yellow/30 to-transparent"></div>
                                                 </div>
-                                            )}
-                                        </div>
-                                    ))}
+
+                                                {room.sessions.length > 0 ? (
+                                                    <>
+                                                        <SessionList sessions={room.sessions} />
+                                                        {!loading && showComingSoonBanner && <ComingSoonBanner message="More sessions coming soon" className="justify-center" />}
+                                                    </>
+                                                ) : (
+                                                    <div className="w-full p-8 bg-gradient-to-br from-primary-yellow/20 to-primary-yellow/5 rounded-2xl text-center border border-primary-yellow/30">
+                                                        <p className="text-lg text-neutral-navy outfit-extra-light">No session available.</p>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                             ))
                         ) : (
@@ -232,6 +268,40 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                         )}
                     </>
                 )}
+
+                {/* Track Registration Overview - Show at top if multiple tracks */}
+                {!loading && hasStarted && allTracks.length > 0 && !showComingSoonBanner && (
+                    <div className="relative z-10">
+                        {/* Header */}
+                        <div className="text-center mb-8">
+                            <h3 className="text-2xl lg:text-3xl outfit-extra-bold text-neutral-navy mb-4 tracking-tight">
+                                Choose Your Track
+                            </h3>
+                            <p className="text-lg text-neutral-navy outfit-extra-light leading-relaxed">
+                                We have {allTracks.length} tracks available. Select the track you&apos;d like to attend:
+                            </p>
+                        </div>
+
+                        {/* Track Cards Grid */}
+                        <div className="flex flex-col md:flex-row items-center justify-center gap-8 lg:gap-12 w-full">
+                            {allTracks.map((track, index) => {
+                                const trackNumber = index + 1;
+                                return (
+                                    <div key={track.id} className="flex flex-col items-center justify-center gap-4 w-full border border-neutral-200/50 rounded-2xl md:rounded-none">
+                                        <RegistrationButton key={track.id} roomName={track.name} trackNumber={trackNumber} />
+                                    </div>
+                                );
+                            })}
+                        </div>
+
+                        {/* Code of Conduct */}
+                        <div className="mt-8 text-center">
+                            <CodeOfConduct />
+                        </div>
+                    </div>
+                )}
+
+                {/* Cache Disclaimer */}
                 {!loading && fromCache && cachedAt ? (
                     <div className="flex flex-row items-center justify-center gap-2 w-full mt-8">
                         <div className="bg-gradient-to-br from-primary-yellow/20 to-primary-yellow/5 p-4 rounded-xl border border-primary-yellow/30">
