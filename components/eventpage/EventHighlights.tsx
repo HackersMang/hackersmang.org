@@ -160,7 +160,7 @@ export default function EventHighlights({
     columns = 4,
     backgroundColor = "bg-secondary-yellow",
     className = "",
-}: EventHighlightsProps) {
+}: Readonly<EventHighlightsProps>) {
     const [highlights, setHighlights] = useState<Highlight[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [dynamicSubtitle, setDynamicSubtitle] = useState<string>(

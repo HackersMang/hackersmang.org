@@ -9,8 +9,6 @@ import { Footer } from "@/components/hackersmang/Footer";
 import CallForSpeaker from "@/components/eventpage/CallForSpeaker";
 import Venue from "@/components/eventpage/Venue";
 import About from "./components/About";
-import CommunityStats from "@/components/hackersmang/CommunityImpact";
-import SessionList from "@/components/eventpage/SessionList";
 import ScheduleWithRegister from "@/components/eventpage/ScheduleWithRegister";
 import { TrackRegistration } from "@/lib/types";
 import EventHighlights from "@/components/eventpage/EventHighlights";
