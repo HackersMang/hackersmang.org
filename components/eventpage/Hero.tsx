@@ -40,7 +40,7 @@ const Intro = ({ title, subtitle, summitAffiliation, eventTag = "HackersMang Eve
 
           {/* Description */}
           {subtitle && (
-            <p className="text-lg lg:text-2xl text-neutral-navy outfit-extra-light leading-relaxed mb-10 max-w-3xl mx-auto">
+            <p className="text-lg lg:text-4xl text-neutral-navy outfit-extra-light leading-relaxed mb-10 max-w-3xl mx-auto">
               {subtitle}
             </p>
           )}

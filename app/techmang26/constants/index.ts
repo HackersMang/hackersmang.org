@@ -3,7 +3,7 @@ import { EventDetailProps, Resource } from "@/lib/types";
 
 export const EVENT_DETAIL: EventDetailProps = {
   title: "#TechMang26",
-  subtitle: "AI in Action: Build. Test. Ship. Show Real, Developer-Focused AI",
+  subtitle: "AI in Action: Build · Test · Ship",
   pageUrl: "/techmang26",
   locationName: undefined,
   locationUrl: undefined,
