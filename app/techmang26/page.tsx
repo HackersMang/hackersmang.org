@@ -13,6 +13,7 @@ import CommunityStats from "@/components/hackersmang/CommunityImpact";
 import SessionList from "@/components/eventpage/SessionList";
 import ScheduleWithRegister from "@/components/eventpage/ScheduleWithRegister";
 import { TrackRegistration } from "@/lib/types";
+import EventHighlights from "@/components/eventpage/EventHighlights";
 
 export const metadata: Metadata = {
     ...baseMetadata,
@@ -45,6 +46,14 @@ function page() {
                         registrationLink={EVENT_DETAIL.callForSpeakerLink} 
                         registrationStartOn={EVENT_DETAIL.callForSpeakerStartOn} 
                         registrationEndOn={EVENT_DETAIL.callForSpeakerEndOn} 
+                    />
+                    <EventHighlights
+                        sessionId={EVENT_DETAIL.sessionizeApiId}
+                        title="Why Attend?"
+                        subtitle="Join us for an unforgettable experience filled with learning, networking, and innovation"
+                        columns={4}
+                        backgroundColor="bg-secondary-yellow"
+                        className="py-20 lg:py-32"
                     />
                     <ScheduleWithRegister sessionId={EVENT_DETAIL.sessionizeApiId} trackRegistrations={trackRegistrations} registrationStartOn={EVENT_DETAIL.registrationStartOn} registrationEndOn={EVENT_DETAIL.registrationEndOn} showComingSoonBanner={EVENT_DETAIL.showComingSoonBanner} />
                     <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />

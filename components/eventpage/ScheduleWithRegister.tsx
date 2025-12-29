@@ -97,7 +97,7 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
     // Collect all unique rooms/tracks from schedule data
     const allTracks = useMemo(() => {
         if (!scheduleData) return [];
-        const tracks: Array<{ name: string; id: string }> = [];
+        const tracks: Array<{ name: string; id: number }> = [];
         scheduleData.forEach(daySchedule => {
             daySchedule.rooms.forEach(room => {
                 if (!tracks.find(t => t.id === room.id)) {
