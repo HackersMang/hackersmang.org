@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { SummitAffiliationConfig } from '@/lib/types';
-import { ExternalLink } from 'lucide-react';
 
 interface SummitCoBrandingProps {
     config: SummitAffiliationConfig;
@@ -25,7 +24,7 @@ const SummitCoBranding: React.FC<SummitCoBrandingProps> = ({ config }) => {
                     {/* Summit Logo */}
                     <div className="bg-neutral-white rounded-2xl p-6 lg:p-8 shadow-lg border border-primary-yellow/30 transition-transform duration-300 hover:scale-105">
                         <Image
-                            src="/ai-impact-summit-2026/logo.png"
+                            src={config.imageUrl || "/hackersmang-logo.jpg"}
                             alt={`${config.summitName} Logo`}
                             width={680}
                             height={272}
@@ -37,25 +36,14 @@ const SummitCoBranding: React.FC<SummitCoBrandingProps> = ({ config }) => {
                     </div>
 
                     {/* Main Tagline */}
+                    {config.tagline && (
                     <div className="text-center space-y-4 max-w-4xl">
                         <h2 className="text-2xl sm:text-3xl md:text-4xl text-neutral-navy outfit-bold leading-tight tracking-tight">
-                            {config.tagline}
-                        </h2>
-                    </div>
-
-                    {/* Motto Section */}
-                    <div className="w-full max-w-3xl pt-4 border-t border-neutral-navy/10">
-                        <div className="flex flex-col items-center justify-center gap-3 text-center">
-                            {/* Devanagari Motto */}
-                            <p className="text-2xl sm:text-3xl md:text-4xl text-neutral-navy outfit-extra-bold leading-relaxed">
-                                सर्वजन हिताय । सर्वजन सुखाय
-                            </p>
-                            {/* English Translation */}
-                            <p className="text-lg sm:text-xl md:text-2xl text-neutral-navy/80 outfit-extra-light italic">
-                                WELFARE FOR ALL • HAPPINESS FOR ALL
-                            </p>
+                                {config.tagline}
+                            </h2>
                         </div>
-                    </div>
+                    )}
+
 
                     {/* Call to Action - Summit Website Link */}
                     {config.summitWebsiteUrl && (

@@ -22,6 +22,13 @@ export const EVENT_DETAIL: EventDetailProps = {
   isSchedulePublished: false,
   sessionizeApiId: "bgrouyg6",
   showComingSoonBanner: true,
+
+  summitAffiliation: {
+    isEnabled: true,
+    summitName: "TiE Mangaluru",
+    summitWebsiteUrl: "https://tiemangaluru.org/",
+    imageUrl: "/branding/tie-2026/logo.jpg"
+  },
 };
 
 // Hero card

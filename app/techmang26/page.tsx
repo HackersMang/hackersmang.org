@@ -38,12 +38,17 @@ function page() {
             <main className="relative bg-white outfit-extra-light">
                 <div className="relative z-10">
                     <Header />
-                    <Intro title={EVENT_DETAIL.title} subtitle={EVENT_DETAIL.subtitle} eventTag="TechMang Events" />
+                    <Intro 
+                        title={EVENT_DETAIL.title}
+                        subtitle={EVENT_DETAIL.subtitle}
+                        eventTag="TechMang Events"
+                        summitAffiliation={EVENT_DETAIL.summitAffiliation}
+                    />
                     <About />
-                    <CallForSpeaker 
-                        registrationLink={EVENT_DETAIL.callForSpeakerLink} 
-                        registrationStartOn={EVENT_DETAIL.callForSpeakerStartOn} 
-                        registrationEndOn={EVENT_DETAIL.callForSpeakerEndOn} 
+                    <CallForSpeaker
+                        registrationLink={EVENT_DETAIL.callForSpeakerLink}
+                        registrationStartOn={EVENT_DETAIL.callForSpeakerStartOn}
+                        registrationEndOn={EVENT_DETAIL.callForSpeakerEndOn}
                     />
                     <EventHighlights
                         sessionId={EVENT_DETAIL.sessionizeApiId}

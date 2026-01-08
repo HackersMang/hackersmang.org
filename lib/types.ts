@@ -2,10 +2,9 @@ export interface SummitAffiliationConfig {
     isEnabled: boolean;
     tagline?: string;
     summitName: string;
-    summitDate: string;
-    summitLocation: string;
     disclaimer?: string;
     summitWebsiteUrl?: string;
+    imageUrl?: string;
 }
 
 export interface EventDetailProps {
