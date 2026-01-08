@@ -140,7 +140,7 @@ export const jsonLd = EVENT_DETAIL.summitAffiliation?.isEnabled ? {
       endDate: '2026-02-20',
       location: {
           '@type': 'Place',
-          name: EVENT_DETAIL.summitAffiliation.summitLocation
+          name: EVENT_DETAIL.summitAffiliation.summitName
       }
   }
 } : baseJsonLd;
