@@ -270,7 +270,7 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                 )}
 
                 {/* Track Registration Overview - Show at top if multiple tracks */}
-                {!loading && hasStarted && allTracks.length > 0 && !showComingSoonBanner && (
+                {!loading && hasStarted && allTracks.length > 0 && (
                     <div className="relative z-10">
                         {/* Header */}
                         <div className="text-center mb-8">
