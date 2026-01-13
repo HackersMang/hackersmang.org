@@ -10,9 +10,9 @@ export const EVENT_DETAIL: EventDetailProps = {
   happeningOn: new Date("01/31/2026"), // MM/DD/YYYY - Update with actual date
   tracks: [
     {
-      name: "AI Tech Talks",
+      name: "AI Talks",
       registrationLink: "https://www.tickettailor.com/events/hackerspacemangaluru/2012555",
-      buttonText: "Register for AI Tech Talks"
+      buttonText: "Register for AI Talks"
     },
     {
       name: "AI workshops",
