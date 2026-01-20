@@ -10,8 +10,9 @@ import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { CodeOfConduct } from "./CodeOfConduct";
 import ComingSoonBanner from "./ComingSoonBanner";
+import Registrations from "./Registrations";
 
-const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStartOn, registrationEndOn, showComingSoonBanner = false }: ScheduleWithRegisterProps): JSX.Element => {
+const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStartOn, registrationEndOn, showComingSoonBanner = false, independentRegistrations }: ScheduleWithRegisterProps): JSX.Element => {
     // State variables
     const [scheduleData, setScheduleData] = useState<GridSmart[] | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
@@ -110,11 +111,16 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
 
     const hasMultipleTracks = allTracks.length > 1;
 
+    // Determine which registration mode to use
+    const useTrackBasedRegistration = trackRegistrations && trackRegistrations.length > 0;
+
     if (error) {
         return <ErrorCard message={error} />;
     }
 
     const RegistrationButton = ({ roomName, trackNumber }: { roomName: string, trackNumber: number }) => {
+        if (!trackRegistrations) return null;
+        
         const trackRegistration = trackRegistrations.find(
             tr => tr.track.toLowerCase() === roomName.toLowerCase()
         );
@@ -269,8 +275,8 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                     </>
                 )}
 
-                {/* Track Registration Overview - Show at top if multiple tracks */}
-                {!loading && hasStarted && allTracks.length > 0 && (
+                {/* Track Registration Overview - Show at top if multiple tracks (backward compatible) */}
+                {!loading && hasStarted && allTracks.length > 0 && useTrackBasedRegistration && (
                     <div className="relative z-10">
                         {/* Header */}
                         <div className="text-center mb-8">
@@ -299,6 +305,15 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                             <CodeOfConduct />
                         </div>
                     </div>
+                )}
+
+                {/* Independent Registrations Component (new approach) */}
+                {!loading && !useTrackBasedRegistration && independentRegistrations && independentRegistrations.length > 0 && (
+                    <Registrations 
+                        registrations={independentRegistrations}
+                        registrationStartOn={registrationStartOn}
+                        registrationEndOn={registrationEndOn}
+                    />
                 )}
 
                 {/* Cache Disclaimer */}

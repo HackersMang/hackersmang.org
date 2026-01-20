@@ -148,10 +148,15 @@ export interface TrackRegistration {
 }
 
 export interface ScheduleWithRegisterProps extends ScheduleProps {
-    trackRegistrations: TrackRegistration[];
+    trackRegistrations?: TrackRegistration[];
     registrationStartOn?: Date | null;
     registrationEndOn?: Date | null;
     showComingSoonBanner?: boolean;
+    independentRegistrations?: Array<{
+        name: string;
+        registrationLink: string;
+        buttonText: string;
+    }>;
 }
 
 export type EventTrack = {

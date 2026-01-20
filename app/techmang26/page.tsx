@@ -10,7 +10,6 @@ import CallForSpeaker from "@/components/eventpage/CallForSpeaker";
 import Venue from "@/components/eventpage/Venue";
 import About from "./components/About";
 import ScheduleWithRegister from "@/components/eventpage/ScheduleWithRegister";
-import { TrackRegistration } from "@/lib/types";
 import EventHighlights from "@/components/eventpage/EventHighlights";
 
 export const metadata: Metadata = {
@@ -22,11 +21,15 @@ export const metadata: Metadata = {
 };
 
 function page() {
-    const trackRegistrations: TrackRegistration[] = EVENT_DETAIL.tracks?.map(track => ({
-        track: track.name,
-        registrationLink: track.registrationLink,
-        buttonText: `Register for ${track.name}`
-    })) || [];
+    const registrations = (EVENT_DETAIL.tracks || [])
+        .filter((track): track is typeof track & { registrationLink: string } => 
+            track.registrationLink !== null
+        )
+        .map(track => ({
+            name: track.name,
+            registrationLink: track.registrationLink,
+            buttonText: track.buttonText || `Register for ${track.name}`
+        }));
 
     return (
         <>
@@ -44,7 +47,7 @@ function page() {
                         eventTag="TechMang Events"
                         summitAffiliation={EVENT_DETAIL.summitAffiliation}
                     />
-                    <About />
+                    <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
                     <CallForSpeaker
                         registrationLink={EVENT_DETAIL.callForSpeakerLink}
                         registrationStartOn={EVENT_DETAIL.callForSpeakerStartOn}
@@ -58,8 +61,14 @@ function page() {
                         backgroundColor="bg-secondary-yellow"
                         className="py-20 lg:py-32"
                     />
-                    <ScheduleWithRegister sessionId={EVENT_DETAIL.sessionizeApiId} trackRegistrations={trackRegistrations} registrationStartOn={EVENT_DETAIL.registrationStartOn} registrationEndOn={EVENT_DETAIL.registrationEndOn} showComingSoonBanner={EVENT_DETAIL.showComingSoonBanner} />
-                    <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
+                    <ScheduleWithRegister 
+                        sessionId={EVENT_DETAIL.sessionizeApiId} 
+                        showComingSoonBanner={EVENT_DETAIL.showComingSoonBanner}
+                        independentRegistrations={registrations}
+                        registrationStartOn={EVENT_DETAIL.registrationStartOn}
+                        registrationEndOn={EVENT_DETAIL.registrationEndOn}
+                    />
+                    <About />
                     <Footer />
                 </div>
             </main>
