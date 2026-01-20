@@ -37,7 +37,7 @@ export const EVENT_DETAIL: EventDetailProps = {
     summitName: "AI Impact Summit 2026",
     tagline: "Official Pre-Summit Event of India - AI Impact Summit 2026",
     summitWebsiteUrl: "https://impact.indiaai.gov.in/",
-    imageUrl: "/ai-impact-summit-2026/logo.png"
+    imageUrl: "/branding/ai-impact-summit-2026/logo.png"
   },
 };
 
