@@ -222,6 +222,11 @@ export default function EventHighlights({
                         <span className="text-xl lg:text-2xl font-bold outfit-extra-light text-neutral-navy tracking-tight">
                             {title}
                         </span>
+                        {subtitle && (
+                            <h3 className="text-2xl lg:text-6xl xl:text-7xl outfit-extra-bold text-neutral-navy mb-4 lg:mb-6 tracking-tight">
+                                {subtitle}
+                            </h3>
+                        )}
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                         {[1, 2, 3, 4].map((index) => (

@@ -3,8 +3,7 @@
 import type React from "react"
 import { useState } from "react"
 import Image from "next/image"
-import { User, ChevronDown, ChevronUp } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { SessionListProps } from "@/lib/types"
 import { extractTagsFromSession } from "@/lib/utils"
 
@@ -58,9 +57,12 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
 
                     {/* Speaker Images - Mobile Only */}
                     <div className="mb-6 lg:hidden">
-                        <div className="flex flex-wrap gap-4">
+                        <div className="flex gap-4">
                             {session.speakers.map((speaker, index) => (
-                                <div key={speaker.id} className="flex flex-col items-center group">
+                                <div 
+                                    key={speaker.id} 
+                                    className="flex flex-col items-start group flex-[0_0_50%]"
+                                >
                                     <div className="relative">
                                         <Image
                                             src={speaker.profilePicture ?? "https://sessionize.com/image/8db9-400o400o1-test4.jpg"}
@@ -70,9 +72,19 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                                             className="w-20 h-20 rounded-2xl object-cover border-2 border-primary-yellow/30 group-hover:border-primary-yellow/60 transition-all duration-300"
                                         />
                                     </div>
-                                    <span className="text-xs text-neutral-navy outfit-extra-light mt-2 text-center max-w-20 md:truncate" title={speaker.name} >
-                                        {speaker.name}
-                                    </span>
+                                    <div className="flex flex-col items-start mt-2 w-full">
+                                        <span className="text-xs text-neutral-navy outfit-extra-light text-left" title={speaker.name}>
+                                            {speaker.name}
+                                        </span>
+                                        {speaker.tagLine && (
+                                            <span 
+                                                className="text-[10px] text-neutral-navy/70 outfit-extra-light text-left mt-1 leading-tight whitespace-normal break-words"
+                                                title={speaker.tagLine}
+                                            >
+                                                {speaker.tagLine}
+                                            </span>
+                                        )}
+                                    </div>
                                 </div>
                             ))}
                         </div>
@@ -120,12 +132,22 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                                         className="w-24 h-24 rounded-2xl object-cover border-2 border-primary-yellow/30 group-hover:border-primary-yellow/60 transition-all duration-300"
                                     />
                                 </div>
-                                <span 
-                                    className="text-sm text-neutral-navy outfit-extra-light mt-3 text-center max-w-24 truncate"
-                                    title={speaker.name}
-                                >
-                                    {speaker.name}
-                                </span>
+                                <div className="flex flex-col items-center mt-3 max-w-40">
+                                    <span 
+                                        className="text-sm text-neutral-navy outfit-extra-light text-center"
+                                        title={speaker.name}
+                                    >
+                                        {speaker.name}
+                                    </span>
+                                    {speaker.tagLine && (
+                                        <span 
+                                            className="text-xs text-neutral-navy/70 outfit-extra-light text-center mt-1 leading-tight whitespace-normal break-words"
+                                            title={speaker.tagLine}
+                                        >
+                                            {speaker.tagLine}
+                                        </span>
+                                    )}
+                                </div>
                             </div>
                         ))}
                     </div>

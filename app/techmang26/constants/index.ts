@@ -1,12 +1,12 @@
 import { SITE_CREATOR, SITE_NAME, SITE_URL } from "@/lib/basemeta";
-import { EventDetailProps, Resource } from "@/lib/types";
+import { EventDetailProps, Resource, Partner } from "@/lib/types";
 
 export const EVENT_DETAIL: EventDetailProps = {
   title: "#TechMang26",
   subtitle: "AI in Action: Build · Test · Ship",
   pageUrl: "/techmang26",
-  locationName: undefined,
-  locationUrl: undefined,
+  locationName: "Wrkwrk Triangle",
+  locationUrl: "https://www.google.com/maps/dir/12.9204224,74.8388352/wrkwrk+Triangle,+3rd,+4th,+5th+floor,+Wrkwrk+triangle,+wrkwrk+Triangle,+NH+66,+Kottara+Chowki,+Derabail,+Mangaluru+575008,+Panvel+-+Kochi+-+Kanyakumari+Hwy,+Derebail,+Mangaluru,+Karnataka+575006/@12.8870616,74.8561301,13.58z/data=!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3ba35b463be9c45f:0x8f5bdede4e4f1e52!2m2!1d74.8377175!2d12.9089805?entry=ttu&g_ep=EgoyMDI2MDExOS4wIKXMDSoASAFQAw%3D%3D",
   happeningOn: new Date("01/31/2026"), // MM/DD/YYYY - Update with actual date
   tracks: [
     {
@@ -27,14 +27,29 @@ export const EVENT_DETAIL: EventDetailProps = {
   callForSpeakerEndOn: new Date("01/30/2026"), // MM/DD/YYYY
   isSchedulePublished: false,
   sessionizeApiId: "bgrouyg6",
-  showComingSoonBanner: true,
+  showComingSoonBanner: false,
 
   summitAffiliation: {
-    isEnabled: true,
-    summitName: "TiE Mangaluru",
-    summitWebsiteUrl: "https://tiemangaluru.org/",
-    imageUrl: "/branding/tie-2026/logo.jpg"
+    isEnabled: false,
+    summitName: "AI Impact Summit 2026",
+    tagline: "Official Pre-Summit Event of India - AI Impact Summit 2026",
+    summitWebsiteUrl: "https://impact.indiaai.gov.in/",
+    imageUrl: "/branding/2026/ai-impact-summit/logo.png"
   },
+  partners: [
+    {
+      label: "Co-hosted",
+      logoPath: "/branding/2026/tie/logo.png",
+      alt: "TiE Mangaluru Logo",
+      url: "https://tiemangaluru.org/"
+    },
+    {
+      label: "Venue Partner",
+      logoPath: "/branding/2026/wrkwrk/logo.png",
+      alt: "Wrkwrk Logo",
+      url: "https://www.wrkwrk.in/"
+    }
+  ] as Partner[],
 };
 
 // Hero card

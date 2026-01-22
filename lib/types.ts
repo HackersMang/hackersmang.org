@@ -7,6 +7,13 @@ export interface SummitAffiliationConfig {
     imageUrl?: string;
 }
 
+export interface Partner {
+    label: string;
+    logoPath: string;
+    alt: string;
+    url?: string;
+}
+
 export interface EventDetailProps {
     title: string;
     subtitle?: string;
@@ -29,6 +36,7 @@ export interface EventDetailProps {
     sessionizeApiId?: string | null;
     showComingSoonBanner?: boolean;
     summitAffiliation?: SummitAffiliationConfig | null;
+    partners?: Partner[];
 }
 
 export interface IntroProps {
@@ -113,6 +121,7 @@ export interface SessionListProps {
             id: string
             name: string
             profilePicture?: string
+            tagLine?: string
         }[],
         categories: Category[]
     }[]

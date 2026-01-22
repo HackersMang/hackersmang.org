@@ -17,7 +17,7 @@ export default function UpcomingEvents() {
                     On 31st January 2026, explore exciting lightning talks, insightful demos, and interactive workshops, designed to spark curiosity and expand knowledge.
                 </p>
             </div>
-            <Register registrationLink={UPCOMING_EVENTS[0].href} registrationStartOn={new Date("11/28/2025")} registrationEndOn={new Date("01/10/2026")} buttonText="Visit Event Page" disableCodeOfConduct={true} target="_self" />
+            <Register registrationLink={UPCOMING_EVENTS[0].href} registrationStartOn={new Date("01/01/2026")} registrationEndOn={new Date("01/31/2026")} buttonText="Visit Event Page" disableCodeOfConduct={true} target="_self" />
         </section>
     );
 }

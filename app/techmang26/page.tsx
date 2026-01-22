@@ -6,11 +6,11 @@ import Intro from "@/components/eventpage/Hero";
 import { alternates, EVENT_DETAIL, eventMetaData, jsonLd, openGraph, twitter } from "./constants";
 import { baseMetadata } from "@/lib/basemeta";
 import { Footer } from "@/components/hackersmang/Footer";
-import CallForSpeaker from "@/components/eventpage/CallForSpeaker";
 import Venue from "@/components/eventpage/Venue";
 import About from "./components/About";
 import ScheduleWithRegister from "@/components/eventpage/ScheduleWithRegister";
 import EventHighlights from "@/components/eventpage/EventHighlights";
+import SupportedBy from "@/components/eventpage/SupportedBy";
 
 export const metadata: Metadata = {
     ...baseMetadata,
@@ -47,12 +47,6 @@ function page() {
                         eventTag="TechMang Events"
                         summitAffiliation={EVENT_DETAIL.summitAffiliation}
                     />
-                    <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
-                    <CallForSpeaker
-                        registrationLink={EVENT_DETAIL.callForSpeakerLink}
-                        registrationStartOn={EVENT_DETAIL.callForSpeakerStartOn}
-                        registrationEndOn={EVENT_DETAIL.callForSpeakerEndOn}
-                    />
                     <EventHighlights
                         sessionId={EVENT_DETAIL.sessionizeApiId}
                         title="Why Attend?"
@@ -67,6 +61,10 @@ function page() {
                         independentRegistrations={registrations}
                         registrationStartOn={EVENT_DETAIL.registrationStartOn}
                         registrationEndOn={EVENT_DETAIL.registrationEndOn}
+                    />
+                    <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
+                    <SupportedBy 
+                        partners={EVENT_DETAIL.partners || []}
                     />
                     <About />
                     <Footer />

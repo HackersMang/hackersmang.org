@@ -43,7 +43,7 @@ const Registrations = ({ registrations, registrationStartOn, registrationEndOn }
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 lg:gap-12 w-full">
                 {registrations.map((registration) => (
                     <div key={registration.registrationLink || registration.name} className="animate-fade-in-up w-full">
-                        <div className="bg-neutral-white/95 p-6 lg:p-10 relative overflow-hidden transition-all duration-500 md:hover:scale-[1.02] md:hover:shadow-lg group rounded-2xl md:rounded-none">
+                        <div className="bg-neutral-white/95 p-0 lg:p-10 relative overflow-hidden transition-all duration-500 md:hover:scale-[1.02] md:hover:shadow-lg group rounded-2xl md:rounded-none">
                             {/* Animated Background Glow */}
                             <div className="absolute inset-0 bg-gradient-to-br from-primary-yellow/5 via-transparent to-primary-yellow/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 

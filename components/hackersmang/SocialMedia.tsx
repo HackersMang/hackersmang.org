@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FaInstagram, FaFacebook, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { FaInstagram, FaFacebook, FaLinkedin, FaYoutube, FaGithub } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
 
 export default function SocialMedia() {
@@ -21,6 +21,9 @@ export default function SocialMedia() {
                 </Link>
                 <Link href="https://m.facebook.com/hackersmang/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                     <FaFacebook size={28} />
+                </Link>
+                <Link href="https://github.com/HackersMang/hackersmang.org" target="_blank" rel="noopener noreferrer" aria-label="Github">
+                    <FaGithub size={28} />
                 </Link>
             </div>
         </div>

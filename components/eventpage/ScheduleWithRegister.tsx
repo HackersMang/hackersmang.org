@@ -77,6 +77,7 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                                 return {
                                     ...sessionSpeaker,
                                     profilePicture: matchedSpeaker?.profilePicture ?? DUMMY_PROFILE_PICTURE,
+                                    tagLine: matchedSpeaker?.tagLine,
                                 };
                             }),
                         })),
@@ -129,7 +130,7 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
 
         return (
             <div className="animate-fade-in-up w-full">
-                <div className="bg-neutral-white/95 p-6 lg:p-10 relative overflow-hidden transition-all duration-500 md:hover:scale-[1.02] md:hover:shadow-lg group rounded-2xl md:rounded-none">
+                <div className="bg-neutral-white/95 p-0 lg:p-10 relative overflow-hidden transition-all duration-500 md:hover:scale-[1.02] md:hover:shadow-lg group rounded-2xl md:rounded-none">
                     {/* Animated Background Glow */}
                     <div className="absolute inset-0 bg-gradient-to-br from-primary-yellow/5 via-transparent to-primary-yellow/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
