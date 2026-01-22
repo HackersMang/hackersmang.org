@@ -39,12 +39,12 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                         <span className="text-sm font-mono text-neutral-navy outfit-extra-light bg-primary-yellow/10 px-3 py-1 rounded-full">
                             [ {formatTime(session.startsAt)}–{formatTime(session.endsAt)} ]
                         </span>
-                        
+
                         {/* Tags */}
                         {sessionTags.length > 0 && (
                             <div className="flex flex-wrap gap-2 justify-end">
                                 {sessionTags.map((tag) => (
-                                    <span 
+                                    <span
                                         key={tag.id}
                                         className="inline-block px-3 py-1 text-xs bg-primary-yellow/20 text-neutral-navy rounded-full font-medium outfit-extra-light border border-primary-yellow/30"
                                     >
@@ -59,8 +59,8 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                     <div className="mb-6 lg:hidden">
                         <div className="flex gap-4">
                             {session.speakers.map((speaker, index) => (
-                                <div 
-                                    key={speaker.id} 
+                                <div
+                                    key={speaker.id}
                                     className="flex flex-col items-start group flex-[0_0_50%]"
                                 >
                                     <div className="relative">
@@ -73,13 +73,12 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                                         />
                                     </div>
                                     <div className="flex flex-col items-start mt-2 w-full">
-                                        <span className="text-xs text-neutral-navy outfit-extra-light text-left" title={speaker.name}>
+                                        <span className="text-xs text-neutral-navy outfit-extra-light text-left">
                                             {speaker.name}
                                         </span>
                                         {speaker.tagLine && (
-                                            <span 
+                                            <span
                                                 className="text-[10px] text-neutral-navy/70 outfit-extra-light text-left mt-1 leading-tight whitespace-normal break-words"
-                                                title={speaker.tagLine}
                                             >
                                                 {speaker.tagLine}
                                             </span>
@@ -120,9 +119,9 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
 
                 {/* Right Side - Speaker Images - Desktop Only */}
                 <div className="hidden lg:flex flex-shrink-0 w-auto">
-                    <div className="flex flex-wrap justify-end gap-6">
+                    <div className="flex flex-wrap justify-end gap-3">
                         {session.speakers.map((speaker, index) => (
-                            <div key={speaker.id} className="flex flex-col items-center group">
+                            <div key={speaker.id} className="flex flex-col items-center group w-40">
                                 <div className="relative">
                                     <Image
                                         src={speaker.profilePicture ?? "https://sessionize.com/image/8db9-400o400o1-test4.jpg"}
@@ -132,17 +131,15 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                                         className="w-24 h-24 rounded-2xl object-cover border-2 border-primary-yellow/30 group-hover:border-primary-yellow/60 transition-all duration-300"
                                     />
                                 </div>
-                                <div className="flex flex-col items-center mt-3 max-w-40">
-                                    <span 
+                                <div className="flex flex-col items-center mt-3 w-full">
+                                    <span
                                         className="text-sm text-neutral-navy outfit-extra-light text-center"
-                                        title={speaker.name}
                                     >
                                         {speaker.name}
                                     </span>
                                     {speaker.tagLine && (
-                                        <span 
-                                            className="text-xs text-neutral-navy/70 outfit-extra-light text-center mt-1 leading-tight whitespace-normal break-words"
-                                            title={speaker.tagLine}
+                                        <span
+                                            className="text-xs text-neutral-navy/70 outfit-extra-light text-center mt-1 leading-tight whitespace-normal break-words w-full"
                                         >
                                             {speaker.tagLine}
                                         </span>
