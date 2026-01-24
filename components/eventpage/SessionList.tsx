@@ -28,9 +28,10 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
 
     // Extract all tags from the session
     const sessionTags = extractTagsFromSession(session)
+    const isServiceSession = session.isServiceSession
 
     return (
-        <div className="w-full bg-neutral-white/95 pt-4 lg:pt-8 border-t border-neutral-navy/30 transition-all duration-300 hover:scale-[1.02]">
+        <div className={`w-full pt-4 lg:pt-8 pb-4 lg:pb-8 border-t border-neutral-navy/30 transition-all duration-300 hover:scale-[1.02] ${isServiceSession ? 'bg-secondary-yellow/10' : 'bg-neutral-white/95'}`}>
             <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
                 {/* Left Side - Time and Content */}
                 <div className="flex-1 w-full lg:w-auto">
@@ -56,9 +57,10 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                     </div>
 
                     {/* Speaker Images - Mobile Only */}
-                    <div className="mb-6 lg:hidden">
-                        <div className="flex gap-4">
-                            {session.speakers.map((speaker, index) => (
+                    {session.speakers.length > 0 && (
+                        <div className="mb-6 lg:hidden">
+                            <div className="flex gap-4">
+                                {session.speakers.map((speaker, index) => (
                                 <div
                                     key={speaker.id}
                                     className="flex flex-col items-start group flex-[0_0_50%]"
@@ -85,42 +87,46 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                                         )}
                                     </div>
                                 </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
-                    </div>
+                    )}
 
                     {/* Title */}
-                    <h4 className="text-xl lg:text-2xl font-bold text-neutral-navy mb-4 tracking-wide outfit-extra-bold">
+                    <h4 className={`text-xl lg:text-2xl font-bold text-neutral-navy ${isServiceSession ? 'mb-0' : 'mb-4'} tracking-wide ${isServiceSession ? 'outfit-extra-light italic px-2 ' : 'outfit-extra-bold'}`}>
                         {session.title}
                     </h4>
 
                     {/* Description */}
-                    <div className="mb-6">
-                        <motion.div
-                            animate={{ height: isExpanded ? "auto" : maxHeight }}
-                            transition={{ duration: 0.3 }}
-                            className="overflow-hidden relative"
-                        >
-                            <p className="text-base lg:text-lg text-neutral-navy leading-relaxed outfit-extra-light">
-                                {session.description}
-                            </p>
-                        </motion.div>
-                        {session.description.length > 300 && (
-                            <button
-                                onClick={toggleExpand}
-                                className="text-sm text-neutral-navy hover:text-neutral-navy focus:outline-none mt-3 transition-colors outfit-extra-light font-semibold underline hover:no-underline"
+                    {session.description && (
+                        <div className="mb-6">
+                            <motion.div
+                                animate={{ height: isExpanded ? "auto" : maxHeight }}
+                                transition={{ duration: 0.3 }}
+                                className="overflow-hidden relative"
                             >
-                                {isExpanded ? "Read Less" : "Read More"}
-                            </button>
-                        )}
-                    </div>
+                                <p className="text-base lg:text-lg text-neutral-navy leading-relaxed outfit-extra-light">
+                                    {session.description}
+                                </p>
+                            </motion.div>
+                            {session.description.length > 300 && (
+                                <button
+                                    onClick={toggleExpand}
+                                    className="text-sm text-neutral-navy hover:text-neutral-navy focus:outline-none mt-3 transition-colors outfit-extra-light font-semibold underline hover:no-underline"
+                                >
+                                    {isExpanded ? "Read Less" : "Read More"}
+                                </button>
+                            )}
+                        </div>
+                    )}
 
                 </div>
 
                 {/* Right Side - Speaker Images - Desktop Only */}
-                <div className="hidden lg:flex flex-shrink-0 w-auto">
-                    <div className="flex flex-wrap justify-end gap-3">
-                        {session.speakers.map((speaker, index) => (
+                {session.speakers.length > 0 && (
+                    <div className="hidden lg:flex flex-shrink-0 w-auto">
+                        <div className="flex flex-wrap justify-end gap-3">
+                            {session.speakers.map((speaker, index) => (
                             <div key={speaker.id} className="flex flex-col items-center group w-40">
                                 <div className="relative">
                                     <Image
@@ -146,9 +152,10 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                                     )}
                                 </div>
                             </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
-                </div>
+                )}
             </div>
         </div>
     )

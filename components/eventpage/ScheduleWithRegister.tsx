@@ -41,11 +41,32 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
             ]);
 
             if (!speakerResponse.ok || !gridSmartResponse.ok) {
-                throw new Error("Oops! Failed to fetch speaker or grid smart data. Looks like the internet took a coffee break! ☕😅");
+                const speakerError = speakerResponse.ok ? null : await speakerResponse.json().catch(() => ({ error: "Unknown error" }));
+                const gridSmartError = gridSmartResponse.ok ? null : await gridSmartResponse.json().catch(() => ({ error: "Unknown error" }));
+                
+                const errorMessage = gridSmartError?.error || speakerError?.error || "Failed to fetch schedule data";
+                const errorDetails = gridSmartError?.details || speakerError?.details || "";
+                
+                console.error("API Error:", {
+                    speakerError,
+                    gridSmartError,
+                    speakerStatus: speakerResponse.status,
+                    gridSmartStatus: gridSmartResponse.status
+                });
+                
+                throw new Error(`${errorMessage}${errorDetails ? `: ${errorDetails}` : ""}`);
             }
 
             const speakerResponseData = await speakerResponse.json();
             const gridSmartResponseData = await gridSmartResponse.json();
+
+            if (!speakerResponseData.data || !gridSmartResponseData.data) {
+                console.error("Invalid response structure:", {
+                    speakerResponseData,
+                    gridSmartResponseData
+                });
+                throw new Error("Invalid data structure received from API");
+            }
 
             const speakerData: SessionizeSpeakers[] = speakerResponseData.data;
             const gridSmartData: GridSmart[] = gridSmartResponseData.data;
@@ -66,7 +87,7 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                 rooms: daySchedule.rooms.map((room) => ({
                     ...room,
                     sessions: room.sessions
-                        .filter((session) => session.speakers.length > 0)
+                        .filter((session) => session.speakers.length > 0 || session.isServiceSession)
                         .map((session) => ({
                             ...session,
                             categories: session.categories || [],
@@ -327,6 +348,46 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                         </div>
                     </div>
                 ) : null}
+
+                {/* Sessionize App Install Button */}
+                {!loading && scheduleData && scheduleData.length > 0 && (
+                    <div className="flex flex-col items-center justify-center w-full mt-12 lg:mt-16 gap-4 bg-primary-yellow/10 p-8 rounded-2xl border border-primary-yellow/30">
+                        <p className="text-sm text-neutral-navy/70 outfit-extra-light text-center max-w-2xl">
+                            Install the Sessionize app for easy access to the schedule and speakers on your mobile device. Works offline and can be installed like a native app.
+                        </p>
+                        <Link
+                            href="https://hackersmang-techmang-2026.sessionize.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group/btn relative w-full md:w-fit inline-flex items-center justify-center gap-3 py-4 px-8 text-neutral-navy font-semibold rounded-2xl transition-all duration-300 overflow-hidden text-lg lg:text-xl hover:md:scale-105 hover:md:shadow-xl"
+                        >
+                            {/* Animated Background Layer */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-primary-yellow/20 to-primary-yellow/10 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+
+                            {/* Button Content */}
+                            <div className="relative flex items-center gap-3">
+                                {/* Icon with Enhanced Animation */}
+                                <div className="w-6 h-6 flex items-center justify-center">
+                                    <ExternalLink
+                                        size={20}
+                                        className="transition-all duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 group-hover/btn:rotate-12"
+                                    />
+                                </div>
+
+                                {/* Text with Animation */}
+                                <span className="outfit-bold tracking-wide transition-all duration-300 group-hover/btn:tracking-wider">
+                                    Install Schedule App
+                                </span>
+
+                                {/* Enhanced Animated Dot */}
+                                <div className="w-2 h-2 bg-neutral-navy rounded-full animate-pulse opacity-60 group-hover/btn:opacity-100 group-hover/btn:scale-125 transition-all duration-300"></div>
+                            </div>
+
+                            {/* Shimmer Effect */}
+                            <div className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-neutral-navy/10 to-transparent"></div>
+                        </Link>
+                    </div>
+                )}
             </div>
         </section>
     );
