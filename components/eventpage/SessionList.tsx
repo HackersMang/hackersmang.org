@@ -109,7 +109,7 @@ const SessionCard: React.FC<{ session: SessionListProps["sessions"][0] }> = ({ s
                                     {session.description}
                                 </p>
                             </motion.div>
-                            {session.description.length > 300 && (
+                            {session.description.length > 240 && (
                                 <button
                                     onClick={toggleExpand}
                                     className="text-sm text-neutral-navy hover:text-neutral-navy focus:outline-none mt-3 transition-colors outfit-extra-light font-semibold underline hover:no-underline"
