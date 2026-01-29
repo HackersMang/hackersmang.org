@@ -21,7 +21,7 @@ export const EVENT_DETAIL: EventDetailProps = {
     }
   ],
   registrationStartOn: new Date("01/01/2026"), // MM/DD/YYYY
-  registrationEndOn: new Date("01/31/2026"), // MM/DD/YYYY
+  registrationEndOn: new Date("01/21/2026"), // MM/DD/YYYY
   callForSpeakerLink: "https://sessionize.com/hackersmang-techmang-2026/",
   callForSpeakerStartOn: new Date("11/28/2025"), // MM/DD/YYYY
   callForSpeakerEndOn: new Date("01/30/2026"), // MM/DD/YYYY
