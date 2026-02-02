@@ -138,5 +138,138 @@ export const jsonLd = {
 };
 
 // Resources
-export const RESOURCES: Resource[] = [];
+export const RESOURCES: Resource[] = [
+  {
+    title: "Build AI-Powered Apps with AI-SDK",
+    speaker: "Jayasurya Kotian",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://drive.google.com/file/d/1E47FZdbzI9MHsJOSUENX5pFqT8H20I6q/view",
+        type: "presentation"
+      }
+    ]
+  },
+  {
+    title: "Dealing with practical issues in Reinforcement Learning: Variance and Constraints",
+    speaker: "Arun Ramaswamy",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://drive.google.com/file/d/11KHZ1lKh3soqaYO--2Jn70XtMpc6Mg5X/view",
+        type: "presentation"
+      }
+    ]
+  },
+  {
+    title: "From Idea to Impact: How BMAD Method Transforms Development",
+    speaker: "Vedanth V",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://docs.google.com/presentation/d/1MQ5MfN_8QX3g7NOUqnkTjY0VjmOFj0wz/edit?usp=drive_web&ouid=114461731221800587026&rtpof=true",
+        type: "presentation"
+      }
+    ]
+  },
+  {
+    title: "Global by Default: How AI is Solving the Internationalisation Bottleneck",
+    speaker: "Amjad N & Antony Anson",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://drive.google.com/file/d/1cWOPIBqnpImxSbrF3JffDgkO5rXC1keU/view",
+        type: "presentation"
+      }
+    ]
+  },
+  {
+    title: "Hierarchical Language Network for Semantic Classification (HeLN)",
+    speaker: "Pratham Kotian",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://drive.google.com/file/d/15IMm87h1KHA1jBXraTo57rBoR2lwjwMd/view",
+        type: "presentation"
+      }
+    ]
+  },
+  {
+    title: "Mastering Hackathons in 2026: From Problem Statement to Winning Prototype (with AI Use Cases)",
+    speaker: "Yash Thakare",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://drive.google.com/file/d/173i3MdFWZe0HNccNB4Ie4BlcM8mdK609/view",
+        type: "presentation"
+      }
+    ]
+  },
+  {
+    title: "Say Hello to Smart Surveillance: A Feed That Talks Back",
+    speaker: "Vedanth V",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://drive.google.com/file/d/1qwCwr1YZcWHmDyhUy_oM5zuSDIiO6KL-/view",
+        type: "presentation"
+      }
+    ]
+  },
+  {
+    title: "Ship Faster with AI: How I Use AI Daily as a Developer",
+    speaker: "Yash Thakare",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://drive.google.com/file/d/1Q-DnkNpExXZshSRG3l-4AwYhpEaN-f1w/view",
+        type: "presentation"
+      }
+    ]
+  },
+  {
+    title: "State Machines: The Last State Management Solution You'll Ever Need",
+    speaker: "Ajith Kumar P M & Aswathy Saji",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://docs.google.com/presentation/d/1W6Q-p1Ltoyld1l3MRixCfHGO3OPvdHgrWGqvYvbkXeE/edit?slide=id.g3b8b0301df6_0_181#slide=id.g3b8b0301df6_0_181",
+        type: "presentation"
+      }
+    ]
+  },
+  {
+    title: "Supercharging Android Apps with On-Device AI: Gemini Nano & Prompt API",
+    speaker: "Dinoy Raj",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://drive.google.com/file/d/1uHfCCeRarekq6lN64qoz3THNr6eqZMR2/view",
+        type: "presentation"
+      }
+    ]
+  },
+  {
+    title: "Supervised Contrastive Learning for Entity Resolution",
+    speaker: "Mohammed Nouman",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://drive.google.com/file/d/1k3Rtmwb5TPsmfAftwjAWBqNzPJOO6zKk/view",
+        type: "presentation"
+      }
+    ]
+  },
+  {
+    title: "Voice AI Agents: From Concept to Real-World Impact in Hospitality & Food Ordering",
+    speaker: "Vishnunaik N T",
+    resources: [
+      {
+        title: "Presentation Slides",
+        url: "https://drive.google.com/file/d/1bou4C7q0E8NK-kaK571715Ns8Fm5jGTl/view",
+        type: "presentation"
+      }
+    ]
+  }
+];
 

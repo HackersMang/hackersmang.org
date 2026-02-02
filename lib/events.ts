@@ -10,6 +10,7 @@ export const UPCOMING_EVENTS: EventLink[] = [
 ];
 
 export const PAST_EVENTS: EventLink[] = [
+  { href: "/techmang26", title: "#TechMang26", subtitle: "The Annual Flagship Event of Hackerspace Mangaluru" },
   { href: "/hmnov25", title: "#HMNov25", subtitle: "HackersMang, 2025 November edition on AI" },
   { href: "/2025-august", title: "#HMAug25", subtitle: "HackersMang, 2025 August edition" },
   { href: "/2025-april", title: "#HMApr25", subtitle: "HackersMang, 2025 April edition" },

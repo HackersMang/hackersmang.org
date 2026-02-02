@@ -43,17 +43,17 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
             if (!speakerResponse.ok || !gridSmartResponse.ok) {
                 const speakerError = speakerResponse.ok ? null : await speakerResponse.json().catch(() => ({ error: "Unknown error" }));
                 const gridSmartError = gridSmartResponse.ok ? null : await gridSmartResponse.json().catch(() => ({ error: "Unknown error" }));
-                
+
                 const errorMessage = gridSmartError?.error || speakerError?.error || "Failed to fetch schedule data";
                 const errorDetails = gridSmartError?.details || speakerError?.details || "";
-                
+
                 console.error("API Error:", {
                     speakerError,
                     gridSmartError,
                     speakerStatus: speakerResponse.status,
                     gridSmartStatus: gridSmartResponse.status
                 });
-                
+
                 throw new Error(`${errorMessage}${errorDetails ? `: ${errorDetails}` : ""}`);
             }
 
@@ -142,7 +142,7 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
 
     const RegistrationButton = ({ roomName, trackNumber }: { roomName: string, trackNumber: number }) => {
         if (!trackRegistrations) return null;
-        
+
         const trackRegistration = trackRegistrations.find(
             tr => tr.track.toLowerCase() === roomName.toLowerCase()
         );
@@ -221,7 +221,7 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
     };
 
     return (
-        <section className="relative bg-neutral-white py-20 lg:py-32 overflow-hidden">
+        <section className="relative bg-neutral-white py-20 lg:py-32">
             <div className="max-w-7xl mx-auto px-5 lg:px-12 relative z-10">
                 {/* Header Section - Matching Resources.tsx */}
                 <div className="text-left lg:text-center mb-8 lg:mb-12 flex flex-col items-start lg:items-center justify-center gap-4 lg:gap-8 text-neutral-navy">
@@ -241,12 +241,12 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                                         const totalTracks = daySchedule.rooms.length;
                                         return (
                                             <div key={room.id} className="w-full mb-16 lg:mb-20">
-                                                {/* Enhanced Track Header with Visual Separator */}
-                                                <div className="mb-0 lg:mb-16">
+                                                {/* Enhanced Track Header - sticky just below site header */}
+                                                <div className="sticky top-20 z-20 -mx-5 px-5 lg:-mx-12 lg:px-12 py-4 mb-0 lg:mb-16 bg-neutral-white border-b border-primary-yellow/20 shadow-[0_4px_6px_-2px_rgba(0,0,0,0.05)]">
 
                                                     {/* Track indicator badge */}
                                                     {hasMultipleTracks && (
-                                                        <div className="flex items-start justify-start md:items-center md:justify-center mb-4">
+                                                        <div className="flex items-start justify-start md:items-center md:justify-center mb-2">
                                                             <div className="inline-flex items-center gap-2 text-sm font-mono text-neutral-navy outfit-extra-light bg-primary-yellow/10 px-3 py-1 rounded-full">
                                                                 <div className="w-2 h-2 bg-neutral-navy rounded-full animate-pulse"></div>
                                                                 <span className="text-sm text-neutral-navy outfit-extra-light font-bold">
@@ -256,22 +256,13 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                                                         </div>
                                                     )}
 
-                                                    <div className="flex items-start justify-start md:items-center md:justify-center text-center mb-6">
+                                                    <div className="flex items-start justify-start md:items-center md:justify-center text-center">
                                                         <div className="relative inline-block">
-                                                            {/* Eyebrow Background */}
-                                                            <div className="absolute inset-0 bg-neutral-white/80 rounded-lg transform rotate-1"></div>
-                                                            <div className="relative">
-                                                                <h3 className="text-4xl lg:text-6xl xl:text-7xl outfit-extra-bold text-neutral-navy mb-4 lg:mb-6 tracking-tight">
-                                                                    {room.name}
-                                                                </h3>
-                                                            </div>
+                                                            <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl outfit-extra-bold text-neutral-navy tracking-tight">
+                                                                {room.name}
+                                                            </h3>
                                                         </div>
                                                     </div>
-
-
-
-                                                    {/* Visual separator line */}
-                                                    <div className="max-w-3xl mx-auto h-px bg-gradient-to-r from-transparent via-primary-yellow/30 to-transparent"></div>
                                                 </div>
 
                                                 {room.sessions.length > 0 ? (
@@ -331,7 +322,7 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
 
                 {/* Independent Registrations Component (new approach) */}
                 {!loading && !useTrackBasedRegistration && independentRegistrations && independentRegistrations.length > 0 && (
-                    <Registrations 
+                    <Registrations
                         registrations={independentRegistrations}
                         registrationStartOn={registrationStartOn}
                         registrationEndOn={registrationEndOn}
@@ -359,7 +350,7 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                             href="https://hackersmang-techmang-2026.sessionize.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group/btn relative w-full md:w-fit inline-flex items-center justify-center gap-3 py-4 px-8 text-neutral-navy font-semibold rounded-2xl transition-all duration-300 overflow-hidden text-lg lg:text-xl hover:md:scale-105 hover:md:shadow-xl"
+                            className="group/btn relative w-full md:w-fit inline-flex items-center justify-center gap-3 md:py-4 md:px-8 text-neutral-navy font-semibold rounded-2xl transition-all duration-300 overflow-hidden text-lg lg:text-xl hover:md:scale-105 hover:md:shadow-xl"
                         >
                             {/* Animated Background Layer */}
                             <div className="absolute inset-0 bg-gradient-to-r from-primary-yellow/20 to-primary-yellow/10 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>

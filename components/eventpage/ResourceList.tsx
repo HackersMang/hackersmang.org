@@ -7,8 +7,8 @@ const ResourceList: React.FC<ResourceListProps> = ({ resources }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
       {resources.map((resource) => (
-        <div key={resource.title} className="relative bg-neutral-white/95 p-8 lg:p-10 rounded-3xl transition-all duration-300 hover:scale-105 group">
-          <div className="relative z-10">
+        <div key={resource.title} className="relative bg-neutral-white/95 p-8 lg:p-10 rounded-3xl transition-all duration-300 hover:scale-105 group flex flex-col">
+          <div className="relative z-10 flex flex-col flex-grow">
             {/* Title */}
             <h4 className="text-2xl lg:text-3xl outfit-extra-bold text-neutral-navy mb-4 tracking-tight">
               {resource.title}
@@ -19,8 +19,8 @@ const ResourceList: React.FC<ResourceListProps> = ({ resources }) => {
               Presented by {resource.speaker}
             </p>
             
-            {/* Resources */}
-            <div className="space-y-3">
+            {/* Resources - pushed to bottom */}
+            <div className="space-y-3 mt-auto">
               {resource.resources.map((item, index) => (
                 <Link
                   key={index}

@@ -62,7 +62,7 @@ const SlidingMenu: React.FC<SlidingMenuProps> = ({ isMenuOpen, toggleMenu }) => 
           <div className="flex flex-col gap-8 mb-8">
             <div className="space-y-6">
               <div className="border-b border-neutral-200/50 pb-2">
-                <h3 className="text-xl outfit-extra-bold text-neutral-navy">Upcoming Events</h3>
+                <h3 className="text-xl outfit-extra-bold text-neutral-navy">Recent Events</h3>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {UPCOMING_EVENTS.map((event, index) => (

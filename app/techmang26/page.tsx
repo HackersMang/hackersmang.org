@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import Header from "@/components/hackersmang/Header";
 import Script from 'next/script';
 import Intro from "@/components/eventpage/Hero";
-import { alternates, EVENT_DETAIL, eventMetaData, jsonLd, openGraph, twitter } from "./constants";
+import { alternates, EVENT_DETAIL, eventMetaData, jsonLd, openGraph, RESOURCES, twitter } from "./constants";
 import { baseMetadata } from "@/lib/basemeta";
 import { Footer } from "@/components/hackersmang/Footer";
 import Venue from "@/components/eventpage/Venue";
@@ -11,6 +11,7 @@ import About from "./components/About";
 import ScheduleWithRegister from "@/components/eventpage/ScheduleWithRegister";
 import EventHighlights from "@/components/eventpage/EventHighlights";
 import SupportedBy from "@/components/eventpage/SupportedBy";
+import Resources from "@/components/eventpage/Resources";
 
 export const metadata: Metadata = {
     ...baseMetadata,
@@ -62,11 +63,11 @@ function page() {
                         registrationStartOn={EVENT_DETAIL.registrationStartOn}
                         registrationEndOn={EVENT_DETAIL.registrationEndOn}
                     />
-                    <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
+                    <Resources resources={RESOURCES} />
                     <SupportedBy 
                         partners={EVENT_DETAIL.partners || []}
                     />
-                    <About />
+                    <Venue happeningOn={EVENT_DETAIL.happeningOn} locationName={EVENT_DETAIL.locationName} locationUrl={EVENT_DETAIL.locationUrl} />
                     <Footer />
                 </div>
             </main>

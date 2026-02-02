@@ -41,7 +41,7 @@ export default function EventsPage() {
             {UPCOMING_EVENTS.length > 0 && (
               <div className="space-y-6">
                 <div className="border-b border-neutral-200/50 pb-2">
-                  <h2 className="text-2xl lg:text-3xl outfit-extra-bold text-neutral-navy">Upcoming Events</h2>
+                  <h2 className="text-2xl lg:text-3xl outfit-extra-bold text-neutral-navy">Recent Events</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
                   {UPCOMING_EVENTS.map((event, index) => (
