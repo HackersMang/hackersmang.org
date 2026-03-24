@@ -22,7 +22,7 @@ export const EVENT_DETAIL: EventDetailProps = {
     },
   ],
 
-  callForSpeakerLink: "https://sessionize.com/hackersmang-hmapr26-2026/",
+  callForSpeakerLink: "https://sessionize.com/hmapr26/",
   callForSpeakerStartOn: new Date("11/01/2025"),
   callForSpeakerEndOn: new Date("04/11/2026"),
 
