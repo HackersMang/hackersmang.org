@@ -49,7 +49,10 @@ export interface IntroProps {
 export interface VenueInfoProps {
     locationName?: string;
     locationUrl?: string;
-    happeningOn: Date
+    happeningOn: Date;
+    /** When true, venue shows a coming-soon banner instead of name/link/directions */
+    showComingSoonBanner?: boolean;
+    comingSoonMessage?: string;
 }
 
 export interface RegisterProps {

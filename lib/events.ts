@@ -6,7 +6,7 @@ import { EventLink } from "@/components/hackersmang/EventCard";
  */
 
 export const UPCOMING_EVENTS: EventLink[] = [
-  { href: "/techmang26", title: "#TechMang26", subtitle: "The Annual Flagship Event of Hackerspace Mangaluru" },
+  { href: "/hmapr26", title: "#HMApr26", subtitle: "HackersMang, 2026 April Edition — April 25" },
 ];
 
 export const PAST_EVENTS: EventLink[] = [

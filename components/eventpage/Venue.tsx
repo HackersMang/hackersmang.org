@@ -5,8 +5,17 @@ import React from "react";
 import { ExternalLink } from "lucide-react";
 import ComingSoonBanner from "./ComingSoonBanner";
 
-const Venue = ({ locationName, locationUrl, happeningOn }: VenueInfoProps): JSX.Element => {
+const Venue = ({
+    locationName,
+    locationUrl,
+    happeningOn,
+    showComingSoonBanner = false,
+    comingSoonMessage = "Venue details coming soon",
+}: VenueInfoProps): JSX.Element => {
     const formattedDate = formatEventDate(happeningOn.toUTCString());
+    const venueReady =
+        !showComingSoonBanner &&
+        Boolean(locationName && locationUrl && locationUrl !== "#");
 
     return (
         <section className="relative bg-secondary-yellow py-20 lg:py-32 overflow-hidden">
@@ -46,26 +55,24 @@ const Venue = ({ locationName, locationUrl, happeningOn }: VenueInfoProps): JSX.
                                         </div>
                                         <span className="text-lg font-semibold text-neutral-navy outfit-extra-bold">Venue</span>
                                     </div>
-                                    {locationName && locationUrl && locationUrl !== "#" ? (
-                                        <>
-                                            <Link
-                                                href={locationUrl}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-xl lg:text-2xl text-neutral-navy hover:text-neutral-navy transition-colors font-semibold outfit-extra-light ml-11 hover:underline"
-                                            >
-                                                {locationName}
-                                            </Link>
-                                        </>
+                                    {venueReady ? (
+                                        <Link
+                                            href={locationUrl!}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-xl lg:text-2xl text-neutral-navy hover:text-neutral-navy transition-colors font-semibold outfit-extra-light ml-11 hover:underline"
+                                        >
+                                            {locationName}
+                                        </Link>
                                     ) : (
                                         <div className="ml-11">
-                                            <ComingSoonBanner message="Venue details coming soon" className="justify-start! w-full" />
+                                            <ComingSoonBanner message={comingSoonMessage} className="justify-start! w-full" />
                                         </div>
                                     )}
                                 </div>
 
                                 {/* Action Button */}
-                                {locationName && locationUrl && locationUrl !== "#" && (
+                                {venueReady && (
                                     <div className="w-full flex flex-col items-center justify-center text-center">
                                         <div className="relative z-10 flex flex-col items-start justify-start md:items-center md:justify-center w-full">
                                             <Link href={locationUrl} target="_blank" rel="noopener noreferrer" className="group/btn relative w-full inline-flex items-center justify-center gap-3 py-4 px-8 bg-gradient-to-r from-primary-green to-primary-green/80 text-neutral-white font-semibold rounded-2xl border border-primary-green/30 transition-all duration-300 hover:from-primary-green/90 hover:to-primary-green/70 overflow-hidden text-lg lg:text-xl hover:scale-105 hover:shadow-xl">
