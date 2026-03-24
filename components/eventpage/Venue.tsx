@@ -75,7 +75,7 @@ const Venue = ({
                                 {venueReady && (
                                     <div className="w-full flex flex-col items-center justify-center text-center">
                                         <div className="relative z-10 flex flex-col items-start justify-start md:items-center md:justify-center w-full">
-                                            <Link href={locationUrl} target="_blank" rel="noopener noreferrer" className="group/btn relative w-full inline-flex items-center justify-center gap-3 py-4 px-8 bg-gradient-to-r from-primary-green to-primary-green/80 text-neutral-white font-semibold rounded-2xl border border-primary-green/30 transition-all duration-300 hover:from-primary-green/90 hover:to-primary-green/70 overflow-hidden text-lg lg:text-xl hover:scale-105 hover:shadow-xl">
+                                            <Link href={locationUrl!} target="_blank" rel="noopener noreferrer" className="group/btn relative w-full inline-flex items-center justify-center gap-3 py-4 px-8 bg-gradient-to-r from-primary-green to-primary-green/80 text-neutral-white font-semibold rounded-2xl border border-primary-green/30 transition-all duration-300 hover:from-primary-green/90 hover:to-primary-green/70 overflow-hidden text-lg lg:text-xl hover:scale-105 hover:shadow-xl">
                                                 <ExternalLink
                                                     size={20}
                                                     className="transition-all duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 group-hover/btn:rotate-12"
