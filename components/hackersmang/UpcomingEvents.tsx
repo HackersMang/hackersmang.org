@@ -14,7 +14,7 @@ export default function UpcomingEvents() {
                     {UPCOMING_EVENTS[0].title}, {UPCOMING_EVENTS[0].subtitle}
                 </h3>
                 <p className="text-neutral-navy text-lg lg:text-xl mb-4 lg:mb-6 leading-relaxed max-w-3xl outfit-extra-light">
-                    On 31st January 2026, explore exciting lightning talks, insightful demos, and interactive workshops, designed to spark curiosity and expand knowledge.
+                    On 25th April 2026, explore exciting AI talks, insightful demos, and interactive workshops, designed to spark curiosity and expand knowledge.
                 </p>
             </div>
             <Register registrationLink={UPCOMING_EVENTS[0].href} registrationStartOn={new Date("01/01/2026")} registrationEndOn={new Date("04/30/2026")} buttonText="Visit Event Page" disableCodeOfConduct={true} target="_self" />
