@@ -7,17 +7,39 @@ export const dynamic = "force-dynamic";
 const DEFAULT_SESSION_ID = "jl4ktls0"; // Default session ID
 const VALID_TYPES = ["Speakers", "GridSmart", "Sessions"]; // Valid types
 
-export async function GET(req: Request, { params }: { params: { type: string } }) {
-    const { searchParams } = new URL(req.url);
-    const sessionId = searchParams.get("sessionId") ?? DEFAULT_SESSION_ID;
-    const type = params.type;
+/** Next.js 15 passes `params` as a Promise; Next 14 uses a plain object. */
+async function resolveRouteParams(
+    params: Promise<{ type: string }> | { type: string }
+): Promise<{ type: string }> {
+    return await Promise.resolve(params);
+}
 
-    // ❌ Reject invalid types
-    if (!VALID_TYPES.includes(type)) {
-        return NextResponse.json({ error: "Invalid request type." }, { status: 400 });
+export async function GET(
+    req: Request,
+    context: { params: Promise<{ type: string }> | { type: string } }
+) {
+    const { searchParams } = new URL(req.url);
+    const rawSessionId = searchParams.get("sessionId");
+    const sessionIdRaw = (rawSessionId ?? DEFAULT_SESSION_ID).trim();
+    // Reject literal "null"/"undefined" strings often sent by mistake
+    const sessionId =
+        sessionIdRaw === "null" || sessionIdRaw === "undefined" || sessionIdRaw === ""
+            ? DEFAULT_SESSION_ID
+            : sessionIdRaw;
+
+    const { type: rawType } = await resolveRouteParams(context.params);
+    const type =
+        VALID_TYPES.find((t) => t.toLowerCase() === String(rawType ?? "").toLowerCase()) ??
+        null;
+
+    if (!type) {
+        return NextResponse.json(
+            { error: "Invalid request type.", allowed: VALID_TYPES },
+            { status: 400 }
+        );
     }
 
-    const apiEndpoint = `${SESSIONIZE_API_URL}/${sessionId}/view/${type}`;
+    const apiEndpoint = `${SESSIONIZE_API_URL}/${encodeURIComponent(sessionId)}/view/${type}`;
     const TIMEOUT_MS = 15000; // 15 second timeout
     const MAX_RETRIES = 2;
 
@@ -32,6 +54,8 @@ export async function GET(req: Request, { params }: { params: { type: string } }
                 signal: controller.signal,
                 headers: {
                     "Cache-Control": "no-store",
+                    Accept: "application/json",
+                    "User-Agent": "HackersMang/1.0 (+https://hackersmang.org)",
                 },
             });
             clearTimeout(timeoutId);

@@ -11,14 +11,14 @@ export const EVENT_DETAIL: EventDetailProps = {
 
   tracks: [
     {
-      name: "Tech Talks",
-      registrationLink: null,
-      buttonText: "Register for Tech Talks",
+      name: "AI Talks",
+      registrationLink: "https://www.tickettailor.com/events/hackerspacemangaluru/2163830",
+      buttonText: "Register for AI Talks",
     },
     {
-      name: "Workshops",
-      registrationLink: null,
-      buttonText: "Register for Workshops",
+      name: "Workshops & Talks",
+      registrationLink: "https://www.tickettailor.com/events/hackerspacemangaluru/2163831",
+      buttonText: "Register for AI Workshops & Talks",
     },
   ],
 
@@ -30,7 +30,8 @@ export const EVENT_DETAIL: EventDetailProps = {
   registrationEndOn: new Date("04/24/2026"),
 
   isSchedulePublished: false,
-  sessionizeApiId: null,
+  sessionizeApiId: 'yak8jheq',
+  sessionizeScheduleAppUrl: "https://hmapr26.sessionize.com",
   showComingSoonBanner: true,
   summitAffiliation: null,
 };

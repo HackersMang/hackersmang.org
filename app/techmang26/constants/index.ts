@@ -27,6 +27,7 @@ export const EVENT_DETAIL: EventDetailProps = {
   callForSpeakerEndOn: new Date("01/30/2026"), // MM/DD/YYYY
   isSchedulePublished: false,
   sessionizeApiId: "bgrouyg6",
+  sessionizeScheduleAppUrl: "https://hackersmang-techmang-2026.sessionize.com",
   showComingSoonBanner: false,
 
   summitAffiliation: {

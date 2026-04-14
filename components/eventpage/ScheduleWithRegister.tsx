@@ -12,7 +12,15 @@ import { CodeOfConduct } from "./CodeOfConduct";
 import ComingSoonBanner from "./ComingSoonBanner";
 import Registrations from "./Registrations";
 
-const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStartOn, registrationEndOn, showComingSoonBanner = false, independentRegistrations }: ScheduleWithRegisterProps): JSX.Element => {
+const ScheduleWithRegister = ({
+    sessionId,
+    trackRegistrations,
+    registrationStartOn,
+    registrationEndOn,
+    showComingSoonBanner = false,
+    independentRegistrations,
+    sessionizeScheduleAppUrl,
+}: ScheduleWithRegisterProps): JSX.Element => {
     // State variables
     const [scheduleData, setScheduleData] = useState<GridSmart[] | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
@@ -242,7 +250,7 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                                         return (
                                             <div key={room.id} className="w-full mb-16 lg:mb-20">
                                                 {/* Enhanced Track Header - sticky just below site header */}
-                                                <div className="sticky top-20 z-20 -mx-5 px-5 lg:-mx-12 lg:px-12 py-4 mb-0 lg:mb-16 bg-neutral-white border-b border-primary-yellow/20 shadow-[0_4px_6px_-2px_rgba(0,0,0,0.05)]">
+                                                <div className="sticky top-20 z-20 -mx-5 px-5 lg:-mx-12 lg:px-12 py-4 mb-0 lg:mb-16 bg-neutral-white border-b border-primary-yellow/20">
 
                                                     {/* Track indicator badge */}
                                                     {hasMultipleTracks && (
@@ -341,13 +349,16 @@ const ScheduleWithRegister = ({ sessionId, trackRegistrations, registrationStart
                 ) : null}
 
                 {/* Sessionize App Install Button */}
-                {!loading && scheduleData && scheduleData.length > 0 && (
+                {!loading &&
+                    scheduleData &&
+                    scheduleData.length > 0 &&
+                    sessionizeScheduleAppUrl && (
                     <div className="flex flex-col items-center justify-center w-full mt-12 lg:mt-16 gap-4 bg-primary-yellow/10 p-8 rounded-2xl border border-primary-yellow/30">
                         <p className="text-sm text-neutral-navy/70 outfit-extra-light text-center max-w-2xl">
                             Install the Sessionize app for easy access to the schedule and speakers on your mobile device. Works offline and can be installed like a native app.
                         </p>
                         <Link
-                            href="https://hackersmang-techmang-2026.sessionize.com"
+                            href={sessionizeScheduleAppUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group/btn relative w-full md:w-fit inline-flex items-center justify-center gap-3 md:py-4 md:px-8 text-neutral-navy font-semibold rounded-2xl transition-all duration-300 overflow-hidden text-lg lg:text-xl hover:md:scale-105 hover:md:shadow-xl"

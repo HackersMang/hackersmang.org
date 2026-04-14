@@ -7,7 +7,6 @@ import { alternates, EVENT_DETAIL, eventMetaData, jsonLd, openGraph, RESOURCES, 
 import { baseMetadata } from "@/lib/basemeta";
 import { Footer } from "@/components/hackersmang/Footer";
 import Venue from "@/components/eventpage/Venue";
-import About from "./components/About";
 import ScheduleWithRegister from "@/components/eventpage/ScheduleWithRegister";
 import EventHighlights from "@/components/eventpage/EventHighlights";
 import SupportedBy from "@/components/eventpage/SupportedBy";
@@ -62,6 +61,7 @@ function page() {
                         independentRegistrations={registrations}
                         registrationStartOn={EVENT_DETAIL.registrationStartOn}
                         registrationEndOn={EVENT_DETAIL.registrationEndOn}
+                        sessionizeScheduleAppUrl={EVENT_DETAIL.sessionizeScheduleAppUrl}
                     />
                     <Resources resources={RESOURCES} />
                     <SupportedBy 

@@ -16,6 +16,7 @@ import { Footer } from "@/components/hackersmang/Footer";
 import Venue from "@/components/eventpage/Venue";
 import CallForSpeaker from "@/components/eventpage/CallForSpeaker";
 import EventHighlights from "@/components/eventpage/EventHighlights";
+import ScheduleWithRegister from "@/components/eventpage/ScheduleWithRegister";
 
 export const metadata: Metadata = {
   ...baseMetadata,
@@ -26,6 +27,17 @@ export const metadata: Metadata = {
 };
 
 function page() {
+  const registrations = (EVENT_DETAIL.tracks || [])
+    .filter(
+      (track): track is typeof track & { registrationLink: string } =>
+        track.registrationLink !== null
+    )
+    .map((track) => ({
+      name: track.name,
+      registrationLink: track.registrationLink,
+      buttonText: track.buttonText || `Register for ${track.name}`,
+    }));
+
   return (
     <>
       <Script
@@ -49,6 +61,15 @@ function page() {
             columns={4}
             backgroundColor="bg-secondary-yellow"
             className="py-20 lg:py-32"
+          />
+          <ScheduleWithRegister
+            sessionId={EVENT_DETAIL.sessionizeApiId}
+            showComingSoonBanner={EVENT_DETAIL.showComingSoonBanner}
+            independentRegistrations={
+              registrations.length > 0 ? registrations : undefined
+            }
+            registrationStartOn={EVENT_DETAIL.registrationStartOn}
+            registrationEndOn={EVENT_DETAIL.registrationEndOn}
           />
           <CallForSpeaker
             registrationLink={EVENT_DETAIL.callForSpeakerLink}

@@ -34,6 +34,8 @@ export interface EventDetailProps {
 
     isSchedulePublished?: boolean;
     sessionizeApiId?: string | null;
+    /** Sessionize PWA URL for “Install schedule app” in schedule section */
+    sessionizeScheduleAppUrl?: string | null;
     showComingSoonBanner?: boolean;
     summitAffiliation?: SummitAffiliationConfig | null;
     partners?: Partner[];
@@ -169,6 +171,8 @@ export interface ScheduleWithRegisterProps extends ScheduleProps {
         registrationLink: string;
         buttonText: string;
     }>;
+    /** Sessionize PWA URL for “Install schedule app” (event-specific; omit to hide) */
+    sessionizeScheduleAppUrl?: string | null;
 }
 
 export type EventTrack = {
