@@ -18,7 +18,7 @@ export const EVENT_DETAIL: EventDetailProps = {
     {
       name: "Workshops & Talks",
       registrationLink: "https://www.tickettailor.com/events/hackerspacemangaluru/2163831",
-      buttonText: "Register for AI Workshops & Talks",
+      buttonText: "Register for Github Copilot Dev days [Workshops & Talks]",
     },
   ],
 
