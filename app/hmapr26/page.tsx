@@ -80,7 +80,7 @@ function page() {
             happeningOn={EVENT_DETAIL.happeningOn}
             locationName={EVENT_DETAIL.locationName}
             locationUrl={EVENT_DETAIL.locationUrl}
-            showComingSoonBanner={true}
+            showComingSoonBanner={false}
           />
           <Footer />
         </div>
