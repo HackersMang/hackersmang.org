@@ -11,7 +11,7 @@ export const EVENT_DETAIL: EventDetailProps = {
 
   tracks: [],
 
-  callForSpeakerLink: "https://sessionize.com/hmjun26/",
+  callForSpeakerLink: "https://sessionize.com/hackersmang-hmjune26-edition/",
   callForSpeakerStartOn: new Date("05/01/2026"),
   callForSpeakerEndOn: new Date("06/27/2026"),
 
