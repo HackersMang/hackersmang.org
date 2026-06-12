@@ -9,7 +9,18 @@ export const EVENT_DETAIL: EventDetailProps = {
   locationUrl: "https://maps.app.goo.gl/bB6HwqDftS4Nq1LT7",
   happeningOn: new Date("06/27/2026"),
 
-  tracks: [],
+  tracks: [
+    {
+      name: "AI Talks",
+      registrationLink: "https://www.tickettailor.com/events/hackerspacemangaluru/2261445",
+      buttonText: "Register for AI Talks",
+    },
+    {
+      name: "Workshops & Talks",
+      registrationLink: "https://www.tickettailor.com/events/hackerspacemangaluru/2261460",
+      buttonText: "Register for Workshops & Talks",
+    },
+  ],
 
   callForSpeakerLink: "https://sessionize.com/hackersmang-hmjune26-edition/",
   callForSpeakerStartOn: new Date("05/01/2026"),
@@ -19,7 +30,7 @@ export const EVENT_DETAIL: EventDetailProps = {
   registrationEndOn: new Date("06/26/2026"),
 
   isSchedulePublished: false,
-  sessionizeApiId: null,
+  sessionizeApiId: '9srbdqp1',
   sessionizeScheduleAppUrl: "https://hmjun26.sessionize.com",
   showComingSoonBanner: true,
   summitAffiliation: null,

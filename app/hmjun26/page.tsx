@@ -62,7 +62,7 @@ function page() {
             backgroundColor="bg-secondary-yellow"
             className="py-20 lg:py-32"
           />
-          {/* <ScheduleWithRegister
+          <ScheduleWithRegister
             sessionId={EVENT_DETAIL.sessionizeApiId}
             showComingSoonBanner={EVENT_DETAIL.showComingSoonBanner}
             independentRegistrations={
@@ -70,7 +70,7 @@ function page() {
             }
             registrationStartOn={EVENT_DETAIL.registrationStartOn}
             registrationEndOn={EVENT_DETAIL.registrationEndOn}
-          /> */}
+          />
           <CallForSpeaker
             registrationLink={EVENT_DETAIL.callForSpeakerLink}
             registrationStartOn={EVENT_DETAIL.callForSpeakerStartOn}
