@@ -71,11 +71,6 @@ function page() {
             registrationStartOn={EVENT_DETAIL.registrationStartOn}
             registrationEndOn={EVENT_DETAIL.registrationEndOn}
           />
-          <CallForSpeaker
-            registrationLink={EVENT_DETAIL.callForSpeakerLink}
-            registrationStartOn={EVENT_DETAIL.callForSpeakerStartOn}
-            registrationEndOn={EVENT_DETAIL.callForSpeakerEndOn}
-          />
           <Venue
             happeningOn={EVENT_DETAIL.happeningOn}
             locationName={EVENT_DETAIL.locationName}
