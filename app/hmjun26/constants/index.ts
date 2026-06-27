@@ -32,7 +32,7 @@ export const EVENT_DETAIL: EventDetailProps = {
   isSchedulePublished: false,
   sessionizeApiId: '9srbdqp1',
   sessionizeScheduleAppUrl: "https://hmjun26.sessionize.com",
-  showComingSoonBanner: true,
+  showComingSoonBanner: false,
   summitAffiliation: null,
 };
 
