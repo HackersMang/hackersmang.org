@@ -119,7 +119,7 @@ export const jsonLd = {
       }
   },
   organizer: {
-      '@type': eventMetaData.category,
+      '@type': 'Organization',
       name: SITE_NAME,
       url: SITE_URL
   },

@@ -1,4 +1,5 @@
 import { EventDetailProps } from "@/lib/types";
+import { SITE_NAME, SITE_URL } from "@/lib/basemeta";
 
 // Speakers
 export const SPEAKERS = [
@@ -63,4 +64,47 @@ export const EVENT_DETAIL: EventDetailProps = {
   ],
   registrationStartOn: new Date("11/20/2024"), // MM/DD/YYYY
   registrationEndOn: new Date("11/23/2024"),
+};
+
+export const HERO_CARD_URL =
+  "https://hackersmang.org/2024-november/cards/hero-card.png";
+
+export const eventMetaData = {
+  title:
+    "HMNov24 | HackersMang, 2024 November Edition by Hackerspace Mangaluru",
+  description:
+    "HackersMang, 2024 November Edition hosted by Hackerspace Mangaluru.",
+  bookmarks: "https://hackersmang.org/2024-november",
+};
+
+export const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: eventMetaData.title,
+  description: eventMetaData.description,
+  startDate: EVENT_DETAIL.happeningOn,
+  endDate: EVENT_DETAIL.happeningOn,
+  location: {
+    "@type": "Place",
+    name: EVENT_DETAIL.locationName,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Mangaluru",
+      addressRegion: "Karnataka",
+      addressCountry: "IN",
+    },
+  },
+  organizer: {
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: SITE_URL,
+  },
+  offers: {
+    "@type": "Offer",
+    url: eventMetaData.bookmarks,
+    price: "0",
+    priceCurrency: "INR",
+    availability: "https://schema.org/SoldOut",
+  },
+  image: [HERO_CARD_URL],
 };

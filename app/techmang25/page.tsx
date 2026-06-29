@@ -18,21 +18,6 @@ export const metadata: Metadata = {
     generator: 'HackersMang',
     applicationName: 'HackersMang',
     referrer: 'origin-when-cross-origin',
-    keywords: [
-        // Primary Keywords
-        'TechMang25', 'Mangaluru Tech Conference', 'Karnataka Tech Events', 'Tech Conference 2025',
-        // Technology Categories
-        'Artificial Intelligence', 'Cloud Computing', 'DevOps', 'Cybersecurity', 'Blockchain',
-        'Machine Learning', 'Data Science', 'IoT', 'Edge Computing', '5G',
-        // Programming & Frameworks
-        'Python', 'JavaScript', 'React', 'Node.js', 'TypeScript',
-        // Cloud & Infrastructure
-        'AWS', 'Azure', 'Google Cloud', 'Docker', 'Kubernetes',
-        // Development Tools
-        'Git', 'GitHub', 'CI/CD', 'Jenkins', 'Terraform',
-        // Event-specific
-        'Tech Symposium Mangaluru', 'IT Conference Karnataka', 'Developer Conference India'
-    ],
     authors: [
         { name: 'Hackerspace' },
         { name: 'Mangaluru', url: 'https://hackersmang.org' }

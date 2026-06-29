@@ -107,7 +107,7 @@ const baseJsonLd = {
       }
   },
   organizer: {
-      '@type': eventMetaData.category,
+      '@type': 'Organization',
       name: SITE_NAME,
       url: SITE_URL
   },
