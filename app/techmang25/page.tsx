@@ -92,9 +92,6 @@ export const metadata: Metadata = {
     },
     alternates: {
         canonical: 'https://hackersmang.org/techmang25',
-        languages: {
-            'en-US': '/en-US',
-        },
     },
     bookmarks: ['https://hackersmang.org/techmang25'],
     category: 'technology',

@@ -46,6 +46,9 @@ export const metadata: Metadata = {
     description: 'HackersMang, 2024 July Edition hosted by Hackerspace Mangaluru.',
     images: 'https://hackersmang.org/ai-techverse/cards/hero-card.png'
   },
+  alternates: {
+    canonical: '/ai-techverse',
+  },
 };
 
 function page() {

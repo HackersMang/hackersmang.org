@@ -78,9 +78,6 @@ export const twitter = {
 
 export const alternates = {
   canonical: eventMetaData.bookmarks,
-  languages: {
-    "en-US": "/en-US",
-  },
 };
 
 export const jsonLd = {

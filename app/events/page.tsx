@@ -3,13 +3,40 @@ import "@/assets/fonts.css";
 import { Footer } from "@/components/hackersmang/Footer";
 import EventCard from "@/components/hackersmang/EventCard";
 import { Metadata } from "next";
-import { baseMetadata } from "@/lib/basemeta";
+import { baseMetadata, SITE_URL } from "@/lib/basemeta";
 import { UPCOMING_EVENTS, PAST_EVENTS } from "@/lib/events";
+
+const EVENTS_URL = `${SITE_URL}/events`;
 
 export const metadata: Metadata = {
   ...baseMetadata,
   title: "Events | HackersMang - Tech Events & Conferences",
   description: "Discover all upcoming and past tech events, conferences, and workshops organized by Hackerspace Mangaluru and the HackersMang community.",
+  alternates: {
+    canonical: EVENTS_URL,
+  },
+  openGraph: {
+    title: "Events | HackersMang - Tech Events & Conferences",
+    description: "Discover all upcoming and past tech events, conferences, and workshops organized by Hackerspace Mangaluru and the HackersMang community.",
+    url: EVENTS_URL,
+    siteName: "Hackerspace Mangaluru",
+    images: [
+      {
+        url: `${SITE_URL}/opengraph-image.jpeg`,
+        width: 1200,
+        height: 630,
+        alt: "Hackerspace Mangaluru Events",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Events | HackersMang - Tech Events & Conferences",
+    description: "Discover all upcoming and past tech events, conferences, and workshops organized by Hackerspace Mangaluru and the HackersMang community.",
+    images: `${SITE_URL}/twitter-image.jpeg`,
+  },
 };
 
 export default function EventsPage() {

@@ -47,12 +47,6 @@ export const metadata: Metadata = {
     description: 'Hackerspace Mangaluru - Hosts Talks & Workshops on latest Open Source technologies & works towards building a thriving tech ecosystem in Mangaluru.',
     images: 'https://hackersmang.org/twitter-image.jpeg'
   },
-  alternates: {
-    canonical: '/',
-    languages: {
-      'en-US': '/en-US',
-    },
-  },
   bookmarks: ['https://hackersmang.org'],
   category: 'technology',
 };

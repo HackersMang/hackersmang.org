@@ -1,3 +1,3 @@
 User-Agent: *
 
-Sitemap: http://hackersmang.org/sitemap.xml
+Sitemap: https://hackersmang.org/sitemap.xml

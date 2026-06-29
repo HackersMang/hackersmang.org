@@ -56,10 +56,7 @@ export const metadata: Metadata = {
     images: 'https://hackersmang.org/2024-november/cards/hero-card.png'
   },
   alternates: {
-    canonical: '/',
-    languages: {
-      'en-US': '/en-US',
-    },
+    canonical: '/2024-november',
   },
   bookmarks: ['https://hackersmang.org/2024-november'],
   category: 'technology',
