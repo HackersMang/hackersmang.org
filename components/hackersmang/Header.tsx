@@ -8,10 +8,10 @@ export default function Header() {
       <div className="flex items-center justify-between h-16 max-w-7xl mx-auto px-5">
         {/* Logo Section */}
         <div className="h-full w-fit flex justify-center items-center text-sm p-0 cursor-pointer">
-          <Link href="/" passHref>
+          <Link href="/" aria-label="Hackerspace Mangaluru home">
             <Image
               src="/icon.png"
-              alt="hackersmang-logo"
+              alt="Hackerspace Mangaluru"
               width={70}
               height={70}
               className="rounded-full cursor-pointer"

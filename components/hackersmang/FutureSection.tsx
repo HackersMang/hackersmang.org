@@ -8,10 +8,10 @@ export default function FutureSection() {
         {/* Header Section */}
         <div className="text-left lg:text-center mb-8 lg:mb-12 flex flex-col items-start lg:items-center justify-center gap-4 lg:gap-8 text-neutral-navy">
             <span className="text-xl lg:text-2xl font-bold outfit-extra-light text-neutral-navy tracking-tight">
-                The future is now
+                Why people keep coming back
             </span>
             <h3 className="text-2xl lg:text-6xl xl:text-7xl outfit-extra-bold text-neutral-navy mb-4 lg:mb-6 tracking-tight">
-                A dynamic environment designed to foster learning, connection, and inspiration.
+                Talks, workshops, and rooms full of builders — in Mangaluru.
             </h3>
         </div>
 
@@ -34,7 +34,7 @@ export default function FutureSection() {
               
               {/* Description */}
               <p className="text-neutral-navy leading-relaxed outfit-extra-light">
-                Hear from experts and peers and get new ideas. See how others tackle similar challenges, and gain fresh perspectives on your own work. Share experiences and learn together.
+                Real talks from local engineers and visiting experts — AI, open source, DevOps, and whatever the community wants to explore next. No slides-for-the-sake-of-slides.
               </p>
             </div>
           </div>
@@ -56,7 +56,7 @@ export default function FutureSection() {
               
               {/* Description */}
               <p className="text-neutral-navy leading-relaxed outfit-extra-light">
-                Connect with like-minded people. Build relationships that can last beyond the event. Help grow your network for future opportunities.
+                Meet developers, founders, and students from across the coast. Many of our regulars found their next collaborator, mentor, or job lead at a HackersMang event.
               </p>
             </div>
           </div>
@@ -78,7 +78,7 @@ export default function FutureSection() {
               
               {/* Description */}
               <p className="text-neutral-navy leading-relaxed outfit-extra-light">
-                Gain new skills, insights, and strategies to move forward. Apply what you learn, improve your work, and grow as an individual.
+                Hands-on workshops and demo-heavy sessions. You leave with something you can try at work or in a side project — not just a conference lanyard.
               </p>
             </div>
           </div>
@@ -100,7 +100,7 @@ export default function FutureSection() {
               
               {/* Description */}
               <p className="text-neutral-navy leading-relaxed outfit-extra-light">
-                Hear stories, ideas, and experiences that spark creativity. Walk away with fresh motivation and the energy to tackle new challenges with confidence.
+                See what people in Mangaluru are actually building. Past events covered LLMs, data tooling, IoT, and more — often before they hit the mainstream hype cycle.
               </p>
             </div>
           </div>

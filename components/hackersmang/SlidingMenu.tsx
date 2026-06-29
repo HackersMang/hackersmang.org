@@ -60,6 +60,7 @@ const SlidingMenu: React.FC<SlidingMenuProps> = ({ isMenuOpen, toggleMenu }) => 
 
           {/* Main Content - Two Column Layout */}
           <div className="flex flex-col gap-8 mb-8">
+            {UPCOMING_EVENTS.length > 0 && (
             <div className="space-y-6">
               <div className="border-b border-neutral-200/50 pb-2">
                 <h3 className="text-xl outfit-extra-bold text-neutral-navy">Upcoming Events</h3>
@@ -70,6 +71,7 @@ const SlidingMenu: React.FC<SlidingMenuProps> = ({ isMenuOpen, toggleMenu }) => 
                 ))}
               </div>
             </div>
+            )}
 
             <div className="space-y-6">
               <PastEvents 

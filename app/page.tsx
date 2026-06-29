@@ -28,7 +28,7 @@ export default function Home() {
         <Hero />
         <FutureSection />
         <UpcomingEvents />
-        <CommunityStats />
+        <CommunityStats subtitle="A volunteer-run community that's been growing Mangaluru's tech scene one event at a time." />
         <Footer />
       </main>
     </>

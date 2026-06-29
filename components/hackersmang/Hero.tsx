@@ -1,4 +1,4 @@
-import React from 'react';
+import Link from 'next/link';
 import CreativeElements from './CreativeElements';
 
 export default function Hero() {
@@ -12,7 +12,7 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary-yellow rounded-full mb-6">
             <div className="w-2 h-2 bg-neutral-navy rounded-full animate-pulse"></div>
             <span className="text-sm outfit-extra-light text-neutral-navy font-bold">
-              A vibrant community of tech enthusiasts
+              Mangaluru&apos;s open-source tech community
             </span>
           </div>
 
@@ -22,8 +22,8 @@ export default function Hero() {
           </h1>
 
           {/* Description */}
-          <p className="text-lg lg:text-xl text-neutral-navy outfit-extra-light leading-relaxed mb-10 max-w-2xl">
-            A community-driven open-source group. Together with the HackersMang community, we host tech talks, workshops, and events aimed at fostering innovation and knowledge-sharing.
+          <p className="text-lg lg:text-xl text-neutral-navy outfit-extra-light leading-relaxed mb-8 max-w-2xl">
+            We run <strong className="outfit-bold">HackersMang</strong> — free meetups, workshops, and flagship events for developers, students, and builders in Mangaluru. Show up to learn something practical, meet people who ship, and leave with ideas you can use on Monday.
           </p>
 
           {/* Interactive Stats */}
@@ -37,7 +37,7 @@ export default function Hero() {
                   </svg>
                 </div>
               </div>
-              <div className="text-sm outfit-extra-light text-neutral-navy mb-3">Events Hosted</div>
+              <div className="text-sm outfit-extra-light text-neutral-navy mb-3">Meetups &amp; conferences since 2023</div>
             </div>
             <div className="group bg-secondary-yellow p-6 lg:p-8 rounded-2xl border border-primary-yellow/20 hover:border-primary-yellow/40 transition-all duration-300 hover:scale-105 cursor-default">
               <div className="flex items-center justify-between mb-3">
@@ -48,7 +48,7 @@ export default function Hero() {
                   </svg>
                 </div>
               </div>
-              <div className="text-sm outfit-extra-light text-neutral-navy mb-3">Active Members</div>
+              <div className="text-sm outfit-extra-light text-neutral-navy mb-3">People in our community</div>
             </div>
 
           </div>

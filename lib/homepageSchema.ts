@@ -11,7 +11,7 @@ export const homepageJsonLd = {
       url: SITE_URL,
       logo: `${SITE_URL}/icon.png`,
       description:
-        "Hosts talks and workshops on open source technologies and works towards building a thriving tech ecosystem in Mangaluru.",
+        "Runs HackersMang — free tech meetups, workshops, and conferences for developers, students, and builders in Mangaluru.",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Mangaluru",

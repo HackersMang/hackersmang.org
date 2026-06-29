@@ -5,7 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 export const metadata: Metadata = {
   metadataBase: new URL('https://hackersmang.org'),
   title: "Hackerspace Mangaluru",
-  description: "Hackerspace Mangaluru - Hosts Talks & Workshops on latest Open Source technologies & works towards building a thriving tech ecosystem in Mangaluru.",
+  description: "Hackerspace Mangaluru runs HackersMang — free tech meetups, workshops, and conferences in Mangaluru. Join 500+ builders for talks on AI, open source, and more.",
   generator: 'Hackerspace Mangaluru',
   applicationName: 'Hackerspace Mangaluru',
   referrer: 'origin-when-cross-origin',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Hackerspace Mangaluru',
-    description: 'Hackerspace Mangaluru - Hosts Talks & Workshops on latest Open Source technologies & works towards building a thriving tech ecosystem in Mangaluru.',
+    description: 'Hackerspace Mangaluru runs HackersMang — free tech meetups, workshops, and conferences in Mangaluru. Join 500+ builders for talks on AI, open source, and more.',
     url: 'https://hackersmang.org',
     siteName: 'Hackerspace Mangaluru',
     images: [
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Hackerspace Mangaluru',
-    description: 'Hackerspace Mangaluru - Hosts Talks & Workshops on latest Open Source technologies & works towards building a thriving tech ecosystem in Mangaluru.',
+    description: 'Hackerspace Mangaluru runs HackersMang — free tech meetups, workshops, and conferences in Mangaluru. Join 500+ builders for talks on AI, open source, and more.',
     images: 'https://hackersmang.org/twitter-image.jpeg'
   },
   bookmarks: ['https://hackersmang.org'],
