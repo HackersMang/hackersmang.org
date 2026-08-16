@@ -17,7 +17,7 @@ export default function Copyright() {
                 </Link>
             </div>
             <div className='text-neutral-navy outfit-extra-light'>
-                © 2025 Hackerspace Mangaluru. All rights reserved
+                © {new Date().getFullYear()} Hackerspace Mangaluru. All rights reserved
             </div>
         </div>
     )
