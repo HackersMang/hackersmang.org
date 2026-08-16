@@ -39,6 +39,25 @@ bun dev      # 🍞 Baking with Bun
 
 Then, hop over to your browser and visit [**http://localhost:3000**](http://localhost:3000) to witness your creation in action. 🎭
 
+## 🤝 Contributing
+
+Want to contribute? Awesome! Check out our [**Contributing Guide**](CONTRIBUTING.md) for detailed instructions.
+
+### Quick Start for Contributors
+
+1. **Fork** the repo and clone your fork
+2. **Add the upstream remote** to stay in sync:
+   ```bash
+   git remote add upstream https://github.com/HackersMang/hackersmang.org.git
+   ```
+3. **Sync before starting work**:
+   ```bash
+   git fetch upstream
+   git checkout master
+   git merge upstream/master
+   ```
+4. **Create a branch**, make changes, and open a PR!
+
 ---
 
 Now go forth, contribute, and make this website as awesome as your favorite cat GIF. 🐱✨
