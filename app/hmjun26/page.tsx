@@ -1,4 +1,3 @@
-import "@/assets/fonts.css";
 import { Metadata } from "next";
 import Header from "@/components/hackersmang/Header";
 import Script from "next/script";
@@ -14,7 +13,6 @@ import {
 import { baseMetadata } from "@/lib/basemeta";
 import { Footer } from "@/components/hackersmang/Footer";
 import Venue from "@/components/eventpage/Venue";
-import CallForSpeaker from "@/components/eventpage/CallForSpeaker";
 import EventHighlights from "@/components/eventpage/EventHighlights";
 import ScheduleWithRegister from "@/components/eventpage/ScheduleWithRegister";
 

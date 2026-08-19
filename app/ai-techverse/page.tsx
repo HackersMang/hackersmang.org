@@ -1,4 +1,3 @@
-import "@/assets/fonts.css"
 import Speakers from "../../components/eventpage/Speakers";
 import Agendas from "../../components/eventpage/Agendas";
 import { Metadata } from "next";

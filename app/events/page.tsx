@@ -1,5 +1,4 @@
 import Header from "@/components/hackersmang/Header";
-import "@/assets/fonts.css";
 import { Footer } from "@/components/hackersmang/Footer";
 import EventCard from "@/components/hackersmang/EventCard";
 import { Metadata } from "next";
@@ -71,8 +70,8 @@ export default function EventsPage() {
                   <h2 className="text-2xl lg:text-3xl outfit-extra-bold text-neutral-navy">Upcoming Events</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-                  {UPCOMING_EVENTS.map((event, index) => (
-                    <EventCard key={`upcoming-${index}`} event={event} />
+                  {UPCOMING_EVENTS.map((event) => (
+                    <EventCard key={event.href} event={event} />
                   ))}
                 </div>
               </div>
@@ -85,8 +84,8 @@ export default function EventsPage() {
                   <h2 className="text-2xl lg:text-3xl outfit-extra-bold text-neutral-navy">Past Events</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-                  {PAST_EVENTS.map((event, index) => (
-                    <EventCard key={`past-${index}`} event={event} />
+                  {PAST_EVENTS.map((event) => (
+                    <EventCard key={event.href} event={event} />
                   ))}
                 </div>
               </div>

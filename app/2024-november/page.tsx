@@ -1,4 +1,3 @@
-import "@/assets/fonts.css"
 import Speakers from "../../components/eventpage/Speakers";
 import Agendas from "../../components/eventpage/Agendas";
 import { Metadata } from "next";
@@ -9,7 +8,6 @@ import Venue from "@/components/eventpage/Venue";
 import Register from "@/components/eventpage/Register";
 import { EVENT_DETAIL, SPEAKERS, jsonLd } from "./constants";
 import { Footer } from "@/components/hackersmang/Footer";
-import { TrackRegistration } from "@/lib/types";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hackersmang.org'),

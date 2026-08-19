@@ -1,16 +1,14 @@
-import "@/assets/fonts.css"
 import { Metadata } from "next";
 import Header from "@/components/hackersmang/Header";
 import Script from 'next/script';
 import Intro from "@/components/eventpage/Hero";
-import { alternates, EVENT_DETAIL, eventMetaData, jsonLd, openGraph, RESOURCES, twitter } from "./constants";
+import { alternates, EVENT_DETAIL, eventMetaData, jsonLd, openGraph, twitter } from "./constants";
 import { baseMetadata } from "@/lib/basemeta";
 import { Footer } from "@/components/hackersmang/Footer";
 import { TrackRegistration } from "@/lib/types";
 import Venue from "@/components/eventpage/Venue";
 import CallForSpeaker from "@/components/eventpage/CallForSpeaker";
 import ScheduleWithRegister from "@/components/eventpage/ScheduleWithRegister";
-import EventHighlights from "@/components/eventpage/EventHighlights";
 import SprintToImagine from "@/components/eventpage/SprintToImagine";
 
 export const metadata: Metadata = {

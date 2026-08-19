@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import Script from "next/script";
 import Header from "@/components/hackersmang/Header";
 import Hero from "@/components/hackersmang/Hero";
-import "@/assets/fonts.css"
 import FutureSection from "@/components/hackersmang/FutureSection";
 import UpcomingEvents from "@/components/hackersmang/UpcomingEvents";
 import CommunityStats from "@/components/hackersmang/CommunityImpact";
