@@ -40,7 +40,7 @@ export default function Hero() {
             </div>
             <div className="group bg-secondary-yellow p-6 lg:p-8 rounded-2xl border border-primary-yellow/20 hover:border-primary-yellow/40 transition-all duration-300 hover:scale-105 cursor-default">
               <div className="flex items-center justify-between mb-3">
-                <div className="text-3xl lg:text-4xl outfit-extra-bold text-neutral-navy">1,000+</div>
+                <div className="text-3xl lg:text-4xl outfit-extra-bold text-neutral-navy">1,500+</div>
                 <div className="w-16 h-16 rounded-lg flex items-center justify-center">
                   <svg className="w-8 h-8 text-neutral-navy" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A1.5 1.5 0 0 0 18.54 8H16c-.8 0-1.54.37-2.01.99L12 11l-1.99-2.01A2.5 2.5 0 0 0 8 8H5.46c-.8 0-1.54.37-2.01.99L1 12.5V22h2v-6h2.5l2.5 6h2l-2.5-6H12v6h2v-6h2.5l2.5 6h2l-2.5-6H20v6h2z"/>

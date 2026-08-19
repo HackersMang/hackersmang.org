@@ -16,9 +16,9 @@ interface CommunityImpactProps {
 }
 
 export const defaultStats: ImpactStat[] = [
-    { value: '12+', label: 'Events Hosted' },
-    { value: '50+', label: 'Speakers' },
-    { value: '500+', label: 'Active Members' },
+    { value: '15+', label: 'Events Hosted' },
+    { value: '100+', label: 'Speakers' },
+    { value: '1,500+', label: 'People in our community' },
 ];
 
 const columnClasses = {
