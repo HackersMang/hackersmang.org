@@ -60,35 +60,38 @@ const extractTopics = (sessions: SessionizeSessionsResponse[]): string[] => {
     return Array.from(topics).slice(0, 3);
 };
 
+const EMPTY_SESSION_HIGHLIGHTS: Highlight[] = [
+    {
+        title: 'Expert Speakers',
+        description: 'Learn from industry leaders and innovators sharing cutting-edge insights.',
+        icon: getIconForHighlight('Speakers')
+    },
+    {
+        title: 'Hands-on Workshops',
+        description: 'Get practical experience through interactive workshops designed to enhance your skills.',
+        icon: getIconForHighlight('Workshops')
+    },
+    {
+        title: 'Networking Opportunities',
+        description: 'Connect with like-minded professionals, developers, and tech enthusiasts.',
+        icon: getIconForHighlight('Networking')
+    },
+    {
+        title: 'Latest Trends',
+        description: 'Stay ahead with the latest developments in AI, cloud computing, and emerging technologies.',
+        icon: getIconForHighlight('Trends')
+    },
+];
+
 // Generate dynamic highlights from sessions data
 const generateHighlights = (sessionsData: SessionizeSessionsResponse[]): Highlight[] => {
-    if (!sessionsData || sessionsData.length === 0) {
-        return [
-            {
-                title: 'Expert Speakers',
-                description: 'Learn from industry leaders and innovators sharing cutting-edge insights.',
-                icon: getIconForHighlight('Speakers')
-            },
-            {
-                title: 'Hands-on Workshops',
-                description: 'Get practical experience through interactive workshops designed to enhance your skills.',
-                icon: getIconForHighlight('Workshops')
-            },
-            {
-                title: 'Networking Opportunities',
-                description: 'Connect with like-minded professionals, developers, and tech enthusiasts.',
-                icon: getIconForHighlight('Networking')
-            },
-            {
-                title: 'Latest Trends',
-                description: 'Stay ahead with the latest developments in AI, cloud computing, and emerging technologies.',
-                icon: getIconForHighlight('Trends')
-            },
-        ];
+    const allSessions = sessionsData?.flatMap(group => group.sessions) ?? [];
+
+    // Sessionize returns a group with an empty sessions list before talks are published
+    if (allSessions.length === 0) {
+        return EMPTY_SESSION_HIGHLIGHTS;
     }
 
-    // Aggregate data from all groups
-    const allSessions = sessionsData.flatMap(group => group.sessions);
     const uniqueSpeakers = new Set(allSessions.flatMap(session => session.speakers.map(s => s.id)));
     const uniqueRooms = new Set(allSessions.map(session => session.room).filter(Boolean));
     const topics = extractTopics(sessionsData);
@@ -146,8 +149,11 @@ const generateHighlights = (sessionsData: SessionizeSessionsResponse[]): Highlig
         },
     ];
 
-    while (highlights.length < 4) {
-        highlights.push(defaultHighlights[highlights.length % defaultHighlights.length]);
+    for (const fallback of defaultHighlights) {
+        if (highlights.length >= 4) break;
+        if (!highlights.some((highlight) => highlight.title === fallback.title)) {
+            highlights.push(fallback);
+        }
     }
 
     return highlights.slice(0, 4);

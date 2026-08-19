@@ -5,7 +5,9 @@ import { EventLink } from "@/components/hackersmang/EventCard";
  * Update this file to add, remove, or modify events
  */
 
-export const UPCOMING_EVENTS: EventLink[] = [];
+export const UPCOMING_EVENTS: EventLink[] = [
+  { href: "/hmsep26", title: "#HMSep26", subtitle: "HackersMang, 2026 September Edition — September 19" },
+];
 
 export const PAST_EVENTS: EventLink[] = [
   { href: "/hmjun26", title: "#HMJun26", subtitle: "HackersMang, 2026 June Edition — June 27" },

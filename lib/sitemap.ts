@@ -8,6 +8,7 @@ import { EVENT_DETAIL as techmang25Event } from "@/app/techmang25/constants";
 import { EVENT_DETAIL as techmang26Event } from "@/app/techmang26/constants";
 import { EVENT_DETAIL as hmapr26Event } from "@/app/hmapr26/constants";
 import { EVENT_DETAIL as hmjun26Event } from "@/app/hmjun26/constants";
+import { EVENT_DETAIL as hmsep26Event } from "@/app/hmsep26/constants";
 import { SITE_URL } from "@/lib/basemeta";
 import { PAST_EVENTS, UPCOMING_EVENTS } from "@/lib/events";
 
@@ -21,6 +22,7 @@ const EVENT_LAST_MODIFIED: Record<string, Date> = {
   "/techmang26": techmang26Event.happeningOn,
   "/hmapr26": hmapr26Event.happeningOn,
   "/hmjun26": hmjun26Event.happeningOn,
+  "/hmsep26": hmsep26Event.happeningOn,
 };
 
 const UPCOMING_PATHS = new Set(
