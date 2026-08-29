@@ -22,7 +22,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageJsonLd) }}
       />
-      <main className="relative bg-white h-full w-full">
+      <main id="main-content" className="relative bg-white h-full w-full">
         <Header />
         <Hero />
         <FutureSection />
