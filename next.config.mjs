@@ -10,6 +10,12 @@ const nextConfig = {
           port: '',
           pathname: '/image/**',
         },
+        {
+          protocol: 'https',
+          hostname: 'cdn.sessionize.com',
+          port: '',
+          pathname: '/image/**',
+        },
       ],
     },
     async redirects() {

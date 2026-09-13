@@ -15,8 +15,9 @@ export const EVENT_DETAIL: EventDetailProps = {
   callForSpeakerStartOn: new Date("08/19/2026"),
   callForSpeakerEndOn: new Date("09/16/2026"),
 
-  isSchedulePublished: false,
+  isSchedulePublished: true,
   sessionizeApiId: "rrdtspnq",
+  sessionizeScheduleAppUrl: "https://hmsep26.sessionize.com",
   showComingSoonBanner: false,
   summitAffiliation: null,
 };
