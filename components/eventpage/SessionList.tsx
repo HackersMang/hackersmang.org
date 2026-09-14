@@ -12,7 +12,7 @@ const DESCRIPTION_MAX_HEIGHT = 54
 const OVERFLOW_TOLERANCE = 2
 const RETRY_DELAY = 100
 const MEASUREMENT_DELAY = 50
-const DUMMY_PROFILE_PICTURE = "https://sessionize.com/image/8db9-400o400o1-test4.jpg"
+const DUMMY_PROFILE_PICTURE = "https://cdn.sessionize.com/image/8db9-400o400o1-test4.jpg"
 
 // Utility function to format time
 const formatTime = (date: string): string => {
@@ -157,6 +157,7 @@ const SessionCard: React.FC<SessionCardProps> = ({ session }) => {
                                                 alt={`${speaker.name} profile`}
                                                 width={80}
                                                 height={80}
+                                                unoptimized
                                                 className="w-20 h-20 rounded-2xl object-cover border-2 border-primary-yellow/30 group-hover:border-primary-yellow/60 transition-all duration-300"
                                             />
                                         </div>
@@ -218,6 +219,7 @@ const SessionCard: React.FC<SessionCardProps> = ({ session }) => {
                                             alt={`${speaker.name} profile`}
                                             width={80}
                                             height={80}
+                                            unoptimized
                                             className="w-24 h-24 rounded-2xl object-cover border-2 border-primary-yellow/30 group-hover:border-primary-yellow/60 transition-all duration-300"
                                         />
                                     </div>

@@ -9,11 +9,32 @@ export const EVENT_DETAIL: EventDetailProps = {
   locationUrl: "https://maps.app.goo.gl/bB6HwqDftS4Nq1LT7",
   happeningOn: new Date("09/19/2026"),
 
-  tracks: [],
+  tracks: [
+    {
+      name: "AI Talks",
+      registrationLink:
+        "https://www.tickettailor.com/events/hackerspacemangaluru/2411914",
+      buttonText: "Register for AI Talks",
+    },
+    {
+      name: "Dev Days | Mangaluru",
+      registrationLink: "https://luma.com/7ig8zs94",
+      buttonText: "Register for Workshop for Professionals",
+    },
+    {
+      name: "Workshops for Students",
+      registrationLink:
+        "https://www.tickettailor.com/events/hackerspacemangaluru/2411916",
+      buttonText: "Register for Workshop for Students",
+    },
+  ],
 
   callForSpeakerLink: "https://sessionize.com/hackersmang-sep-2026-edition",
   callForSpeakerStartOn: new Date("08/19/2026"),
   callForSpeakerEndOn: new Date("09/16/2026"),
+
+  registrationStartOn: new Date("08/19/2026"),
+  registrationEndOn: new Date("09/19/2026"),
 
   isSchedulePublished: true,
   sessionizeApiId: "rrdtspnq",
