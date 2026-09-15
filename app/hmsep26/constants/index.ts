@@ -3,7 +3,7 @@ import { EventDetailProps, Resource } from "@/lib/types";
 
 export const EVENT_DETAIL: EventDetailProps = {
   title: "#HMSep26",
-  subtitle: "HackersMang, 2026 September Edition",
+  subtitle: "AI in Action: Beyond the Prompt: Engineering Real AI",
   pageUrl: "/hmsep26",
   locationName: "UniCourt Mangaluru",
   locationUrl: "https://maps.app.goo.gl/bB6HwqDftS4Nq1LT7",
