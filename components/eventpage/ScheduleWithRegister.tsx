@@ -141,6 +141,47 @@ const ScheduleWithRegister = ({
 
     const hasMultipleTracks = allTracks.length > 1;
 
+    // Track jump nav: which track is currently in view
+    const [activeTrackId, setActiveTrackId] = useState<number | null>(null);
+
+    const scrollToTrack = useCallback((trackId: number) => {
+        const el = document.getElementById(`track-${trackId}`);
+        if (!el) return;
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        setActiveTrackId(trackId);
+    }, []);
+
+    useEffect(() => {
+        if (!hasMultipleTracks || !scheduleData) return;
+
+        setActiveTrackId((prev) => prev ?? allTracks[0]?.id ?? null);
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const visible = entries
+                    .filter((entry) => entry.isIntersecting)
+                    .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+
+                if (visible[0]) {
+                    const id = Number((visible[0].target as HTMLElement).dataset.trackId);
+                    if (!Number.isNaN(id)) setActiveTrackId(id);
+                }
+            },
+            {
+                // Treat a track as active when its header sits in the upper viewport
+                rootMargin: "-15% 0px -55% 0px",
+                threshold: [0, 0.1, 0.25],
+            }
+        );
+
+        allTracks.forEach((track) => {
+            const el = document.getElementById(`track-${track.id}`);
+            if (el) observer.observe(el);
+        });
+
+        return () => observer.disconnect();
+    }, [hasMultipleTracks, scheduleData, allTracks]);
+
     // Determine which registration mode to use
     const useTrackBasedRegistration = trackRegistrations && trackRegistrations.length > 0;
 
@@ -248,7 +289,12 @@ const ScheduleWithRegister = ({
                                     {daySchedule.rooms.map((room, roomIndex) => {
                                         const totalTracks = daySchedule.rooms.length;
                                         return (
-                                            <div key={room.id} className="w-full mb-16 lg:mb-20">
+                                            <div
+                                                key={room.id}
+                                                id={`track-${room.id}`}
+                                                data-track-id={room.id}
+                                                className="w-full mb-16 lg:mb-20 scroll-mt-28 lg:scroll-mt-32"
+                                            >
                                                 {/* Enhanced Track Header - sticky just below site header */}
                                                 <div className="sticky top-20 z-20 -mx-5 px-5 lg:-mx-12 lg:px-12 py-4 mb-0 lg:mb-16 bg-neutral-white border-b border-primary-yellow/20">
 
@@ -391,6 +437,76 @@ const ScheduleWithRegister = ({
                     </div>
                 )}
             </div>
+
+            {/* Outside z-10 stacking context so it stays above sibling sections */}
+            {!loading && hasMultipleTracks && (
+                <>
+                    <div className="hidden md:block fixed right-4 lg:right-6 top-1/2 -translate-y-1/2 z-50">
+                        <nav
+                            aria-label="Jump to track"
+                            className="flex flex-col gap-2 animate-fade-in-up"
+                        >
+                            {allTracks.map((track, index) => {
+                                const isActive = activeTrackId === track.id;
+                                return (
+                                    <div key={track.id} className="relative group">
+                                        <button
+                                            type="button"
+                                            onClick={() => scrollToTrack(track.id)}
+                                            aria-current={isActive ? "true" : undefined}
+                                            aria-describedby={`track-tip-${track.id}`}
+                                            className={`min-w-[5.5rem] px-3 py-2.5 text-left border outfit-bold text-sm transition-[background-color,border-color,box-shadow] duration-300 ease-out ${
+                                                isActive
+                                                    ? "bg-primary-yellow text-neutral-navy border-primary-yellow shadow-sm"
+                                                    : "bg-neutral-white/95 text-neutral-navy border-primary-yellow/40 hover:border-primary-yellow hover:bg-primary-yellow/10"
+                                            }`}
+                                        >
+                                            Track {index + 1}
+                                        </button>
+
+                                        <span
+                                            id={`track-tip-${track.id}`}
+                                            role="tooltip"
+                                            className="pointer-events-none absolute right-full top-1/2 -translate-y-1/2 mr-3 whitespace-nowrap px-3 py-1.5 bg-neutral-white text-neutral-navy text-xs outfit-bold border border-primary-yellow/40 shadow-sm opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 group-focus-within:opacity-100 group-focus-within:translate-x-0 transition-all duration-300 ease-out"
+                                        >
+                                            {track.name}
+                                            <span
+                                                aria-hidden
+                                                className="absolute left-full top-1/2 -translate-y-1/2 border-4 border-transparent border-l-neutral-white drop-shadow-sm"
+                                            />
+                                        </span>
+                                    </div>
+                                );
+                            })}
+                        </nav>
+                    </div>
+
+                    <nav
+                        aria-label="Jump to track"
+                        className="md:hidden fixed bottom-0 inset-x-0 z-50 flex items-center justify-center gap-1 w-full px-4 py-3 bg-neutral-white/95 border-t border-primary-yellow/40 shadow-[0_-4px_12px_rgba(0,0,0,0.06)] backdrop-blur-sm animate-fade-in-up"
+                    >
+                        {allTracks.map((track, index) => {
+                            const isActive = activeTrackId === track.id;
+                            return (
+                                <button
+                                    key={track.id}
+                                    type="button"
+                                    onClick={() => scrollToTrack(track.id)}
+                                    aria-current={isActive ? "true" : undefined}
+                                    aria-label={`${track.name}, Track ${index + 1}`}
+                                    className={`flex-1 text-center px-3 py-2.5 text-sm outfit-bold transition-colors duration-300 ease-out ${
+                                        isActive
+                                            ? "bg-primary-yellow text-neutral-navy"
+                                            : "bg-transparent text-neutral-navy/70"
+                                    }`}
+                                >
+                                    Track {index + 1}
+                                </button>
+                            );
+                        })}
+                    </nav>
+                </>
+            )}
         </section>
     );
 };
