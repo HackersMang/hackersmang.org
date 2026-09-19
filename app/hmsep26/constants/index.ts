@@ -34,7 +34,7 @@ export const EVENT_DETAIL: EventDetailProps = {
   callForSpeakerEndOn: new Date("09/16/2026"),
 
   registrationStartOn: new Date("08/19/2026"),
-  registrationEndOn: new Date("09/19/2026"),
+  registrationEndOn: new Date("09/17/2026"),
 
   isSchedulePublished: true,
   sessionizeApiId: "rrdtspnq",
