@@ -71,11 +71,6 @@ function page() {
             registrationEndOn={EVENT_DETAIL.registrationEndOn}
             sessionizeScheduleAppUrl={EVENT_DETAIL.sessionizeScheduleAppUrl}
           />
-          <CallForSpeaker
-            registrationLink={EVENT_DETAIL.callForSpeakerLink}
-            registrationStartOn={EVENT_DETAIL.callForSpeakerStartOn}
-            registrationEndOn={EVENT_DETAIL.callForSpeakerEndOn}
-          />
           <Venue
             happeningOn={EVENT_DETAIL.happeningOn}
             locationName={EVENT_DETAIL.locationName}
