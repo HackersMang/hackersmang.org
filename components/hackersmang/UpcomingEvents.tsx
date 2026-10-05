@@ -11,7 +11,7 @@ export default function UpcomingEvents() {
             <section className="bg-neutral-white relative py-20 lg:py-32 overflow-hidden">
                 <div className="max-w-7xl mx-auto px-5 lg:px-12 text-left md:text-center flex flex-col items-start md:items-center justify-center gap-4 lg:gap-8">
                     <span className="text-xl lg:text-2xl font-bold outfit-extra-light text-neutral-navy tracking-tight">
-                        Recent Event
+                        Upcoming Event
                     </span>
                     <h3 className="text-2xl lg:text-6xl xl:text-7xl outfit-bold text-neutral-navy mb-4 lg:mb-6 tracking-tight">
                         {UPCOMING_EVENT.title}, {UPCOMING_EVENT.subtitle}
@@ -22,9 +22,9 @@ export default function UpcomingEvents() {
                 </div>
                 <Register
                     registrationLink={UPCOMING_EVENT.href}
-                    registrationStartOn={new Date("08/19/2026")}
-                    registrationEndOn={new Date("09/19/2026")}
-                    buttonText="View event page"
+                    registrationStartOn={new Date("10/01/2026")}
+                    registrationEndOn={new Date("01/16/2027")}
+                    buttonText={`Visit ${UPCOMING_EVENT.title}`}
                     disableCodeOfConduct={true}
                     target="_self"
                 />
@@ -49,7 +49,7 @@ export default function UpcomingEvents() {
                 registrationLink={RECENT_EVENT.href}
                 registrationStartOn={new Date("05/01/2026")}
                 registrationEndOn={new Date("06/27/2026")}
-                buttonText="View event page"
+                buttonText={`Visit ${RECENT_EVENT.title}`}
                 disableCodeOfConduct={true}
                 target="_self"
             />
