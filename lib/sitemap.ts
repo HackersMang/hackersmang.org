@@ -6,6 +6,7 @@ import { EVENT_DETAIL as aug2025Event } from "@/app/2025-august/constants";
 import { EVENT_DETAIL as hmnov25Event } from "@/app/hmnov25/constants";
 import { EVENT_DETAIL as techmang25Event } from "@/app/techmang25/constants";
 import { EVENT_DETAIL as techmang26Event } from "@/app/techmang26/constants";
+import { EVENT_DETAIL as techmang27Event } from "@/app/techmang27/constants";
 import { EVENT_DETAIL as hmapr26Event } from "@/app/hmapr26/constants";
 import { EVENT_DETAIL as hmjun26Event } from "@/app/hmjun26/constants";
 import { EVENT_DETAIL as hmsep26Event } from "@/app/hmsep26/constants";
@@ -20,6 +21,7 @@ const EVENT_LAST_MODIFIED: Record<string, Date> = {
   "/hmnov25": hmnov25Event.happeningOn,
   "/techmang25": techmang25Event.happeningOn,
   "/techmang26": techmang26Event.happeningOn,
+  "/techmang27": techmang27Event.happeningOn,
   "/hmapr26": hmapr26Event.happeningOn,
   "/hmjun26": hmjun26Event.happeningOn,
   "/hmsep26": hmsep26Event.happeningOn,

@@ -6,10 +6,11 @@ import { EventLink } from "@/components/hackersmang/EventCard";
  */
 
 export const UPCOMING_EVENTS: EventLink[] = [
-  { href: "/hmsep26", title: "#HMSep26", subtitle: "HackersMang, 2026 September Edition — September 19" },
+  { href: "/techmang27", title: "#TechMang27", subtitle: "AI Beyond the Hype: Ideas, Innovation and Impact. — January 16, 2027" },
 ];
 
 export const PAST_EVENTS: EventLink[] = [
+  { href: "/hmsep26", title: "#HMSep26", subtitle: "HackersMang, 2026 September Edition — September 19" },
   { href: "/hmjun26", title: "#HMJun26", subtitle: "HackersMang, 2026 June Edition — June 27" },
   { href: "/hmapr26", title: "#HMApr26", subtitle: "HackersMang, 2026 April Edition — April 25" },
   { href: "/techmang26", title: "#TechMang26", subtitle: "The Annual Flagship Event of Hackerspace Mangaluru" },

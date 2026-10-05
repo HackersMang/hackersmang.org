@@ -14,6 +14,13 @@ export interface Partner {
     url?: string;
 }
 
+export interface CallForSpeakerSubmission {
+    name: string;
+    link: string;
+    buttonText?: string;
+    description?: string;
+}
+
 export interface EventDetailProps {
     title: string;
     subtitle?: string;
@@ -29,6 +36,8 @@ export interface EventDetailProps {
     registrationStartOn?: Date | null;
     registrationEndOn?: Date | null;
     callForSpeakerLink?: string | null;
+    /** Multiple CFP links (e.g. Student + Professional). When set, preferred over callForSpeakerLink. */
+    callForSpeakers?: CallForSpeakerSubmission[] | null;
     callForSpeakerStartOn?: Date | null;
     callForSpeakerEndOn?: Date | null;
 
@@ -64,6 +73,8 @@ export interface RegisterProps {
     buttonText?: string;
     disableCodeOfConduct?: boolean;
     target?: string;
+    /** When provided, Call For Speakers shows multiple submission CTAs */
+    submissions?: CallForSpeakerSubmission[];
 }
 
 // Define the SessionizeSpeakers interface
