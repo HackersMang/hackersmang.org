@@ -53,9 +53,9 @@ function page() {
             locationName={EVENT_DETAIL.locationName}
             locationUrl={EVENT_DETAIL.locationUrl}
             showDateComingSoonBanner={true}
-            dateComingSoonMessage="Date coming soon"
+            dateComingSoonMessage="Revealing soon"
             showComingSoonBanner={true}
-            comingSoonMessage="Venue details coming soon"
+            comingSoonMessage="Revealing soon"
           />
           <Footer />
         </div>
