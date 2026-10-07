@@ -60,10 +60,13 @@ export interface IntroProps {
 export interface VenueInfoProps {
     locationName?: string;
     locationUrl?: string;
-    happeningOn: Date;
+    happeningOn?: Date | null;
     /** When true, venue shows a coming-soon banner instead of name/link/directions */
     showComingSoonBanner?: boolean;
     comingSoonMessage?: string;
+    /** When true, date shows a coming-soon banner instead of the formatted date */
+    showDateComingSoonBanner?: boolean;
+    dateComingSoonMessage?: string;
 }
 
 export interface RegisterProps {

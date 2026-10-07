@@ -7,7 +7,8 @@ export const EVENT_DETAIL: EventDetailProps = {
   pageUrl: "/techmang27",
   locationName: undefined,
   locationUrl: undefined,
-  happeningOn: new Date("01/16/2027"), // MM/DD/YYYY
+  // Date TBA — new date will be announced; keep a placeholder for sitemap lastmod only
+  happeningOn: new Date(),
   tracks: null,
 
   callForSpeakers: [
@@ -44,7 +45,7 @@ export const eventMetaData = {
   title:
     "TechMang27 | The Annual Flagship Event of Hackerspace Mangaluru | 2027 edition",
   description:
-    "Join TechMang27 — AI Beyond the Hype: Ideas, Innovation and Impact. January 16, 2027 in Mangaluru. Call for Speakers open for Student and Professional editions.",
+    "Join TechMang27 — AI Beyond the Hype: Ideas, Innovation and Impact. Date to be announced. Call for Speakers open for Student and Professional editions.",
   bookmarks: "https://hackersmang.org/techmang27",
   category: "Tech Conference",
 };
@@ -87,8 +88,8 @@ export const jsonLd = {
   "@type": "Event",
   name: eventMetaData.title,
   description: eventMetaData.description,
-  startDate: EVENT_DETAIL.happeningOn,
-  endDate: EVENT_DETAIL.happeningOn,
+  // startDate/endDate omitted until the new date is announced
+  eventStatus: "https://schema.org/EventScheduled",
   location: {
     "@type": "Place",
     name: "Mangaluru",

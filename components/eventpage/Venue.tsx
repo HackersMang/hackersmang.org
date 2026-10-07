@@ -11,8 +11,13 @@ const Venue = ({
     happeningOn,
     showComingSoonBanner = false,
     comingSoonMessage = "Venue details coming soon",
+    showDateComingSoonBanner = false,
+    dateComingSoonMessage = "Date coming soon",
 }: VenueInfoProps): JSX.Element => {
-    const formattedDate = formatEventDate(happeningOn.toUTCString());
+    const dateReady = !showDateComingSoonBanner && Boolean(happeningOn);
+    const formattedDate = happeningOn
+        ? formatEventDate(happeningOn.toUTCString())
+        : null;
     const venueReady =
         !showComingSoonBanner &&
         Boolean(locationName && locationUrl && locationUrl !== "#");
@@ -40,9 +45,15 @@ const Venue = ({
                                         </div>
                                         <span className="text-lg font-semibold text-neutral-navy outfit-extra-bold">Date</span>
                                     </div>
-                                    <p className="text-xl lg:text-2xl text-neutral-navy outfit-extra-light ml-11">
-                                        {formattedDate}
-                                    </p>
+                                    {dateReady && formattedDate ? (
+                                        <p className="text-xl lg:text-2xl text-neutral-navy outfit-extra-light ml-11">
+                                            {formattedDate}
+                                        </p>
+                                    ) : (
+                                        <div className="ml-11">
+                                            <ComingSoonBanner message={dateComingSoonMessage} className="justify-start! w-full" />
+                                        </div>
+                                    )}
                                 </div>
 
                                 {/* Location */}

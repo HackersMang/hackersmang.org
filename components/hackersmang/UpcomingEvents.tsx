@@ -23,7 +23,7 @@ export default function UpcomingEvents() {
                 <Register
                     registrationLink={UPCOMING_EVENT.href}
                     registrationStartOn={new Date("10/01/2026")}
-                    registrationEndOn={new Date("01/16/2027")}
+                    registrationEndOn={new Date("12/31/2027")}
                     buttonText={`Visit ${UPCOMING_EVENT.title}`}
                     disableCodeOfConduct={true}
                     target="_self"

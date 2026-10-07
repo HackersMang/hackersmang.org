@@ -14,6 +14,7 @@ import { baseMetadata } from "@/lib/basemeta";
 import { Footer } from "@/components/hackersmang/Footer";
 import Venue from "@/components/eventpage/Venue";
 import CallForSpeaker from "@/components/eventpage/CallForSpeaker";
+import About from "./components/About";
 
 export const metadata: Metadata = {
   ...baseMetadata,
@@ -40,6 +41,7 @@ function page() {
             eventTag="TechMang Events"
             summitAffiliation={EVENT_DETAIL.summitAffiliation}
           />
+          <About />
           <CallForSpeaker
             registrationLink={EVENT_DETAIL.callForSpeakerLink}
             submissions={EVENT_DETAIL.callForSpeakers ?? undefined}
@@ -50,6 +52,8 @@ function page() {
             happeningOn={EVENT_DETAIL.happeningOn}
             locationName={EVENT_DETAIL.locationName}
             locationUrl={EVENT_DETAIL.locationUrl}
+            showDateComingSoonBanner={true}
+            dateComingSoonMessage="Date coming soon"
             showComingSoonBanner={true}
             comingSoonMessage="Venue details coming soon"
           />

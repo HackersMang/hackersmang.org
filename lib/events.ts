@@ -6,7 +6,7 @@ import { EventLink } from "@/components/hackersmang/EventCard";
  */
 
 export const UPCOMING_EVENTS: EventLink[] = [
-  { href: "/techmang27", title: "#TechMang27", subtitle: "AI Beyond the Hype: Ideas, Innovation and Impact. — January 16, 2027" },
+  { href: "/techmang27", title: "#TechMang27", subtitle: "AI Beyond the Hype: Ideas, Innovation and Impact." },
 ];
 
 export const PAST_EVENTS: EventLink[] = [
